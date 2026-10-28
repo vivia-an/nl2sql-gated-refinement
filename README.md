@@ -2,9 +2,9 @@
 
 Code, frozen configurations, the statistical analysis plan with its dated amendments, result files and prompts for
 
-> Li, S.; Song, X.; Wang, D. *What Does Execution-Gated Refinement Buy in Text-to-SQL? Cost, Accuracy Across Backbones, and Negative Results.* Applied Sciences (MDPI), <PAPER_DOI>.
+> Li, S.; Song, X.; Wang, D. *What Does Execution-Gated Refinement Buy in Text-to-SQL? Cost, Accuracy Across Backbones, and Negative Results.* Submitted to Applied Sciences (MDPI).
 
-Code archive (this repository, release v1.0.0): <ZENODO_CODE_DOI>. Run archive (stored model requests and responses, predictions): <ZENODO_ARCHIVE_DOI>. Source repository: <GITHUB_URL>.
+Code archive (this repository, release v1.0.1): https://doi.org/10.5281/zenodo.23739688 (all versions: https://doi.org/10.5281/zenodo.23739687). Run archive (stored model requests and responses, predictions): https://doi.org/10.5281/zenodo.23735019. Source repository: https://github.com/vivia-an/nl2sql-gated-refinement.
 
 The paper is an evaluation study. It asks what a generate-and-critique loop adds to a text-to-SQL system built on a frozen, API-hosted language model: what it costs, what it buys on backbones of different price, and which parts matter. It reports the tests that were pre-specified, the post hoc analyses (marked as such) and the components that did not help. This repository is not a software product; it exists so that the numbers in the paper can be traced to stored result files and re-derived.
 
@@ -32,7 +32,7 @@ figs/                    the figures of the article and the data files they are 
 
 - The manuscript and supplement sources (they are published by the journal). `paper/` holds only what the code generates: the number macros and the tables.
 - Benchmark data. BIRD, Spider and the corrected-reference releases are not redistributed; download them from their sources. `DATA_LICENCES.md` lists the licence of each as stated upstream, what is kept here (identifiers and digests, and in `results/diag/` SQL text of BIRD training questions under CC BY-SA 4.0), and the attribution and modification notice.
-- The archived model requests and responses and the per-question predictions of every run. They are deposited separately at <ZENODO_ARCHIVE_DOI> (see Level 2).
+- The archived model requests and responses and the per-question predictions of every run. They are deposited separately at https://doi.org/10.5281/zenodo.23735019 (see Level 2).
 - API keys and any machine addresses. The scripts that drove the compute machines are not part of the release.
 - The MDPI LaTeX class files.
 - One baseline file (`macsql_const.py`, upstream has no licence file): `python code/tools/fetch_macsql_const.py` downloads it from the pinned upstream commit and checks its sha256.
@@ -57,7 +57,7 @@ Every number in the article is a `\res{KEY}`, `\tsres{KEY}` or `\xres{KEY}` refe
 
 ### Level 2: result files from the stored predictions (no API key; needs the run archive)
 
-The result files are computed from per-question predictions (`preds.jsonl`, one JSON object per question) and the archived model requests and responses of each run. The run archive is at <ZENODO_ARCHIVE_DOI> (`MANIFEST.tsv` lists every file with its sha256, `RUNS.tsv` every run). Unpack it so that the runs are at `<WORK_DIR>/runs/<experiment>/<run>/`:
+The result files are computed from per-question predictions (`preds.jsonl`, one JSON object per question) and the archived model requests and responses of each run. The run archive is at https://doi.org/10.5281/zenodo.23735019 (`MANIFEST.tsv` lists every file with its sha256, `RUNS.tsv` every run). Unpack it so that the runs are at `<WORK_DIR>/runs/<experiment>/<run>/`:
 
 ```bash
 tar xzf nl2sql_runs_1.0.0.tar.gz -C <WORK_DIR>             # creates <WORK_DIR>/runs/ and <WORK_DIR>/frozen/
@@ -128,7 +128,7 @@ The authors have filed a patent application on a method that underlies the pipel
 
 Code and documentation: MIT (`LICENSE`, Copyright (c) 2026 Shikai Li). Benchmark data and the benchmark-bearing files keep their own licences (`DATA_LICENCES.md`).
 
-Run archive (<ZENODO_ARCHIVE_DOI>). It contains benchmark material: BIRD and Spider are published under CC BY-SA 4.0 and Spider-Realistic is treated as CC BY-SA 4.0 (the sources disagree: the Zenodo description says CC BY-SA 4.0, the metadata field says CC BY 4.0). Please attribute the benchmarks to their authors. The archive **modifies** this material: questions, evidence strings and schema text are embedded in the stored model requests and responses, and model outputs and execution results are attached; the modified material is shared under CC BY-SA 4.0. The databases under BIRD and Spider are not redistributed and not relicensed; they keep their upstream licences. The model responses are shared as research data with attribution to the provider (Alibaba Cloud Model Studio); no additional licence is claimed on the raw output text, and their use is subject to the provider's terms.
+Run archive (https://doi.org/10.5281/zenodo.23735019). It contains benchmark material: BIRD and Spider are published under CC BY-SA 4.0 and Spider-Realistic is treated as CC BY-SA 4.0 (the sources disagree: the Zenodo description says CC BY-SA 4.0, the metadata field says CC BY 4.0). Please attribute the benchmarks to their authors. The archive **modifies** this material: questions, evidence strings and schema text are embedded in the stored model requests and responses, and model outputs and execution results are attached; the modified material is shared under CC BY-SA 4.0. The databases under BIRD and Spider are not redistributed and not relicensed; they keep their upstream licences. The model responses are shared as research data with attribution to the provider (Alibaba Cloud Model Studio); no additional licence is claimed on the raw output text, and their use is subject to the provider's terms.
 
 ## Citation
 

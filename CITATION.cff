@@ -5,11 +5,11 @@ type: software
 abstract: >-
   Code, frozen configurations, pre-specified statistical analysis plan with dated amendments, lock file, result files and replay
   scripts for a seven-module text-to-SQL pipeline around frozen, API-hosted language models, evaluated on the BIRD benchmark.
-version: "1.0.0"
-date-released: "<YYYY-MM-DD>"            # PLACEHOLDER: date of the GitHub release v1.0.0
-doi: "<ZENODO_CODE_DOI>"                 # PLACEHOLDER: Zenodo version DOI of the GitHub release
-repository-code: "<GITHUB_URL>"          # PLACEHOLDER: URL of the GitHub repository
-url: "<GITHUB_URL>"                      # PLACEHOLDER
+version: "1.0.1"
+date-released: "2026-10-28"
+doi: "10.5281/zenodo.23739688"
+repository-code: "https://github.com/vivia-an/nl2sql-gated-refinement"
+url: "https://github.com/vivia-an/nl2sql-gated-refinement"
 license: "MIT"
 keywords:
   - text-to-SQL
@@ -38,6 +38,4 @@ preferred-citation:
   publisher:
     name: "MDPI"
   year: 2026
-  volume: "<VOLUME>"                     # PLACEHOLDER: assigned by the journal
-  issue: "<ISSUE>"                       # PLACEHOLDER
-  doi: "<PAPER_DOI>"                     # PLACEHOLDER: 10.3390/app... assigned by the journal
+  status: submitted
