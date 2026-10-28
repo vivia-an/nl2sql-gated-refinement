@@ -58,7 +58,7 @@ LABELS = {
     "EXT1": "EXT (external-validity)",
     "E10": "EXPL (LLM annotation)",
     "PF": "EXPL (feedback-updated Critic, simulated oracle feedback, post hoc)",
-    "RV2": "POSTHOC2 (post hoc, requested by review simulation; computed on existing runs; SAP Amendment 10)",
+    "RV2": "POSTHOC2 (post hoc, following a critical reading of the draft by the authors with Claude Sonnet 5.5 (see Acknowledgments); computed on existing runs; SAP Amendment 10)",
     "RV3": "POSTHOC3 (post hoc, requested by the round-3 referees; new runs for seeds and the same-examples control; SAP section 26)",
     "RV4T0": "POSTHOC4-T0 (post hoc, requested by the round-4 referees; temperature-0 rerun of part of the locked run, reduced scope after the loss of compute worker machines; SAP section 27)",
     "RV4": "POSTHOC4 (post hoc, requested by the round-4 referees; computed on existing runs, no model call; SAP section 27)",
