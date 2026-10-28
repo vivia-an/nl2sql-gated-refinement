@@ -1,0 +1,7 @@
+# FROZEN 2026-10-26 by code/tools/freeze_configs.py from exp/configs/min_gated_legacyddl.yaml (sha256 2ba063da9dc8bdec). Do not edit: a change is a new lock entry (SPEC 1.3 step 6).
+# MIN M3 ablation -Q (legacy identifier rendering) on full_gated: ddl.quote_keywords false = pre-X5 prompts. TEMPLATE -> frozen/gated_legacyddl.yaml. --system full_gated.
+temperature: 0.0
+ddl: {quote_keywords: false}
+m5: {policy: gated, gate_empty: false, score_for_routing: false, t_max: 3}
+route: {score: exec, theta_h: 7.5}
+m6: {policy: ws_full, path: exp/frozen/corpus_burnin_39e2477c.sqlite, update: false}

@@ -1,0 +1,33 @@
+<<sections>>
+
+# Complete list of tables and columns of the database
+The schema block above may show only some of the tables. This is the complete list (names and declared types only). A table or column is missing from the database only if it is absent from this list.
+<<full_schema>>
+
+<<standard?>># Task
+You review a SQLite query written for the question below. The query has ALREADY EXECUTED successfully and its real execution result is shown under "Execution". A query that executed has no syntax error, no unknown table and no unknown column.
+Judge only whether the returned result answers the question: the rows, the columns and the values. Do not judge speed. Do not judge style.
+
+Rules:
+1. Never claim a runtime error, an undefined table or an unknown column. Mention a table or column as missing only if it is absent from the complete list above; for an executed query this does not happen.
+2. The Evidence is authoritative. If the SQL follows the Evidence's definition of a term, it is right, even if you would define the term differently.
+3. An issue is "must_fix" only if (a) you quote the exact phrase of the question or evidence it concerns, (b) you quote the exact SQL fragment it concerns, and (c) fixing it would change the returned result so that it answers the question. Whether DISTINCT, COUNT versus COUNT(DISTINCT), the aggregate, the comparison direction, the sort direction, LIMIT, a filter or a column is right is a semantic matter and can be must_fix.
+4. If the question can reasonably be read in more than one way and the SQL implements one of those readings, that is not a must_fix issue.
+5. A must_fix claim must be a fact that you can demonstrate from the question, the evidence, the schema and the execution result. Before you claim that a filter, column, join or aggregate is missing or wrong, re-read the SQL and check that it is not already there in another form. A doubt ("may", "might", "could", "likely", "if the data ...", "it is safer to ...", "without seeing the data") is not a must_fix issue.
+6. Everything else is "style": extra or differently named or differently ordered columns that do not change the answer, aliases, formatting, join style, efficiency, doubts about data you cannot see. Style issues never lower the score.
+
+Score "semantic" (integer 0-10): 9-10 = no must_fix issue; 7-8 = you have a doubt but cannot name a must_fix issue; 0-6 = at least one must_fix issue (lower = more serious or more numerous).
+
+Return one JSON object and nothing else:
+{"semantic": int, "issues": [{"severity": "must_fix" | "style", "question_phrase": str, "sql_fragment": str, "description": str}], "suggestions": [str]}
+
+# Question
+Question: <<question>>
+Evidence: <<evidence>>
+<<graph>>
+
+# SQL
+<<sql>>
+
+# Execution
+<<preview>>

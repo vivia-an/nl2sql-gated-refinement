@@ -1,0 +1,174 @@
+{
+ "dirs": [
+  "R4T0"
+ ],
+ "price_file": "../exp/prices.yaml",
+ "cache_hit_ratio": 0.2,
+ "unpriced_rows": {},
+ "total": {
+  "cny_disc": 44.90799387999998,
+  "cny_nodisc": 66.09821980000001,
+  "calls": 24747
+ },
+ "by_model": {
+  "qwen3.5-27b": {
+   "calls": 7224,
+   "pt": 20823277,
+   "ct": 790198,
+   "cached": 0,
+   "cny_disc": 16.2869166,
+   "cny_nodisc": 16.2869166
+  },
+  "qwen3.7-flash-2026-07-15": {
+   "calls": 10930,
+   "pt": 33223504,
+   "ct": 1542243,
+   "cached": 6860672,
+   "cny_disc": 6.780787680000006,
+   "cny_nodisc": 7.878495200000009
+  },
+  "qwen3.7-plus-2026-05-26": {
+   "calls": 6593,
+   "pt": 18271544,
+   "ct": 673715,
+   "cached": 12557824,
+   "cny_disc": 21.840289599999966,
+   "cny_nodisc": 41.932807999999994
+  }
+ },
+ "by_run": {
+  "R4T0/fixed-27b-r1": {
+   "calls": 5555,
+   "pt": 16002112,
+   "ct": 695300,
+   "cached": 0,
+   "cny_disc": 12.938707199999998,
+   "cny_nodisc": 12.938707199999998
+  },
+  "R4T0/fixed-flash-r1": {
+   "calls": 3703,
+   "pt": 12520462,
+   "ct": 576192,
+   "cached": 1043328,
+   "cny_disc": 2.7981135200000056,
+   "cny_nodisc": 2.9650460000000085
+  },
+  "R4T0/fixed-flash-r2": {
+   "calls": 25,
+   "pt": 77318,
+   "ct": 2557,
+   "cached": 13440,
+   "cny_disc": 0.015358800000000002,
+   "cny_nodisc": 0.017509200000000003
+  },
+  "R4T0/fixed-plus-r1": {
+   "calls": 4963,
+   "pt": 13611215,
+   "ct": 588754,
+   "cached": 8935680,
+   "cny_disc": 17.63537399999997,
+   "cny_nodisc": 31.932462000000005
+  },
+  "R4T0/zs-27b-r1": {
+   "calls": 1534,
+   "pt": 4279297,
+   "ct": 76972,
+   "cached": 0,
+   "cny_disc": 2.937043800000003,
+   "cny_nodisc": 2.937043800000003
+  },
+  "R4T0/zs-flash-r1": {
+   "calls": 1534,
+   "pt": 4279297,
+   "ct": 87474,
+   "cached": 3625984,
+   "cny_disc": 0.34568116000000054,
+   "cny_nodisc": 0.9258386000000014
+  },
+  "R4T0/zs-plus-r1": {
+   "calls": 15,
+   "pt": 62698,
+   "ct": 858,
+   "cached": 47616,
+   "cny_disc": 0.056074399999999996,
+   "cny_nodisc": 0.13226
+  },
+  "round5/fixed-flash-r1": {
+   "calls": 5575,
+   "pt": 15949278,
+   "ct": 849444,
+   "cached": 2173184,
+   "cny_disc": 3.521701359999993,
+   "cny_nodisc": 3.8694107999999954
+  },
+  "round5/gated-27b-r1": {
+   "calls": 132,
+   "pt": 528914,
+   "ct": 17662,
+   "cached": 0,
+   "cny_disc": 0.4021260000000001,
+   "cny_nodisc": 0.4021260000000001
+  },
+  "round5/gated-flash-r1": {
+   "calls": 92,
+   "pt": 392112,
+   "ct": 26513,
+   "cached": 4736,
+   "cny_disc": 0.09887504000000001,
+   "cny_nodisc": 0.09963280000000001
+  },
+  "round5/gated-plus-r1": {
+   "calls": 91,
+   "pt": 360497,
+   "ct": 6231,
+   "cached": 81792,
+   "cny_disc": 0.6399748,
+   "cny_nodisc": 0.7708419999999999
+  },
+  "round5/rootonly-27b-r1": {
+   "calls": 3,
+   "pt": 12954,
+   "ct": 264,
+   "cached": 0,
+   "cny_disc": 0.0090396,
+   "cny_nodisc": 0.0090396
+  },
+  "round5/rootonly-flash-r1": {
+   "calls": 1,
+   "pt": 5037,
+   "ct": 63,
+   "cached": 0,
+   "cny_disc": 0.0010578000000000002,
+   "cny_nodisc": 0.0010578000000000002
+  },
+  "round5/rootonly-plus-r1": {
+   "calls": 5,
+   "pt": 20535,
+   "ct": 345,
+   "cached": 0,
+   "cny_disc": 0.043829999999999994,
+   "cny_nodisc": 0.043829999999999994
+  },
+  "round5/zs-plus-r1": {
+   "calls": 1534,
+   "pt": 4279297,
+   "ct": 78385,
+   "cached": 3540352,
+   "cny_disc": 3.5211108,
+   "cny_nodisc": 9.185673999999992
+  }
+ },
+ "s303": {
+  "cny_disc": 0,
+  "cny_nodisc": 0,
+  "calls": 0,
+  "runs": 0
+ },
+ "note": "embedding and rerank requests are not priced (placeholder prices, tokens not logged); the 1-token probes of r3_probe are not logged",
+ "round5": {
+  "cny_disc": 8.18164099999999,
+  "cny_nodisc": 14.249352999999994,
+  "calls": 7418,
+  "note": "host runs of the completion (8 jobs, Flash fixed loop whole); the 15 earlier rows of zs-plus-r1 are counted in round 4 only"
+ }
+}

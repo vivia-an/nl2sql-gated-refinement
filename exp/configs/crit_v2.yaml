@@ -1,0 +1,3 @@
+# E5 variant V2: pure-LLM weighted critic (one call returns the three axes)
+temperature: 0.0
+m5: {variant: v2}

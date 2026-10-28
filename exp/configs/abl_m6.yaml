@@ -1,0 +1,3 @@
+# E3 -M6: raw POOL57 history, WS ignored, no eviction, rho = 0 (default policy "raw", no burn-in store)
+temperature: 0.0
+m6: {policy: raw, path: null}

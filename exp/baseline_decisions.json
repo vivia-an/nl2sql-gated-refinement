@@ -1,0 +1,157 @@
+{
+ "date": "2026-10-26 05:45:09",
+ "rule": "code/tools/pick_trial.py: highest HT-300 EX inside [0.85,1.15]*B_ref; ties fewer calls, lower trial; none inside -> OUT_OF_WINDOW (not budget-matched, not B*-eligible). Applied to BOTH budgets (SAP 13.6 rule 9, 'matched to both where the knob allows').",
+ "b_ref_full_gated": 2.0209,
+ "b_ref_full_fixed": 3.2888,
+ "gated_window": {
+  "acsql": {
+   "trial": 1,
+   "ex": 0.69,
+   "calls_per_q": 2.1233333333333335,
+   "status": "ok",
+   "b_ref": 2.0209,
+   "n_trials": 3
+  },
+  "bon_vote": {
+   "trial": 2,
+   "ex": 0.7033333333333334,
+   "calls_per_q": 2.0,
+   "status": "ok",
+   "b_ref": 2.0209,
+   "n_trials": 3
+  },
+  "macsql": {
+   "trial": 1,
+   "ex": 0.7066666666666667,
+   "calls_per_q": 1.8166666666666667,
+   "status": "ok",
+   "b_ref": 2.0209,
+   "n_trials": 2
+  },
+  "sdebug": {
+   "trial": 2,
+   "ex": 0.6933333333333334,
+   "calls_per_q": 2.1033333333333335,
+   "status": "ok",
+   "b_ref": 2.0209,
+   "n_trials": 3
+  }
+ },
+ "fixed_window": {
+  "acsql": {
+   "trial": 3,
+   "ex": 0.6933333333333334,
+   "calls_per_q": 2.5233333333333334,
+   "status": "OUT_OF_WINDOW",
+   "b_ref": 3.2888,
+   "n_trials": 3
+  },
+  "bon_vote": {
+   "trial": 1,
+   "ex": 0.6933333333333334,
+   "calls_per_q": 2.0,
+   "status": "OUT_OF_WINDOW",
+   "b_ref": 3.2888,
+   "n_trials": 3
+  },
+  "macsql": {
+   "trial": 1,
+   "ex": 0.7066666666666667,
+   "calls_per_q": 1.8166666666666667,
+   "status": "OUT_OF_WINDOW",
+   "b_ref": 3.2888,
+   "n_trials": 2
+  },
+  "sdebug": {
+   "trial": 3,
+   "ex": 0.68,
+   "calls_per_q": 3.98,
+   "status": "OUT_OF_WINDOW",
+   "b_ref": 3.2888,
+   "n_trials": 3
+  }
+ },
+ "applied": {
+  "sdebug": 2,
+  "acsql": 1,
+  "macsql": 1,
+  "bon_vote": 2
+ },
+ "applied_note": "Frozen = the pick inside the gated window (the original M2 budget). In the fixed window (primary full_fixed, [2.80,3.78]) no sdebug, acsql or macsql trial lies inside, so the knob does not reach that budget and no extra arm is run (the closest trials, sdebug t3 3.98 calls and acsql t3 2.52, are NOT run); the full_fixed budget is matched by bon_vote n=3 (min_bon_vote_n3, 3.0 calls, T 0.7, no trial choice). This operationalisation was fixed after the trial table was seen (internal note F1 section 1, item 8 amended); the full trial table is under `trials` in this file.",
+ "trials": {
+  "acsql": {
+   "t1": {
+    "ex": 0.69,
+    "calls_per_q": 2.1233333333333335,
+    "n": 300,
+    "prompt_tokens_per_q": 3539.4266666666667
+   },
+   "t2": {
+    "ex": 0.69,
+    "calls_per_q": 2.3633333333333333,
+    "n": 300,
+    "prompt_tokens_per_q": 4056.806666666667
+   },
+   "t3": {
+    "ex": 0.6933333333333334,
+    "calls_per_q": 2.5233333333333334,
+    "n": 300,
+    "prompt_tokens_per_q": 4407.64
+   }
+  },
+  "bon_vote": {
+   "t1": {
+    "ex": 0.6933333333333334,
+    "calls_per_q": 2.0,
+    "n": 300,
+    "prompt_tokens_per_q": 3278.0066666666667
+   },
+   "t2": {
+    "ex": 0.7033333333333334,
+    "calls_per_q": 2.0,
+    "n": 300,
+    "prompt_tokens_per_q": 3278.0066666666667
+   },
+   "t3": {
+    "ex": 0.69,
+    "calls_per_q": 2.0,
+    "n": 300,
+    "prompt_tokens_per_q": 3278.0066666666667
+   }
+  },
+  "macsql": {
+   "t1": {
+    "ex": 0.7066666666666667,
+    "calls_per_q": 1.8166666666666667,
+    "n": 300,
+    "prompt_tokens_per_q": 4748.533333333334
+   },
+   "t2": {
+    "ex": 0.6866666666666666,
+    "calls_per_q": 1.77,
+    "n": 300,
+    "prompt_tokens_per_q": 4695.59
+   }
+  },
+  "sdebug": {
+   "t1": {
+    "ex": 0.6933333333333334,
+    "calls_per_q": 2.1966666666666668,
+    "n": 300,
+    "prompt_tokens_per_q": 3945.266666666667
+   },
+   "t2": {
+    "ex": 0.6933333333333334,
+    "calls_per_q": 2.1033333333333335,
+    "n": 300,
+    "prompt_tokens_per_q": 3637.9933333333333
+   },
+   "t3": {
+    "ex": 0.68,
+    "calls_per_q": 3.98,
+    "n": 300,
+    "prompt_tokens_per_q": 11869.06
+   }
+  }
+ }
+}

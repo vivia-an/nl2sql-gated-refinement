@@ -1,0 +1,10 @@
+# X7 (HEADROOM row 1 follow-up, value probing): full_gated + gate_empty (an executable but empty / all-NULL result is revised) + m5.probe_values.
+# The revision prompt of an EMPTY result (template rev_exec_probe.user) additionally lists up to probe_n = 8 distinct stored values of every short
+# text column (<= 40 characters) that the empty SQL compares with a literal in WHERE / JOIN ON / HAVING (read-only SELECT DISTINCT ... LIMIT 9,
+# 5 s guard, at most 4 columns). Error revisions use the unchanged rev_exec.user template. Roots, M1 and generation prompts are identical to
+# full_gated.yaml (same cache keys); control for the gate alone: full_gated_empty.yaml.
+# Logged: preds `probed` (columns shown, summed over the chain), `probe_cols`; cands `probed`, `probe_cols` on the candidate that was revised.
+temperature: 0.0
+ddl: {quote_keywords: true}
+m5: {policy: gated, gate_empty: true, probe_values: true, probe_n: 8, probe_max_len: 40, probe_max_cols: 4, probe_timeout_s: 5.0, score_for_routing: false, t_max: 3}
+route: {score: exec, theta_h: 7.5}

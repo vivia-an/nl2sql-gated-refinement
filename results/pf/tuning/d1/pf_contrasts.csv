@@ -1,0 +1,12 @@
+name,a,b,d_pp,lo_pp,hi_pp,a_only,b_only,loo_min_pp,loo_max_pp,share_dbs_same_sign,n,reading,d_pp_no_thrombosis,lo_pp_no_thrombosis,hi_pp_no_thrombosis,status
+PF1,pf_n1000_q100,pf_n0,0.0,0.0,0.0,0,0,0.0,0.0,,160,no difference larger than 1.5 pp,0.0,0.0,0.0,
+PF2,pf_n1000_q085,full_fixed,,,,,,,,,,,,,,not run
+PF2_q100,pf_n1000_q100,full_fixed,-0.625,-3.571428571428571,2.112676056338028,1,2,-1.694915254237288,0.8333333333333334,0.5,160,inconclusive; the interval contains both 0 and effects of at least 1.5 pp,-0.625,-3.571428571428571,2.112676056338028,
+PF2_n0,pf_n0,full_fixed,-0.625,-3.571428571428571,2.112676056338028,1,2,-1.694915254237288,0.8333333333333334,0.5,160,inconclusive; the interval contains both 0 and effects of at least 1.5 pp,-0.625,-3.571428571428571,2.112676056338028,
+PF3a,pf_n1000_q085,full_gated,,,,,,,,,,,,,,not run
+PF3a_q100,pf_n1000_q100,full_gated,,,,,,,,,,,,,,not run
+PF4_250_vs_0,pf_n250_q100,pf_n0,,,,,,,,,,,,,,not run
+PF4_1000_vs_250,pf_n1000_q100,pf_n250_q100,,,,,,,,,,,,,,not run
+PF4_noise_cost,pf_n1000_q100,pf_n1000_q085,,,,,,,,,,,,,,not run
+ref_pf_n0_vs_zs,pf_n0,zs,,,,,,,,,,,,,,not run
+ref_pf_n1000_q100_vs_zs,pf_n1000_q100,zs,,,,,,,,,,,,,,not run

@@ -1,0 +1,25 @@
+# Complete list of tables and columns of the database
+<<full_schema>>
+
+# Task
+<<role_intro>>
+Decide once whether to MAINTAIN the review (no must_fix issue: the query is left as it is) or to CHANGE it (the query is flagged because it has a must_fix issue and is sent to revision). Neither answer is the default. A wrong query that is passed stays wrong; a correct query that is flagged is sent to revision, which can break it. <<user_clause>>
+Decide from the question, the evidence, the schema and the real execution below. Whichever answer you choose, quote the part of the question, evidence, schema or result that decides it and say in one or two sentences why it decides it. For "change", name the question phrase, the SQL fragment and what is wrong with it; for "maintain", name the question phrase, the SQL fragment and why the result answers the question.
+
+Return one JSON object and nothing else:
+{"decision": "maintain" | "change", "evidence": str}
+
+# Question
+Question: <<question>>
+Evidence: <<evidence>>
+<<graph?>>
+
+# SQL
+<<sql>>
+
+# Execution of this SQL
+<<preview>>
+
+# The review
+<<review_block>>
+<<user_block>>

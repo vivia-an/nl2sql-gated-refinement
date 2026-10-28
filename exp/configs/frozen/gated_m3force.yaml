@@ -1,0 +1,9 @@
+# FROZEN 2026-10-26 by code/tools/freeze_configs.py from exp/configs/min_gated_m3force.yaml (sha256 4a4e2009ceafcd2c). Do not edit: a change is a new lock entry (SPEC 1.3 step 6).
+# MIN M3 ablation "M3 forced vs fallback" on full_gated: schema_fallback_tokens 0 so that routing / RRF / rerank / FK expansion really run
+# (default 6000 = full schema whenever it fits). TEMPLATE -> frozen/gated_m3force.yaml. --system full_gated.
+temperature: 0.0
+ddl: {quote_keywords: true}
+m3: {schema_fallback_tokens: 0}
+m5: {policy: gated, gate_empty: false, score_for_routing: false, t_max: 3}
+route: {score: exec, theta_h: 7.5}
+m6: {policy: ws_full, path: exp/frozen/corpus_burnin_39e2477c.sqlite, update: false}

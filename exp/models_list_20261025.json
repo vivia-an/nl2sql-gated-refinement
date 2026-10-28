@@ -1,0 +1,727 @@
+{
+ "queried": "2026-10-25",
+ "endpoint": "GET /compatible-mode/v1/models",
+ "count": 180,
+ "models": [
+  {
+   "id": "MiniMax-M2.5",
+   "created": 1782975373
+  },
+  {
+   "id": "MiniMax/MiniMax-M2.1",
+   "created": 1770949497
+  },
+  {
+   "id": "MiniMax/MiniMax-M2.5",
+   "created": 1786938408
+  },
+  {
+   "id": "MiniMax/MiniMax-M2.7",
+   "created": 1786938376
+  },
+  {
+   "id": "MiniMax/MiniMax-M3",
+   "created": 1786938334
+  },
+  {
+   "id": "MiniMax/MiniMax-M3.1-Flash",
+   "created": 1792573561
+  },
+  {
+   "id": "MiniMax/speech-02-hd",
+   "created": 1791958119
+  },
+  {
+   "id": "MiniMax/speech-02-turbo",
+   "created": 1791958253
+  },
+  {
+   "id": "MiniMax/speech-2.8-hd",
+   "created": 1791958283
+  },
+  {
+   "id": "MiniMax/speech-2.8-turbo",
+   "created": 1791958316
+  },
+  {
+   "id": "ZHIPU/GLM-5",
+   "created": 1791958346
+  },
+  {
+   "id": "ZHIPU/GLM-5.1",
+   "created": 1779179620
+  },
+  {
+   "id": "ZHIPU/GLM-5.2",
+   "created": 1786938297
+  },
+  {
+   "id": "ZHIPU/GLM-5.3",
+   "created": 1787029715
+  },
+  {
+   "id": "ZHIPU/GLM-5.3-Flash",
+   "created": 1788226680
+  },
+  {
+   "id": "ZHIPU/GLM-5.3-FlashX",
+   "created": 1789955590
+  },
+  {
+   "id": "cmaas-qwen3.8-flash",
+   "created": 1791882726
+  },
+  {
+   "id": "deepseek-r1-distill-llama-70b",
+   "created": 1757401865
+  },
+  {
+   "id": "deepseek-r1-distill-qwen-1.5b",
+   "created": 1753955733
+  },
+  {
+   "id": "deepseek-v4-flash-0731",
+   "created": 1787730477
+  },
+  {
+   "id": "deepseek-v4-pro",
+   "created": 1787730514
+  },
+  {
+   "id": "deepseek-v4-pro-0813",
+   "created": 1789377983
+  },
+  {
+   "id": "deepseek-v4.1-flash",
+   "created": 1789453086
+  },
+  {
+   "id": "deepseek-v4.1-flash-1017",
+   "created": 1792576811
+  },
+  {
+   "id": "fun-asr-flash-2026-06-15",
+   "created": 1781685634
+  },
+  {
+   "id": "glm-5",
+   "created": 1787730487
+  },
+  {
+   "id": "glm-5.1",
+   "created": 1787730511
+  },
+  {
+   "id": "glm-5.2",
+   "created": 1787730537
+  },
+  {
+   "id": "glm-5.2-fast-preview",
+   "created": 1788847644
+  },
+  {
+   "id": "glm-5.3",
+   "created": 1789525956
+  },
+  {
+   "id": "glm-5.3-prime",
+   "created": 1790612875
+  },
+  {
+   "id": "gui-plus",
+   "created": 1762330077
+  },
+  {
+   "id": "kimi-k2.5",
+   "created": 1786010763
+  },
+  {
+   "id": "kimi-k2.6",
+   "created": 1784953933
+  },
+  {
+   "id": "kimi-k2.7-code",
+   "created": 1785146472
+  },
+  {
+   "id": "kimi-k3",
+   "created": 1787581447
+  },
+  {
+   "id": "kimi/kimi-k2.6",
+   "created": 1791958378
+  },
+  {
+   "id": "kimi/kimi-k2.7-code",
+   "created": 1791958408
+  },
+  {
+   "id": "kimi/kimi-k2.7-code-highspeed",
+   "created": 1791958437
+  },
+  {
+   "id": "kimi/kimi-k2.8-preview",
+   "created": 1789537400
+  },
+  {
+   "id": "kimi/kimi-k3",
+   "created": 1791958464
+  },
+  {
+   "id": "kimi/kimi-k3.1-pro",
+   "created": 1792830469
+  },
+  {
+   "id": "kimi/kimi-k3.1-pro-highspeed",
+   "created": 1792830480
+  },
+  {
+   "id": "qwen-1.8b-chat",
+   "created": 1714377102
+  },
+  {
+   "id": "qwen-1.8b-longcontext-chat",
+   "created": 1714377102
+  },
+  {
+   "id": "qwen-14b-chat",
+   "created": 1714377102
+  },
+  {
+   "id": "qwen-72b-chat",
+   "created": 1714377102
+  },
+  {
+   "id": "qwen-7b-chat",
+   "created": 1714377102
+  },
+  {
+   "id": "qwen-audio-3.0-asr-flash",
+   "created": 1785423572
+  },
+  {
+   "id": "qwen-audio-3.0-realtime-flash",
+   "created": 1789355708
+  },
+  {
+   "id": "qwen-audio-3.0-realtime-plus",
+   "created": 1789529107
+  },
+  {
+   "id": "qwen-audio-3.1-realtime-plus",
+   "created": 1791774610
+  },
+  {
+   "id": "qwen-coder-plus-1106",
+   "created": 1753956290
+  },
+  {
+   "id": "qwen-deep-research-2025-12-15",
+   "created": 1773912697
+  },
+  {
+   "id": "qwen-deep-search-planning",
+   "created": 1761806022
+  },
+  {
+   "id": "qwen-flash",
+   "created": 1787730439
+  },
+  {
+   "id": "qwen-flash-character",
+   "created": 1775802140
+  },
+  {
+   "id": "qwen-flash-character-2026-02-26",
+   "created": 1772265971
+  },
+  {
+   "id": "qwen-image-2.0",
+   "created": 1772537751
+  },
+  {
+   "id": "qwen-image-2.0-2026-03-03",
+   "created": 1772537799
+  },
+  {
+   "id": "qwen-image-2.0-pro",
+   "created": 1772537784
+  },
+  {
+   "id": "qwen-image-2.0-pro-2026-03-03",
+   "created": 1772537768
+  },
+  {
+   "id": "qwen-image-2.0-pro-2026-04-22",
+   "created": 1776952745
+  },
+  {
+   "id": "qwen-image-2.0-pro-2026-06-22",
+   "created": 1782972278
+  },
+  {
+   "id": "qwen-image-2.1-pro",
+   "created": 1791022057
+  },
+  {
+   "id": "qwen-image-3.0",
+   "created": 1790220112
+  },
+  {
+   "id": "qwen-image-3.0-pro",
+   "created": 1790566793
+  },
+  {
+   "id": "qwen-long",
+   "created": 1783696203
+  },
+  {
+   "id": "qwen-max",
+   "created": 1787730423
+  },
+  {
+   "id": "qwen-max-0107",
+   "created": 1714377100
+  },
+  {
+   "id": "qwen-max-1201",
+   "created": 1714377101
+  },
+  {
+   "id": "qwen-max-longcontext",
+   "created": 1714377101
+  },
+  {
+   "id": "qwen-mt-flash",
+   "created": 1762432503
+  },
+  {
+   "id": "qwen-mt-lite",
+   "created": 1763619345
+  },
+  {
+   "id": "qwen-mt-plus",
+   "created": 1761731052
+  },
+  {
+   "id": "qwen-mt-uni",
+   "created": 1789726387
+  },
+  {
+   "id": "qwen-plus",
+   "created": 1787721029
+  },
+  {
+   "id": "qwen-plus-2025-01-25",
+   "created": 1760421714
+  },
+  {
+   "id": "qwen-plus-2025-04-28",
+   "created": 1760413775
+  },
+  {
+   "id": "qwen-plus-2025-07-14",
+   "created": 1779708876
+  },
+  {
+   "id": "qwen-plus-2025-11-05",
+   "created": 1764071954
+  },
+  {
+   "id": "qwen-plus-2025-12-01",
+   "created": 1783306979
+  },
+  {
+   "id": "qwen-plus-latest",
+   "created": 1781184202
+  },
+  {
+   "id": "qwen-turbo-0919",
+   "created": 1770119917
+  },
+  {
+   "id": "qwen-turbo-2024-11-01",
+   "created": 1760421757
+  },
+  {
+   "id": "qwen-vl-ocr",
+   "created": 1753956252
+  },
+  {
+   "id": "qwen-vl-ocr-2025-11-20",
+   "created": 1784171096
+  },
+  {
+   "id": "qwen1.5-0.5b-chat",
+   "created": 1774946470
+  },
+  {
+   "id": "qwen1.5-1.8b-chat",
+   "created": 1774946434
+  },
+  {
+   "id": "qwen1.5-110b-chat",
+   "created": 1774946124
+  },
+  {
+   "id": "qwen1.5-14b-chat",
+   "created": 1774946349
+  },
+  {
+   "id": "qwen1.5-32b-chat",
+   "created": 1774946200
+  },
+  {
+   "id": "qwen1.5-72b-chat",
+   "created": 1774946160
+  },
+  {
+   "id": "qwen1.5-7b-chat",
+   "created": 1774946396
+  },
+  {
+   "id": "qwen2-0.5b-instruct",
+   "created": 1774946317
+  },
+  {
+   "id": "qwen2-1.5b-instruct",
+   "created": 1774946282
+  },
+  {
+   "id": "qwen2-57b-a14b-instruct",
+   "created": 1774945927
+  },
+  {
+   "id": "qwen2-7b-instruct",
+   "created": 1774946249
+  },
+  {
+   "id": "qwen2.5-0.5b-instruct",
+   "created": 1757402120
+  },
+  {
+   "id": "qwen2.5-1.5b-instruct",
+   "created": 1757402614
+  },
+  {
+   "id": "qwen2.5-math-1.5b-instruct",
+   "created": 1774948594
+  },
+  {
+   "id": "qwen3-asr-flash-realtime",
+   "created": 1791971231
+  },
+  {
+   "id": "qwen3-coder-flash",
+   "created": 1770130782
+  },
+  {
+   "id": "qwen3-livetranslate-flash",
+   "created": 1764836565
+  },
+  {
+   "id": "qwen3-livetranslate-flash-2025-12-01",
+   "created": 1764737030
+  },
+  {
+   "id": "qwen3-omni-flash",
+   "created": 1785331705
+  },
+  {
+   "id": "qwen3-omni-flash-realtime-2025-09-15",
+   "created": 1791886151
+  },
+  {
+   "id": "qwen3-s2s-flash-realtime-2025-09-22",
+   "created": 1791885813
+  },
+  {
+   "id": "qwen3-tts-flash",
+   "created": 1791971021
+  },
+  {
+   "id": "qwen3-tts-flash-realtime",
+   "created": 1791971255
+  },
+  {
+   "id": "qwen3-vl-plus",
+   "created": 1785381829
+  },
+  {
+   "id": "qwen3.5-122b-a10b",
+   "created": 1783070062
+  },
+  {
+   "id": "qwen3.5-27b",
+   "created": 1783075416
+  },
+  {
+   "id": "qwen3.5-35b-a3b",
+   "created": 1782110388
+  },
+  {
+   "id": "qwen3.5-397b-a17b",
+   "created": 1792675390
+  },
+  {
+   "id": "qwen3.5-flash",
+   "created": 1788964683
+  },
+  {
+   "id": "qwen3.5-flash-2026-02-23",
+   "created": 1783305361
+  },
+  {
+   "id": "qwen3.5-livetranslate-flash-realtime",
+   "created": 1791977658
+  },
+  {
+   "id": "qwen3.5-livetranslate-flash-realtime-2026-05-19",
+   "created": 1791977686
+  },
+  {
+   "id": "qwen3.5-ocr",
+   "created": 1781525537
+  },
+  {
+   "id": "qwen3.5-omni-flash",
+   "created": 1783305131
+  },
+  {
+   "id": "qwen3.5-omni-flash-2026-03-15",
+   "created": 1783305260
+  },
+  {
+   "id": "qwen3.5-omni-flash-realtime",
+   "created": 1776345863
+  },
+  {
+   "id": "qwen3.5-omni-flash-realtime-2026-03-15",
+   "created": 1776345899
+  },
+  {
+   "id": "qwen3.5-omni-plus",
+   "created": 1785381682
+  },
+  {
+   "id": "qwen3.5-omni-plus-2026-03-15",
+   "created": 1790647649
+  },
+  {
+   "id": "qwen3.5-omni-plus-realtime",
+   "created": 1776345931
+  },
+  {
+   "id": "qwen3.5-omni-plus-realtime-2026-03-15",
+   "created": 1776421800
+  },
+  {
+   "id": "qwen3.5-plus",
+   "created": 1791807490
+  },
+  {
+   "id": "qwen3.5-plus-2026-02-15",
+   "created": 1791807582
+  },
+  {
+   "id": "qwen3.5-plus-2026-04-20",
+   "created": 1791807529
+  },
+  {
+   "id": "qwen3.6-27b",
+   "created": 1783069093
+  },
+  {
+   "id": "qwen3.6-35b-a3b",
+   "created": 1783304863
+  },
+  {
+   "id": "qwen3.6-flash",
+   "created": 1792728708
+  },
+  {
+   "id": "qwen3.6-flash-2026-04-16",
+   "created": 1783305047
+  },
+  {
+   "id": "qwen3.6-plus",
+   "created": 1792676112
+  },
+  {
+   "id": "qwen3.6-plus-2026-04-02",
+   "created": 1792676114
+  },
+  {
+   "id": "qwen3.7-flash",
+   "created": 1787730553
+  },
+  {
+   "id": "qwen3.7-flash-2026-07-15",
+   "created": 1785147239
+  },
+  {
+   "id": "qwen3.7-max",
+   "created": 1787730641
+  },
+  {
+   "id": "qwen3.7-max-2026-05-17",
+   "created": 1783307517
+  },
+  {
+   "id": "qwen3.7-max-2026-05-20",
+   "created": 1783253535
+  },
+  {
+   "id": "qwen3.7-max-2026-06-08",
+   "created": 1783306563
+  },
+  {
+   "id": "qwen3.7-max-preview",
+   "created": 1783307376
+  },
+  {
+   "id": "qwen3.7-plus",
+   "created": 1792745829
+  },
+  {
+   "id": "qwen3.7-plus-2026-05-26",
+   "created": 1792745688
+  },
+  {
+   "id": "qwen3.7-text-embedding",
+   "created": 1784119182
+  },
+  {
+   "id": "qwen3.7-text-embedding-flash",
+   "created": 1788180620
+  },
+  {
+   "id": "qwen3.7-text-rerank",
+   "created": 1792657272
+  },
+  {
+   "id": "qwen3.8-2.4t-a95b",
+   "created": 1787721432
+  },
+  {
+   "id": "qwen3.8-27b",
+   "created": 1787712340
+  },
+  {
+   "id": "qwen3.8-flash",
+   "created": 1792740254
+  },
+  {
+   "id": "qwen3.8-livetranslate-flash-realtime",
+   "created": 1791774612
+  },
+  {
+   "id": "qwen3.8-max",
+   "created": 1792029486
+  },
+  {
+   "id": "qwen3.8-max-0902",
+   "created": 1788313616
+  },
+  {
+   "id": "qwen3.8-omni-flash",
+   "created": 1791894666
+  },
+  {
+   "id": "qwen3.8-omni-flash-realtime",
+   "created": 1792072934
+  },
+  {
+   "id": "siliconflow/deepseek-r1-0528",
+   "created": 1769611447
+  },
+  {
+   "id": "siliconflow/deepseek-v3-0324",
+   "created": 1769611458
+  },
+  {
+   "id": "siliconflow/deepseek-v3.1-terminus",
+   "created": 1769611465
+  },
+  {
+   "id": "siliconflow/deepseek-v3.2",
+   "created": 1769611475
+  },
+  {
+   "id": "sre-gpu-auto-handle",
+   "created": 1781066849
+  },
+  {
+   "id": "stepfun/step-3.7-flash",
+   "created": 1787897199
+  },
+  {
+   "id": "stepfun/step-5-preview",
+   "created": 1789984828
+  },
+  {
+   "id": "test-sre-gpu-auto-handle",
+   "created": 1787280590
+  },
+  {
+   "id": "tongyi-xiaomi-analysis-flash",
+   "created": 1770706811
+  },
+  {
+   "id": "tongyi-xiaomi-analysis-pro",
+   "created": 1770706854
+  },
+  {
+   "id": "unisound/unisound-u2",
+   "created": 1787905295
+  },
+  {
+   "id": "vanchin/deepseek-ocr",
+   "created": 1791962136
+  },
+  {
+   "id": "vanchin/deepseek-r1",
+   "created": 1791962166
+  },
+  {
+   "id": "vanchin/deepseek-v3",
+   "created": 1791962191
+  },
+  {
+   "id": "vanchin/deepseek-v3.1-terminus",
+   "created": 1791962223
+  },
+  {
+   "id": "vanchin/deepseek-v3.2-think",
+   "created": 1791962272
+  },
+  {
+   "id": "vanchin/deepseek-v4-pro",
+   "created": 1787897097
+  },
+  {
+   "id": "vanchin/deepseek-v4-pro-0813",
+   "created": 1787886911
+  },
+  {
+   "id": "vanchin/deepseek-v4.1-flash",
+   "created": 1789955558
+  },
+  {
+   "id": "wan2.7-image",
+   "created": 1780918614
+  },
+  {
+   "id": "wan2.7-image-pro",
+   "created": 1780644939
+  },
+  {
+   "id": "xiaomi/mimo-v2.6-pro-ultraspeed",
+   "created": 1792389853
+  },
+  {
+   "id": "z-image-turbo",
+   "created": 1766111685
+  }
+ ]
+}

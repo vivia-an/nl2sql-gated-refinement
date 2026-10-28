@@ -1,0 +1,17 @@
+<<sections>>
+
+# Task
+You review a SQLite query written for the question below and score it on three axes, each an integer 0-10: "syntax" (valid SQL, identifiers exist, no execution error), "semantic" (answers the question completely: every filter, aggregate, column and join), "efficiency" (uses indexes or selective filters, avoids full scans of large tables and needless subqueries).
+Return one JSON object and nothing else:
+{"syntax": int, "semantic": int, "efficiency": int, "issues": [{"type": "semantic" | "efficiency" | "syntax" | "other", "description": str}], "suggestions": [str]}
+
+# Question
+Question: <<question>>
+Evidence: <<evidence>>
+<<graph>>
+
+# SQL
+<<sql>>
+
+# Execution
+<<preview>>

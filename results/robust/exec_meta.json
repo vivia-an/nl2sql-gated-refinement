@@ -1,0 +1,79 @@
+{
+ "created": "2026-10-27 13:31:30",
+ "elapsed_s": 525.8,
+ "gold_timeout_s": 120,
+ "n_gold_exec": 4482,
+ "n_pred_exec": 4030,
+ "pred_timeout_s": 30,
+ "runs": {
+  "flash.fixed": "MIN/M5/fixed-flash-s0",
+  "flash.gated": "MIN/M5/gated-flash-s0",
+  "flash.rootonly": "MIN/M5/rootonly-flash-s0",
+  "flash.zs": "MIN/M5/zs-flash-s0",
+  "plus.acsql": "MIN/M2/acsql-s0",
+  "plus.bonvote2": "MIN/M2/bonvote-s0",
+  "plus.bonvote3": "MIN/M2/bonvote3-s0",
+  "plus.fixed": "MIN/M1/fixed-s0",
+  "plus.gated": "MIN/M1/gated-s0",
+  "plus.macsql": "MIN/M2/macsql-s0",
+  "plus.rootonly": "MIN/M3/rootonly-s0",
+  "plus.route": "MIN/M1/gated-route-s0",
+  "plus.sdebug": "MIN/M2/sdebug-s0",
+  "plus.zs": "MIN/M1/zs-s0",
+  "q27b.fixed": "MIN/M5/fixed-27b-s0",
+  "q27b.gated": "MIN/M5/gated-27b-s0",
+  "q27b.rootonly": "MIN/M5/rootonly-27b-s0",
+  "q27b.zs": "MIN/M5/zs-27b-s0"
+ },
+ "scope": "robustness-posthoc",
+ "slow_over_20s": [
+  [
+   "plus.zs",
+   "bird_dev:debit_card_specializing:1526",
+   30.006
+  ],
+  [
+   "plus.fixed",
+   "bird_dev:card_games:518",
+   30.006
+  ],
+  [
+   "plus.rootonly",
+   "bird_dev:card_games:518",
+   30.006
+  ],
+  [
+   "plus.acsql",
+   "bird_dev:card_games:518",
+   30.007
+  ],
+  [
+   "plus.acsql",
+   "bird_dev:codebase_community:571",
+   30.003
+  ],
+  [
+   "flash.zs",
+   "bird_dev:debit_card_specializing:1481",
+   23.049
+  ],
+  [
+   "q27b.zs",
+   "bird_dev:card_games:518",
+   30.004
+  ]
+ ],
+ "stage": "exec",
+ "variant_files": {
+  "G1": "repos/text_to_sql_benchmarks/data/arcwise_plat_sql_only_with_diff.json",
+  "G2": "repos/text_to_sql_benchmarks/data/arcwise_plat_full_with_diff.json",
+  "G3": "repos/ReViSQL/data/arcwise_plat_sql.json",
+  "G4": "repos/ReViSQL/data/arcwise_plat_full.json"
+ },
+ "variant_sha256": {
+  "G1": "e7bf76408f99266506ea558d84982c69422e5db3dfecab5f08a3a8d3900e8395",
+  "G2": "baefe2ca4fbab86c000df72aad9eaa563f7d422e425af2cbff071f656ea4eea8",
+  "G3": "5927cd9320546ee02c0540c6299f3ff068709efbcbabf87d81a74f85749b5ce2",
+  "G4": "d16716e3ef235819e4b71fdfa9c3d47935861ff9e8a36278e4f9f6f47cf1db0a"
+ }
+}

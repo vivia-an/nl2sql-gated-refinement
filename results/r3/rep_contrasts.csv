@@ -1,0 +1,26 @@
+contrast,scope,n_runs,est_s101,est_s202,est_s303,mean_T07,cl_lo,cl_hi,item_lo,item_hi,range_lo,range_hi,t_lo,t_hi,wide_lo,wide_hi,reading_cluster,reading_wide,s0_est,s0_cl_lo,s0_cl_hi,s0_reading_cluster,s0_reading_wide,agrees_with_s0_cluster,agrees_with_s0_wide
+stack,plus,3,0.522,-0.522,-0.196,-0.065,-1.731,1.524,-1.369,1.195,-0.522,0.522,-1.391,1.260,-1.731,1.524,contains 0,contains 0,0.456,-1.188,2.314,contains 0,contains 0,yes,yes
+stack,flash,3,2.347,1.760,2.738,2.282,-0.132,4.494,0.782,3.803,1.760,2.738,1.059,3.504,-0.132,4.494,contains 0,contains 0,1.304,-1.020,3.423,contains 0,contains 0,yes,yes
+stack,27b,3,2.803,1.304,2.216,2.108,0.802,3.338,0.826,3.433,1.304,2.803,0.231,3.985,0.231,3.985,positive,positive,2.347,0.246,4.358,positive,positive,yes,yes
+loop_g,plus,3,0.391,0.261,0.391,0.348,0.108,0.668,0.130,0.608,0.261,0.391,0.161,0.535,0.108,0.668,positive,positive,0.196,0.000,0.429,contains 0,contains 0,no,no
+loop_g,flash,3,2.412,2.282,2.282,2.325,1.481,3.217,1.804,2.868,2.282,2.412,2.138,2.512,1.481,3.217,positive,positive,1.108,0.794,1.429,positive,positive,yes,yes
+loop_g,27b,3,1.695,2.151,1.695,1.847,1.213,2.503,1.391,2.325,1.695,2.151,1.193,2.501,1.193,2.503,positive,positive,1.108,0.817,1.407,positive,positive,yes,yes
+loop_f,plus,3,0.847,0.652,0.847,0.782,0.242,1.413,0.304,1.260,0.652,0.847,0.502,1.063,0.242,1.413,positive,positive,0.326,-0.072,0.779,contains 0,contains 0,no,no
+loop_f,flash,3,3.390,3.129,3.585,3.368,2.040,4.878,2.499,4.281,3.129,3.585,2.799,3.937,2.040,4.878,positive,positive,1.760,0.680,3.081,positive,positive,yes,yes
+loop_f,27b,3,1.760,2.477,2.347,2.195,1.043,3.490,1.195,3.194,1.760,2.477,1.246,3.144,1.043,3.490,positive,positive,1.108,-0.150,2.225,contains 0,contains 0,no,no
+g_minus_f,plus,3,-0.456,-0.391,-0.456,-0.435,-0.964,0.000,-0.891,0.000,-0.456,-0.391,-0.528,-0.341,-0.964,0.000,contains 0,contains 0,-0.130,-0.533,0.260,contains 0,contains 0,yes,yes
+g_minus_f,flash,3,-0.978,-0.847,-1.304,-1.043,-2.032,-0.282,-1.782,-0.325,-1.304,-0.847,-1.627,-0.459,-2.032,-0.282,negative,negative,-0.652,-2.076,0.541,contains 0,contains 0,no,no
+g_minus_f,27b,3,-0.065,-0.326,-0.652,-0.348,-1.485,0.621,-1.217,0.543,-0.652,-0.065,-1.078,0.383,-1.485,0.621,contains 0,contains 0,0.000,-1.053,1.105,contains 0,contains 0,yes,yes
+g_minus_zs,plus,3,0.913,-0.261,0.196,0.282,-1.267,1.814,-0.978,1.521,-0.261,0.913,-1.187,1.752,-1.267,1.814,contains 0,contains 0,0.652,-0.975,2.512,contains 0,contains 0,yes,yes
+g_minus_zs,flash,3,4.759,4.042,5.020,4.607,2.175,6.776,3.129,6.106,4.042,5.020,3.349,5.865,2.175,6.776,positive,positive,2.412,-0.135,4.774,contains 0,contains 0,no,no
+g_minus_zs,27b,3,4.498,3.455,3.911,3.955,2.676,4.956,2.651,5.237,3.455,4.498,2.656,5.254,2.651,5.254,positive,positive,3.455,1.488,5.335,positive,positive,yes,yes
+f_minus_zs,plus,3,1.369,0.130,0.652,0.717,-0.650,2.130,-0.543,1.956,0.130,1.369,-0.828,2.262,-0.828,2.262,contains 0,contains 0,0.782,-0.852,2.511,contains 0,contains 0,yes,yes
+f_minus_zs,flash,3,5.737,4.889,6.323,5.650,3.307,7.845,4.172,7.150,4.889,6.323,3.859,7.441,3.307,7.845,positive,positive,3.064,0.929,5.006,positive,positive,yes,yes
+f_minus_zs,27b,3,4.563,3.781,4.563,4.302,2.570,6.063,2.847,5.737,3.781,4.563,3.181,5.424,2.570,6.063,positive,positive,3.455,1.223,5.745,positive,positive,yes,yes
+stack,pooled3,3,1.890,0.847,1.586,1.441,0.059,2.722,0.536,2.354,0.847,1.890,0.109,2.774,0.059,2.774,positive,positive,1.369,0.218,2.390,positive,positive,yes,yes
+loop_g,pooled3,3,1.499,1.565,1.456,1.507,1.041,1.989,1.231,1.811,1.456,1.565,1.371,1.642,1.041,1.989,positive,positive,0.804,0.630,0.986,positive,positive,yes,yes
+loop_f,pooled3,3,1.999,2.086,2.260,2.115,1.267,3.110,1.565,2.666,1.999,2.260,1.785,2.445,1.267,3.110,positive,positive,1.065,0.438,1.783,positive,positive,yes,yes
+g_minus_f,pooled3,3,-0.500,-0.522,-0.804,-0.608,-1.279,-0.069,-1.050,-0.159,-0.804,-0.500,-1.030,-0.187,-1.279,-0.069,negative,negative,-0.261,-0.930,0.297,contains 0,contains 0,no,no
+g_minus_zs,pooled3,3,3.390,2.412,3.042,2.948,1.635,4.073,2.050,3.853,2.412,3.390,1.717,4.179,1.635,4.179,positive,positive,2.173,1.056,3.146,positive,positive,yes,yes
+f_minus_zs,pooled3,3,3.890,2.934,3.846,3.556,2.208,4.798,2.637,4.476,2.934,3.890,2.215,4.898,2.208,4.898,positive,positive,2.434,1.315,3.554,positive,positive,yes,yes
+w1,weak2,3,4.628,3.748,4.465,4.281,2.627,5.587,3.216,5.335,3.748,4.628,3.118,5.444,2.627,5.587,positive,positive,2.934,1.559,4.118,positive,positive,yes,yes

@@ -1,0 +1,399 @@
+item_id,question,evidence,schema_ref,gold_sql,pred_sql,gold_result,pred_result,label_X,rationale_X,label_Y,rationale_Y,final_label,final_rationale
+A014,State the detailed content of the comment which was created on 7/19/2010 7:25:47 PM.,detailed content of the comment refers to Text; created on 7/19/2010 7:16:14 PM refers to CreationDate = '2010-07-19 19:16:14.0',schemas/codebase_community.txt,SELECT Text FROM comments WHERE CreationDate = '2010-07-19 19:16:14.0',"SELECT Text
+FROM comments
+WHERE CreationDate = '2010-07-19 19:25:47'","columns: Text | rows: 1
+Yes, R is nice- but WHY is it 'valuable'.","columns: Text | rows: 0
+(no rows)",L3,,L6,Question says 7:25:47 PM but evidence/gold use 19:16:14.0; gold contradicts the question time; pred follows question and drops the .0 suffix.,,
+A022,What is the name of set number 5 and its translation?,set number 5 refers to id = 5,schemas/card_games.txt,"SELECT T1.name, T2.translation FROM sets AS T1 INNER JOIN set_translations AS T2 ON T1.code = T2.setCode WHERE T2.id = 5 GROUP BY T1.name, T2.translation","SELECT T1.name, T2.translation
+FROM sets AS T1
+INNER JOIN set_translations AS T2 ON T1.code = T2.setCode
+WHERE T1.id = 5","columns: name, translation | rows: 1
+Tenth Edition | Set Base Decima Edizione","columns: name, translation | rows: 0
+(no rows)",L7,Evidence set number 5 refers to id = 5 does not say sets.id (prediction) or set_translations.id (gold).,L1,,,
+A025,What is the power ID of cryokinesis?,power ID refers to superpower.id; cryokinesis refers to power_name = 'cryokinesis';,schemas/superhero.txt,SELECT id FROM superpower WHERE power_name = 'Cryokinesis',"SELECT id
+FROM superpower
+WHERE power_name = 'cryokinesis'","columns: id | rows: 1
+19","columns: id | rows: 0
+(no rows)",L3,,L6,Evidence says cryokinesis refers to power_name = 'cryokinesis' (lower case) and pred uses exactly that; gold uses 'Cryokinesis' so gold does not implement the evidence literal.,,
+A033,"Of the schools that offers a magnet program serving a grade span of Kindergarten to 8th grade, how many offers Multiple Provision Types? List the number of cities that offers a Kindergarten to 8th grade span and indicate how many schools are there serving such grade span for each city.",Kindergarten to 8th grade refers to K-8; 'Offers a magnet program' means Magnet = 1; Multiple Provision Types refers to `NSLP Provision Status` = 'Multiple Provision Types',schemas/california_schools.txt,"SELECT T2.City, COUNT(T2.CDSCode) FROM frpm AS T1 INNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode WHERE T2.Magnet = 1 AND T2.GSoffered = 'K-8' AND T1.`NSLP Provision Status` = 'Multiple Provision Types' GROUP BY T2.City","SELECT 
+    COUNT(CASE WHEN T3.""NSLP Provision Status"" = 'Multiple Provision Types' THEN 1 END) AS num_multiple_provision,
+    COUNT(DISTINCT T1.City) AS num_cities,
+    T1.City,
+    COUNT(T1.CDSCode) AS num_schools
+FROM schools AS T1
+INNER JOIN frpm AS T3 ON T1.CDSCode = T3.CDSCode
+WHERE T1.Magnet = 1
+  AND T1.GSserved = 'K-8'
+GROUP BY T1.City","columns: City, COUNT(T2.CDSCode) | rows: 1
+Adelanto | 1","columns: num_multiple_provision, num_cities, City, num_schools | rows: 10+
+1 | 1 | Adelanto | 1
+0 | 1 | Bakersfield | 1
+0 | 1 | Camarillo | 1
+0 | 1 | El Centro | 1
+0 | 1 | Fairfield | 1
+0 | 1 | Fresno | 2
+0 | 1 | Los Angeles | 1
+0 | 1 | Marina Del Rey | 1
+0 | 1 | Moorpark | 1
+0 | 1 | Ontario | 3",L7,Compound question (how many offer Multiple Provision Types plus cities and schools per city); gold only lists city counts filtered by provision while pred counts provision inside SELECT and uses GSserved instead of GSoffered.,L1,,,
+A038,Indicate which atoms are connected in non-carcinogenic type molecules.,label = '-' means molecules are non-carcinogenic,schemas/toxicology.txt,SELECT DISTINCT T1.atom_id FROM atom AS T1 INNER JOIN molecule AS T2 ON T1.molecule_id = T2.molecule_id INNER JOIN connected AS T3 ON T1.atom_id = T3.atom_id WHERE T2.label = '-',"SELECT DISTINCT T1.atom_id, T1.atom_id2
+FROM connected AS T1
+JOIN bond AS T2 ON T1.bond_id = T2.bond_id
+JOIN molecule AS T3 ON T2.molecule_id = T3.molecule_id
+WHERE T3.label = '-'","columns: atom_id | rows: 10+
+TR002_1
+TR002_2
+TR002_3
+TR002_4
+TR002_5
+TR002_6
+TR004_1
+TR004_10
+TR004_11
+TR004_12","columns: atom_id, atom_id2 | rows: 10+
+TR002_1 | TR002_2
+TR002_1 | TR002_3
+TR002_1 | TR002_6
+TR002_2 | TR002_1
+TR002_2 | TR002_4
+TR002_2 | TR002_5
+TR002_3 | TR002_1
+TR002_4 | TR002_2
+TR002_5 | TR002_2
+TR002_6 | TR002_1",L8,,L7,'Indicate which atoms are connected' can be read as the list of atoms that appear in connections (gold atom_id) or as the connected pairs (pred atom_id atom_id2).,,
+A055,Tally the toxicology element of the 4th atom of each molecule that was carcinogenic.,"label = '+' means molecules are carcinogenic; 4th atom of each molecule refers to substr(atom_id, 7, 1) = '4';",schemas/toxicology.txt,"SELECT DISTINCT T1.element FROM atom AS T1 INNER JOIN molecule AS T2 ON T1.molecule_id = T2.molecule_id WHERE T2.label = '+' AND SUBSTR(T1.atom_id, -1) = '4' AND LENGTH(T1.atom_id) = 7","SELECT T1.element, COUNT(*)
+FROM atom AS T1
+INNER JOIN molecule AS T2 ON T1.molecule_id = T2.molecule_id
+WHERE T2.label = '+' AND SUBSTR(T1.atom_id, 7, 1) = '4'
+GROUP BY T1.element","columns: element | rows: 8
+cl
+c
+br
+n
+o
+s
+h
+f","columns: element, COUNT(*) | rows: 9
+br | 6
+c | 145
+cl | 9
+f | 1
+h | 59
+n | 8
+na | 3
+o | 33
+s | 5",L4,,L6,"Evidence says 4th atom refers to substr(atom_id, 7, 1) = '4' but gold uses SUBSTR(T1.atom_id, -1) = '4' AND LENGTH(atom_id)=7; question says tally but gold returns distinct elements without counts.",,
+A059,Which driver ranked the first in the Canadian Grand Prix in 2007? Please give his reference name.,reference name refers to driverRef; Canadian Grand Prix refers to races.name = 'Canadian Grand Prix';,schemas/formula_1.txt,"SELECT T3.forename, T3.surname, T3.driverRef FROM races AS T1 INNER JOIN results AS T2 ON T2.raceId = T1.raceId INNER JOIN drivers AS T3 ON T3.driverId = T2.driverId WHERE T1.name = 'Canadian Grand Prix' AND T2.rank = 1 AND T1.year = 2007","SELECT T2.driverRef
+FROM races AS T1
+INNER JOIN results AS T3 ON T1.raceId = T3.raceId
+INNER JOIN drivers AS T2 ON T3.driverId = T2.driverId
+WHERE T1.name = 'Canadian Grand Prix'
+  AND T1.year = 2007
+  AND T3.position = 1","columns: forename, surname, driverRef | rows: 1
+Fernando | Alonso | alonso","columns: driverRef | rows: 1
+hamilton",L1,,L7,Question 'ranked the first' has two readings: results.rank (fastest-lap rank as in gold) or finishing position = 1 (pred); evidence only fixes driverRef and race name and does not decide.,,
+A070,What elements are in a double type bond?,double type bond refers to bond_type = '=';,schemas/toxicology.txt,SELECT DISTINCT T1.element FROM atom AS T1 INNER JOIN bond AS T2 ON T1.molecule_id = T2.molecule_id INNER JOIN connected AS T3 ON T1.atom_id = T3.atom_id WHERE T2.bond_type = '=',"SELECT DISTINCT T1.element
+FROM atom AS T1
+INNER JOIN connected AS T2 ON T1.atom_id = T2.atom_id
+INNER JOIN bond AS T3 ON T2.bond_id = T3.bond_id
+WHERE T3.bond_type = '='","columns: element | rows: 10+
+c
+o
+cl
+h
+s
+n
+p
+f
+sn
+pb","columns: element | rows: 5
+c
+o
+n
+s
+ca",L6,Question/evidence: elements in a double type bond; gold joins atom to bond only on molecule_id and so returns elements (h cl f etc.) of any molecule having a double bond not atoms in a double bond; prediction uses connected.,L2,,,
+A071,Which patient has a normal proteinuria level and is diagnosed with SLE? Please give his or her patient ID.,normal proteinuria level refers to 0 < `U-PRO` < 30; diagnosed with SLE refers to Diagnosis = 'SLE';,schemas/thrombosis_prediction.txt,SELECT DISTINCT T1.ID FROM Patient AS T1 INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID WHERE T2.`U-PRO` > 0 AND T2.`U-PRO` < 30 AND T1.Diagnosis = 'SLE',"SELECT DISTINCT T1.ID
+FROM Patient AS T1
+INNER JOIN Laboratory AS T2 ON T1.ID = T2.ID
+WHERE T1.Diagnosis = 'SLE'
+  AND CAST(T2.""U-PRO"" AS REAL) > 0
+  AND CAST(T2.""U-PRO"" AS REAL) < 30","columns: ID | rows: 10+
+48473
+250391
+460574
+668398
+1066089
+1086485
+1130007
+1185720
+1567380
+1665879","columns: ID | rows: 10+
+48473
+250391
+460574
+668398
+1066089
+1086485
+1185720
+1567380
+1665879
+1755350",L3,U-PRO is a TEXT column; gold compares text with numbers while the prediction CASTs to REAL so the range filter selects different patients.,L6,Evidence gives numeric range 0 < U-PRO < 30 but U-PRO is TEXT and gold compares it as text with number literals (string order); pred casts to REAL.,,
+A092,How many bond id have element iodine?,iodine refers to element = 'i',schemas/toxicology.txt,SELECT COUNT(T3.bond_id) FROM atom AS T1 INNER JOIN molecule AS T2 ON T1.molecule_id = T2.molecule_id INNER JOIN bond AS T3 ON T2.molecule_id = T3.molecule_id WHERE T1.element = 'i',"SELECT COUNT(DISTINCT T1.bond_id)
+FROM bond AS T1
+INNER JOIN connected AS T2 ON T1.bond_id = T2.bond_id
+INNER JOIN atom AS T3 ON T2.atom_id = T3.atom_id
+WHERE T3.element = 'i'","columns: COUNT(T3.bond_id) | rows: 1
+12","columns: COUNT(DISTINCT T1.bond_id) | rows: 1
+6",L6,Question: how many bond ids have element iodine; gold joins atom to bond only on molecule_id and counts all bonds of molecules containing iodine (12) without DISTINCT; prediction counts bonds connected to iodine atoms (6).,L2,,,
+A098,"Among black card borders, which card has full artwork?",white card borders refers to borderColor = 'white'; has full artwork refers to isFullArt = 1,schemas/card_games.txt,SELECT id FROM cards WHERE borderColor = 'black' AND isFullArt = 1,"SELECT name
+FROM cards
+WHERE borderColor = 'black' AND isFullArt = 1","columns: id | rows: 10+
+1183
+1184
+1185
+1186
+1187
+1188
+1189
+1190
+1191
+1192","columns: name | rows: 10+
+Plains
+Plains
+Island
+Island
+Swamp
+Swamp
+Mountain
+Mountain
+Forest
+Forest",L7,'which card' can be answered by id (gold) or by the card name (pred) and evidence does not fix the output column.,L1,,,
+A101,Which active district has the highest average score in Reading?,,schemas/california_schools.txt,SELECT T1.District FROM schools AS T1 INNER JOIN satscores AS T2 ON T1.CDSCode = T2.cds WHERE T1.StatusType = 'Active' ORDER BY T2.AvgScrRead DESC LIMIT 1,"SELECT T2.District
+FROM satscores AS T1
+INNER JOIN schools AS T2 ON T1.cds = T2.CDSCode
+WHERE T2.StatusType = 'Active'
+GROUP BY T2.District
+ORDER BY AVG(T1.AvgScrRead) DESC
+LIMIT 1","columns: District | rows: 1
+Palo Alto Unified","columns: District | rows: 1
+Santa Cruz County Office of Education",L7,Question gives no evidence: highest average Reading score per school row (gold) versus average of school averages per district (pred) are both defensible.,L4,,,
+A112,Which user created post ID 1 and what is the reputation of this user?,,schemas/codebase_community.txt,"SELECT T2.Id, T2.Reputation FROM comments AS T1 INNER JOIN users AS T2 ON T1.UserId = T2.Id WHERE T1.PostId = 1","SELECT u.DisplayName, u.Reputation
+FROM posts p
+JOIN users u ON p.OwnerUserId = u.Id
+WHERE p.Id = 1","columns: Id, Reputation | rows: 1
+8 | 6764","columns: DisplayName, Reputation | rows: 1
+csgillespie | 6764",L1,,L6,Question: which user created post ID 1; gold finds the user through comments.UserId (a commenter) instead of the post owner and returns Id.,,
+A129,"How long did it take the user, known by his or her display name 'Zolomon' to get the badge? Count from the date the user's account was created.","SUBTRACT(Date from stats_badges, CreationDate) where DisplayName = 'Zolomon';",schemas/codebase_community.txt,SELECT T1.Date - T2.CreationDate FROM badges AS T1 INNER JOIN users AS T2 ON T1.UserId = T2.Id WHERE T2.DisplayName = 'Zolomon',"SELECT julianday(b.Date) - julianday(u.CreationDate) AS days_to_badge
+FROM badges b
+JOIN users u ON b.UserId = u.Id
+WHERE u.DisplayName = 'Zolomon'
+ORDER BY b.Date ASC
+LIMIT 1","columns: T1.Date - T2.CreationDate | rows: 1
+1","columns: days_to_badge | rows: 1
+83.04526620404795",L6,Gold computes T1.Date - T2.CreationDate as raw text subtraction giving the constant 1 where the question asks 'How long did it take'; pred computes a real day difference.,L8,,,
+A131,"Among the customers who paid in euro, how many of them have a monthly consumption of over 1000?",Pays in euro = Currency = 'EUR'.,schemas/debit_card_specializing.txt,SELECT COUNT(*) FROM yearmonth AS T1 INNER JOIN customers AS T2 ON T1.CustomerID = T2.CustomerID WHERE T2.Currency = 'EUR' AND T1.Consumption > 1000.00,"SELECT COUNT(DISTINCT c.CustomerID)
+FROM customers c
+JOIN yearmonth ym ON c.CustomerID = ym.CustomerID
+WHERE c.Currency = 'EUR'
+  AND ym.Consumption > 1000","columns: COUNT(*) | rows: 1
+2730","columns: COUNT(DISTINCT c.CustomerID) | rows: 1
+391",L4,Pred uses COUNT(DISTINCT CustomerID) while gold counts rows (2730 vs 391).,L6,Question asks how many customers ('how many of them'); gold COUNT(*) counts yearmonth rows (2730) not customers; prediction counts DISTINCT CustomerID.,,
+A150,What is the school type of the school with the highest latitude? Indicate the name of the school as well as the latitude coordinates.,,schemas/california_schools.txt,"SELECT T1.`School Type`, T1.`School Name`, T2.Latitude FROM frpm AS T1 INNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode ORDER BY T2.Latitude DESC LIMIT 1","SELECT ""School Type"", ""School Name"", Latitude
+FROM frpm
+ORDER BY Latitude DESC
+LIMIT 1","columns: School Type, School Name, Latitude | rows: 1
+High Schools (Public) | Leggett Valley High | 44.219305",ERROR: no such column: Latitude,L2,,L1,,,
+A153,"What is the molecule of atom id ""TR000_2"" and atom id 2 ""TR000_4""?",,schemas/toxicology.txt,SELECT T1.molecule_id FROM bond AS T1 INNER JOIN connected AS T2 ON T1.bond_id = T2.bond_id WHERE T2.atom_id = 'TR000_2' AND T2.atom_id2 = 'TR000_4',"SELECT DISTINCT c.molecule_id
+FROM connected c
+WHERE c.atom_id = 'TR000_2' AND c.atom_id2 = 'TR000_4'","columns: molecule_id | rows: 1
+TR000",ERROR: no such column: c.molecule_id,L2,Prediction references c.molecule_id on connected which has no such column; gold joins bond to reach molecule_id.,L1,,,
+A159,List out the code for drivers who have nationality in America.,nationality = 'America',schemas/formula_1.txt,SELECT code FROM drivers WHERE Nationality = 'American',"SELECT code
+FROM drivers
+WHERE nationality = 'America'","columns: code | rows: 10+
+SPE
+NULL
+NULL
+NULL
+NULL
+NULL
+NULL
+NULL
+NULL
+NULL","columns: code | rows: 0
+(no rows)",L6,Evidence says 'nationality = 'America'' but gold filters Nationality = 'American'.,L3,,,
+A171,"Which districts have transactions greater than USS$10,000 in 1997?",,schemas/financial.txt,"SELECT T1.district_id FROM account AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id INNER JOIN trans AS T3 ON T1.account_id = T3.account_id WHERE STRFTIME('%Y', T3.date) = '1997' GROUP BY T1.district_id HAVING SUM(T3.amount) > 10000","SELECT DISTINCT d.A2
+FROM district d
+JOIN account a ON d.district_id = a.district_id
+JOIN trans t ON a.account_id = t.account_id
+WHERE t.amount > 10000
+  AND t.date LIKE '97%'","columns: district_id | rows: 10+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10","columns: A2 | rows: 0
+(no rows)",L7,Question: districts which have transactions greater than USS$10000 in 1997 with no evidence: gold reads it as the SUM of amounts per district > 10000 while the prediction reads it as a single transaction amount > 10000.,L3,,,
+A186,Which driver ranked the first in the Canadian Grand Prix in 2007? Please give his reference name.,reference name refers to driverRef; Canadian Grand Prix refers to races.name = 'Canadian Grand Prix';,schemas/formula_1.txt,"SELECT T3.forename, T3.surname, T3.driverRef FROM races AS T1 INNER JOIN results AS T2 ON T2.raceId = T1.raceId INNER JOIN drivers AS T3 ON T3.driverId = T2.driverId WHERE T1.name = 'Canadian Grand Prix' AND T2.rank = 1 AND T1.year = 2007","SELECT d.driverRef
+FROM drivers d
+JOIN results r ON d.driverId = r.driverId
+JOIN races ra ON r.raceId = ra.raceId
+WHERE ra.name = 'Canadian Grand Prix'
+  AND ra.year = 2007
+  AND r.position = 1","columns: forename, surname, driverRef | rows: 1
+Fernando | Alonso | alonso","columns: driverRef | rows: 1
+hamilton",L7,Question 'ranked the first' has two readings: results.rank (fastest-lap rank as in gold) or finishing position = 1 (pred); evidence only fixes driverRef and race name and does not decide.,L1,,,
+A187,What is the height of the tallest player? Indicate his name.,tallest player refers to MAX(height);,schemas/european_football_2.txt,SELECT player_name FROM Player ORDER BY height DESC LIMIT 1,"SELECT player_name, height
+FROM Player
+ORDER BY height DESC
+LIMIT 1","columns: player_name | rows: 1
+Kristof van Hout","columns: player_name, height | rows: 1
+Kristof van Hout | 208.28",L6,Question asks 'What is the height of the tallest player? Indicate his name' but gold returns only player_name without the height.,L8,,,
+A197,"Please provide a list of clients who were born between 1983 and 1987 and whose account branch is in East Bohemia, along with their IDs.",,schemas/financial.txt,"SELECT T1.client_id, T3.account_id FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id INNER JOIN disp AS T4 ON T1.client_id = T4.client_id INNER JOIN account AS T3 ON T2.district_id = T3.district_id and T4.account_id = T3.account_id WHERE T2.A3 = 'east Bohemia' AND STRFTIME('%Y', T1.birth_date) BETWEEN '1983' AND '1987'","SELECT DISTINCT c.client_id
+FROM client c
+JOIN district d ON c.district_id = d.district_id
+WHERE c.birth_date >= '1983-01-01'
+  AND c.birth_date <= '1987-12-31'
+  AND d.A3 = 'east Bohemia'","columns: client_id, account_id | rows: 3
+379 | 311
+734 | 611
+3428 | 2836","columns: client_id | rows: 3
+379
+734
+3428",L8,,L2,,,
+A209,In which race did the fastest 1st lap time was recorded? Please indicate the time in milliseconds.,fastest refers to Min(time);,schemas/formula_1.txt,SELECT T1.milliseconds FROM lapTimes AS T1 INNER JOIN races AS T2 on T1.raceId = T2.raceId WHERE T1.lap = 1 ORDER BY T1.time LIMIT 1,"SELECT r.name, lt.milliseconds
+FROM lapTimes lt
+JOIN races r ON lt.raceId = r.raceId
+WHERE lt.lap = 1
+ORDER BY lt.milliseconds ASC
+LIMIT 1","columns: milliseconds | rows: 1
+841218","columns: name, milliseconds | rows: 1
+Austrian Grand Prix | 71506",L1,,L6,Question asks In which race the fastest first lap occurred but gold selects only milliseconds and orders the text column time lexicographically (returns 841218 ms = 14 min lap); pred returns race name with min milliseconds.,,
+A211,"Among posts by Harvey Motulsky and Noah Snyder, which one has higher popularity?",Has higher popularity means the post has higher view count ; calculation = MAX(SUM(ViewCount)) where DisplayName = 'Harvey Motulsky' OR DisplayName = 'Noah Snyder';,schemas/codebase_community.txt,SELECT T1.DisplayName FROM users AS T1 INNER JOIN postHistory AS T2 ON T1.Id = T2.UserId INNER JOIN posts AS T3 ON T2.PostId = T3.Id WHERE T1.DisplayName = 'Harvey Motulsky' OR T1.DisplayName = 'Noah Snyder' GROUP BY T1.DisplayName ORDER BY SUM(T3.ViewCount) DESC LIMIT 1,"SELECT p.OwnerUserId, u.DisplayName, SUM(p.ViewCount) AS TotalViewCount
+FROM posts p
+JOIN users u ON p.OwnerUserId = u.Id
+WHERE u.DisplayName IN ('Harvey Motulsky', 'Noah Snyder')
+GROUP BY p.OwnerUserId, u.DisplayName
+ORDER BY TotalViewCount DESC
+LIMIT 1","columns: DisplayName | rows: 1
+Harvey Motulsky","columns: OwnerUserId, DisplayName, TotalViewCount | rows: 1
+25 | Harvey Motulsky | 23065",L8,,L2,,,
+A216,Indicate which atoms are connected in non-carcinogenic type molecules.,label = '-' means molecules are non-carcinogenic,schemas/toxicology.txt,SELECT DISTINCT T1.atom_id FROM atom AS T1 INNER JOIN molecule AS T2 ON T1.molecule_id = T2.molecule_id INNER JOIN connected AS T3 ON T1.atom_id = T3.atom_id WHERE T2.label = '-',"SELECT DISTINCT c.atom_id, c.atom_id2
+FROM connected c
+JOIN atom a1 ON c.atom_id = a1.atom_id
+JOIN molecule m ON a1.molecule_id = m.molecule_id
+WHERE m.label = '-'","columns: atom_id | rows: 10+
+TR002_1
+TR002_2
+TR002_3
+TR002_4
+TR002_5
+TR002_6
+TR004_1
+TR004_10
+TR004_11
+TR004_12","columns: atom_id, atom_id2 | rows: 10+
+TR002_1 | TR002_2
+TR002_1 | TR002_3
+TR002_1 | TR002_6
+TR002_2 | TR002_1
+TR002_2 | TR002_4
+TR002_2 | TR002_5
+TR002_3 | TR002_1
+TR002_4 | TR002_2
+TR002_5 | TR002_2
+TR002_6 | TR002_1",L7,Connected atoms can be read as a list of atoms (gold: atom_id only) or as connected pairs (pred: atom_id and atom_id2); the question does not fix the output.,L8,,,
+A217,What are the atoms that are bonded in the molecule TR001 with the bond ID of TR001_2_6?,TR001 is the molecule id; TR001_2_6 is the bond id,schemas/toxicology.txt,"SELECT SUBSTR(T.bond_id, 1, 7) AS atom_id1 , T.molecule_id || SUBSTR(T.bond_id, 8, 2) AS atom_id2 FROM bond AS T WHERE T.molecule_id = 'TR001' AND T.bond_id = 'TR001_2_6'","SELECT atom_id, atom_id2
+FROM connected
+WHERE bond_id = 'TR001_2_6'","columns: atom_id1, atom_id2 | rows: 1
+TR001_2 | TR001_6","columns: atom_id, atom_id2 | rows: 2
+TR001_2 | TR001_6
+TR001_6 | TR001_2",L1,,L4,,,
+A221,"List all the elements with double bond, consisted in molecule TR024.","double bond refers to bond_type = '='; element = 'cl' means Chlorine; element = 'c' means Carbon; element = 'h' means Hydrogen; element = 'o' means Oxygen, element = 's' means Sulfur; element = 'n' means Nitrogen, element = 'p' means Phosphorus, element = 'na' means Sodium, element = 'br' means Bromine, element = 'f' means Fluorine; element = 'i' means Iodine; element = 'sn' means Tin; element = 'pb' means Lead; element = 'te' means Tellurium; element = 'ca' means Calcium",schemas/toxicology.txt,SELECT T1.element FROM atom AS T1 INNER JOIN bond AS T2 ON T1.molecule_id = T2.molecule_id WHERE T1.molecule_id = 'TR024' AND T2.bond_type = '=',"SELECT DISTINCT a.element
+FROM atom a
+JOIN connected c ON a.atom_id = c.atom_id OR a.atom_id = c.atom_id2
+JOIN bond b ON c.bond_id = b.bond_id
+WHERE b.molecule_id = 'TR024'
+  AND b.bond_type = '='","columns: element | rows: 10+
+c
+c
+o
+o
+s
+s
+o
+o
+o
+o","columns: element | rows: 2
+c
+o",L7,Elements with double bond in molecule TR024 can mean elements of the atoms in the double bond (prediction via connected) or all elements of the molecule having a double bond (gold joins atom-bond on molecule_id).,L6,Question/evidence: elements with double bond (bond_type = '=') in TR024; gold joins atom to bond only on molecule_id so it returns every atom of the molecule (includes s and duplicates) without tying the atom to the double bond via connected; prediction links atoms to the bond through connected.,,
+A255,State the detailed content of the comment which was created on 7/19/2010 7:25:47 PM.,detailed content of the comment refers to Text; created on 7/19/2010 7:16:14 PM refers to CreationDate = '2010-07-19 19:16:14.0',schemas/codebase_community.txt,SELECT Text FROM comments WHERE CreationDate = '2010-07-19 19:16:14.0',"SELECT Text
+FROM comments
+WHERE CreationDate = '2010-07-19 19:25:47.0'","columns: Text | rows: 1
+Yes, R is nice- but WHY is it 'valuable'.","columns: Text | rows: 1
+also the US census data http://www.census.gov/main/www/acces",L3,,L6,Question says created on 7/19/2010 7:25:47 PM but gold filters CreationDate = '2010-07-19 19:16:14.0' (the evidence line itself says 7:16:14).,,
+A260,How many accounts in Beroun were opened after 1996?,,schemas/financial.txt,"SELECT COUNT(account_id) FROM account AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE STRFTIME('%Y', T1.date) > '1996' AND T2.A2 = 'Beroun'","SELECT COUNT(*) 
+FROM account a
+JOIN district d ON a.district_id = d.district_id
+WHERE d.A2 = 'Beroun' 
+  AND a.date > '961231'","columns: COUNT(account_id) | rows: 1
+8","columns: COUNT(*) | rows: 1
+50",L6,The account.date column is stored as YYMMDD but gold applies STRFTIME('%Y') to it which does not parse so after 1996 is not implemented; result 8 is degenerate.,L3,,,
+A262,"How many posts were created on 21st July, 2010?","created on 21st July, 2010 refers to CreationDate BETWEEN '2010-07-21 00:00:00' and '2012-07-21 23:59:59';",schemas/codebase_community.txt,SELECT COUNT(id) FROM postHistory WHERE date(CreationDate) = '2010-07-21',"SELECT COUNT(*)
+FROM posts
+WHERE ""CreaionDate"" BETWEEN '2010-07-21 00:00:00' AND '2010-07-21 23:59:59'","columns: COUNT(id) | rows: 1
+209","columns: COUNT(*) | rows: 1
+108",L1,,L7,Question says posts (posts table) but evidence names CreationDate which exists only in postHistory (gold) while posts has the typo column CreaionDate (prediction); both tables defensible.,,
+A263,How many male customers who were born between 1974 and 1976 have made a payment on their home in excess of $4000?,Man and male refers to gender = 'M'; 'SIPO' stands for household payment,schemas/financial.txt,"SELECT COUNT(T1.account_id) FROM trans AS T1 INNER JOIN account AS T2 ON T1.account_id = T2.account_id INNER JOIN disp AS T4 ON T2.account_id = T4.account_id INNER JOIN client AS T3 ON T4.client_id = T3.client_id WHERE STRFTIME('%Y', T3.birth_date) BETWEEN '1974' AND '1976' AND T3.gender = 'M' AND T1.amount > 4000 AND T1.k_symbol = 'SIPO'","SELECT COUNT(DISTINCT c.client_id)
+FROM client c
+JOIN disp d ON c.client_id = d.client_id
+JOIN ""order"" o ON d.account_id = o.account_id
+WHERE c.gender = 'M'
+  AND c.birth_date >= '1974-01-01'
+  AND c.birth_date <= '1976-12-31'
+  AND o.k_symbol = 'SIPO'
+  AND o.amount > 4000","columns: COUNT(T1.account_id) | rows: 1
+1556","columns: COUNT(DISTINCT c.client_id) | rows: 1
+44",L1,,L6,Question asks 'how many male customers' but gold COUNT(T1.account_id) counts 1556 trans rows across a 4-table join.,,
+A265,On how many cards designed by John Avon is its foil non-powerful?,John Avon refer to artist; foil poweful foils refers to cardKingdomId and cardKingdomFoildId is NOT NULL,schemas/card_games.txt,SELECT COUNT(id) FROM cards WHERE (cardKingdomId IS NULL OR cardKingdomFoilId IS NULL) AND artist = 'John Avon',"SELECT COUNT(*)
+FROM cards
+WHERE artist = 'John Avon'
+  AND cardKingdomId IS NOT NULL
+  AND cardKingdomFoilId IS NOT NULL","columns: COUNT(id) | rows: 1
+739","columns: COUNT(*) | rows: 1
+389",L3,,L5,D1: 'non-powerful foil' = NOT(cardKingdomId and cardKingdomFoilId both NOT NULL) i.e. either is NULL; D2: pred computes the powerful foils (both NOT NULL).,,
+A269,"What's the German type of the card ""Ancestor's Chosen""?","German refers to language = 'German'; ""Ancestor's Chosen"" refers to name = 'Ancestor''s Chosen'",schemas/card_games.txt,SELECT DISTINCT T1.type FROM cards AS T1 INNER JOIN foreign_data AS T2 ON T2.uuid = T1.uuid WHERE T1.name = 'Ancestor''s Chosen' AND T2.language = 'German',"SELECT fd.type
+FROM cards c
+JOIN foreign_data fd ON c.uuid = fd.uuid
+WHERE c.name = 'Ancestor''s Chosen'
+  AND fd.language = 'German'","columns: type | rows: 1
+Creature — Human Cleric","columns: type | rows: 2
+Kreatur — Mensch, Kleriker
+Kreatur — Kleriker",L6,Question asks the German type of the card; gold returns cards.type (English 'Creature — Human Cleric') filtered by German language while foreign_data.type holds the German type.,L7,'German type of the card' can mean the German-language type text (foreign_data.type as in pred) or the card type for a card with a German entry (cards.type as in gold); evidence only fixes language = 'German'.,,
+A273,How many times did Michael Schumacher won from races hosted in Sepang International Circuit?,win from races refers to max(points),schemas/formula_1.txt,SELECT SUM(T2.wins) FROM drivers AS T1 INNER JOIN driverStandings AS T2 ON T2.driverId = T1.driverId INNER JOIN races AS T3 ON T3.raceId = T2.raceId INNER JOIN circuits AS T4 ON T4.circuitId = T3.circuitId WHERE T1.forename = 'Michael' AND T1.surname = 'Schumacher' AND T4.name = 'Sepang International Circuit',"SELECT COUNT(*)
+FROM results r
+JOIN races ra ON r.raceId = ra.raceId
+JOIN circuits c ON ra.circuitId = c.circuitId
+JOIN drivers d ON r.driverId = d.driverId
+WHERE d.forename = 'Michael' 
+  AND d.surname = 'Schumacher'
+  AND c.name = 'Sepang International Circuit'
+  AND r.points = (
+      SELECT MAX(points) 
+      FROM results 
+      WHERE raceId = r.raceId
+  )","columns: SUM(T2.wins) | rows: 1
+16",ERROR: timeout: interrupted,L6,Evidence says win from races refers to max(points) but gold sums driverStandings.wins and never uses points.,L1,,,
+A298,"How many translations are there for the set of cards with ""Angel of Mercy"" in it?","set of cards with ""Angel of Mercy"" in it refers to name = 'Angel of Mercy'",schemas/card_games.txt,SELECT COUNT(DISTINCT translation) FROM set_translations WHERE setCode IN ( SELECT setCode FROM cards WHERE name = 'Angel of Mercy' ) AND translation IS NOT NULL,"SELECT COUNT(*) 
+FROM set_translations 
+WHERE setCode IN (
+    SELECT DISTINCT setCode 
+    FROM cards 
+    WHERE name = 'Angel of Mercy'
+)","columns: COUNT(DISTINCT translation) | rows: 1
+28","columns: COUNT(*) | rows: 1
+40",L3,,L4,,,

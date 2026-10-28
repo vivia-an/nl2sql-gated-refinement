@@ -1,0 +1,4 @@
+# AC-SQL trial 2: max_regen 2.
+temperature: 0.0
+ddl: {quote_keywords: true}   # X6: same quoted identifiers as the ours-systems (SAP 13.6 rule 1); schema block only, no extra rule line
+max_regen: 2

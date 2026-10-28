@@ -1,0 +1,11 @@
+<<sections>><<value_hints?>>
+
+# Task
+Write one SQLite query that answers the request below.
+Rules: use only tables and columns that appear in the schema; quote identifiers that contain spaces or special characters with double quotes; join tables only through the listed foreign keys or join hints; follow the evidence literally when it defines a term or formula; return exactly the columns the question asks for, in the order asked, with no extra columns.<<quote_rule?>>
+Return only the SQL.
+
+# Request
+Question: <<question>>
+Evidence: <<evidence>>
+<<graph>>

@@ -1,0 +1,3 @@
+# E3 -M5: single generation, no Critic loop (also disables M7)
+temperature: 0.0
+m5: {enabled: false, route_human: false}

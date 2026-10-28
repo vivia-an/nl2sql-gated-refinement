@@ -1,0 +1,459 @@
+{
+ "_meta": {
+  "scope": "diagnostic-posthoc",
+  "selection": "fixed rule: lowest id of the class, different categories where possible; illustrative, not representative; VB memory verdicts are SIMULATED ORACLE feedback"
+ },
+ "cases": [
+  {
+   "class": "FP_fixed_by_VA",
+   "id": "D010",
+   "category": "distinct_drop",
+   "source_qid": "bird_train:mondial_geo:8350",
+   "db_id": "mondial_geo",
+   "question": "What are the names of the rivers in Canada?",
+   "evidence": "",
+   "evaluated_kind": "gold",
+   "gold_sql": "SELECT DISTINCT T1.River FROM located AS T1 INNER JOIN country AS T2 ON T1.Country = T2.Code WHERE T2.Name = 'Canada' AND T1.River IS NOT NULL",
+   "injected_sql": "SELECT T1.River FROM located AS T1 INNER JOIN country AS T2 ON T1.Country = T2.Code WHERE T2.Name = 'Canada' AND T1.River IS NOT NULL",
+   "edit": {
+    "from": "SELECT DISTINCT",
+    "to": "SELECT"
+   },
+   "variants": {
+    "V0": {
+     "score": 7.3,
+     "semantic": 5.0,
+     "triggered": true,
+     "issues": [
+      "The query only retrieves rivers from the 'located' table, which links cities to rivers. This misses rivers that do not have a city located on them recorded in this specific table, or rivers that are primarily defined in the 'geo_river' table. The 'geo_river' table is the standard mapping of rivers to countries/provinces in this schema and should be used to ensure all rivers in Canada are captured."
+     ],
+     "style_issues": [],
+     "final_matches_gold": 0,
+     "final_changed": true
+    },
+    "VA": {
+     "score": 10.0,
+     "semantic": 10.0,
+     "triggered": false,
+     "issues": [],
+     "style_issues": [],
+     "final_matches_gold": 1,
+     "final_changed": false
+    },
+    "VB": {
+     "score": 10.0,
+     "semantic": 10.0,
+     "triggered": false,
+     "issues": [],
+     "style_issues": [],
+     "final_matches_gold": 1,
+     "final_changed": false,
+     "memory_verdicts": [
+      "accepted",
+      "accepted",
+      "accepted",
+      "rejected"
+     ]
+    },
+    "VC": {
+     "score": 10.0,
+     "semantic": 10.0,
+     "triggered": false,
+     "issues": [],
+     "style_issues": [],
+     "final_matches_gold": 1,
+     "final_changed": false
+    },
+    "VD": {
+     "score": 10.0,
+     "semantic": 10.0,
+     "triggered": false,
+     "issues": [],
+     "style_issues": [],
+     "final_matches_gold": 1,
+     "final_changed": false
+    }
+   }
+  },
+  {
+   "class": "FP_fixed_by_VA",
+   "id": "D056",
+   "category": "limit_change",
+   "source_qid": "bird_train:college_completion:3746",
+   "db_id": "college_completion",
+   "question": "In Harvard University, which year recorded the highest number of first-time, full-time, degree-seeking students in the cohort being tracked, minus any exclusions?",
+   "evidence": "Harvard University refers to chronname = 'Harvard University'; highest number of first-time, full-time, degree-seeking students in the cohort being tracked, minus any exclusions refers to MAX(grad_cohort);",
+   "evaluated_kind": "gold",
+   "gold_sql": "SELECT T2.year FROM institution_details AS T1 INNER JOIN institution_grads AS T2 ON T2.unitid = T1.unitid WHERE T1.chronname = 'Harvard University' GROUP BY T2.year ORDER BY SUM(T2.grad_cohort) DESC LIMIT 1",
+   "injected_sql": "SELECT T2.year FROM institution_details AS T1 INNER JOIN institution_grads AS T2 ON T2.unitid = T1.unitid WHERE T1.chronname = 'Harvard University' GROUP BY T2.year ORDER BY SUM(T2.grad_cohort) DESC LIMIT 2",
+   "edit": {
+    "from": "LIMIT 1",
+    "to": "LIMIT 2"
+   },
+   "variants": {
+    "V0": {
+     "score": 5.6,
+     "semantic": 2.0,
+     "triggered": true,
+     "issues": [
+      "The query uses SUM(T2.grad_cohort) to order the results, but the question and evidence explicitly ask for the MAX(grad_cohort). In the institution_grads table, grad_cohort is broken down by gender, race, and cohort type. Summing these values would calculate the total cohort size for a year (if all subgroups are present), whereas MAX would find the single largest subgroup count. The evidence hint 'MAX(grad_cohort)' suggests the intent is to find the maximum value, not the sum. Even if the intent was total cohort, the evidence contradicts the query logic. Additionally, if there are multiple rows per year, simply taking the MAX of grad_cohort without specifying which row's year to return in a non-aggregated context can be ambiguous, but using SUM changes the metric entirely from what was requested.",
+      "The query groups by year. If the goal is to find the single year with the highest individual grad_cohort value (as implied by MAX), grouping by year and summing is incorrect. If the goal is the year with the highest total cohort, SUM is correct but contradicts the evidence hint. Given the evidence hint is explicit about MAX, the query is semantically incorrect relative to the provided guidance."
+     ],
+     "style_issues": [],
+     "final_matches_gold": 0,
+     "final_changed": true
+    },
+    "VA": {
+     "score": 10.0,
+     "semantic": 10.0,
+     "triggered": false,
+     "issues": [],
+     "style_issues": [],
+     "final_matches_gold": 1,
+     "final_changed": false
+    },
+    "VB": {
+     "score": 10.0,
+     "semantic": 10.0,
+     "triggered": false,
+     "issues": [],
+     "style_issues": [],
+     "final_matches_gold": 1,
+     "final_changed": false,
+     "memory_verdicts": [
+      "rejected",
+      "accepted",
+      "accepted",
+      "rejected"
+     ]
+    },
+    "VC": {
+     "score": 10.0,
+     "semantic": 10.0,
+     "triggered": false,
+     "issues": [],
+     "style_issues": [],
+     "final_matches_gold": 1,
+     "final_changed": false
+    },
+    "VD": {
+     "score": 10.0,
+     "semantic": 10.0,
+     "triggered": false,
+     "issues": [],
+     "style_issues": [],
+     "final_matches_gold": 1,
+     "final_changed": false
+    }
+   }
+  },
+  {
+   "class": "FP_fixed_by_VB",
+   "id": "D017",
+   "category": "distinct_drop",
+   "source_qid": "bird_train:cs_semester:899",
+   "db_id": "cs_semester",
+   "question": "What is the name of the course with the highest satisfaction from students?",
+   "evidence": "sat refers to student's satisfaction degree with the course where sat = 5 stands for the highest satisfaction;",
+   "evaluated_kind": "gold",
+   "gold_sql": "SELECT DISTINCT T2.name FROM registration AS T1 INNER JOIN course AS T2 ON T1.course_id = T2.course_id WHERE T1.sat = 5",
+   "injected_sql": "SELECT T2.name FROM registration AS T1 INNER JOIN course AS T2 ON T1.course_id = T2.course_id WHERE T1.sat = 5",
+   "edit": {
+    "from": "SELECT DISTINCT",
+    "to": "SELECT"
+   },
+   "variants": {
+    "V0": {
+     "score": 5.8,
+     "semantic": 2.0,
+     "triggered": true,
+     "issues": [
+      "The question asks for the course with the *highest* satisfaction. The evidence states 'sat = 5 stands for the highest satisfaction', but it does not state that 5 is the *only* possible highest value or that all courses have a rating of 5. The correct approach is to find the maximum `sat` value in the table and return the course(s) associated with that maximum value. The provided query hardcodes `WHERE sat = 5`, which assumes 5 is always the max and exists. If the actual maximum satisfaction in the data was 4, this query would return no results, whereas the correct answer should return the course(s) with sat=4. Furthermore, if multiple courses have sat=5, the question implies a single 'name' (singular), but typically 'the course with the highest...' implies finding the max aggregate. Even if we accept sat=5 as the target, the query returns ALL courses with sat=5, not necessarily the one with the 'highest' if there's a nuance, but more importantly, it fails to dynamically determine the highest satisfaction level.",
+      "The query returns 12 rows. The question asks for 'the name of the course' (singular). While there might be ties, usually such questions expect either a single result (via limit 1) or all tied results. However, the primary failure is the hardcoded filter instead of using MAX(sat)."
+     ],
+     "style_issues": [],
+     "final_matches_gold": 0,
+     "final_changed": true
+    },
+    "VA": {
+     "score": 0.0,
+     "semantic": 0.0,
+     "triggered": true,
+     "issues": [
+      "The question asks for the course with the *highest* satisfaction. The evidence states sat=5 is the highest value, but it does not guarantee that any student actually gave a 5, nor that 5 is the maximum value present in the data for the 'highest' relative comparison. More importantly, if multiple courses have sat=5, the query returns all of them (12 rows). The question implies a single course ('the name of the course'). Even if we assume sat=5 is the max, returning 12 courses doesn't identify 'the' course with the highest satisfaction if there's a tie, or worse, if the actual max sat in the database is less than 5 (e.g., 4), this query returns nothing while the correct answer should be the courses with sat=4. The standard interpretation of 'highest satisfaction' is to find the MAX(sat) in the dataset and return the course(s) associated with that max value. Using a hardcoded `WHERE sat = 5` is incorrect because it assumes the global maximum is always 5 and present. It should use `ORDER BY sat DESC LIMIT 1` or a subquery for `MAX(sat)`. (question: \"highest satisfaction from students\"; SQL: \"WHERE T1.sat = 5\")",
+      "The query returns 12 rows. The question asks for 'the name' (singular). While ties are possible, the primary issue is the filtering logic. If the intent was to get the single top course, `LIMIT 1` with `ORDER BY sat DESC` is required. The current query fails to rank or limit to the single best instance if 'highest' implies a unique top performer or just the top tier. However, combined with the previous point, the main failure is using a constant filter instead of finding the actual maximum. (question: \"the name of the course\"; SQL: \"SELECT DISTINCT T2.name ... WHERE T1.sat = 5\")"
+     ],
+     "style_issues": [],
+     "final_matches_gold": 0,
+     "final_changed": true
+    },
+    "VB": {
+     "score": 10.0,
+     "semantic": 10.0,
+     "triggered": false,
+     "issues": [],
+     "style_issues": [],
+     "final_matches_gold": 1,
+     "final_changed": false,
+     "memory_verdicts": [
+      "accepted",
+      "accepted",
+      "accepted",
+      "accepted"
+     ]
+    },
+    "VC": {
+     "score": 0.0,
+     "semantic": 0.0,
+     "triggered": true,
+     "issues": [
+      "The question asks for the course with the *highest* satisfaction. The evidence states sat=5 is the highest value, but it does not guarantee that any student actually gave a 5, nor that 5 is the maximum value present in the data for the 'highest' relative comparison. More importantly, if multiple courses have sat=5, the query returns all of them (12 rows). The question implies a single course ('the name of the course'). Even if we assume sat=5 is the max, returning 12 courses doesn't identify 'the' course with the highest satisfaction if there's a tie, or worse, if the actual max sat in the database is less than 5 (e.g., 4), this query returns nothing while the correct answer should be the courses with sat=4. The standard interpretation of 'highest satisfaction' is to find the MAX(sat) in the dataset and return the course(s) associated with that max value. Using a hardcoded `WHERE sat = 5` is incorrect because it assumes the global maximum is always 5 and present. It should use `ORDER BY sat DESC LIMIT 1` or a subquery for `MAX(sat)`. (question: \"highest satisfaction from students\"; SQL: \"WHERE T1.sat = 5\")"
+     ],
+     "style_issues": [],
+     "final_matches_gold": 0,
+     "final_changed": true
+    },
+    "VD": {
+     "score": 0.0,
+     "semantic": 0.0,
+     "triggered": true,
+     "issues": [
+      "The question asks for the course with the *highest* satisfaction. The evidence states sat=5 is the highest value, but it does not guarantee that any student actually gave a 5, nor that 5 is the maximum value present in the data for the 'highest' relative comparison. More importantly, if multiple courses have sat=5, the query returns all of them (12 rows). The question implies a single course ('the name of the course'). Even if we assume sat=5 is the max, returning 12 courses doesn't identify 'the' course with the highest satisfaction if there's a tie, or worse, if the actual max sat in the database is less than 5 (e.g., 4), this query returns nothing while the correct answer should be the courses with sat=4. The standard interpretation of 'highest satisfaction' is to find the MAX(sat) in the dataset and return the course(s) associated with that max value. Using a hardcoded `WHERE sat = 5` is incorrect because it assumes the global maximum is always 5 and present. It should use `ORDER BY sat DESC LIMIT 1` or a subquery for `MAX(sat)`. (question: \"highest satisfaction from students\"; SQL: \"WHERE T1.sat = 5\")"
+     ],
+     "style_issues": [],
+     "final_matches_gold": 0,
+     "final_changed": true
+    }
+   }
+  },
+  {
+   "class": "FP_fixed_by_VB",
+   "id": "D103",
+   "category": "order_flip",
+   "source_qid": "bird_train:movie_3:9132",
+   "db_id": "movie_3",
+   "question": "Please list the full names of all the customers who have rented the film with the highest replacement cost.",
+   "evidence": "full name refers to first_name, last_name; highest replacement cost refers to Max(replacement_cost)",
+   "evaluated_kind": "gold",
+   "gold_sql": "SELECT T1.first_name, T1.last_name FROM customer AS T1 INNER JOIN rental AS T2 ON T1.customer_id = T2.customer_id INNER JOIN inventory AS T3 ON T2.inventory_id = T3.inventory_id INNER JOIN film AS T4 ON T3.film_id = T4.film_id ORDER BY T4.replacement_cost DESC LIMIT 1",
+   "injected_sql": "SELECT T1.first_name, T1.last_name FROM customer AS T1 INNER JOIN rental AS T2 ON T1.customer_id = T2.customer_id INNER JOIN inventory AS T3 ON T2.inventory_id = T3.inventory_id INNER JOIN film AS T4 ON T3.film_id = T4.film_id ORDER BY T4.replacement_cost ASC LIMIT 1",
+   "edit": {
+    "from": "DESC",
+    "to": "ASC"
+   },
+   "variants": {
+    "V0": {
+     "score": 7.3,
+     "semantic": 5.0,
+     "triggered": true,
+     "issues": [
+      "The query uses LIMIT 1, which returns only a single customer. However, multiple films can share the highest replacement cost, and multiple customers may have rented any of those films. The question asks for 'all' such customers, so the query should filter by the maximum replacement cost value rather than just picking one row arbitrarily."
+     ],
+     "style_issues": [],
+     "final_matches_gold": 0,
+     "final_changed": true
+    },
+    "VA": {
+     "score": 10.0,
+     "semantic": 10.0,
+     "triggered": false,
+     "issues": [],
+     "style_issues": [],
+     "final_matches_gold": 1,
+     "final_changed": false
+    },
+    "VB": {
+     "score": 10.0,
+     "semantic": 10.0,
+     "triggered": false,
+     "issues": [],
+     "style_issues": [],
+     "final_matches_gold": 1,
+     "final_changed": false,
+     "memory_verdicts": [
+      "accepted",
+      "accepted",
+      "rejected",
+      "accepted"
+     ]
+    },
+    "VC": {
+     "score": 10.0,
+     "semantic": 10.0,
+     "triggered": false,
+     "issues": [],
+     "style_issues": [],
+     "final_matches_gold": 1,
+     "final_changed": false
+    },
+    "VD": {
+     "score": 10.0,
+     "semantic": 10.0,
+     "triggered": false,
+     "issues": [],
+     "style_issues": [],
+     "final_matches_gold": 1,
+     "final_changed": false
+    }
+   }
+  },
+  {
+   "class": "FP_still_failing_all",
+   "id": "D008",
+   "category": "distinct_drop",
+   "source_qid": "bird_train:movie_3:9259",
+   "db_id": "movie_3",
+   "question": "Find and list the full name of customers who rented more family movies than Sci-Fi movies.",
+   "evidence": "full name refers to first_name, last_name; 'family' AND 'Sci-Fi' are names of the category; customers who rented more family movies than Sci-Fi movies refers to count(name = 'Family') > count(name = 'Sci-Fi')",
+   "evaluated_kind": "gold",
+   "gold_sql": "SELECT DISTINCT IIF(SUM(IIF(T5.name = 'Family', 1, 0)) - SUM(IIF(T5.name = 'Sci-Fi', 1, 0)) > 0, T1.first_name, 0) FROM customer AS T1 INNER JOIN rental AS T2 ON T1.customer_id = T2.customer_id INNER JOIN inventory AS T3 ON T2.inventory_id = T3.inventory_id INNER JOIN film_category AS T4 ON T4.film_id = T3.film_id INNER JOIN category AS T5 ON T4.category_id = T5.category_id GROUP BY T1.customer_id",
+   "injected_sql": "SELECT IIF(SUM(IIF(T5.name = 'Family', 1, 0)) - SUM(IIF(T5.name = 'Sci-Fi', 1, 0)) > 0, T1.first_name, 0) FROM customer AS T1 INNER JOIN rental AS T2 ON T1.customer_id = T2.customer_id INNER JOIN inventory AS T3 ON T2.inventory_id = T3.inventory_id INNER JOIN film_category AS T4 ON T4.film_id = T3.film_id INNER JOIN category AS T5 ON T4.category_id = T5.category_id GROUP BY T1.customer_id",
+   "edit": {
+    "from": "SELECT DISTINCT",
+    "to": "SELECT"
+   },
+   "variants": {
+    "V0": {
+     "score": 5.6,
+     "semantic": 2.0,
+     "triggered": true,
+     "issues": [
+      "The query only returns the first name (or 0) instead of the full name (first_name and last_name) as requested.",
+      "The query returns '0' for customers who do not meet the condition, instead of filtering them out. The question asks to 'list' customers who meet the criteria, implying a filter (WHERE or HAVING), not a conditional display value.",
+      "The GROUP BY clause uses customer_id, but the SELECT clause references first_name without including it in the GROUP BY or an aggregate function. While SQLite allows this, it is semantically ambiguous if multiple customers had the same ID (impossible here) or if the intent was to group by name. More importantly, since last_name is missing entirely, the 'full name' requirement is not met."
+     ],
+     "style_issues": [],
+     "final_matches_gold": 0,
+     "final_changed": true
+    },
+    "VA": {
+     "score": 0.0,
+     "semantic": 0.0,
+     "triggered": true,
+     "issues": [
+      "The query only selects the first name (conditionally) and omits the last name. The question explicitly asks for the 'full name', which the evidence defines as 'first_name, last_name'. Additionally, the use of IIF returns '0' for customers who do not meet the criteria, rather than filtering them out, resulting in incorrect rows in the output. (question: \"list the full name of customers\"; SQL: \"SELECT DISTINCT IIF(SUM(IIF(T5.name = 'Family', 1, 0)) - SUM(IIF(T5.name = 'Sci-Fi', 1, 0)) > 0, T1.first_name, 0)\")",
+      "The logic for filtering customers is implemented in the SELECT clause using IIF, which outputs '0' for non-matching customers instead of excluding them. A correct query should use a HAVING clause to filter groups where the count of Family movies is greater than the count of Sci-Fi movies. (question: \"customers who rented more family movies than Sci-Fi movies\"; SQL: \"IIF(SUM(IIF(T5.name = 'Family', 1, 0)) - SUM(IIF(T5.name = 'Sci-Fi', 1, 0)) > 0, T1.first_name, 0)\")"
+     ],
+     "style_issues": [],
+     "final_matches_gold": 0,
+     "final_changed": true
+    },
+    "VB": {
+     "score": 0.0,
+     "semantic": 0.0,
+     "triggered": true,
+     "issues": [
+      "The query only selects the first name (conditionally) and omits the last name. The question explicitly asks for the 'full name', which the evidence defines as 'first_name, last_name'. Additionally, the use of IIF returns '0' for customers who do not meet the criteria, rather than filtering them out, resulting in incorrect rows in the output. (question: \"list the full name of customers\"; SQL: \"SELECT DISTINCT IIF(SUM(IIF(T5.name = 'Family', 1, 0)) - SUM(IIF(T5.name = 'Sci-Fi', 1, 0)) > 0, T1.first_name, 0)\")",
+      "The condition is implemented inside the SELECT clause using IIF, which means all customers are returned (either with their name or '0'). The correct approach is to filter the groups using a HAVING clause to only include customers where the count of Family movies is strictly greater than the count of Sci-Fi movies. (question: \"customers who rented more family movies than Sci-Fi movies\"; SQL: \"IIF(SUM(IIF(T5.name = 'Family', 1, 0)) - SUM(IIF(T5.name = 'Sci-Fi', 1, 0)) > 0, T1.first_name, 0)\")"
+     ],
+     "style_issues": [],
+     "final_matches_gold": 0,
+     "final_changed": true,
+     "memory_verdicts": [
+      "accepted",
+      "accepted",
+      "accepted",
+      "accepted"
+     ]
+    },
+    "VC": {
+     "score": 0.0,
+     "semantic": 0.0,
+     "triggered": true,
+     "issues": [
+      "The query only selects the first name (conditionally) and omits the last name. The question explicitly asks for the 'full name', which the evidence defines as 'first_name, last_name'. Additionally, the use of IIF returns '0' for customers who do not meet the criteria, rather than filtering them out, resulting in incorrect rows in the output. (question: \"list the full name of customers\"; SQL: \"SELECT DISTINCT IIF(SUM(IIF(T5.name = 'Family', 1, 0)) - SUM(IIF(T5.name = 'Sci-Fi', 1, 0)) > 0, T1.first_name, 0)\")",
+      "The logic for filtering customers is implemented in the SELECT clause using IIF, which outputs '0' for non-matching customers instead of excluding them. A correct query should use a HAVING clause to filter groups where the count of Family movies is greater than the count of Sci-Fi movies. (question: \"customers who rented more family movies than Sci-Fi movies\"; SQL: \"IIF(SUM(IIF(T5.name = 'Family', 1, 0)) - SUM(IIF(T5.name = 'Sci-Fi', 1, 0)) > 0, T1.first_name, 0)\")"
+     ],
+     "style_issues": [],
+     "final_matches_gold": 0,
+     "final_changed": true
+    },
+    "VD": {
+     "score": 0.0,
+     "semantic": 0.0,
+     "triggered": true,
+     "issues": [
+      "The query only selects the first name (conditionally) and omits the last name. The question explicitly asks for the 'full name', which the evidence defines as 'first_name, last_name'. Additionally, the use of IIF returns '0' for customers who do not meet the criteria, rather than filtering them out, resulting in incorrect rows in the output. (question: \"list the full name of customers\"; SQL: \"SELECT DISTINCT IIF(SUM(IIF(T5.name = 'Family', 1, 0)) - SUM(IIF(T5.name = 'Sci-Fi', 1, 0)) > 0, T1.first_name, 0)\")",
+      "The logic for filtering customers is implemented in the SELECT clause using IIF, which outputs '0' for non-matching customers instead of excluding them. A correct query should use a HAVING clause to filter groups where the count of Family movies is greater than the count of Sci-Fi movies. (question: \"customers who rented more family movies than Sci-Fi movies\"; SQL: \"IIF(SUM(IIF(T5.name = 'Family', 1, 0)) - SUM(IIF(T5.name = 'Sci-Fi', 1, 0)) > 0, T1.first_name, 0)\")"
+     ],
+     "style_issues": [],
+     "final_matches_gold": 0,
+     "final_changed": true
+    }
+   }
+  },
+  {
+   "class": "detection_lost_VB",
+   "id": "D000",
+   "category": "distinct_drop",
+   "source_qid": "bird_train:college_completion:3717",
+   "db_id": "college_completion",
+   "question": "Give the post name of \"Idaho\" state.",
+   "evidence": "post name refers to state_post;",
+   "evaluated_kind": "pert",
+   "gold_sql": "SELECT T FROM ( SELECT DISTINCT CASE WHEN state = 'Idaho' THEN state_post ELSE NULL END AS T FROM state_sector_details ) WHERE T IS NOT NULL",
+   "injected_sql": "SELECT T FROM ( SELECT CASE WHEN state = 'Idaho' THEN state_post ELSE NULL END AS T FROM state_sector_details ) WHERE T IS NOT NULL",
+   "edit": {
+    "from": "SELECT DISTINCT",
+    "to": "SELECT"
+   },
+   "variants": {
+    "V0": {
+     "score": 6.0,
+     "semantic": 2.0,
+     "triggered": true,
+     "issues": [
+      "The query returns the value 'Idaho' which is the state name, not the state post name (abbreviation). The evidence states 'post name refers to state_post'. In the `state_sector_details` table, for Idaho, the `state_post` is likely 'Id.' or similar, but the query result shows 'Idaho'. This implies the query might be selecting the wrong column or the data in `state_post` is unexpectedly 'Idaho'. However, looking at samples ('Ala.', 'U.S.'), it's likely an abbreviation. If the result is 'Idaho', it's likely the query selected `state` instead of `state_post` or the SQL provided has a logic error where it returns the state name. Actually, re-reading the SQL: `SELECT CASE WHEN state = 'Idaho' THEN state_post ELSE NULL END`. If the result is 'Idaho', then `state_post` MUST be 'Idaho'. But standard postal abbreviations are 2 letters. The column is `state_post`. Samples show 'Ala.', 'Alaska'. It is possible `state_post` for Idaho is 'Idaho'. But there are 6 duplicate rows. The query fails to use DISTINCT.",
+      "The query uses a subquery and CASE statement unnecessarily. A simple `SELECT DISTINCT state_post FROM state_sector_details WHERE state = 'Idaho'` would be more efficient and clear.",
+      "The result contains 6 duplicate rows. The question asks for 'the post name', implying a single unique value. The query should include DISTINCT."
+     ],
+     "style_issues": [],
+     "final_matches_gold": 1,
+     "final_changed": true
+    },
+    "VA": {
+     "score": 10.0,
+     "semantic": 10.0,
+     "triggered": false,
+     "issues": [],
+     "style_issues": [],
+     "final_matches_gold": 0,
+     "final_changed": false
+    },
+    "VB": {
+     "score": 10.0,
+     "semantic": 10.0,
+     "triggered": false,
+     "issues": [],
+     "style_issues": [],
+     "final_matches_gold": 0,
+     "final_changed": false,
+     "memory_verdicts": [
+      "accepted",
+      "accepted",
+      "accepted",
+      "accepted"
+     ]
+    },
+    "VC": {
+     "score": 10.0,
+     "semantic": 10.0,
+     "triggered": false,
+     "issues": [],
+     "style_issues": [],
+     "final_matches_gold": 0,
+     "final_changed": false
+    },
+    "VD": {
+     "score": 10.0,
+     "semantic": 10.0,
+     "triggered": false,
+     "issues": [],
+     "style_issues": [],
+     "final_matches_gold": 0,
+     "final_changed": false
+    }
+   }
+  }
+ ]
+}

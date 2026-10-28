@@ -1,0 +1,51 @@
+item_id,primary_label,secondary_label,rationale,notes
+A029,L1,,"Pred filters posts.CreationDate (misspelled T2.CreaionDate) instead of comments.CreationDate as in the gold.",0 rows
+A128,L3,,,"Gold adds T3.type = 'OWNER'; pred omits it (missing predicate)"
+A201,L8,,,"Same approved values; pred has an extra output column expense_description"
+A206,L6,L7,"Evidence says post related refers to RelatedPostId but the gold joins on postLinks.PostId and returns only the ViewCount of post 61217 repeated; related posts are never listed.",
+A094,L1,,"Pred uses results.position while gold and evidence setup use driverStandings.position.",
+A064,L6,L3,"Evidence says COUNT(ID) > 2 but gold uses HAVING COUNT(ID) >= 2; pred follows the evidence while the question says two or more.",
+A142,L4,,,"COUNT(*) vs COUNT(DISTINCT T1.id)"
+A254,L8,,,"Question is yes/no; gold maps via IIF to YES/NO while pred returns raw 0/1 flag"
+A102,L1,,,"Pred returns state instead of county column"
+A146,L6,L2,"Gold joins Player.id = Match.id which has no meaning for 'Italy players' (ids of different entities); pred uses the player slots of Match but times out.",Pred ERROR timeout
+A217,L4,,,"Pred reads symmetric connected table so returns both orderings (2 rows) vs 1 row; column named atom_id vs atom_id1"
+A103,L8,,,"Pred returns raw label '+' instead of YES/NO flag"
+A227,L5,L4,"D1 = take the single oldest mythic card then list its legal formats; D2 = per-format minimum release date (GROUP BY format) so many rows with other cards' dates.",
+A208,L6,L8,"Question asks 'In which location does the Hungaroring circuit located' but gold selects only country/lat/lng and omits location.",Pred has the extra location column
+A198,L6,L8,"Question says 'list the district' but gold returns only the percentage column with no district.",Pred adds district and DISTINCT
+A117,L1,L3,,"Pred uses postHistory.Text instead of comments.Text; also LIKE vs equality on Tags"
+A106,L1,,,"Pred uses results.points vs driverStandings.points in gold"
+A036,L1,L2,,"Pred uses Patient.First Date instead of Laboratory.Date and omits the Laboratory join"
+A006,L3,,,"CharterNum literal '40' vs '0040' (zero-padded text)"
+A168,L6,L3,"Evidence says '2011/2/22 refers to date = 2012-02-22' but the gold filters 2011-02-22; pred follows the evidence literal and also uses equality on a datetime string (gold uses SUBSTR).",Question vs evidence conflict
+A083,L4,,,"Gold has extra cards join and no DISTINCT; pred uses DISTINCT"
+A093,L1,,,"Earliest customer needs transaction Date but pred orders customers by CustomerID without transactions_1k"
+A150,L1,,,"Pred looks for Latitude in frpm (column is in schools); ERROR no such column"
+A056,L7,,"'How many owner and disponent dispositions' can be read as one total (pred COUNT) or as two separate counts (gold SUM(type='OWNER') and SUM(type='DISPONENT')).",
+A104,L5,,"D1 = age as year(now) minus year(birthday) per evidence SUBTRACT(YEAR(NOW()) YEAR(birthday)); D2 = fractional age by julianday difference / 365.0.",
+A047,L8,,,"Same ID order; pred has extra Birthday column"
+A145,L8,,,"Pred timed out; logic looks comparable to gold so cause not visible in the preview"
+A125,L3,,,"Issued is ISO date in data (gold strftime works); pred treats first 2 chars as YY so gives 1919 etc."
+A023,L3,,,"Pred literal 'Behcet''s' does not match 'Behcet'; also uses Patient.Diagnosis vs Examination.Diagnosis"
+A164,L3,,,"a.date LIKE '93%' assumes YYMMDD but date is ISO; gold uses strftime year"
+A121,L7,,"Evidence Count(UserId where Teacher) / Count(UserId) can be read on the badges table (pred) or against all users (gold SELECT COUNT(Id) FROM users); the question 'percentage of users' does not decide.",
+A155,L6,,"Question asks posts and comments of the latest-created user but gold has no GROUP BY or user filter: ORDER BY with LIMIT 1 over a single COUNT returns the count of all joined rows (171570) and one column.",Pred ERROR timeout
+A100,L1,,,"Pred takes Diagnosis from Examination instead of Patient"
+A107,L6,,"Evidence says more than 4 votes refer to PostId > 4 but gold uses HAVING COUNT(T4.Id) > 4 grouped by post and vote and returns many rows instead of one count.",
+A078,L6,,"Evidence defines age as SUBTRACT(year(current_timestamp) year(Birthday)) < 50 but gold subtracts using the lab Date year; pred follows the evidence.",
+A192,L6,,"Evidence says anti-Cardiolipin refers to aCL IgM but gold returns aCL IgA aCL IgG and aCL IgM.",
+A152,L1,L5,,"Pred uses nonexistent income.link_to_event (ERROR); also counts incomes per event vs evidence income > 40 on amount"
+A141,L3,L4,,"status 'restricted' lowercase vs 'Restricted'; COUNT(*) vs COUNT(DISTINCT id)"
+A005,L3,,,"Pred compares account.date < '970101' but dates are ISO strings; 0 rows"
+A071,L6,L3,"Evidence gives numeric range 0 < U-PRO < 30 but U-PRO is TEXT and gold compares it as text with number literals (string order); pred casts to REAL.",Inference from schema type TEXT; some IDs only in gold
+A069,L6,L1,"Question says free or reduced price meals but gold filters Free Meal Count (Ages 5-17); pred uses FRPM Count.",Pred also uses schools.SOCType and returns schools.School
+A252,L3,,,"Pred uses isTextless = 1 where evidence says isTextless = 0; denominator also differs"
+A113,L6,,"Question says 'In comments with 0 score' but gold filters posts.Score (T2.Score = 0) not comments.Score.",
+A075,L3,,,"Gold excludes NULL Website (IS NOT NULL); pred does not"
+A001,L1,,,"Pred refers to T1.School Name on schools; that column is in frpm (ERROR)"
+A067,L6,,"Evidence says spend the most refers to expense.cost but gold orders by budget.spent and returns Elijah Allen three times without grouping by member.",Pred groups by name returns 3 rows
+A025,L3,,,"Literal 'cryokinesis' vs 'Cryokinesis' case"
+A210,L8,,,"Gold lists ids; pred aggregates to one row with count and GROUP_CONCAT (shape difference)"
+A014,L6,L3,"Question says 7:25:47 PM but evidence/gold use 19:16:14.0; gold contradicts the question time; pred follows question and drops the .0 suffix.",Question vs evidence conflict
+A202,L8,,,"Pred omits height_cm column; ranks match"

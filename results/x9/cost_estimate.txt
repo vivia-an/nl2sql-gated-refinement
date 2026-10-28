@@ -1,0 +1,27 @@
+{
+ "HR": {
+  "n": 1101,
+  "with_hint": 729,
+  "gen_prompt_tokens": 3113,
+  "gen_completion": 57,
+  "hint_tokens_with_hint": 75.0,
+  "rev_calls_X5": 23,
+  "rev_prompt": 3575,
+  "new_gen_calls": 729,
+  "new_rev_calls_est": 15.2,
+  "cny_est": 5.1
+ },
+ "HT": {
+  "n": 300,
+  "with_hint": 225,
+  "gen_prompt_tokens": 2618,
+  "gen_completion": 60,
+  "hint_tokens_with_hint": 80.0,
+  "rev_calls_X5": 4,
+  "rev_prompt": 2641,
+  "new_gen_calls": 225,
+  "new_rev_calls_est": 3.0,
+  "cny_est": 1.34
+ }
+}
+total calls 972.2 cny 6.44

@@ -1,0 +1,2 @@
+# zero-shot (ours implementation): DDL + sample values + evidence -> SQL, 1 call
+temperature: 0.0

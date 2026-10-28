@@ -1,0 +1,6 @@
+# X7 control for full_gated_probe.yaml: full_gated + gate_empty (an executable but empty / all-NULL result is revised with the plain
+# rev_exec.user template, no value probing). full_gated_probe minus this run = effect of the probed values; this run minus full_gated = effect of the gate.
+temperature: 0.0
+ddl: {quote_keywords: true}
+m5: {policy: gated, gate_empty: true, score_for_routing: false, t_max: 3}
+route: {score: exec, theta_h: 7.5}

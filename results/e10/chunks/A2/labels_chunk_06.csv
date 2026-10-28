@@ -1,0 +1,51 @@
+item_id,primary_label,secondary_label,rationale,notes
+A153,L1,L2,,pred reads molecule_id from connected which has no such column (execution error); molecule_id lives in bond so a join to bond is also missing
+A060,L1,L2,,evidence says code of sets refers to setCode (set_translations) but pred selects sets.code; gold joins set_translations
+A009,L6,L3,"Question asks for the transaction of 1998/9/2 but gold filters T3.date='1997-08-20' which is not the date in the question.",pred date literal '980902' also does not match the stored trans date format (0 rows)
+A161,L6,,"Evidence defines the average as the parking cost average (where category = 'Parking') but the gold subquery SELECT AVG(cost) FROM expense has no Parking filter.",pred follows the evidence and returns 0 rows
+A188,L8,,,gold returns an extra output column (type) beyond the category asked for; category values are the same
+A048,L1,,,pred sums transactions_1k.Amount instead of yearmonth.Consumption (gas use); also returns an extra column
+A124,L6,L1,"Question asks how many of the comments have 0 score but gold filters T2.Score (posts.Score) instead of the comments score; pred filters T1.Score of comments.",
+A167,L6,L3,"Question asks for the transaction of 1998/9/2 but gold filters T3.date='1997-08-20' which is not the date in the question.",pred date literal '980902' does not match the stored trans date format (0 rows)
+A299,L6,L1,"Question asks for the foreign name of the card but gold selects T1.name (cards.name) not the foreign_data name.",pred selects foreign_data name and type
+A088,L3,,,pred lacks AvgScrRead IS NOT NULL so NULL scores sort first under ASC
+A291,L1,,,pred orders by milliseconds while evidence says fastest time = Min(time) (time column)
+A243,L2,L1,,gold joins set_translations (only sets with translations; column setCode); pred uses sets only with code
+A296,L6,,"Question asks for the post history counts but gold returns T1.Id rows of postHistory (a list of ids) not a count.",pred computes COUNT and MAX(ph.CreationDate) rather than posts.LastEditDate
+A043,L4,L8,,pred takes top 20 laps (DISTINCT after ORDER BY lap) not top 20 drivers by their own minimum; also missing driverId column
+A176,L1,L2,,pred uses comments.UserDisplayName (empty here) instead of joining users.DisplayName
+A268,L1,,,pred uses constructorResults.points instead of constructorStandings.points
+A118,L1,L7,,pred selects cards.name while gold selects cards.id; list of cards could be id or name
+A212,L8,,,gold returns an extra id column; pred joins all attribute rows without LIMIT subquery but values equal
+A282,L1,,,pred uses results table instead of driverStandings and counts position>1 with NULL positions excluded from SUM numerator but kept in COUNT(*)
+A055,L6,L8,"Evidence says 4th atom refers to substr(atom_id, 7, 1) = '4' but gold uses SUBSTR(T1.atom_id, -1) = '4' AND LENGTH(atom_id)=7; question says tally but gold returns distinct elements without counts.",pred follows evidence and returns counts
+A216,L7,L8,"Connected atoms can be read as a list of atoms (gold: atom_id only) or as connected pairs (pred: atom_id and atom_id2); the question does not fix the output.",
+A166,L6,,"Question and evidence ask for the user who was last to edit the post but gold joins T1.OwnerUserId (the owner) instead of LastEditorUserId.",pred uses LastEditorUserId and returns 0 rows
+A283,L4,,,gold groups by City and sums enrollment; pred ranks individual school rows
+A203,L8,,,pred returns atom_id and atom_id2 as two columns while gold returns atom_id of the two directed rows
+A260,L6,,"The account.date column is stored as YYMMDD but gold applies STRFTIME('%Y') to it which does not parse so after 1996 is not implemented; result 8 is degenerate.",pred compares a.date > '961231' which matches the stored format
+A300,L8,,,GOLD TIMEOUT: gold result is ERROR timeout so no comparison possible; pred looks consistent with evidence (LIMIT 1 for max reputation)
+A027,L6,,"Question and evidence ask for the user who was last to edit the post but gold joins T1.OwnerUserId (the owner) instead of LastEditorUserId.",pred uses LastEditorUserId and returns 0 rows
+A228,L3,L4,,pred lacks full_name IS NOT NULL and DISTINCT so NULL and duplicate names appear
+A054,L8,,,gold also outputs height_cm and a RANK() column; pred gives only ordered names
+A012,L1,,,pred takes County and School from schools via a join instead of satscores cname/sname; returned 0 rows (cause not determinable from preview)
+A257,L6,,"Question asks for the defence aggression class but gold selects chanceCreationShootingClass.",pred selects defenceAggressionClass
+A115,L1,,,pred orders by MIN(milliseconds) while evidence says Min(time); also groups by driver
+A159,L3,L6,,evidence literally says nationality = 'America' but data value is 'American' (gold uses it); pred copied the evidence literal and got 0 rows
+A011,L5,L3,"D1: evidence defines doesn't have Japanese translation as language not like '%Japanese%' on the Korean translation row; D2: pred computes sets with no Japanese translation row at all (NOT IN) which returns 0 rows. Linking is right and the output shape is the same.",gold condition is nearly vacuous but is what the evidence prescribes
+A053,L6,L1,"Question asks for the latest lap time (Max(time)) but gold takes time from pitStops (pit stop duration) and returns repeated driverId rows.",pred uses lapTimes grouped per driver and returns names instead of driverId
+A211,L2,L8,,gold joins users-postHistory-posts; pred joins users-posts via OwnerUserId and adds extra columns; winner name same
+A101,L4,,,pred groups by district with AVG while gold takes the single top school row
+A031,L4,L8,,pred adds GROUP BY type and AVG(A11) column; gold lists types per account row (gold BETWEEN includes 8000 though question says exceeds)
+A191,L8,,,pred concatenates forename and surname into one column; age value equal
+A215,L8,L2,,gold returns pb atom and neighbour as two columns; pred returns only neighbour with OR join on both directions
+A298,L3,L4,,pred counts rows with COUNT(*) and no translation IS NOT NULL; gold COUNT(DISTINCT translation)
+A185,L6,L3,"Evidence says editor refers to DisplayName of the editor but gold joins T1.OwnerUserId (the owner) not LastEditorUserId.",pred also dropped the trailing ? of the title so it returns 0 rows
+A160,L1,,,pred filters posts.CreaionDate (typo column) instead of comments.CreationDate given in the evidence
+A111,L1,L7,,pred selects amount while gold selects budget_id; which budgets could be listed by id or amount
+A290,L1,,,pred counts DISTINCT driverId in results; gold counts driverStandings rows (8 vs 22); pred table seems the more natural for participation
+A249,L4,,,gold COUNT(Symptoms) ignores NULL so NULL group ranks last; pred COUNT(*) makes NULL the top group
+A065,L4,,,pred uses ORDER BY LIMIT 1 and drops ties; gold returns all rows equal to MIN
+A051,L8,,,gold returns extra Title column; DisplayName values equal
+A079,L2,,,pred adds join to molecule which changes the set of rows (TR447 missing in preview)
+A082,L1,,,pred uses results.position instead of driverStandings (position stands)

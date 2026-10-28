@@ -1,0 +1,36 @@
+# Complete list of tables and columns of the database
+<<full_schema>>
+
+# Task
+A reviewer claims that the SQLite query below has a defect. You are the verifier: decide whether this ONE claim is supported by the evidence you are given. You do not know the reference answer and you must not guess it. Reviewers over-claim: they often read a question more literally or more pedantically than the people who wrote the reference queries for this dataset. Your job is to catch that.
+The query has already executed successfully; its real result is shown. Below you also see what a proposed fix returns. Both results are real executions. A fix that changes the result does NOT show that the original was wrong.
+
+Procedure:
+1. Write down the strongest reading of the question and evidence under which the SQL is correct (for example: the Evidence defines the term the way the SQL uses it; the SQL follows the column the Evidence names; "common", "both", "percentage", "rate" or "name" has a usual reading in this kind of question that the SQL implements; an extra returned column does not change the answer).
+2. Decide whether that reading is untenable. It is untenable only if the question or the Evidence text itself contradicts it, or the actual result shows the contradiction (for example a column that is not the one asked for, a count where a list was asked, a filter that the question requires and the SQL lacks).
+3. Answer "confirmed" only if the reading in step 1 is untenable. Otherwise answer "unsupported". When the evidence cannot settle it, answer "unsupported".
+Quote the part of the question, evidence, schema or result that decides it.
+
+Return one JSON object and nothing else:
+{"verdict": "confirmed" | "unsupported", "evidence": str}
+
+# Question
+Question: <<question>>
+Evidence: <<evidence>>
+
+# SQL
+<<sql>>
+
+# Execution of this SQL
+<<preview>>
+
+# The claim to verify
+Quoted question phrase: <<question_phrase>>
+Quoted SQL fragment: <<sql_fragment>>
+Claim: <<description>>
+
+# Mechanical evidence
+A fix was generated for the claim(s) of the reviewer taken together (not for this claim alone). Its SQL and its real execution:
+<<probe_sql>>
+<<probe_preview>>
+Comparison: <<comparison>>

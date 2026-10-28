@@ -1,0 +1,19 @@
+<<sections>><<value_hints?>>
+
+# Task
+Fix the SQLite query below so that it answers the question. You see the previous query, its execution result and a reviewer's feedback. Use only tables and columns that appear in the schema.<<quote_rule?>> Keep what is correct and change only what the feedback shows to be wrong.
+Return only the corrected SQL.
+
+# Request
+Question: <<question>>
+Evidence: <<evidence>>
+<<graph>>
+
+# Previous SQL
+<<sql>>
+
+# Execution
+<<preview>>
+
+# Reviewer feedback (score <<score>>/10; <<mode>>)
+<<feedback>>

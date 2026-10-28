@@ -1,0 +1,106 @@
+{
+ "_meta": {
+  "scope": "diagnostic-posthoc",
+  "block": "SAP 18.3 tuning draw (seed 20261107; 225 injected + 99 gold controls; questions disjoint from the 594 evaluation items); prompts iterated here only; critic-only (root node) runs; loop checks on 30 items each (loopA..D) not summarised",
+  "items_sha256": "a1140edeb012ca2a76d2f4a4d530e00962e143d6bdb0a40d7df52ef4b6f7086e"
+ },
+ "runs": {
+  "tune_V0": {
+   "description": "V0 (frozen pipeline critic, reference)",
+   "n_injected": 225,
+   "n_gold": 99,
+   "detection": 0.8444444444444444,
+   "gold_fpr": 0.20202020202020202,
+   "auroc": 0.8525028058361391
+  },
+  "tuneA1": {
+   "description": "VA draft 1",
+   "n_injected": 225,
+   "n_gold": 99,
+   "detection": 0.8488888888888889,
+   "gold_fpr": 0.21212121212121213,
+   "auroc": 0.8281257014590347
+  },
+  "tuneA2": {
+   "description": "VA draft 2 (adds rule 5: no doubts as must_fix) = FROZEN",
+   "n_injected": 225,
+   "n_gold": 99,
+   "detection": 0.8355555555555556,
+   "gold_fpr": 0.20202020202020202,
+   "auroc": 0.8212794612794613
+  },
+  "tuneB1": {
+   "description": "VB (VA draft 2 + memory) = FROZEN",
+   "n_injected": 225,
+   "n_gold": 99,
+   "detection": 0.8444444444444444,
+   "gold_fpr": 0.1919191919191919,
+   "auroc": 0.8301907968574636
+  },
+  "tuneC1": {
+   "description": "VC verifier draft 1",
+   "n_injected": 225,
+   "n_gold": 99,
+   "detection": 0.8222222222222222,
+   "gold_fpr": 0.16161616161616163,
+   "auroc": 0.8373063973063973,
+   "stages": {
+    "pert_critic_flagged": 188,
+    "pert_after_ab": 187,
+    "pert_after_c": 185,
+    "pert_after_final": 185,
+    "gold_critic_flagged": 20,
+    "gold_after_ab": 20,
+    "gold_after_c": 16,
+    "gold_after_final": 16,
+    "pert_verifier_confirmed": 242,
+    "gold_verifier_confirmed": 22,
+    "pert_verifier_unsupported": 2
+   }
+  },
+  "tuneC2": {
+   "description": "VC verifier draft 2 (skeptical procedure) = FROZEN",
+   "n_injected": 225,
+   "n_gold": 99,
+   "detection": 0.8177777777777778,
+   "gold_fpr": 0.16161616161616163,
+   "auroc": 0.8371268237934905,
+   "stages": {
+    "pert_critic_flagged": 188,
+    "pert_after_ab": 187,
+    "pert_after_c": 185,
+    "pert_after_final": 184,
+    "gold_critic_flagged": 20,
+    "gold_after_ab": 20,
+    "gold_after_c": 16,
+    "gold_after_final": 16,
+    "pert_verifier_confirmed": 239,
+    "pert_verifier_unsupported": 5,
+    "gold_verifier_confirmed": 22
+   }
+  },
+  "tuneD1": {
+   "description": "VD appeal prompt draft 1 = FROZEN",
+   "n_injected": 225,
+   "n_gold": 99,
+   "detection": 0.8177777777777778,
+   "gold_fpr": 0.16161616161616163,
+   "auroc": 0.8371268237934905,
+   "stages": {
+    "pert_critic_flagged": 188,
+    "pert_after_ab": 187,
+    "pert_after_c": 185,
+    "pert_after_final": 184,
+    "gold_critic_flagged": 20,
+    "gold_after_ab": 20,
+    "gold_after_c": 16,
+    "gold_after_final": 16,
+    "pert_verifier_confirmed": 239,
+    "gold_verifier_confirmed": 22,
+    "pert_verifier_unsupported": 5,
+    "pert_appeal_withdraw": 4,
+    "pert_appeal_maintain": 1
+   }
+  }
+ }
+}

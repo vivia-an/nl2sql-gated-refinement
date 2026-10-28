@@ -1,0 +1,153 @@
+{
+ "_meta": {
+  "cache": "separate machine-local call cache, so the full arms are not made cheaper by smoke hits",
+  "items": "exp/queues/ext1_smoke_qids.txt (20 items, random.Random(20261127).sample over the 508 file positions)",
+  "label": "smoke (disclosed, not an analysis; items stay in the full arms)",
+  "scope": "external-validity",
+  "split": "spider_realistic"
+ },
+ "arms": {
+  "ext1s-27b-fixed": {
+   "calls_per_q": 3.0,
+   "done_line": "[run] done {\"n\": 20, \"ex\": 0.85, \"calls_per_q\": 3.0, \"prompt_tokens_per_q\": 2312.5, \"completion_tokens_per_q\": 252.0, \"api_fail\": 0, \"sys_error\": 0, \"wall_s\": 153.7, \"client_stats\": {\"calls\": 60, \"cache_hits\": 0, \"n429\": 0, \"n5xx\": 0, \"ntimeout\": 0, \"retries\": 0, \"failures\": 0, \"embed_calls\": 766, \"rerank_calls\": 43, \"cache_db_errors\": 0, \"cache_quarantined\": 0, \"cache_dropped_writes\": 0, \"cache_miss_on_error\": 0, \"cache_bad_rows\": 0}}",
+   "errors": 0,
+   "ex_plain": 0.85,
+   "ex_ts": 0.7,
+   "ex_ts_n_scored": 20,
+   "exec_ok": 1.0,
+   "n": 20,
+   "n_revised": 0
+  },
+  "ext1s-27b-gated": {
+   "calls_per_q": 2.0,
+   "done_line": "[run] done {\"n\": 20, \"ex\": 0.85, \"calls_per_q\": 2.0, \"prompt_tokens_per_q\": 1280.7, \"completion_tokens_per_q\": 226.0, \"api_fail\": 0, \"sys_error\": 0, \"wall_s\": 10.9, \"client_stats\": {\"calls\": 40, \"cache_hits\": 40, \"n429\": 0, \"n5xx\": 0, \"ntimeout\": 0, \"retries\": 0, \"failures\": 0, \"embed_calls\": 0, \"rerank_calls\": 2, \"cache_db_errors\": 0, \"cache_quarantined\": 0, \"cache_dropped_writes\": 0, \"cache_miss_on_error\": 0, \"cache_bad_rows\": 0}}",
+   "errors": 0,
+   "ex_plain": 0.85,
+   "ex_ts": 0.7,
+   "ex_ts_n_scored": 20,
+   "exec_ok": 1.0,
+   "n": 20,
+   "n_revised": 0
+  },
+  "ext1s-27b-rootonly": {
+   "calls_per_q": 2.0,
+   "done_line": "[run] done {\"n\": 20, \"ex\": 0.85, \"calls_per_q\": 2.0, \"prompt_tokens_per_q\": 1280.7, \"completion_tokens_per_q\": 226.0, \"api_fail\": 0, \"sys_error\": 0, \"wall_s\": 9.1, \"client_stats\": {\"calls\": 40, \"cache_hits\": 40, \"n429\": 0, \"n5xx\": 0, \"ntimeout\": 0, \"retries\": 0, \"failures\": 0, \"embed_calls\": 0, \"rerank_calls\": 2, \"cache_db_errors\": 0, \"cache_quarantined\": 0, \"cache_dropped_writes\": 0, \"cache_miss_on_error\": 0, \"cache_bad_rows\": 0}}",
+   "errors": 0,
+   "ex_plain": 0.85,
+   "ex_ts": 0.7,
+   "ex_ts_n_scored": 20,
+   "exec_ok": 1.0,
+   "n": 20,
+   "n_revised": 0
+  },
+  "ext1s-27b-zs": {
+   "calls_per_q": 1.0,
+   "done_line": "[run] done {\"n\": 20, \"ex\": 0.9, \"calls_per_q\": 1.0, \"prompt_tokens_per_q\": 675.75, \"completion_tokens_per_q\": 35.8, \"api_fail\": 0, \"sys_error\": 0, \"wall_s\": 13.4, \"client_stats\": {\"calls\": 20, \"cache_hits\": 0, \"n429\": 0, \"n5xx\": 0, \"ntimeout\": 0, \"retries\": 0, \"failures\": 0, \"embed_calls\": 0, \"rerank_calls\": 0, \"cache_db_errors\": 0, \"cache_quarantined\": 0, \"cache_dropped_writes\": 0, \"cache_miss_on_error\": 0, \"cache_bad_rows\": 0}}",
+   "errors": 0,
+   "ex_plain": 0.9,
+   "ex_ts": 0.75,
+   "ex_ts_n_scored": 20,
+   "exec_ok": 1.0,
+   "n": 20,
+   "n_revised": 0
+  },
+  "ext1s-flash-fixed": {
+   "calls_per_q": 3.3,
+   "done_line": "[run] done {\"n\": 20, \"ex\": 0.9, \"calls_per_q\": 3.3, \"prompt_tokens_per_q\": 2685.0, \"completion_tokens_per_q\": 285.3, \"api_fail\": 0, \"sys_error\": 0, \"wall_s\": 142.2, \"client_stats\": {\"calls\": 66, \"cache_hits\": 0, \"n429\": 0, \"n5xx\": 0, \"ntimeout\": 0, \"retries\": 0, \"failures\": 0, \"embed_calls\": 766, \"rerank_calls\": 43, \"cache_db_errors\": 0, \"cache_quarantined\": 0, \"cache_dropped_writes\": 0, \"cache_miss_on_error\": 0, \"cache_bad_rows\": 0}}",
+   "errors": 0,
+   "ex_plain": 0.9,
+   "ex_ts": 0.7,
+   "ex_ts_n_scored": 20,
+   "exec_ok": 1.0,
+   "n": 20,
+   "n_revised": 3
+  },
+  "ext1s-flash-gated": {
+   "calls_per_q": 2.0,
+   "done_line": "[run] done {\"n\": 20, \"ex\": 0.95, \"calls_per_q\": 2.0, \"prompt_tokens_per_q\": 1274.25, \"completion_tokens_per_q\": 215.75, \"api_fail\": 0, \"sys_error\": 0, \"wall_s\": 11.6, \"client_stats\": {\"calls\": 40, \"cache_hits\": 40, \"n429\": 0, \"n5xx\": 0, \"ntimeout\": 0, \"retries\": 0, \"failures\": 0, \"embed_calls\": 19, \"rerank_calls\": 23, \"cache_db_errors\": 0, \"cache_quarantined\": 0, \"cache_dropped_writes\": 0, \"cache_miss_on_error\": 0, \"cache_bad_rows\": 0}}",
+   "errors": 0,
+   "ex_plain": 0.95,
+   "ex_ts": 0.7,
+   "ex_ts_n_scored": 20,
+   "exec_ok": 1.0,
+   "n": 20,
+   "n_revised": 0
+  },
+  "ext1s-flash-rootonly": {
+   "calls_per_q": 2.0,
+   "done_line": "[run] done {\"n\": 20, \"ex\": 0.95, \"calls_per_q\": 2.0, \"prompt_tokens_per_q\": 1274.25, \"completion_tokens_per_q\": 215.75, \"api_fail\": 0, \"sys_error\": 0, \"wall_s\": 9.2, \"client_stats\": {\"calls\": 40, \"cache_hits\": 40, \"n429\": 0, \"n5xx\": 0, \"ntimeout\": 0, \"retries\": 0, \"failures\": 0, \"embed_calls\": 0, \"rerank_calls\": 1, \"cache_db_errors\": 0, \"cache_quarantined\": 0, \"cache_dropped_writes\": 0, \"cache_miss_on_error\": 0, \"cache_bad_rows\": 0}}",
+   "errors": 0,
+   "ex_plain": 0.95,
+   "ex_ts": 0.7,
+   "ex_ts_n_scored": 20,
+   "exec_ok": 1.0,
+   "n": 20,
+   "n_revised": 0
+  },
+  "ext1s-flash-zs": {
+   "calls_per_q": 1.0,
+   "done_line": "[run] done {\"n\": 20, \"ex\": 0.9, \"calls_per_q\": 1.0, \"prompt_tokens_per_q\": 675.75, \"completion_tokens_per_q\": 37.5, \"api_fail\": 0, \"sys_error\": 0, \"wall_s\": 7.0, \"client_stats\": {\"calls\": 20, \"cache_hits\": 0, \"n429\": 0, \"n5xx\": 0, \"ntimeout\": 0, \"retries\": 0, \"failures\": 0, \"embed_calls\": 0, \"rerank_calls\": 0, \"cache_db_errors\": 0, \"cache_quarantined\": 0, \"cache_dropped_writes\": 0, \"cache_miss_on_error\": 0, \"cache_bad_rows\": 0}}",
+   "errors": 0,
+   "ex_plain": 0.9,
+   "ex_ts": 0.55,
+   "ex_ts_n_scored": 20,
+   "exec_ok": 1.0,
+   "n": 20,
+   "n_revised": 0
+  },
+  "ext1s-plus-fixed": {
+   "calls_per_q": 3.0,
+   "done_line": "[run] done {\"n\": 20, \"ex\": 0.85, \"calls_per_q\": 3.0, \"prompt_tokens_per_q\": 2307.9, \"completion_tokens_per_q\": 272.4, \"api_fail\": 0, \"sys_error\": 0, \"wall_s\": 158.6, \"client_stats\": {\"calls\": 60, \"cache_hits\": 0, \"n429\": 0, \"n5xx\": 0, \"ntimeout\": 0, \"retries\": 0, \"failures\": 0, \"embed_calls\": 766, \"rerank_calls\": 43, \"cache_db_errors\": 0, \"cache_quarantined\": 0, \"cache_dropped_writes\": 0, \"cache_miss_on_error\": 0, \"cache_bad_rows\": 0}}",
+   "errors": 0,
+   "ex_plain": 0.85,
+   "ex_ts": 0.75,
+   "ex_ts_n_scored": 20,
+   "exec_ok": 1.0,
+   "n": 20,
+   "n_revised": 0
+  },
+  "ext1s-plus-gated": {
+   "calls_per_q": 2.0,
+   "done_line": "[run] done {\"n\": 20, \"ex\": 0.85, \"calls_per_q\": 2.0, \"prompt_tokens_per_q\": 1278.5, \"completion_tokens_per_q\": 248.2, \"api_fail\": 0, \"sys_error\": 0, \"wall_s\": 11.9, \"client_stats\": {\"calls\": 40, \"cache_hits\": 40, \"n429\": 0, \"n5xx\": 0, \"ntimeout\": 0, \"retries\": 0, \"failures\": 0, \"embed_calls\": 19, \"rerank_calls\": 22, \"cache_db_errors\": 0, \"cache_quarantined\": 0, \"cache_dropped_writes\": 0, \"cache_miss_on_error\": 0, \"cache_bad_rows\": 0}}",
+   "errors": 0,
+   "ex_plain": 0.85,
+   "ex_ts": 0.75,
+   "ex_ts_n_scored": 20,
+   "exec_ok": 1.0,
+   "n": 20,
+   "n_revised": 0
+  },
+  "ext1s-plus-rootonly": {
+   "calls_per_q": 2.0,
+   "done_line": "[run] done {\"n\": 20, \"ex\": 0.85, \"calls_per_q\": 2.0, \"prompt_tokens_per_q\": 1278.5, \"completion_tokens_per_q\": 248.2, \"api_fail\": 0, \"sys_error\": 0, \"wall_s\": 9.8, \"client_stats\": {\"calls\": 40, \"cache_hits\": 40, \"n429\": 0, \"n5xx\": 0, \"ntimeout\": 0, \"retries\": 0, \"failures\": 0, \"embed_calls\": 0, \"rerank_calls\": 0, \"cache_db_errors\": 0, \"cache_quarantined\": 0, \"cache_dropped_writes\": 0, \"cache_miss_on_error\": 0, \"cache_bad_rows\": 0}}",
+   "errors": 0,
+   "ex_plain": 0.85,
+   "ex_ts": 0.75,
+   "ex_ts_n_scored": 20,
+   "exec_ok": 1.0,
+   "n": 20,
+   "n_revised": 0
+  },
+  "ext1s-plus-zs": {
+   "calls_per_q": 1.0,
+   "done_line": "[run] done {\"n\": 20, \"ex\": 0.85, \"calls_per_q\": 1.0, \"prompt_tokens_per_q\": 675.75, \"completion_tokens_per_q\": 38.5, \"api_fail\": 0, \"sys_error\": 0, \"wall_s\": 10.6, \"client_stats\": {\"calls\": 20, \"cache_hits\": 0, \"n429\": 0, \"n5xx\": 0, \"ntimeout\": 0, \"retries\": 0, \"failures\": 0, \"embed_calls\": 0, \"rerank_calls\": 0, \"cache_db_errors\": 0, \"cache_quarantined\": 0, \"cache_dropped_writes\": 0, \"cache_miss_on_error\": 0, \"cache_bad_rows\": 0}}",
+   "errors": 0,
+   "ex_plain": 0.85,
+   "ex_ts": 0.65,
+   "ex_ts_n_scored": 20,
+   "exec_ok": 1.0,
+   "n": 20,
+   "n_revised": 0
+  }
+ },
+ "cost_report_by_model": [
+  "model                                                calls       yuan   prompt_tok  compl_tok",
+  "qwen3.7-text-embedding                                2336       0.34       679715          0",
+  "qwen3.7-plus-2026-05-26                                 80       0.16        59673       6218",
+  "qwen3.5-27b                                             80       0.06        59765       5756",
+  "qwen3.7-flash-2026-07-15                                86       0.02        67215       6456",
+  "qwen3.7-text-rerank                                    179       0.00            0          0",
+  "TOTAL yuan = 0.58"
+ ],
+ "total_cny": 0.58
+}

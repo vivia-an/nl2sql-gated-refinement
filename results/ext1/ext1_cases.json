@@ -1,0 +1,344 @@
+{
+ "_meta": {
+  "rule": "SAP 21.11: discordant items sorted by qid (ascending string order), first 3 per direction; no hand picking",
+  "scope": "external-validity"
+ },
+ "contrasts": {
+  "XB1_flash": {
+   "gated_right_zs_wrong": {
+    "n_discordant": 53,
+    "cases": [
+     {
+      "qid": "spider_realistic:battle_death:251",
+      "db_id": "battle_death",
+      "question": "What are the ids and names of the battles that led to more than 10 people died.",
+      "gold": "SELECT T1.id ,  T1.name FROM battle AS T1 JOIN ship AS T2 ON T1.id  =  T2.lost_in_battle JOIN death AS T3 ON T2.id  =  T3.caused_by_ship_id GROUP BY T1.id HAVING sum(T3.killed)  >  10",
+      "sql_gated": "SELECT T1.id , T1.name FROM battle AS T1 JOIN ship AS T2 ON T1.id  =  T2.lost_in_battle JOIN death AS T3 ON T2.id  =  T3.caused_by_ship_id GROUP BY T1.id HAVING sum(T3.killed)  >  10",
+      "sql_zs": "SELECT DISTINCT b.id, b.name\nFROM battle b\nJOIN ship s ON b.id = s.lost_in_battle\nJOIN death d ON s.id = d.caused_by_ship_id\nWHERE d.killed > 10",
+      "ex_ts_gated": 1,
+      "ex_ts_zs": 0
+     },
+     {
+      "qid": "spider_realistic:car_1:105",
+      "db_id": "car_1",
+      "question": "How many nations has more than 2 car makers ?",
+      "gold": "select count(*) from countries as t1 join car_makers as t2 on t1.countryid  =  t2.country group by t1.countryid having count(*)  >  2",
+      "sql_gated": "SELECT count(*) FROM car_makers GROUP BY Country HAVING count(*) > 2",
+      "sql_zs": "SELECT COUNT(*) AS nation_count\nFROM (\n    SELECT c.CountryId, c.CountryName\n    FROM countries c\n    JOIN car_makers cm ON c.CountryId = cm.Country\n    GROUP BY c.CountryId, c.CountryName\n    HAVING COUNT(cm.Id) > 2\n) AS subquery",
+      "ex_ts_gated": 1,
+      "ex_ts_zs": 0
+     },
+     {
+      "qid": "spider_realistic:car_1:106",
+      "db_id": "car_1",
+      "question": "What is the number of nations with more than 2 car makers ?",
+      "gold": "select count(*) from countries as t1 join car_makers as t2 on t1.countryid  =  t2.country group by t1.countryid having count(*)  >  2",
+      "sql_gated": "SELECT count(*) FROM car_makers GROUP BY Country HAVING count(*) > 2",
+      "sql_zs": "SELECT COUNT(*) \nFROM countries \nWHERE CountryId IN (\n    SELECT Country \n    FROM car_makers \n    GROUP BY Country \n    HAVING COUNT(*) > 2\n)",
+      "ex_ts_gated": 1,
+      "ex_ts_zs": 0
+     }
+    ]
+   },
+   "zs_right_gated_wrong": {
+    "n_discordant": 36,
+    "cases": [
+     {
+      "qid": "spider_realistic:car_1:100",
+      "db_id": "car_1",
+      "question": "What are the different models created by either General Motors or over 3500 lbs?",
+      "gold": "SELECT DISTINCT T2.Model FROM CAR_NAMES AS T1 JOIN MODEL_LIST AS T2 ON T1.Model  =  T2.Model JOIN CAR_MAKERS AS T3 ON T2.Maker  =  T3.Id JOIN CARS_DATA AS T4 ON T1.MakeId  =  T4.Id WHERE T3.FullName  =  'General Motors' OR T4.weight  >  3500;",
+      "sql_gated": "SELECT DISTINCT m.Model\nFROM model_list m\nJOIN car_makers cm ON m.Maker = cm.Id\nJOIN cars_data cd ON m.Model = cd.Id\nWHERE cm.FullName = 'General Motors' OR cd.Weight > 3500",
+      "sql_zs": "SELECT DISTINCT ml.Model\nFROM model_list ml\nJOIN car_makers cm ON ml.Maker = cm.Id\nJOIN car_names cn ON ml.Model = cn.Model\nJOIN cars_data cd ON cn.MakeId = cd.Id\nWHERE cm.FullName = 'General Motors' OR cd.Weight > 3500",
+      "ex_ts_gated": 0,
+      "ex_ts_zs": 1
+     },
+     {
+      "qid": "spider_realistic:car_1:112",
+      "db_id": "car_1",
+      "question": "What are the ids and names of all countries that either have more than 3 car makers or produce fiats?",
+      "gold": "select t1.countryid ,  t1.countryname from countries as t1 join car_makers as t2 on t1.countryid  =  t2.country group by t1.countryid having count(*)  >  3 union select t1.countryid ,  t1.countryname from countries as t1 join car_makers as t2 on t1.countryid  =  t2.country join model_list as t3 on t2.id  =  t3.maker where t3.model  =  'fiat';",
+      "sql_gated": "SELECT T1.CountryId ,  T1.CountryName\nFROM countries AS T1\nJOIN car_makers AS T2 ON T1.CountryId  =  T2.Country\nWHERE T1.CountryId IN (\n    SELECT T3.Country\n    FROM car_makers AS T3\n    GROUP BY T3.Country\n    HAVING count(*) > 3\n)\nOR T2.Maker = 'fiat'",
+      "sql_zs": "SELECT c.CountryId, c.CountryName\nFROM countries c\nWHERE (\n    SELECT COUNT(*)\n    FROM car_makers cm\n    WHERE cm.Country = c.CountryId\n) > 3\nOR EXISTS (\n    SELECT 1\n    FROM car_makers cm\n    JOIN model_list ml ON cm.Id = ml.Maker\n    WHERE cm.Country = c.CountryId\n    AND ml.Model = 'fiat'\n)",
+      "ex_ts_gated": 0,
+      "ex_ts_zs": 1
+     },
+     {
+      "qid": "spider_realistic:car_1:71",
+      "db_id": "car_1",
+      "question": "How many car models are produced by each manufacturer? List the count and the maker full name.",
+      "gold": "select count(*) ,  t2.fullname from model_list as t1 join car_makers as t2 on t1.maker  =  t2.id group by t2.id;",
+      "sql_gated": "SELECT count(T1.Model) , T2.FullName\nFROM model_list AS T1\nJOIN car_makers AS T2 ON T1.Maker = T2.Id\nGROUP BY T2.FullName",
+      "sql_zs": "SELECT COUNT(*) AS count, cm.FullName\nFROM model_list ml\nJOIN car_makers cm ON ml.Maker = cm.Id\nGROUP BY cm.Id, cm.FullName",
+      "ex_ts_gated": 0,
+      "ex_ts_zs": 1
+     }
+    ]
+   }
+  },
+  "XB1_27b": {
+   "gated_right_zs_wrong": {
+    "n_discordant": 31,
+    "cases": [
+     {
+      "qid": "spider_realistic:battle_death:251",
+      "db_id": "battle_death",
+      "question": "What are the ids and names of the battles that led to more than 10 people died.",
+      "gold": "SELECT T1.id ,  T1.name FROM battle AS T1 JOIN ship AS T2 ON T1.id  =  T2.lost_in_battle JOIN death AS T3 ON T2.id  =  T3.caused_by_ship_id GROUP BY T1.id HAVING sum(T3.killed)  >  10",
+      "sql_gated": "SELECT T1.id, T1.name\nFROM battle AS T1\nJOIN ship AS T2 ON T1.id = T2.lost_in_battle\nJOIN death AS T3 ON T2.id = T3.caused_by_ship_id\nGROUP BY T1.id\nHAVING SUM(T3.killed) > 10",
+      "sql_zs": "SELECT DISTINCT b.id, b.name\nFROM battle AS b\nJOIN ship AS s ON b.id = s.lost_in_battle\nJOIN death AS d ON s.id = d.caused_by_ship_id\nWHERE d.killed > 10",
+      "ex_ts_gated": 1,
+      "ex_ts_zs": 0
+     },
+     {
+      "qid": "spider_realistic:car_1:60",
+      "db_id": "car_1",
+      "question": "What is the full name of each car manufacturer, along with its id and how many models it produces?",
+      "gold": "SELECT T1.FullName ,  T1.Id ,  count(*) FROM CAR_MAKERS AS T1 JOIN MODEL_LIST AS T2 ON T1.Id  =  T2.Maker GROUP BY T1.Id;",
+      "sql_gated": "SELECT T2.FullName, T2.Id, COUNT(*)\nFROM model_list AS T1\nJOIN car_makers AS T2 ON T1.Maker = T2.Id\nGROUP BY T2.Id",
+      "sql_zs": "SELECT cm.FullName, cm.Id, COUNT(ml.ModelId) AS model_count\nFROM car_makers cm\nLEFT JOIN model_list ml ON cm.Id = ml.Maker\nGROUP BY cm.Id, cm.FullName",
+      "ex_ts_gated": 1,
+      "ex_ts_zs": 0
+     },
+     {
+      "qid": "spider_realistic:car_1:88",
+      "db_id": "car_1",
+      "question": "What is the average horsepower of the cars before 1980?",
+      "gold": "SELECT avg(horsepower) FROM CARS_DATA WHERE YEAR  <  1980;",
+      "sql_gated": "SELECT AVG(CAST(Horsepower AS REAL))\nFROM cars_data\nWHERE Year < 1980",
+      "sql_zs": "SELECT AVG(CAST(Horsepower AS INTEGER))\nFROM cars_data\nWHERE Year < 1980",
+      "ex_ts_gated": 1,
+      "ex_ts_zs": 0
+     }
+    ]
+   },
+   "zs_right_gated_wrong": {
+    "n_discordant": 24,
+    "cases": [
+     {
+      "qid": "spider_realistic:car_1:110",
+      "db_id": "car_1",
+      "question": "What are the different models wthat are lighter than 3500 but were not built by the Ford Motor Company?",
+      "gold": "SELECT DISTINCT T1.model FROM MODEL_LIST AS T1 JOIN CAR_NAMES AS T2 ON T1.Model  =  T2.Model JOIN CARS_DATA AS T3 ON T2.MakeId  =  T3.Id JOIN CAR_MAKERS AS T4 ON T1.Maker  =  T4.Id WHERE T3.weight  <  3500 AND T4.FullName != 'Ford Motor Company';",
+      "sql_gated": "SELECT DISTINCT m.Model\nFROM model_list m\nJOIN car_makers cm ON m.Maker = cm.Id\nJOIN cars_data cd ON cm.Id = cd.Id\nWHERE cd.Weight < 3500\n  AND cm.FullName != 'Ford Motor Company'",
+      "sql_zs": "SELECT DISTINCT m.Model\nFROM model_list m\nJOIN car_names cn ON m.Model = cn.Model\nJOIN cars_data cd ON cn.MakeId = cd.Id\nJOIN car_makers cm ON m.Maker = cm.Id\nWHERE cd.Weight < 3500\n  AND cm.FullName != 'Ford Motor Company'",
+      "ex_ts_gated": 0,
+      "ex_ts_zs": 1
+     },
+     {
+      "qid": "spider_realistic:car_1:65",
+      "db_id": "car_1",
+      "question": "Find the make and production time of the cars that were produced in the earliest ?",
+      "gold": "SELECT T2.Make ,  T1.Year FROM CARS_DATA AS T1 JOIN CAR_NAMES AS T2 ON T1.Id  =  T2.MakeId WHERE T1.Year  =  (SELECT min(YEAR) FROM CARS_DATA);",
+      "sql_gated": "SELECT cm.Maker, cd.Year\nFROM car_makers cm\nJOIN cars_data cd ON cm.Id = cd.Id\nORDER BY cd.Year ASC\nLIMIT 1",
+      "sql_zs": "SELECT cn.Make, cd.Year\nFROM car_names cn\nJOIN cars_data cd ON cn.MakeId = cd.Id\nWHERE cd.Year = (SELECT MIN(Year) FROM cars_data)",
+      "ex_ts_gated": 0,
+      "ex_ts_zs": 1
+     },
+     {
+      "qid": "spider_realistic:car_1:71",
+      "db_id": "car_1",
+      "question": "How many car models are produced by each manufacturer? List the count and the maker full name.",
+      "gold": "select count(*) ,  t2.fullname from model_list as t1 join car_makers as t2 on t1.maker  =  t2.id group by t2.id;",
+      "sql_gated": "SELECT COUNT(*) AS count, T2.FullName\nFROM model_list AS T1\nJOIN car_makers AS T2 ON T1.Maker = T2.Id\nGROUP BY T2.FullName",
+      "sql_zs": "SELECT COUNT(*) AS count, cm.FullName\nFROM car_makers cm\nJOIN model_list ml ON cm.Id = ml.Maker\nGROUP BY cm.Id, cm.FullName",
+      "ex_ts_gated": 0,
+      "ex_ts_zs": 1
+     }
+    ]
+   }
+  },
+  "XB2_plus": {
+   "gated_right_zs_wrong": {
+    "n_discordant": 29,
+    "cases": [
+     {
+      "qid": "spider_realistic:car_1:62",
+      "db_id": "car_1",
+      "question": "What is the model for the car that is lighter than the average?",
+      "gold": "SELECT T1.model FROM CAR_NAMES AS T1 JOIN CARS_DATA AS T2 ON T1.MakeId  =  T2.Id WHERE T2.Weight  <  (SELECT avg(Weight) FROM CARS_DATA)",
+      "sql_gated": "SELECT T2.Model\nFROM cars_data AS T1\nJOIN car_names AS T2 ON T1.Id = T2.MakeId\nWHERE T1.Weight < (SELECT AVG(Weight) FROM cars_data)",
+      "sql_zs": "SELECT T1.Model\nFROM model_list AS T1\nJOIN car_makers AS T2 ON T1.Maker = T2.Id\nJOIN car_names AS T3 ON T1.Model = T3.Model\nJOIN cars_data AS T4 ON T3.MakeId = T4.Id\nWHERE T4.Weight < (SELECT AVG(Weight) FROM cars_data)",
+      "ex_ts_gated": 1,
+      "ex_ts_zs": 0
+     },
+     {
+      "qid": "spider_realistic:car_1:76",
+      "db_id": "car_1",
+      "question": "How many car models are produced in the usa?",
+      "gold": "SELECT count(*) FROM MODEL_LIST AS T1 JOIN CAR_MAKERS AS T2 ON T1.Maker  =  T2.Id JOIN COUNTRIES AS T3 ON T2.Country  =  T3.CountryId WHERE T3.CountryName  =  'usa';",
+      "sql_gated": "SELECT COUNT(DISTINCT T1.Model)\nFROM model_list AS T1\nJOIN car_makers AS T2 ON T1.Maker = T2.Id\nJOIN countries AS T3 ON T2.Country = T3.CountryId\nWHERE T3.CountryName = 'usa'",
+      "sql_zs": "SELECT COUNT(*)\nFROM car_makers cm\nJOIN countries c ON cm.Country = c.CountryId\nWHERE c.CountryName = 'usa'",
+      "ex_ts_gated": 1,
+      "ex_ts_zs": 0
+     },
+     {
+      "qid": "spider_realistic:car_1:85",
+      "db_id": "car_1",
+      "question": "What are the names of all European countries with at least 3 manufacturers?",
+      "gold": "SELECT T1.CountryName FROM COUNTRIES AS T1 JOIN CONTINENTS AS T2 ON T1.Continent  =  T2.ContId JOIN CAR_MAKERS AS T3 ON T1.CountryId  =  T3.Country WHERE T2.Continent  =  'europe' GROUP BY T1.CountryName HAVING count(*)  >=  3;",
+      "sql_gated": "SELECT DISTINCT T1.CountryName\nFROM countries AS T1\nJOIN continents AS T2 ON T1.Continent = T2.ContId\nJOIN car_makers AS T3 ON T3.Country = T1.CountryId\nWHERE T2.Continent = 'europe'\nGROUP BY T1.CountryName\nHAVING COUNT(*) >= 3",
+      "sql_zs": "SELECT c.CountryName\nFROM countries c\nJOIN continents cont ON c.Continent = cont.ContId\nJOIN car_makers cm ON c.CountryId = cm.Country\nWHERE cont.Continent = 'europe'\nGROUP BY c.CountryId, c.CountryName\nHAVING COUNT(cm.Id) >= 3",
+      "ex_ts_gated": 1,
+      "ex_ts_zs": 0
+     }
+    ]
+   },
+   "zs_right_gated_wrong": {
+    "n_discordant": 15,
+    "cases": [
+     {
+      "qid": "spider_realistic:concert_singer:23",
+      "db_id": "concert_singer",
+      "question": "List singer names and number of concerts for each person.",
+      "gold": "SELECT T2.name ,  count(*) FROM singer_in_concert AS T1 JOIN singer AS T2 ON T1.singer_id  =  T2.singer_id GROUP BY T2.singer_id",
+      "sql_gated": "SELECT T1.Name, COUNT(*) \nFROM singer AS T1 \nJOIN singer_in_concert AS T2 ON T1.Singer_ID = T2.Singer_ID \nGROUP BY T1.Name",
+      "sql_zs": "SELECT s.Name, COUNT(*) AS number_of_concerts\nFROM singer s\nJOIN singer_in_concert sic ON s.Singer_ID = sic.Singer_ID\nGROUP BY s.Singer_ID, s.Name",
+      "ex_ts_gated": 0,
+      "ex_ts_zs": 1
+     },
+     {
+      "qid": "spider_realistic:concert_singer:31",
+      "db_id": "concert_singer",
+      "question": "Find the number of concerts happened in the stadium that can accommodate the most people.",
+      "gold": "select count(*) from concert where stadium_id = (select stadium_id from stadium order by capacity desc limit 1)",
+      "sql_gated": "SELECT COUNT(*) \nFROM concert \nJOIN stadium ON concert.Stadium_ID = stadium.Stadium_ID \nORDER BY stadium.Capacity DESC \nLIMIT 1",
+      "sql_zs": "SELECT COUNT(*) \nFROM concert \nWHERE Stadium_ID = (\n    SELECT Stadium_ID \n    FROM stadium \n    ORDER BY Capacity DESC \n    LIMIT 1\n)",
+      "ex_ts_gated": 0,
+      "ex_ts_zs": 1
+     },
+     {
+      "qid": "spider_realistic:concert_singer:32",
+      "db_id": "concert_singer",
+      "question": "What are the number of concerts that occurred in the stadium with space for the most people?",
+      "gold": "select count(*) from concert where stadium_id = (select stadium_id from stadium order by capacity desc limit 1)",
+      "sql_gated": "SELECT COUNT(*) \nFROM concert \nJOIN stadium ON concert.Stadium_ID = stadium.Stadium_ID \nORDER BY stadium.Capacity DESC \nLIMIT 1",
+      "sql_zs": "SELECT COUNT(*)\nFROM concert\nWHERE Stadium_ID = (\n    SELECT Stadium_ID\n    FROM stadium\n    ORDER BY Capacity DESC\n    LIMIT 1\n)",
+      "ex_ts_gated": 0,
+      "ex_ts_zs": 1
+     }
+    ]
+   }
+  },
+  "XB3_plus": {
+   "gated_right_fixed_wrong": {
+    "n_discordant": 1,
+    "cases": [
+     {
+      "qid": "spider_realistic:concert_singer:22",
+      "db_id": "concert_singer",
+      "question": "Show the name and theme for all concerts and the number of singers in each.",
+      "gold": "SELECT T2.concert_name ,  T2.theme ,  count(*) FROM singer_in_concert AS T1 JOIN concert AS T2 ON T1.concert_id  =  T2.concert_id GROUP BY T2.concert_id",
+      "sql_gated": "SELECT T1.concert_Name, T1.Theme, COUNT(*) \nFROM concert AS T1 \nJOIN singer_in_concert AS T2 ON T1.concert_ID = T2.concert_ID \nGROUP BY T1.concert_ID",
+      "sql_fixed": "SELECT T1.concert_Name, T1.Theme, COUNT(T2.Singer_ID) \nFROM concert AS T1 \nLEFT JOIN singer_in_concert AS T2 ON T1.concert_ID = T2.concert_ID \nGROUP BY T1.concert_ID",
+      "ex_ts_gated": 1,
+      "ex_ts_fixed": 0
+     }
+    ]
+   },
+   "fixed_right_gated_wrong": {
+    "n_discordant": 3,
+    "cases": [
+     {
+      "qid": "spider_realistic:concert_singer:31",
+      "db_id": "concert_singer",
+      "question": "Find the number of concerts happened in the stadium that can accommodate the most people.",
+      "gold": "select count(*) from concert where stadium_id = (select stadium_id from stadium order by capacity desc limit 1)",
+      "sql_gated": "SELECT COUNT(*) \nFROM concert \nJOIN stadium ON concert.Stadium_ID = stadium.Stadium_ID \nORDER BY stadium.Capacity DESC \nLIMIT 1",
+      "sql_fixed": "SELECT COUNT(*) \nFROM concert \nWHERE Stadium_ID = (SELECT Stadium_ID FROM stadium ORDER BY Capacity DESC LIMIT 1)",
+      "ex_ts_gated": 0,
+      "ex_ts_fixed": 1
+     },
+     {
+      "qid": "spider_realistic:world_1:342",
+      "db_id": "world_1",
+      "question": "Which region is Kabul located in?",
+      "gold": "SELECT Region FROM country AS T1 JOIN city AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Name  =  \"Kabul\"",
+      "sql_gated": "SELECT District FROM city WHERE Name = 'Kabul'",
+      "sql_fixed": "SELECT c.Region FROM city ci JOIN country c ON ci.CountryCode = c.Code WHERE ci.Name = 'Kabul'",
+      "ex_ts_gated": 0,
+      "ex_ts_fixed": 1
+     },
+     {
+      "qid": "spider_realistic:world_1:343",
+      "db_id": "world_1",
+      "question": "What region is Kabul in?",
+      "gold": "SELECT Region FROM country AS T1 JOIN city AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Name  =  \"Kabul\"",
+      "sql_gated": "SELECT District FROM city WHERE Name = 'Kabul'",
+      "sql_fixed": "SELECT T2.Region FROM city AS T1 JOIN country AS T2 ON T1.CountryCode = T2.Code WHERE T1.Name = 'Kabul'",
+      "ex_ts_gated": 0,
+      "ex_ts_fixed": 1
+     }
+    ]
+   }
+  }
+ },
+ "gate_fired": {
+  "plus": [],
+  "flash": [
+   {
+    "qid": "spider_realistic:car_1:109",
+    "actions": [
+     "revise",
+     "accept"
+    ],
+    "final_sql": "SELECT DISTINCT ml.Model\nFROM cars_data c\nJOIN car_names cn ON c.Id = cn.MakeId\nJOIN model_list ml ON cn.Model = ml.Model\nJOIN car_makers cm ON ml.Maker = cm.Id\nWHERE c.Weight < 3500\nAND cm.FullName != 'Ford Motor Company'",
+    "ex_ts": 1,
+    "exec_ok": true
+   },
+   {
+    "qid": "spider_realistic:car_1:59",
+    "actions": [
+     "revise",
+     "accept"
+    ],
+    "final_sql": "SELECT T2.FullName, T2.Id, count(*)\nFROM model_list AS T1\nJOIN car_makers AS T2 ON T1.Maker  =  T2.Id\nGROUP BY T2.FullName, T2.Id",
+    "ex_ts": 1,
+    "exec_ok": true
+   },
+   {
+    "qid": "spider_realistic:car_1:60",
+    "actions": [
+     "revise",
+     "accept"
+    ],
+    "final_sql": "SELECT T1.FullName, T1.Id, count(T3.ModelId)\nFROM car_makers AS T1\nJOIN model_list AS T3 ON T1.Id  =  T3.Maker\nGROUP BY T1.Id",
+    "ex_ts": 1,
+    "exec_ok": true
+   }
+  ],
+  "27b": [
+   {
+    "qid": "spider_realistic:wta_1:231",
+    "actions": [
+     "revise",
+     "revise_noop",
+     "stop_best"
+    ],
+    "final_sql": "SELECT first_name || ' ' || last_name AS full_name\nFROM players\nORDER BY birth_date DESC",
+    "ex_ts": 0,
+    "exec_ok": false
+   },
+   {
+    "qid": "spider_realistic:wta_1:234",
+    "actions": [
+     "revise",
+     "accept"
+    ],
+    "final_sql": "SELECT T2.first_name || ' ' || T2.last_name AS name, T1.winner_rank_points\nFROM matches AS T1\nJOIN players AS T2 ON T1.winner_id = T2.player_id\nGROUP BY T1.winner_id\nORDER BY COUNT(*) DESC\nLIMIT 1",
+    "ex_ts": 0,
+    "exec_ok": true
+   },
+   {
+    "qid": "spider_realistic:wta_1:239",
+    "actions": [
+     "revise",
+     "accept"
+    ],
+    "final_sql": "SELECT T1.winner_name, T1.loser_name FROM matches AS T1 ORDER BY T1.minutes DESC LIMIT 1",
+    "ex_ts": 1,
+    "exec_ok": true
+   }
+  ]
+ }
+}

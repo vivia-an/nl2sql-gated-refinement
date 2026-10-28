@@ -1,0 +1,51 @@
+item_id,primary_label,secondary_label,rationale,notes
+A126,L2,,,"Pred joins atom to bond through connected (OR on atom_id/atom_id2) while gold joins atom and bond directly on molecule_id; pred returns NULL (no rows)."
+A172,L6,,"Evidence says 'in 2014 refers to date >= 2014-01-01 AND date <= 2014-01-31' but the gold outer query has no date filter at all and only the average subquery uses SUBSTR(date,1,4)='2014'; pred implements the evidence window literally.",
+A137,L6,,"Evidence defines percentage = COUNT(ID where GOT>=60 AND Diagnosis='SLE') / COUNT(ID where GOT>=60) * 1.0 but gold uses COUNT(CASE ... ELSE 0 END)/COUNT(T1.ID) with integer division, a degenerate constant 1.",
+A218,L4,,,"Gold returns all 4 tied leagues via HAVING = MAX; pred uses ORDER BY ... LIMIT 1 (tie handling)."
+A059,L1,L8,,"Gold orders on results.rank = 1 while pred uses results.position = 1; pred also returns only driverRef (gold adds forename and surname)."
+A286,L3,,,"Pred adds extra predicate d.type = 'OWNER' that neither question nor evidence prescribes."
+A170,L3,,,"Pred compares q2 = '0:01:15' (wrong time format) and returns no rows; gold uses LIKE '1:15%'."
+A197,L2,L8,,"Pred filters on client district instead of joining disp/account for the account branch and omits account_id column; same 3 client ids."
+A190,L8,,,"Pred returns only time while gold also returns date; time value identical (13:00:00). Filter by circuit name vs race name gives the same row."
+A213,L6,,"Question asks for molecule 'TR346' but gold hard-codes T1.molecule_id = 'TR000'.",
+A165,L6,,"Evidence says normal anti-scl70 and examination done after 1997/1/1 refers to `Examination Date` > 1997-01-01 but gold filters Laboratory.Date > 1997-01-01 unquoted (arithmetic 1995) and never touches Examination.",Pred uses Examination Date as in the evidence and returns no rows.
+A066,L6,,"Evidence says 'atoms cannot bond with other atoms means atom_id NOT in connected table' but gold removes every element that has any connected atom (element-level NOT IN) instead of atom-level.",Pred implements atom-level NOT IN on atom_id and atom_id2.
+A045,L8,,,"Same values but column order Street City Zip State (question order) vs gold Street City State Zip (evidence order)."
+A289,L1,L3,,"Pred groups by expense_description instead of the type column (gold event.type) and adds e.approved = 'true'. Question wording 'type of expenses' is loose."
+A119,L4,,,"Gold lists Views per matching user; pred collapses with SUM(u.Views) into one row."
+A041,L6,L8,"Question asks to 'list the district of the and the state' plus the increment but gold selects only the percentage expression.","Pred outputs district, state and value with DISTINCT; evidence years 2015/2016 vs question 1995/1996 inconsistent."
+A157,L1,L8,,"Pred ERROR: no such column c.country (alias c undefined; should be ci). Pred also adds circuit name column that gold lacks."
+A022,L1,,,"Pred filters sets.id = 5 while gold filters set_translations.id = 5 (same-name column in other table); pred returns no rows."
+A207,L8,,,"Pred omits molecule_id column; label values identical."
+A123,L5,,"D1: evidence formula DIVIDE(COUNT(language='Japanese'), COUNT(language))*100 with expansion sets as the population (type='expansion' filter); D2: pred computes the share of expansion among Japanese translations (condition moved to numerator and Japanese to the WHERE denominator).",
+A288,L6,L8,"Evidence says 'rate = divide(COUNT(raceID where time is not null), COUNT(raceID))' with no multiplication but gold multiplies by 100.","Pred returns 0.2272 vs gold 22.72; scale only."
+A116,L1,L2,,"Pred takes Diagnosis from Examination (T1) rather than Patient and adds Examination to the join chain, giving 3 different rows."
+A177,L3,,,"Pred compares account.date < '970101' (wrong date format) and returns no rows; gold uses STRFTIME year."
+A239,L3,,,"Gold adds originalType IS NOT NULL; pred returns a NULL row."
+A186,L1,L8,,"Same pattern as the Canadian GP item: results.position = 1 vs gold results.rank = 1; only driverRef returned."
+A255,L6,L3,"Question says created on 7/19/2010 7:25:47 PM but gold filters CreationDate = '2010-07-19 19:16:14.0' (the evidence line itself says 7:16:14).",Question and evidence conflict; pred follows the question.
+A238,L6,,"Evidence says 'atoms cannot bond with other atoms means atom_id NOT in connected table' but gold removes every element that has any connected atom (element-level NOT IN).",Duplicate question of another item in the chunk.
+A237,L1,,,"Pred uses constructorResults while gold uses constructorStandings."
+A016,L1,L3,,"Pred uses foreign_data.text with equality while gold uses flavorText LIKE (case-insensitive); no rows returned."
+A226,L6,,"Question note says cards are linked to language through table 'set' but gold compares set_translations.id IN (SELECT id FROM cards ...), joining unrelated ids.",Pred joins through setCode and returns 10 languages.
+A018,L1,,,"Pred uses results.fastestLapTime while evidence says lap record refers to time (lapTimes.time); no rows."
+A039,L8,,,"Question asks how many and list ids; gold lists ids, pred returns count plus GROUP_CONCAT in one row."
+A209,L1,L8,,"Pred orders by milliseconds while evidence says fastest refers to Min(time); pred also adds race name column."
+A080,L4,,,"Connected stores both directions so pred returns 2 rows (reverse pair) vs gold single row; no DISTINCT or direction handling."
+A273,L1,,,"Pred counts rows in results with points = max per race (ERROR: timeout) while gold sums driverStandings.wins."
+A154,L1,,,"Pred ERROR: no such column s.School Name (alias s undefined)."
+A091,L4,,,"Pred groups by player_name instead of id and uses AVG(heading_accuracy) vs SUM/COUNT(player_fifa_api_id)."
+A269,L7,L1,"'German type of the card' can mean the German-language type text (foreign_data.type as in pred) or the card type for a card with a German entry (cards.type as in gold); evidence only fixes language = 'German'.",
+A264,L6,,"Question says 'in year 2021' but gold filters STRFTIME('%Y', T4.date) = '1998'.","Pred follows the question and returns NULL."
+A132,L1,,,"Pred orders by lapTimes.milliseconds while evidence says fastest lap refers to MIN(time)."
+A162,L1,,,"Pred takes School Name and county from frpm rather than satscores sname/cname; no rows (cause of empty result not visible)."
+A020,L3,,,"Pred uses date between '930101' and '931231' (wrong date format) and returns no rows."
+A061,L6,,"Question asks for top five best selling products but gold orders individual transaction rows by Amount with no grouping, returning repeated 'Nafta' rows.",Pred groups by product description and sums Amount.
+A095,L6,L1,"Evidence says powerful foils refers to cardKingdomFoilId paired with cardKingdomId but gold tests cardKingdomId IS NULL OR cardKingdomId IS NULL, ignoring cardKingdomFoilId.","Pred also selects name instead of id."
+A293,L6,,"Evidence says 'overall_rating >= 60 AND overall_rating < 65' but gold uses BETWEEN 60 AND 65, which includes 65.",
+A122,L1,,,"Pred selects frpm.School Code instead of CDSCode."
+A248,L1,L4,,"Pred takes Diagnosis from Examination joined with Laboratory instead of Patient and adds DISTINCT."
+A007,L6,,"Evidence says on 2011/2/22 refers to date = '2012-02-22' but gold uses SUBSTR(date,1,10) = '2011-02-22'.","Pred follows the evidence literal and returns no rows; question says 2011/2/22."
+A246,L6,,"Evidence says percentage = DIVIDE(SUM(bond_type = '#') * 100, COUNT(bond_id)) where label = '+' but gold computes the share of carcinogenic molecules among molecules with triple bonds.",Pred follows the evidence formula.
+A130,L3,,,"Pred's country exclusion list uses values such as South Korea United Arab Emirates Great Britain that do not match the DB spelling in gold list (Korea UAE UK); counts 4 vs 2."

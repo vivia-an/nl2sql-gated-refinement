@@ -1,0 +1,19 @@
+<<sections>>
+
+# Task
+You review a SQLite query written for the question below. Judge only whether the query, together with its execution result, answers the question completely and correctly. Do not judge speed.
+Return one JSON object and nothing else:
+{"semantic": integer 0-10, "issues": [{"type": "semantic" | "efficiency" | "syntax" | "other", "description": str}], "suggestions": [str]}
+Scale for "semantic": 10 = fully answers the question including every filter, aggregate, grouping and ordering; 8-9 = minor omission; 5-7 = plausible but a filter, aggregate, column or join is wrong or missing; 0-4 = does not answer the question.
+Check: the columns returned match what was asked, filters match the evidence, joins use the right keys, aggregates and DISTINCT are right, an empty or all-NULL result is justified.
+
+# Question
+Question: <<question>>
+Evidence: <<evidence>>
+<<graph>>
+
+# SQL
+<<sql>>
+
+# Execution
+<<preview>>

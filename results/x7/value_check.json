@@ -1,0 +1,2426 @@
+{
+ "gated_HR": {
+  "n_wrong_in_classes": 322,
+  "n_questions": 1101,
+  "levels": {
+   "approx": 30,
+   "absent": 38,
+   "none_missing": 174,
+   "verbatim_only": 23,
+   "no_gold_literal": 57
+  },
+  "levels_frac_of_wrong": {
+   "approx": 0.09316770186335403,
+   "absent": 0.11801242236024845,
+   "none_missing": 0.5403726708074534,
+   "verbatim_only": 0.07142857142857142,
+   "no_gold_literal": 0.17701863354037267
+  },
+  "missing_literal_text_classes": {
+   "case": 16,
+   "absent": 67,
+   "verbatim": 26,
+   "stem": 7,
+   "format": 7,
+   "fuzzy": 2
+  },
+  "pure_value_error": 56,
+  "upper_bound_value_grounding": {
+   "n": 68,
+   "pp_of_all_questions": 6.176203451407811,
+   "retrievable_by_lookup_n": 40,
+   "retrievable_by_lookup_pp": 3.6330608537693005,
+   "pure_value_error_and_nonverbatim_n": 33,
+   "verbatim_only_n": 23
+  },
+  "absent_literals": {
+   "n": 67,
+   "with_column_cardinality": 20,
+   "card_le_8": 7,
+   "card_le_20": 7,
+   "card_le_50": 10,
+   "card_gt_50": 10
+  },
+  "split": "bird_train_HR",
+  "run": "<NL2SQL_ROOT>/runs/X5/1b-hr-gated",
+  "n_rows_total": 1101,
+  "n_wrong_all": 372,
+  "classes": [
+   "value_mismatch",
+   "row_subset",
+   "row_superset",
+   "empty_result"
+  ],
+  "examples": {
+   "approx": [
+    {
+     "qid": "bird_train:address:5085",
+     "question": "Among all the residential areas in Delaware, how many of them implement daylight saving?",
+     "evidence": "\"Delaware\" is a county; implement daylight savings refers to daylight_saving = 'Yes'",
+     "gold_literals": [
+      [
+       "DELAWARE",
+       "case",
+       false
+      ],
+      [
+       "Yes",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "DE",
+      "Yes"
+     ],
+     "gold_columns": [
+      "country.county",
+      "zip_data.daylight_savings"
+     ],
+     "pred_columns": [
+      "zip_data.daylight_savings",
+      "zip_data.state"
+     ]
+    },
+    {
+     "qid": "bird_train:address:5209",
+     "question": "List down the names of the cities belonging to Noble, Oklahoma.",
+     "evidence": "the county of Noble is located in the state of Oklahoma;",
+     "gold_literals": [
+      [
+       "Oklahoma",
+       "verbatim",
+       true
+      ],
+      [
+       "NOBLE",
+       "case",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "Noble",
+      "Oklahoma"
+     ],
+     "gold_columns": [
+      "country.county",
+      "state.name"
+     ],
+     "pred_columns": [
+      "country.county",
+      "state.name"
+     ]
+    },
+    {
+     "qid": "bird_train:address:5212",
+     "question": "What is the elevation of the city belonging to Hampden, Massachusetts?",
+     "evidence": "the county of Hampden is located in the state of Massachusetts.",
+     "gold_literals": [
+      [
+       "Massachusetts",
+       "verbatim",
+       true
+      ],
+      [
+       "HAMPDEN",
+       "case",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "Hampden",
+      "Massachusetts"
+     ],
+     "gold_columns": [
+      "country.county",
+      "state.name"
+     ],
+     "pred_columns": [
+      "country.county",
+      "state.name"
+     ]
+    },
+    {
+     "qid": "bird_train:address:5225",
+     "question": "Provide the zip codes and area codes of the postal points with the community post office type at the elevation above 6000.",
+     "evidence": "community post office type refers to type = 'Community Post Office'; elevation above 6000 refers to elevation > 6000;",
+     "gold_literals": [
+      [
+       "Community Post Office ",
+       "case",
+       false
+      ],
+      [
+       "6000",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "Community Post Office",
+      "6000"
+     ],
+     "gold_columns": [
+      "zip_data.type"
+     ],
+     "pred_columns": [
+      "zip_data.type"
+     ]
+    }
+   ],
+   "absent": [
+    {
+     "qid": "bird_train:address:5087",
+     "question": "In which county is the residential area with the highest average income per household located?",
+     "evidence": "highest average income per household refers to Max(avg_income_per_household)",
+     "gold_literals": [
+      [
+       "ARECIBO",
+       "absent",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "1"
+     ],
+     "gold_columns": [
+      "country.county"
+     ],
+     "pred_columns": []
+    },
+    {
+     "qid": "bird_train:beer_factory:5257",
+     "question": "What is the phone number of the customer who owns the credit card of number 6011179359005380?",
+     "evidence": "FALSE;",
+     "gold_literals": [
+      [
+       "6011179359005382",
+       "absent",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "6011179359005380"
+     ],
+     "gold_columns": [
+      "transaction.CreditCardNumber"
+     ],
+     "pred_columns": [
+      "transaction.CreditCardNumber"
+     ]
+    },
+    {
+     "qid": "bird_train:beer_factory:5305",
+     "question": "In the reviews of September 2014. Which brand of beers obtained the highest star ratings?",
+     "evidence": "September 2014 refers to ReviewDate LIKE '2014-09%'; brand of beers refers to BrandName; highest star ratings refers to MAX(StarRating);",
+     "gold_literals": [
+      [
+       "5",
+       "absent",
+       false
+      ],
+      [
+       "2014-09-01",
+       "absent",
+       false
+      ],
+      [
+       "2014-09-30",
+       "absent",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "1",
+      "2014-09"
+     ],
+     "gold_columns": [
+      "rootbeerreview.StarRating"
+     ],
+     "pred_columns": [
+      "rootbeerreview.ReviewDate"
+     ]
+    },
+    {
+     "qid": "bird_train:beer_factory:5320",
+     "question": "How many brands of bottle root beer were purchased between 4/3/2015 and 10/26/2015?",
+     "evidence": "bottle root beer refers to ContainerType = 'Bottle'; purchased between 4/3/2015 and 10/26/2015 refers to PurchaseDate BETWEEN '2015-04-23' AND '2015-10-26';",
+     "gold_literals": [
+      [
+       "Bottle",
+       "verbatim",
+       true
+      ],
+      [
+       "2015-04-03",
+       "absent",
+       false
+      ],
+      [
+       "2015-10-26",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "Bottle",
+      "2015-04-23",
+      "2015-10-26"
+     ],
+     "gold_columns": [
+      "rootbeer.ContainerType"
+     ],
+     "pred_columns": [
+      "rootbeer.ContainerType"
+     ]
+    }
+   ],
+   "none_missing": [
+    {
+     "qid": "bird_train:address:5098",
+     "question": "How many counties are there in Alabama?",
+     "evidence": "\"Alabama\" is the name",
+     "gold_literals": [
+      [
+       "Alabama",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "Alabama"
+     ],
+     "gold_columns": [
+      "state.name"
+     ],
+     "pred_columns": [
+      "state.name"
+     ]
+    },
+    {
+     "qid": "bird_train:address:5107",
+     "question": "In the state where Lisa Murkowski is the representative, how many cities have zero employees?",
+     "evidence": "zero employee refers to employees = 0",
+     "gold_literals": [
+      [
+       "Murkowski",
+       "verbatim",
+       true
+      ],
+      [
+       "Lisa",
+       "verbatim",
+       true
+      ],
+      [
+       "0",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "Lisa",
+      "Murkowski",
+      "0"
+     ],
+     "gold_columns": [
+      "congress.first_name",
+      "congress.last_name",
+      "zip_data.employees"
+     ],
+     "pred_columns": [
+      "congress.first_name",
+      "congress.last_name",
+      "zip_data.employees"
+     ]
+    },
+    {
+     "qid": "bird_train:address:5110",
+     "question": "What party does the area with the zip code 91701 belong to?",
+     "evidence": "",
+     "gold_literals": [
+      [
+       "91701",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "91701"
+     ],
+     "gold_columns": [
+      "zip_data.zip_code"
+     ],
+     "pred_columns": [
+      "zip_congress.zip_code"
+     ]
+    },
+    {
+     "qid": "bird_train:address:5112",
+     "question": "Show the alias for the county at coordinate (18.090875, -66.867756).",
+     "evidence": "coordinates refers to latitude, longitude; latitude = '18.090875; longitude = '-66.867756'",
+     "gold_literals": [
+      [
+       "18.090875",
+       "verbatim",
+       true
+      ],
+      [
+       "66.867756",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "18.090875",
+      "66.867756"
+     ],
+     "gold_columns": [
+      "zip_data.latitude"
+     ],
+     "pred_columns": [
+      "zip_data.latitude"
+     ]
+    }
+   ],
+   "verbatim_only": [
+    {
+     "qid": "bird_train:address:5101",
+     "question": "In California, how many delivery receptacles are there in the community post office that has the highest number of delivery receptacles?",
+     "evidence": "in California refers to name = 'California' and state = 'CA'; 'Community Post Office' is the Type",
+     "gold_literals": [
+      [
+       "CA",
+       "verbatim",
+       false
+      ],
+      [
+       "Community Post Office",
+       "verbatim",
+       true
+      ],
+      [
+       "California",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "1",
+      "California",
+      "Community Post Office"
+     ],
+     "gold_columns": [
+      "state.abbreviation",
+      "state.name",
+      "zip_data.state",
+      "zip_data.type"
+     ],
+     "pred_columns": [
+      "state.name",
+      "zip_data.type"
+     ]
+    },
+    {
+     "qid": "bird_train:address:5114",
+     "question": "For the county represented by Thompson Bennie G, how many bad aliases does it have?",
+     "evidence": "",
+     "gold_literals": [
+      [
+       "Thompson",
+       "verbatim",
+       true
+      ],
+      [
+       "Bennie G",
+       "verbatim",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "Bennie",
+      "Thompson"
+     ],
+     "gold_columns": [
+      "congress.first_name",
+      "congress.last_name"
+     ],
+     "pred_columns": [
+      "congress.first_name",
+      "congress.last_name"
+     ]
+    },
+    {
+     "qid": "bird_train:address:5118",
+     "question": "How many counties are there in Virginia State?",
+     "evidence": "\"Virginia\" is the state",
+     "gold_literals": [
+      [
+       "Virginia",
+       "verbatim",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "VA"
+     ],
+     "gold_columns": [
+      "state.name"
+     ],
+     "pred_columns": [
+      "zip_data.state"
+     ]
+    },
+    {
+     "qid": "bird_train:address:5127",
+     "question": "What is the zip code of the district represented by Steven A King?",
+     "evidence": "",
+     "gold_literals": [
+      [
+       "King",
+       "verbatim",
+       true
+      ],
+      [
+       "Steven A",
+       "verbatim",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "Steven",
+      "King"
+     ],
+     "gold_columns": [
+      "congress.first_name",
+      "congress.last_name"
+     ],
+     "pred_columns": [
+      "congress.first_name",
+      "congress.last_name"
+     ]
+    }
+   ],
+   "no_gold_literal": [
+    {
+     "qid": "bird_train:address:5102",
+     "question": "In which county can you find the city with the highest number of females?",
+     "evidence": "highest number of females refers to Max(female_population)",
+     "gold_literals": [],
+     "pred_literals": [
+      "1"
+     ],
+     "gold_columns": [],
+     "pred_columns": []
+    },
+    {
+     "qid": "bird_train:address:5106",
+     "question": "How many representatives are there in the state with the highest monthly benefit payments for retired workers?",
+     "evidence": "state with highest monthly benefits payment for retired workers refers to Max(monthly_benefits_retired_workers)",
+     "gold_literals": [],
+     "pred_literals": [
+      "1"
+     ],
+     "gold_columns": [],
+     "pred_columns": []
+    },
+    {
+     "qid": "bird_train:address:5113",
+     "question": "For the city with the most elders, what's its area code?",
+     "evidence": "city with most elders refers to Max(over_65)",
+     "gold_literals": [],
+     "pred_literals": [
+      "1"
+     ],
+     "gold_columns": [],
+     "pred_columns": []
+    },
+    {
+     "qid": "bird_train:address:5168",
+     "question": "Provide the zip code, city, and congress representative's full names of the area which has highest population in 2020.",
+     "evidence": "representative's full names refer to first_name, last_name; area which has highest population in 2020 refers to MAX(population_2020);",
+     "gold_literals": [],
+     "pred_literals": [
+      "1"
+     ],
+     "gold_columns": [],
+     "pred_columns": []
+    }
+   ]
+  }
+ },
+ "gated_HT": {
+  "n_wrong_in_classes": 77,
+  "n_questions": 300,
+  "levels": {
+   "none_missing": 53,
+   "absent": 8,
+   "no_gold_literal": 8,
+   "verbatim_only": 4,
+   "approx": 4
+  },
+  "levels_frac_of_wrong": {
+   "none_missing": 0.6883116883116883,
+   "absent": 0.1038961038961039,
+   "no_gold_literal": 0.1038961038961039,
+   "verbatim_only": 0.05194805194805195,
+   "approx": 0.05194805194805195
+  },
+  "missing_literal_text_classes": {
+   "absent": 13,
+   "verbatim": 8,
+   "case": 2,
+   "fuzzy": 1,
+   "stem": 1
+  },
+  "pure_value_error": 12,
+  "upper_bound_value_grounding": {
+   "n": 12,
+   "pp_of_all_questions": 4.0,
+   "retrievable_by_lookup_n": 9,
+   "retrievable_by_lookup_pp": 3.0,
+   "pure_value_error_and_nonverbatim_n": 7,
+   "verbatim_only_n": 4
+  },
+  "absent_literals": {
+   "n": 13,
+   "with_column_cardinality": 9,
+   "card_le_8": 4,
+   "card_le_20": 5,
+   "card_le_50": 6,
+   "card_gt_50": 3
+  },
+  "split": "bird_train_HT",
+  "run": "<NL2SQL_ROOT>/runs/X5/1b-ht-gated",
+  "n_rows_total": 300,
+  "n_wrong_all": 95,
+  "classes": [
+   "value_mismatch",
+   "row_subset",
+   "row_superset",
+   "empty_result"
+  ],
+  "examples": {
+   "none_missing": [
+    {
+     "qid": "bird_train:law_episode:1272",
+     "question": "How many people have won at least 3 awards?",
+     "evidence": "won refers to result = 'Winner'; at least 3 awards refers to count(result) > 3",
+     "gold_literals": [
+      [
+       "Winner",
+       "verbatim",
+       true
+      ],
+      [
+       "3",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "Winner",
+      "3"
+     ],
+     "gold_columns": [
+      "Award.result"
+     ],
+     "pred_columns": [
+      "Award.result"
+     ]
+    },
+    {
+     "qid": "bird_train:law_episode:1283",
+     "question": "How many episodes are there in the 9th season of Law and Order? Calculate the average number of casts per season of the said series.",
+     "evidence": "the 9th season refers to season = 9; Law and Order refers to series = 'Law and Order'; cast refers to category = 'Cast'; average number of casts per season = divide(count(person_id), count(episode_id))",
+     "gold_literals": [
+      [
+       "Cast",
+       "verbatim",
+       true
+      ],
+      [
+       "Law and Order",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "Law and Order",
+      "9",
+      "Cast"
+     ],
+     "gold_columns": [
+      "Credit.category",
+      "Episode.series"
+     ],
+     "pred_columns": [
+      "Credit.category",
+      "Episode.season",
+      "Episode.series"
+     ]
+    },
+    {
+     "qid": "bird_train:law_episode:1330",
+     "question": "What is the ratio of American casts on episode 2 of the series? Please include their roles.",
+     "evidence": "American refers to birth_country = 'USA'; cast refers to category = 'Cast'; ratio = divide(count(person_id where birth_country = 'USA'), total(category)) where category = 'Cast'",
+     "gold_literals": [
+      [
+       "2",
+       "verbatim",
+       true
+      ],
+      [
+       "USA",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "USA",
+      "1",
+      "0",
+      "2",
+      "Cast"
+     ],
+     "gold_columns": [
+      "Episode.episode",
+      "Person.birth_country"
+     ],
+     "pred_columns": [
+      "Credit.category",
+      "Episode.episode"
+     ]
+    },
+    {
+     "qid": "bird_train:law_episode:1336",
+     "question": "List out director names that received an award along with the episode number.",
+     "evidence": "director refers to role = 'director'; received an award refers to result = 'Winner'; episode number refers to episode",
+     "gold_literals": [
+      [
+       "director",
+       "verbatim",
+       true
+      ],
+      [
+       "Winner",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "director",
+      "Winner"
+     ],
+     "gold_columns": [
+      "Award.result",
+      "Award.role"
+     ],
+     "pred_columns": [
+      "Award.result",
+      "Award.role"
+     ]
+    }
+   ],
+   "absent": [
+    {
+     "qid": "bird_train:law_episode:1279",
+     "question": "What is the percentage of people who gave the \"True North\" episode a 1-star rating?",
+     "evidence": "the \"True North\" episode refers to title = 'True North'; 1-star refers to stars = 1; percentage = divide(count(episode_id where stars = 1), count(episode_id)) * 100% where title = 'True North'",
+     "gold_literals": [
+      [
+       "True North",
+       "verbatim",
+       true
+      ],
+      [
+       "tt0629477",
+       "absent",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "1",
+      "0",
+      "100",
+      "True North"
+     ],
+     "gold_columns": [
+      "Episode.episode_id",
+      "Episode.title"
+     ],
+     "pred_columns": [
+      "Episode.title"
+     ]
+    },
+    {
+     "qid": "bird_train:law_episode:1324",
+     "question": "On what episode did Julia Roberts win the \"Outstanding Guest Actress in a Drama Series\" award during the 1999 Primetime Emmy Awards? Tell me her role.",
+     "evidence": "win refers to result = 'Winner'; the \"Outstanding Guest Actress in a Drama Series\" award refers to award = 'Outstanding Guest Actress in a Drama Series'; the 1999 refers to year = 1999; Primetime Emmy Awards refers to organization = 'Primetime Emmy Awards'",
+     "gold_literals": [
+      [
+       "1999",
+       "verbatim",
+       true
+      ],
+      [
+       "Outstanding Guest Actress in a Drama Series",
+       "verbatim",
+       true
+      ],
+      [
+       "Primetime Emmy Awards",
+       "verbatim",
+       true
+      ],
+      [
+       "Julia Roberts",
+       "verbatim",
+       true
+      ],
+      [
+       "Nominee",
+       "absent",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "Julia Roberts",
+      "Winner",
+      "Outstanding Guest Actress in a Drama Series",
+      "1999",
+      "Primetime Emmy Awards"
+     ],
+     "gold_columns": [
+      "Award.award",
+      "Award.organization",
+      "Award.result",
+      "Award.year",
+      "Person.name"
+     ],
+     "pred_columns": [
+      "Award.award",
+      "Award.organization",
+      "Award.result",
+      "Award.year",
+      "Person.name"
+     ]
+    },
+    {
+     "qid": "bird_train:law_episode:1347",
+     "question": "Who was the nominee playing the role of Katrina Ludlow in the Law & Order series?",
+     "evidence": "nominee refers to result = 'Nominee'; the role of Katrina Ludlow refers to role = 'Katrina Ludlow'",
+     "gold_literals": [
+      [
+       "Nominee",
+       "verbatim",
+       true
+      ],
+      [
+       "Katrina Ludlow",
+       "verbatim",
+       true
+      ],
+      [
+       "Law and Order",
+       "absent",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "Nominee",
+      "Katrina Ludlow",
+      "Law & Order"
+     ],
+     "gold_columns": [
+      "Award.result",
+      "Award.role",
+      "Award.series"
+     ],
+     "pred_columns": [
+      "Award.result",
+      "Award.role",
+      "Award.series"
+     ]
+    },
+    {
+     "qid": "bird_train:retail_complains:379",
+     "question": "What is the percentage of female clients in the Middle Atlantic?",
+     "evidence": "female refers to sex = 'Female'; the Middle Atlantic refers to division = 'Middle Atlantic'; percentage = divide(count(client_id where sex = 'Female' and division = 'Middle Atlantic') , count(client_id where division = 'Middle Atlantic')) * 100%",
+     "gold_literals": [
+      [
+       "South Atlantic",
+       "absent",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "Female",
+      "1",
+      "0",
+      "100",
+      "Middle Atlantic"
+     ],
+     "gold_columns": [
+      "district.division"
+     ],
+     "pred_columns": [
+      "district.division"
+     ]
+    }
+   ],
+   "no_gold_literal": [
+    {
+     "qid": "bird_train:law_episode:1296",
+     "question": "Who is the person who appeared the most in the series? Calculate in percentage how many times he or she appeared.",
+     "evidence": "who refers to name; appear the most refers to max(count(person_id)); percentage = divide(count(person_id where max(count(person_id))), count(person_id)) * 100%",
+     "gold_literals": [],
+     "pred_literals": [
+      "100",
+      "1"
+     ],
+     "gold_columns": [],
+     "pred_columns": []
+    },
+    {
+     "qid": "bird_train:law_episode:1343",
+     "question": "What is the average star with highest percentage for episodes that have received award?",
+     "evidence": "received award refers to result = 'Winner'; the highest percentage refers to max(percent); average star = divide(sum(stars), count(episode_id))",
+     "gold_literals": [],
+     "pred_literals": [
+      "1",
+      "Winner"
+     ],
+     "gold_columns": [],
+     "pred_columns": [
+      "Award.result"
+     ]
+    },
+    {
+     "qid": "bird_train:retail_complains:285",
+     "question": "What percentage of consumers from Houston disputed complaints?",
+     "evidence": "percentage = MULTIPLY(DIVIDE(SUM(\"Consumer disputed?\" = 'Yes' AND city = 'Houston'), COUNT(client_id)), 1.0); Houston refers to city = 'Houston';",
+     "gold_literals": [],
+     "pred_literals": [
+      "Yes",
+      "1",
+      "0",
+      "100",
+      "Houston"
+     ],
+     "gold_columns": [],
+     "pred_columns": [
+      "client.city"
+     ]
+    },
+    {
+     "qid": "bird_train:retail_complains:341",
+     "question": "What percentage of complaints are from the elderly?",
+     "evidence": "elder refers to age < = 65; percentage refers to divide(sum(age < = 65) , count(client_id)) * 100%",
+     "gold_literals": [],
+     "pred_literals": [
+      "65",
+      "1.0",
+      "0",
+      "100"
+     ],
+     "gold_columns": [],
+     "pred_columns": []
+    }
+   ],
+   "verbatim_only": [
+    {
+     "qid": "bird_train:law_episode:1298",
+     "question": "How many episodes have not won any Law & Order series awards?",
+     "evidence": "have not won any award refers to Result = 'Nominee'",
+     "gold_literals": [
+      [
+       "Nominee",
+       "verbatim",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "Law and Order",
+      "Winner"
+     ],
+     "gold_columns": [
+      "Award.result"
+     ],
+     "pred_columns": [
+      "Award.result",
+      "Episode.series"
+     ]
+    },
+    {
+     "qid": "bird_train:retail_complains:383",
+     "question": "Which city in West North Central has the highest number of customers over the age of 60?",
+     "evidence": "in North Central refers to Region = 'North Central'; highest number of customers refers to max(count(client_id)); over the age of 60 refers to age > 60",
+     "gold_literals": [
+      [
+       "West North Central",
+       "verbatim",
+       false
+      ],
+      [
+       "60",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "1",
+      "North Central",
+      "60"
+     ],
+     "gold_columns": [
+      "district.division"
+     ],
+     "pred_columns": [
+      "state.Region"
+     ]
+    },
+    {
+     "qid": "bird_train:world_development_indicators:2134",
+     "question": "How many annual indicators use the Sum aggregation method from 2001 to 2003?",
+     "evidence": "Annual refers to Periodicity; from 2001 to 2003 implies Year = 'YR2001', Year = 'YR2002' , Year = 'YR2003';",
+     "gold_literals": [
+      [
+       "YR2001",
+       "verbatim",
+       false
+      ],
+      [
+       "YR2002",
+       "verbatim",
+       false
+      ],
+      [
+       "YR2003",
+       "verbatim",
+       false
+      ],
+      [
+       "Annual",
+       "verbatim",
+       true
+      ],
+      [
+       "Sum",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "Annual",
+      "Sum",
+      "2001",
+      "2003"
+     ],
+     "gold_columns": [
+      "Footnotes.Year",
+      "Series.AggregationMethod",
+      "Series.Periodicity"
+     ],
+     "pred_columns": [
+      "Series.AggregationMethod",
+      "Series.Periodicity"
+     ]
+    },
+    {
+     "qid": "bird_train:world_development_indicators:2160",
+     "question": "Mention the series code of countries using pound sterling as their currency unit. Which country belongs to high income group among them.",
+     "evidence": "",
+     "gold_literals": [
+      [
+       "Pound sterling",
+       "case",
+       true
+      ],
+      [
+       "high income",
+       "verbatim",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "Pound sterling",
+      "High income"
+     ],
+     "gold_columns": [
+      "Country.CurrencyUnit",
+      "Country.IncomeGroup"
+     ],
+     "pred_columns": [
+      "Country.CurrencyUnit",
+      "Country.IncomeGroup"
+     ]
+    }
+   ],
+   "approx": [
+    {
+     "qid": "bird_train:retail_complains:328",
+     "question": "How many of the complaints are longer than 15 minutes?",
+     "evidence": "longer than 15 minutes refers to ser_time > '00:15:00'",
+     "gold_literals": [
+      [
+       "M",
+       "case",
+       false
+      ],
+      [
+       "15",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "00:15:00"
+     ],
+     "gold_columns": [],
+     "pred_columns": []
+    },
+    {
+     "qid": "bird_train:world_development_indicators:2155",
+     "question": "Mention the series code of countries using Australian dollar as their currency unit. Which country belongs to middle income group among them.",
+     "evidence": "middle income group refers to IncomeGroup = 'Low middle income';",
+     "gold_literals": [
+      [
+       "Australian dollar",
+       "verbatim",
+       true
+      ],
+      [
+       "Lower middle income",
+       "fuzzy",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "Australian dollar",
+      "Low middle income"
+     ],
+     "gold_columns": [
+      "Country.CurrencyUnit",
+      "Country.IncomeGroup"
+     ],
+     "pred_columns": [
+      "Country.CurrencyUnit",
+      "Country.IncomeGroup"
+     ]
+    },
+    {
+     "qid": "bird_train:world_development_indicators:2179",
+     "question": "How much is the total urban population of middle income countries in 1960?",
+     "evidence": "IncomeGroup = 'Middle income'; Year = 1960; urban population refers to IndicatorName;",
+     "gold_literals": [
+      [
+       "middle income",
+       "verbatim",
+       false
+      ],
+      [
+       "1960",
+       "verbatim",
+       true
+      ],
+      [
+       "Urban population",
+       "case",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "Middle income",
+      "1960",
+      "urban population"
+     ],
+     "gold_columns": [
+      "Country.IncomeGroup",
+      "Indicators.IndicatorName",
+      "Indicators.Year"
+     ],
+     "pred_columns": [
+      "Country.IncomeGroup",
+      "Indicators.IndicatorName",
+      "Indicators.Year"
+     ]
+    },
+    {
+     "qid": "bird_train:world_development_indicators:2181",
+     "question": "How many countries using the 1993 System of National Accounts methodology?",
+     "evidence": "use the 1993 System of National Accounts methodology refers to SystemOfNationalAccounts = '1993 System of National Accounts methodology.'",
+     "gold_literals": [
+      [
+       "Country uses the 1993 System of National Accounts methodology.",
+       "stem",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "1993 System of National Accounts methodology."
+     ],
+     "gold_columns": [
+      "Country.SystemOfNationalAccounts"
+     ],
+     "pred_columns": [
+      "Country.SystemOfNationalAccounts"
+     ]
+    }
+   ]
+  }
+ },
+ "p0_HR": {
+  "n_wrong_in_classes": 306,
+  "n_questions": 1101,
+  "levels": {
+   "approx": 29,
+   "absent": 39,
+   "none_missing": 164,
+   "verbatim_only": 21,
+   "no_gold_literal": 53
+  },
+  "levels_frac_of_wrong": {
+   "approx": 0.09477124183006536,
+   "absent": 0.12745098039215685,
+   "none_missing": 0.5359477124183006,
+   "verbatim_only": 0.06862745098039216,
+   "no_gold_literal": 0.17320261437908496
+  },
+  "missing_literal_text_classes": {
+   "case": 16,
+   "absent": 67,
+   "verbatim": 25,
+   "stem": 6,
+   "format": 7,
+   "fuzzy": 2
+  },
+  "pure_value_error": 53,
+  "upper_bound_value_grounding": {
+   "n": 68,
+   "pp_of_all_questions": 6.176203451407811,
+   "retrievable_by_lookup_n": 39,
+   "retrievable_by_lookup_pp": 3.542234332425068,
+   "pure_value_error_and_nonverbatim_n": 34,
+   "verbatim_only_n": 21
+  },
+  "absent_literals": {
+   "n": 67,
+   "with_column_cardinality": 20,
+   "card_le_8": 7,
+   "card_le_20": 7,
+   "card_le_50": 10,
+   "card_gt_50": 10
+  },
+  "split": "bird_train_HR",
+  "run": "<NL2SQL_ROOT>/runs/X5/1b-hr-quote",
+  "n_rows_total": 1101,
+  "n_wrong_all": 366,
+  "classes": [
+   "value_mismatch",
+   "row_subset",
+   "row_superset",
+   "empty_result"
+  ],
+  "examples": {
+   "approx": [
+    {
+     "qid": "bird_train:address:5085",
+     "question": "Among all the residential areas in Delaware, how many of them implement daylight saving?",
+     "evidence": "\"Delaware\" is a county; implement daylight savings refers to daylight_saving = 'Yes'",
+     "gold_literals": [
+      [
+       "DELAWARE",
+       "case",
+       false
+      ],
+      [
+       "Yes",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "Delaware",
+      "Yes"
+     ],
+     "gold_columns": [
+      "country.county",
+      "zip_data.daylight_savings"
+     ],
+     "pred_columns": [
+      "state.name",
+      "zip_data.daylight_savings"
+     ]
+    },
+    {
+     "qid": "bird_train:address:5209",
+     "question": "List down the names of the cities belonging to Noble, Oklahoma.",
+     "evidence": "the county of Noble is located in the state of Oklahoma;",
+     "gold_literals": [
+      [
+       "Oklahoma",
+       "verbatim",
+       true
+      ],
+      [
+       "NOBLE",
+       "case",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "Noble",
+      "Oklahoma"
+     ],
+     "gold_columns": [
+      "country.county",
+      "state.name"
+     ],
+     "pred_columns": [
+      "country.county",
+      "state.name"
+     ]
+    },
+    {
+     "qid": "bird_train:address:5225",
+     "question": "Provide the zip codes and area codes of the postal points with the community post office type at the elevation above 6000.",
+     "evidence": "community post office type refers to type = 'Community Post Office'; elevation above 6000 refers to elevation > 6000;",
+     "gold_literals": [
+      [
+       "Community Post Office ",
+       "case",
+       false
+      ],
+      [
+       "6000",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "Community Post Office",
+      "6000"
+     ],
+     "gold_columns": [
+      "zip_data.type"
+     ],
+     "pred_columns": [
+      "zip_data.type"
+     ]
+    },
+    {
+     "qid": "bird_train:beer_factory:5246",
+     "question": "Among the root beer brands that do not advertise on Twitter, how many of them have root beers sold in August, 2014?",
+     "evidence": "do not advertise on Twitter refers to twitter IS NULL; in August, 2014 refers to SUBSTR(TransactionDate, 1, 4) = '2014' AND SUBSTR(TransactionDate, 6, 2) = '08';",
+     "gold_literals": [
+      [
+       "2014-08",
+       "stem",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "1",
+      "4",
+      "2014",
+      "6",
+      "2",
+      "08"
+     ],
+     "gold_columns": [
+      "transaction.TransactionDate"
+     ],
+     "pred_columns": [
+      "transaction.TransactionDate"
+     ]
+    }
+   ],
+   "absent": [
+    {
+     "qid": "bird_train:address:5087",
+     "question": "In which county is the residential area with the highest average income per household located?",
+     "evidence": "highest average income per household refers to Max(avg_income_per_household)",
+     "gold_literals": [
+      [
+       "ARECIBO",
+       "absent",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "1"
+     ],
+     "gold_columns": [
+      "country.county"
+     ],
+     "pred_columns": []
+    },
+    {
+     "qid": "bird_train:beer_factory:5257",
+     "question": "What is the phone number of the customer who owns the credit card of number 6011179359005380?",
+     "evidence": "FALSE;",
+     "gold_literals": [
+      [
+       "6011179359005382",
+       "absent",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "6011179359005380"
+     ],
+     "gold_columns": [
+      "transaction.CreditCardNumber"
+     ],
+     "pred_columns": [
+      "transaction.CreditCardNumber"
+     ]
+    },
+    {
+     "qid": "bird_train:beer_factory:5305",
+     "question": "In the reviews of September 2014. Which brand of beers obtained the highest star ratings?",
+     "evidence": "September 2014 refers to ReviewDate LIKE '2014-09%'; brand of beers refers to BrandName; highest star ratings refers to MAX(StarRating);",
+     "gold_literals": [
+      [
+       "5",
+       "absent",
+       false
+      ],
+      [
+       "2014-09-01",
+       "absent",
+       false
+      ],
+      [
+       "2014-09-30",
+       "absent",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "1",
+      "2014-09"
+     ],
+     "gold_columns": [
+      "rootbeerreview.StarRating"
+     ],
+     "pred_columns": [
+      "rootbeerreview.ReviewDate"
+     ]
+    },
+    {
+     "qid": "bird_train:beer_factory:5320",
+     "question": "How many brands of bottle root beer were purchased between 4/3/2015 and 10/26/2015?",
+     "evidence": "bottle root beer refers to ContainerType = 'Bottle'; purchased between 4/3/2015 and 10/26/2015 refers to PurchaseDate BETWEEN '2015-04-23' AND '2015-10-26';",
+     "gold_literals": [
+      [
+       "Bottle",
+       "verbatim",
+       true
+      ],
+      [
+       "2015-04-03",
+       "absent",
+       false
+      ],
+      [
+       "2015-10-26",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "Bottle",
+      "2015-04-23",
+      "2015-10-26"
+     ],
+     "gold_columns": [
+      "rootbeer.ContainerType"
+     ],
+     "pred_columns": [
+      "rootbeer.ContainerType"
+     ]
+    }
+   ],
+   "none_missing": [
+    {
+     "qid": "bird_train:address:5098",
+     "question": "How many counties are there in Alabama?",
+     "evidence": "\"Alabama\" is the name",
+     "gold_literals": [
+      [
+       "Alabama",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "Alabama"
+     ],
+     "gold_columns": [
+      "state.name"
+     ],
+     "pred_columns": [
+      "state.name"
+     ]
+    },
+    {
+     "qid": "bird_train:address:5107",
+     "question": "In the state where Lisa Murkowski is the representative, how many cities have zero employees?",
+     "evidence": "zero employee refers to employees = 0",
+     "gold_literals": [
+      [
+       "Murkowski",
+       "verbatim",
+       true
+      ],
+      [
+       "Lisa",
+       "verbatim",
+       true
+      ],
+      [
+       "0",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "Lisa",
+      "Murkowski",
+      "0"
+     ],
+     "gold_columns": [
+      "congress.first_name",
+      "congress.last_name",
+      "zip_data.employees"
+     ],
+     "pred_columns": [
+      "congress.first_name",
+      "congress.last_name",
+      "zip_data.employees"
+     ]
+    },
+    {
+     "qid": "bird_train:address:5110",
+     "question": "What party does the area with the zip code 91701 belong to?",
+     "evidence": "",
+     "gold_literals": [
+      [
+       "91701",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "91701"
+     ],
+     "gold_columns": [
+      "zip_data.zip_code"
+     ],
+     "pred_columns": [
+      "zip_congress.zip_code"
+     ]
+    },
+    {
+     "qid": "bird_train:address:5117",
+     "question": "Which state is area code 878 in? Give the name of the state.",
+     "evidence": "",
+     "gold_literals": [
+      [
+       "878",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "878"
+     ],
+     "gold_columns": [
+      "area_code.area_code"
+     ],
+     "pred_columns": [
+      "area_code.area_code"
+     ]
+    }
+   ],
+   "verbatim_only": [
+    {
+     "qid": "bird_train:address:5101",
+     "question": "In California, how many delivery receptacles are there in the community post office that has the highest number of delivery receptacles?",
+     "evidence": "in California refers to name = 'California' and state = 'CA'; 'Community Post Office' is the Type",
+     "gold_literals": [
+      [
+       "CA",
+       "verbatim",
+       false
+      ],
+      [
+       "Community Post Office",
+       "verbatim",
+       false
+      ],
+      [
+       "California",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "1",
+      "California",
+      "Post Office"
+     ],
+     "gold_columns": [
+      "state.abbreviation",
+      "state.name",
+      "zip_data.state",
+      "zip_data.type"
+     ],
+     "pred_columns": [
+      "state.name",
+      "zip_data.type"
+     ]
+    },
+    {
+     "qid": "bird_train:address:5114",
+     "question": "For the county represented by Thompson Bennie G, how many bad aliases does it have?",
+     "evidence": "",
+     "gold_literals": [
+      [
+       "Thompson",
+       "verbatim",
+       true
+      ],
+      [
+       "Bennie G",
+       "verbatim",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "Bennie",
+      "Thompson"
+     ],
+     "gold_columns": [
+      "congress.first_name",
+      "congress.last_name"
+     ],
+     "pred_columns": [
+      "congress.first_name",
+      "congress.last_name"
+     ]
+    },
+    {
+     "qid": "bird_train:address:5118",
+     "question": "How many counties are there in Virginia State?",
+     "evidence": "\"Virginia\" is the state",
+     "gold_literals": [
+      [
+       "Virginia",
+       "verbatim",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "VA"
+     ],
+     "gold_columns": [
+      "state.name"
+     ],
+     "pred_columns": [
+      "zip_data.state"
+     ]
+    },
+    {
+     "qid": "bird_train:address:5127",
+     "question": "What is the zip code of the district represented by Steven A King?",
+     "evidence": "",
+     "gold_literals": [
+      [
+       "King",
+       "verbatim",
+       true
+      ],
+      [
+       "Steven A",
+       "verbatim",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "Steven",
+      "Steve",
+      "King"
+     ],
+     "gold_columns": [
+      "congress.first_name",
+      "congress.last_name"
+     ],
+     "pred_columns": [
+      "congress.first_name",
+      "congress.last_name"
+     ]
+    }
+   ],
+   "no_gold_literal": [
+    {
+     "qid": "bird_train:address:5102",
+     "question": "In which county can you find the city with the highest number of females?",
+     "evidence": "highest number of females refers to Max(female_population)",
+     "gold_literals": [],
+     "pred_literals": [
+      "1"
+     ],
+     "gold_columns": [],
+     "pred_columns": []
+    },
+    {
+     "qid": "bird_train:address:5106",
+     "question": "How many representatives are there in the state with the highest monthly benefit payments for retired workers?",
+     "evidence": "state with highest monthly benefits payment for retired workers refers to Max(monthly_benefits_retired_workers)",
+     "gold_literals": [],
+     "pred_literals": [
+      "1"
+     ],
+     "gold_columns": [],
+     "pred_columns": []
+    },
+    {
+     "qid": "bird_train:address:5113",
+     "question": "For the city with the most elders, what's its area code?",
+     "evidence": "city with most elders refers to Max(over_65)",
+     "gold_literals": [],
+     "pred_literals": [
+      "1"
+     ],
+     "gold_columns": [],
+     "pred_columns": []
+    },
+    {
+     "qid": "bird_train:address:5168",
+     "question": "Provide the zip code, city, and congress representative's full names of the area which has highest population in 2020.",
+     "evidence": "representative's full names refer to first_name, last_name; area which has highest population in 2020 refers to MAX(population_2020);",
+     "gold_literals": [],
+     "pred_literals": [
+      "1"
+     ],
+     "gold_columns": [],
+     "pred_columns": []
+    }
+   ]
+  }
+ },
+ "p0_HT": {
+  "n_wrong_in_classes": 74,
+  "n_questions": 300,
+  "levels": {
+   "none_missing": 47,
+   "absent": 8,
+   "no_gold_literal": 10,
+   "verbatim_only": 4,
+   "approx": 5
+  },
+  "levels_frac_of_wrong": {
+   "none_missing": 0.6351351351351351,
+   "absent": 0.10810810810810811,
+   "no_gold_literal": 0.13513513513513514,
+   "verbatim_only": 0.05405405405405406,
+   "approx": 0.06756756756756757
+  },
+  "missing_literal_text_classes": {
+   "absent": 12,
+   "verbatim": 8,
+   "case": 3,
+   "fuzzy": 1,
+   "stem": 1
+  },
+  "pure_value_error": 11,
+  "upper_bound_value_grounding": {
+   "n": 13,
+   "pp_of_all_questions": 4.333333333333333,
+   "retrievable_by_lookup_n": 10,
+   "retrievable_by_lookup_pp": 3.3333333333333335,
+   "pure_value_error_and_nonverbatim_n": 7,
+   "verbatim_only_n": 4
+  },
+  "absent_literals": {
+   "n": 12,
+   "with_column_cardinality": 8,
+   "card_le_8": 4,
+   "card_le_20": 5,
+   "card_le_50": 6,
+   "card_gt_50": 2
+  },
+  "split": "bird_train_HT",
+  "run": "<NL2SQL_ROOT>/runs/X5/1b-ht-quote",
+  "n_rows_total": 300,
+  "n_wrong_all": 92,
+  "classes": [
+   "value_mismatch",
+   "row_subset",
+   "row_superset",
+   "empty_result"
+  ],
+  "examples": {
+   "none_missing": [
+    {
+     "qid": "bird_train:law_episode:1272",
+     "question": "How many people have won at least 3 awards?",
+     "evidence": "won refers to result = 'Winner'; at least 3 awards refers to count(result) > 3",
+     "gold_literals": [
+      [
+       "Winner",
+       "verbatim",
+       true
+      ],
+      [
+       "3",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "Winner",
+      "3"
+     ],
+     "gold_columns": [
+      "Award.result"
+     ],
+     "pred_columns": [
+      "Award.result"
+     ]
+    },
+    {
+     "qid": "bird_train:law_episode:1283",
+     "question": "How many episodes are there in the 9th season of Law and Order? Calculate the average number of casts per season of the said series.",
+     "evidence": "the 9th season refers to season = 9; Law and Order refers to series = 'Law and Order'; cast refers to category = 'Cast'; average number of casts per season = divide(count(person_id), count(episode_id))",
+     "gold_literals": [
+      [
+       "Cast",
+       "verbatim",
+       true
+      ],
+      [
+       "Law and Order",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "Law and Order",
+      "9",
+      "Cast"
+     ],
+     "gold_columns": [
+      "Credit.category",
+      "Episode.series"
+     ],
+     "pred_columns": [
+      "Credit.category",
+      "Episode.season",
+      "Episode.series"
+     ]
+    },
+    {
+     "qid": "bird_train:law_episode:1330",
+     "question": "What is the ratio of American casts on episode 2 of the series? Please include their roles.",
+     "evidence": "American refers to birth_country = 'USA'; cast refers to category = 'Cast'; ratio = divide(count(person_id where birth_country = 'USA'), total(category)) where category = 'Cast'",
+     "gold_literals": [
+      [
+       "2",
+       "verbatim",
+       true
+      ],
+      [
+       "USA",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "USA",
+      "1",
+      "0",
+      "2",
+      "Cast"
+     ],
+     "gold_columns": [
+      "Episode.episode",
+      "Person.birth_country"
+     ],
+     "pred_columns": [
+      "Credit.category",
+      "Episode.episode"
+     ]
+    },
+    {
+     "qid": "bird_train:law_episode:1336",
+     "question": "List out director names that received an award along with the episode number.",
+     "evidence": "director refers to role = 'director'; received an award refers to result = 'Winner'; episode number refers to episode",
+     "gold_literals": [
+      [
+       "director",
+       "verbatim",
+       true
+      ],
+      [
+       "Winner",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "director",
+      "Winner"
+     ],
+     "gold_columns": [
+      "Award.result",
+      "Award.role"
+     ],
+     "pred_columns": [
+      "Award.result",
+      "Award.role"
+     ]
+    }
+   ],
+   "absent": [
+    {
+     "qid": "bird_train:law_episode:1279",
+     "question": "What is the percentage of people who gave the \"True North\" episode a 1-star rating?",
+     "evidence": "the \"True North\" episode refers to title = 'True North'; 1-star refers to stars = 1; percentage = divide(count(episode_id where stars = 1), count(episode_id)) * 100% where title = 'True North'",
+     "gold_literals": [
+      [
+       "True North",
+       "verbatim",
+       true
+      ],
+      [
+       "tt0629477",
+       "absent",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "1",
+      "0",
+      "100",
+      "True North"
+     ],
+     "gold_columns": [
+      "Episode.episode_id",
+      "Episode.title"
+     ],
+     "pred_columns": [
+      "Episode.title"
+     ]
+    },
+    {
+     "qid": "bird_train:law_episode:1324",
+     "question": "On what episode did Julia Roberts win the \"Outstanding Guest Actress in a Drama Series\" award during the 1999 Primetime Emmy Awards? Tell me her role.",
+     "evidence": "win refers to result = 'Winner'; the \"Outstanding Guest Actress in a Drama Series\" award refers to award = 'Outstanding Guest Actress in a Drama Series'; the 1999 refers to year = 1999; Primetime Emmy Awards refers to organization = 'Primetime Emmy Awards'",
+     "gold_literals": [
+      [
+       "1999",
+       "verbatim",
+       true
+      ],
+      [
+       "Outstanding Guest Actress in a Drama Series",
+       "verbatim",
+       true
+      ],
+      [
+       "Primetime Emmy Awards",
+       "verbatim",
+       true
+      ],
+      [
+       "Julia Roberts",
+       "verbatim",
+       true
+      ],
+      [
+       "Nominee",
+       "absent",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "Julia Roberts",
+      "Winner",
+      "Outstanding Guest Actress in a Drama Series",
+      "1999",
+      "Primetime Emmy Awards"
+     ],
+     "gold_columns": [
+      "Award.award",
+      "Award.organization",
+      "Award.result",
+      "Award.year",
+      "Person.name"
+     ],
+     "pred_columns": [
+      "Award.award",
+      "Award.organization",
+      "Award.result",
+      "Award.year",
+      "Person.name"
+     ]
+    },
+    {
+     "qid": "bird_train:law_episode:1347",
+     "question": "Who was the nominee playing the role of Katrina Ludlow in the Law & Order series?",
+     "evidence": "nominee refers to result = 'Nominee'; the role of Katrina Ludlow refers to role = 'Katrina Ludlow'",
+     "gold_literals": [
+      [
+       "Nominee",
+       "verbatim",
+       true
+      ],
+      [
+       "Katrina Ludlow",
+       "verbatim",
+       true
+      ],
+      [
+       "Law and Order",
+       "absent",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "Nominee",
+      "Katrina Ludlow",
+      "Law & Order"
+     ],
+     "gold_columns": [
+      "Award.result",
+      "Award.role",
+      "Award.series"
+     ],
+     "pred_columns": [
+      "Award.result",
+      "Award.role",
+      "Award.series"
+     ]
+    },
+    {
+     "qid": "bird_train:retail_complains:379",
+     "question": "What is the percentage of female clients in the Middle Atlantic?",
+     "evidence": "female refers to sex = 'Female'; the Middle Atlantic refers to division = 'Middle Atlantic'; percentage = divide(count(client_id where sex = 'Female' and division = 'Middle Atlantic') , count(client_id where division = 'Middle Atlantic')) * 100%",
+     "gold_literals": [
+      [
+       "South Atlantic",
+       "absent",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "Female",
+      "1",
+      "0",
+      "100",
+      "Middle Atlantic"
+     ],
+     "gold_columns": [
+      "district.division"
+     ],
+     "pred_columns": [
+      "district.division"
+     ]
+    }
+   ],
+   "no_gold_literal": [
+    {
+     "qid": "bird_train:law_episode:1296",
+     "question": "Who is the person who appeared the most in the series? Calculate in percentage how many times he or she appeared.",
+     "evidence": "who refers to name; appear the most refers to max(count(person_id)); percentage = divide(count(person_id where max(count(person_id))), count(person_id)) * 100%",
+     "gold_literals": [],
+     "pred_literals": [
+      "100",
+      "1"
+     ],
+     "gold_columns": [],
+     "pred_columns": []
+    },
+    {
+     "qid": "bird_train:law_episode:1343",
+     "question": "What is the average star with highest percentage for episodes that have received award?",
+     "evidence": "received award refers to result = 'Winner'; the highest percentage refers to max(percent); average star = divide(sum(stars), count(episode_id))",
+     "gold_literals": [],
+     "pred_literals": [
+      "1",
+      "Winner"
+     ],
+     "gold_columns": [],
+     "pred_columns": [
+      "Award.result"
+     ]
+    },
+    {
+     "qid": "bird_train:retail_complains:285",
+     "question": "What percentage of consumers from Houston disputed complaints?",
+     "evidence": "percentage = MULTIPLY(DIVIDE(SUM(\"Consumer disputed?\" = 'Yes' AND city = 'Houston'), COUNT(client_id)), 1.0); Houston refers to city = 'Houston';",
+     "gold_literals": [],
+     "pred_literals": [
+      "Yes",
+      "1",
+      "0",
+      "100",
+      "Houston"
+     ],
+     "gold_columns": [],
+     "pred_columns": [
+      "district.city"
+     ]
+    },
+    {
+     "qid": "bird_train:retail_complains:341",
+     "question": "What percentage of complaints are from the elderly?",
+     "evidence": "elder refers to age < = 65; percentage refers to divide(sum(age < = 65) , count(client_id)) * 100%",
+     "gold_literals": [],
+     "pred_literals": [
+      "65",
+      "1.0",
+      "0",
+      "100"
+     ],
+     "gold_columns": [],
+     "pred_columns": []
+    }
+   ],
+   "verbatim_only": [
+    {
+     "qid": "bird_train:law_episode:1298",
+     "question": "How many episodes have not won any Law & Order series awards?",
+     "evidence": "have not won any award refers to Result = 'Nominee'",
+     "gold_literals": [
+      [
+       "Nominee",
+       "verbatim",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "Law and Order",
+      "Winner"
+     ],
+     "gold_columns": [
+      "Award.result"
+     ],
+     "pred_columns": [
+      "Award.result",
+      "Episode.series"
+     ]
+    },
+    {
+     "qid": "bird_train:law_episode:1349",
+     "question": "What is the date of birth of the actor who played the role of a \"writer\"?",
+     "evidence": "date of birth refers to birthdate",
+     "gold_literals": [
+      [
+       "writer",
+       "verbatim",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "Writer"
+     ],
+     "gold_columns": [
+      "Award.role"
+     ],
+     "pred_columns": [
+      "Credit.role"
+     ]
+    },
+    {
+     "qid": "bird_train:world_development_indicators:2133",
+     "question": "Please list the indicator names belonging to Education: Inputs topic in 2000.",
+     "evidence": "Year = 'YR2000';",
+     "gold_literals": [
+      [
+       "YR2000",
+       "verbatim",
+       false
+      ],
+      [
+       "Education: Inputs",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "Education: Inputs",
+      "2000"
+     ],
+     "gold_columns": [
+      "Footnotes.Year",
+      "Series.Topic"
+     ],
+     "pred_columns": [
+      "Indicators.Year",
+      "Series.Topic"
+     ]
+    },
+    {
+     "qid": "bird_train:world_development_indicators:2134",
+     "question": "How many annual indicators use the Sum aggregation method from 2001 to 2003?",
+     "evidence": "Annual refers to Periodicity; from 2001 to 2003 implies Year = 'YR2001', Year = 'YR2002' , Year = 'YR2003';",
+     "gold_literals": [
+      [
+       "YR2001",
+       "verbatim",
+       false
+      ],
+      [
+       "YR2002",
+       "verbatim",
+       false
+      ],
+      [
+       "YR2003",
+       "verbatim",
+       false
+      ],
+      [
+       "Annual",
+       "verbatim",
+       true
+      ],
+      [
+       "Sum",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "Annual",
+      "Sum",
+      "2001",
+      "2003"
+     ],
+     "gold_columns": [
+      "Footnotes.Year",
+      "Series.AggregationMethod",
+      "Series.Periodicity"
+     ],
+     "pred_columns": [
+      "Series.AggregationMethod",
+      "Series.Periodicity"
+     ]
+    }
+   ],
+   "approx": [
+    {
+     "qid": "bird_train:retail_complains:283",
+     "question": "What is the medium through which most complaints are registered in Florida?",
+     "evidence": "medium refers to \"Submitted via\"; most complaints refers to MAX(Complaint ID); Florida refers to state = 'florida';",
+     "gold_literals": [
+      [
+       "FL",
+       "case",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "1",
+      "Florida"
+     ],
+     "gold_columns": [
+      "client.state"
+     ],
+     "pred_columns": [
+      "state.State"
+     ]
+    },
+    {
+     "qid": "bird_train:retail_complains:328",
+     "question": "How many of the complaints are longer than 15 minutes?",
+     "evidence": "longer than 15 minutes refers to ser_time > '00:15:00'",
+     "gold_literals": [
+      [
+       "M",
+       "case",
+       false
+      ],
+      [
+       "15",
+       "verbatim",
+       true
+      ]
+     ],
+     "pred_literals": [
+      "00:15:00"
+     ],
+     "gold_columns": [],
+     "pred_columns": []
+    },
+    {
+     "qid": "bird_train:world_development_indicators:2155",
+     "question": "Mention the series code of countries using Australian dollar as their currency unit. Which country belongs to middle income group among them.",
+     "evidence": "middle income group refers to IncomeGroup = 'Low middle income';",
+     "gold_literals": [
+      [
+       "Australian dollar",
+       "verbatim",
+       true
+      ],
+      [
+       "Lower middle income",
+       "fuzzy",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "Australian dollar",
+      "Low middle income"
+     ],
+     "gold_columns": [
+      "Country.CurrencyUnit",
+      "Country.IncomeGroup"
+     ],
+     "pred_columns": [
+      "Country.CurrencyUnit",
+      "Country.IncomeGroup"
+     ]
+    },
+    {
+     "qid": "bird_train:world_development_indicators:2179",
+     "question": "How much is the total urban population of middle income countries in 1960?",
+     "evidence": "IncomeGroup = 'Middle income'; Year = 1960; urban population refers to IndicatorName;",
+     "gold_literals": [
+      [
+       "middle income",
+       "verbatim",
+       false
+      ],
+      [
+       "1960",
+       "verbatim",
+       true
+      ],
+      [
+       "Urban population",
+       "case",
+       false
+      ]
+     ],
+     "pred_literals": [
+      "Middle income",
+      "1960",
+      "urban population"
+     ],
+     "gold_columns": [
+      "Country.IncomeGroup",
+      "Indicators.IndicatorName",
+      "Indicators.Year"
+     ],
+     "pred_columns": [
+      "Country.IncomeGroup",
+      "Indicators.IndicatorName",
+      "Indicators.Year"
+     ]
+    }
+   ]
+  }
+ },
+ "gated": {
+  "n_wrong_in_classes": 399,
+  "n_questions": 1401,
+  "levels": {
+   "approx": 34,
+   "absent": 46,
+   "none_missing": 227,
+   "verbatim_only": 27,
+   "no_gold_literal": 65
+  },
+  "levels_frac_of_wrong": {
+   "approx": 0.08521303258145363,
+   "absent": 0.11528822055137844,
+   "none_missing": 0.568922305764411,
+   "verbatim_only": 0.06766917293233082,
+   "no_gold_literal": 0.16290726817042606
+  },
+  "missing_literal_text_classes": {
+   "case": 18,
+   "absent": 80,
+   "verbatim": 34,
+   "stem": 8,
+   "format": 7,
+   "fuzzy": 3
+  },
+  "pure_value_error": 68,
+  "upper_bound_value_grounding": {
+   "n": 80,
+   "pp_of_all_questions": 5.710206995003569,
+   "retrievable_by_lookup_n": 49,
+   "retrievable_by_lookup_pp": 3.497501784439686,
+   "pure_value_error_and_nonverbatim_n": 40,
+   "verbatim_only_n": 27
+  },
+  "absent_literals": {
+   "n": 80,
+   "with_column_cardinality": 29,
+   "card_le_8": 11,
+   "card_le_20": 12,
+   "card_le_50": 16,
+   "card_gt_50": 13
+  },
+  "pooled_from": [
+   "gated_HR",
+   "gated_HT"
+  ],
+  "n_wrong_all": 467
+ },
+ "p0": {
+  "n_wrong_in_classes": 380,
+  "n_questions": 1401,
+  "levels": {
+   "approx": 34,
+   "absent": 47,
+   "none_missing": 211,
+   "verbatim_only": 25,
+   "no_gold_literal": 63
+  },
+  "levels_frac_of_wrong": {
+   "approx": 0.08947368421052632,
+   "absent": 0.12368421052631579,
+   "none_missing": 0.5552631578947368,
+   "verbatim_only": 0.06578947368421052,
+   "no_gold_literal": 0.16578947368421051
+  },
+  "missing_literal_text_classes": {
+   "case": 19,
+   "absent": 79,
+   "verbatim": 33,
+   "stem": 7,
+   "format": 7,
+   "fuzzy": 3
+  },
+  "pure_value_error": 64,
+  "upper_bound_value_grounding": {
+   "n": 81,
+   "pp_of_all_questions": 5.781584582441114,
+   "retrievable_by_lookup_n": 49,
+   "retrievable_by_lookup_pp": 3.497501784439686,
+   "pure_value_error_and_nonverbatim_n": 41,
+   "verbatim_only_n": 25
+  },
+  "absent_literals": {
+   "n": 79,
+   "with_column_cardinality": 28,
+   "card_le_8": 11,
+   "card_le_20": 12,
+   "card_le_50": 16,
+   "card_gt_50": 12
+  },
+  "pooled_from": [
+   "p0_HR",
+   "p0_HT"
+  ],
+  "n_wrong_all": 458
+ }
+}

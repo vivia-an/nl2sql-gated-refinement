@@ -1,0 +1,150 @@
+{
+ "HR": {
+  "score": {
+   "within_db_AUROC_weighted": 0.6866807970777599,
+   "excl_beer_factory": 0.6576787780674955,
+   "per_db": {
+    "address": 0.7104936996488329,
+    "beer_factory": 0.9014285714285715,
+    "bike_share_1": 0.6562049062049062,
+    "donor": 0.6787229938271605,
+    "public_review_platform": 0.6592592592592592,
+    "retails": 0.5707236842105263,
+    "sales": 0.7287775891341256,
+    "simpson_episodes": 0.6195874183006536
+   }
+  },
+  "sem": {
+   "within_db_AUROC_weighted": 0.6049105185153145,
+   "excl_beer_factory": 0.5677592586447023,
+   "per_db": {
+    "address": 0.6089650898574674,
+    "beer_factory": 0.88,
+    "bike_share_1": 0.5804473304473304,
+    "donor": 0.6033950617283951,
+    "public_review_platform": 0.5865608465608466,
+    "retails": 0.5218515037593985,
+    "sales": 0.5097623089983022,
+    "simpson_episodes": 0.5498366013071896
+   }
+  },
+  "syn": {
+   "within_db_AUROC_weighted": 0.6166280100400441,
+   "excl_beer_factory": 0.5792585282344554,
+   "per_db": {
+    "address": 0.5851063829787234,
+    "beer_factory": 0.8933333333333333,
+    "bike_share_1": 0.648989898989899,
+    "donor": 0.6209490740740741,
+    "public_review_platform": 0.5575661375661376,
+    "retails": 0.5220864661654135,
+    "sales": 0.5713073005093379,
+    "simpson_episodes": 0.5637254901960784
+   }
+  },
+  "eff": {
+   "within_db_AUROC_weighted": 0.5998428974292095,
+   "excl_beer_factory": 0.5619429372342049,
+   "per_db": {
+    "address": 0.5760173517868209,
+    "beer_factory": 0.8804761904761905,
+    "bike_share_1": 0.511002886002886,
+    "donor": 0.6048418209876543,
+    "public_review_platform": 0.5502645502645502,
+    "retails": 0.5290178571428571,
+    "sales": 0.676358234295416,
+    "simpson_episodes": 0.5063316993464052
+   }
+  },
+  "nonempty": {
+   "within_db_AUROC_weighted": 0.6158163853544504,
+   "excl_beer_factory": 0.5783372923799828,
+   "per_db": {
+    "address": 0.5851063829787234,
+    "beer_factory": 0.8933333333333333,
+    "bike_share_1": 0.6484487734487735,
+    "donor": 0.6168981481481481,
+    "public_review_platform": 0.5571428571428572,
+    "retails": 0.5216165413533834,
+    "sales": 0.5704584040747029,
+    "simpson_episodes": 0.5637254901960784
+   }
+  },
+  "execok": {
+   "within_db_AUROC_weighted": 0.5616376127026886,
+   "excl_beer_factory": 0.5195426236278283,
+   "per_db": {
+    "address": 0.5,
+    "beer_factory": 0.8733333333333333,
+    "bike_share_1": 0.5194805194805194,
+    "donor": 0.5648148148148148,
+    "public_review_platform": 0.5222222222222223,
+    "retails": 0.5131578947368421,
+    "sales": 0.5161290322580645,
+    "simpson_episodes": 0.5
+   }
+  }
+ },
+ "HT": {
+  "score": {
+   "within_db_AUROC_weighted": 0.7282981322608515,
+   "excl_beer_factory": 0.7282981322608515,
+   "per_db": {
+    "law_episode": 0.7914529914529914,
+    "retail_complains": 0.685570987654321,
+    "video_games": 0.6547619047619048,
+    "world_development_indicators": 0.8229323308270676
+   }
+  },
+  "sem": {
+   "within_db_AUROC_weighted": 0.6020860145860145,
+   "excl_beer_factory": 0.6020860145860145,
+   "per_db": {
+    "law_episode": 0.6666666666666666,
+    "retail_complains": 0.5416666666666666,
+    "video_games": 0.5836550836550837,
+    "world_development_indicators": 0.6428571428571429
+   }
+  },
+  "syn": {
+   "within_db_AUROC_weighted": 0.5969814814814814,
+   "excl_beer_factory": 0.5969814814814814,
+   "per_db": {
+    "law_episode": 0.6333333333333333,
+    "retail_complains": 0.6157407407407407,
+    "video_games": 0.5476190476190477,
+    "world_development_indicators": 0.6142857142857143
+   }
+  },
+  "eff": {
+   "within_db_AUROC_weighted": 0.6173087856750138,
+   "excl_beer_factory": 0.6173087856750138,
+   "per_db": {
+    "law_episode": 0.6709401709401709,
+    "retail_complains": 0.5435956790123457,
+    "video_games": 0.6190476190476191,
+    "world_development_indicators": 0.6541353383458647
+   }
+  },
+  "nonempty": {
+   "within_db_AUROC_weighted": 0.5969814814814814,
+   "excl_beer_factory": 0.5969814814814814,
+   "per_db": {
+    "law_episode": 0.6333333333333333,
+    "retail_complains": 0.6157407407407407,
+    "video_games": 0.5476190476190477,
+    "world_development_indicators": 0.6142857142857143
+   }
+  },
+  "execok": {
+   "within_db_AUROC_weighted": 0.523015873015873,
+   "excl_beer_factory": 0.523015873015873,
+   "per_db": {
+    "law_episode": 0.5666666666666667,
+    "retail_complains": 0.5,
+    "video_games": 0.5238095238095238,
+    "world_development_indicators": 0.5142857142857142
+   }
+  }
+ }
+}

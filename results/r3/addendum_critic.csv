@@ -1,0 +1,4 @@
+backbone,shared_root_q,helped,hurt,net_q,net_pp_all,net_ci_lo_pp,net_ci_hi_pp,p_two,table4_implied_net_q,table4_implied_net_pp,revised_by_fixed_only
+plus,1532,15,13,2,0.1304,-0.5888,0.8210,0.8506,2,0.1304,81
+flash,1505,33,20,13,0.8475,-0.1455,1.7422,0.0984,14,0.9126,172
+27b,1522,34,35,-1,-0.0652,-1.1676,1.0430,1.0000,0,0.0000,209

@@ -1,0 +1,104 @@
+{
+ "dirs": [
+  "R4T0"
+ ],
+ "price_file": "../exp/prices.yaml",
+ "cache_hit_ratio": 0.2,
+ "unpriced_rows": {},
+ "total": {
+  "cny_disc": 36.726352879999986,
+  "cny_nodisc": 51.84886680000001,
+  "calls": 17329
+ },
+ "by_model": {
+  "qwen3.5-27b": {
+   "calls": 7089,
+   "pt": 20281409,
+   "ct": 772272,
+   "cached": 0,
+   "cny_disc": 15.875751000000001,
+   "cny_nodisc": 15.875751000000001
+  },
+  "qwen3.7-flash-2026-07-15": {
+   "calls": 5262,
+   "pt": 16877077,
+   "ct": 666223,
+   "cached": 4682752,
+   "cny_disc": 3.159153480000012,
+   "cny_nodisc": 3.9083938000000127
+  },
+  "qwen3.7-plus-2026-05-26": {
+   "calls": 4978,
+   "pt": 13673913,
+   "ct": 589612,
+   "cached": 8983296,
+   "cny_disc": 17.69144839999997,
+   "cny_nodisc": 32.064721999999996
+  }
+ },
+ "by_run": {
+  "R4T0/fixed-27b-r1": {
+   "calls": 5555,
+   "pt": 16002112,
+   "ct": 695300,
+   "cached": 0,
+   "cny_disc": 12.938707199999998,
+   "cny_nodisc": 12.938707199999998
+  },
+  "R4T0/fixed-flash-r1": {
+   "calls": 3703,
+   "pt": 12520462,
+   "ct": 576192,
+   "cached": 1043328,
+   "cny_disc": 2.7981135200000056,
+   "cny_nodisc": 2.9650460000000085
+  },
+  "R4T0/fixed-flash-r2": {
+   "calls": 25,
+   "pt": 77318,
+   "ct": 2557,
+   "cached": 13440,
+   "cny_disc": 0.015358800000000002,
+   "cny_nodisc": 0.017509200000000003
+  },
+  "R4T0/fixed-plus-r1": {
+   "calls": 4963,
+   "pt": 13611215,
+   "ct": 588754,
+   "cached": 8935680,
+   "cny_disc": 17.63537399999997,
+   "cny_nodisc": 31.932462000000005
+  },
+  "R4T0/zs-27b-r1": {
+   "calls": 1534,
+   "pt": 4279297,
+   "ct": 76972,
+   "cached": 0,
+   "cny_disc": 2.937043800000003,
+   "cny_nodisc": 2.937043800000003
+  },
+  "R4T0/zs-flash-r1": {
+   "calls": 1534,
+   "pt": 4279297,
+   "ct": 87474,
+   "cached": 3625984,
+   "cny_disc": 0.34568116000000054,
+   "cny_nodisc": 0.9258386000000014
+  },
+  "R4T0/zs-plus-r1": {
+   "calls": 15,
+   "pt": 62698,
+   "ct": 858,
+   "cached": 47616,
+   "cny_disc": 0.056074399999999996,
+   "cny_nodisc": 0.13226
+  }
+ },
+ "s303": {
+  "cny_disc": 0,
+  "cny_nodisc": 0,
+  "calls": 0,
+  "runs": 0
+ },
+ "note": "embedding and rerank requests are not priced (placeholder prices, tokens not logged); the 1-token probes of r3_probe are not logged"
+}

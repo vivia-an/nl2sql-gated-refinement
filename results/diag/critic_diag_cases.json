@@ -1,0 +1,418 @@
+{
+ "_meta": {
+  "scope": "diagnostic-injected",
+  "selection": "fixed rule: per outcome class the 2 lowest-id records of different categories; illustrative, not representative; gold_control_* shows whether the unperturbed gold of the same question was flagged too (BIRD gold is not always right)"
+ },
+ "cases": [
+  {
+   "class": "A_detected_and_repaired",
+   "id": "D000",
+   "category": "distinct_drop",
+   "source_qid": "bird_train:college_completion:3717",
+   "db_id": "college_completion",
+   "question": "Give the post name of \"Idaho\" state.",
+   "evidence": "post name refers to state_post;",
+   "gold_sql": "SELECT T FROM ( SELECT DISTINCT CASE WHEN state = 'Idaho' THEN state_post ELSE NULL END AS T FROM state_sector_details ) WHERE T IS NOT NULL",
+   "injected_sql": "SELECT T FROM ( SELECT CASE WHEN state = 'Idaho' THEN state_post ELSE NULL END AS T FROM state_sector_details ) WHERE T IS NOT NULL",
+   "edit": {
+    "from": "SELECT DISTINCT",
+    "to": "SELECT"
+   },
+   "evaluated_variant": "pert",
+   "evaluated_sql": "SELECT T FROM ( SELECT CASE WHEN state = 'Idaho' THEN state_post ELSE NULL END AS T FROM state_sector_details ) WHERE T IS NOT NULL",
+   "critic": {
+    "score": 6.0,
+    "syntax": 10.0,
+    "semantic": 2.0,
+    "efficiency": 10.0,
+    "issues": [
+     {
+      "type": "semantic",
+      "description": "The query returns the value 'Idaho' which is the state name, not the state post name (abbreviation). The evidence states 'post name refers to state_post'. In the `state_sector_details` table, for Idaho, the `state_post` is likely 'Id.' or similar, but the query result shows 'Idaho'. This implies the query might be selecting the wrong column or the data in `state_post` is unexpectedly 'Idaho'. However, looking at samples ('Ala.', 'U.S.'), it's likely an abbreviation. If the result is 'Idaho', it's likely the query selected `state` instead of `state_post` or the SQL provided has a logic error where it returns the state name. Actually, re-reading the SQL: `SELECT CASE WHEN state = 'Idaho' THEN state_post ELSE NULL END`. If the result is 'Idaho', then `state_post` MUST be 'Idaho'. But standard postal abbreviations are 2 letters. The column is `state_post`. Samples show 'Ala.', 'Alaska'. It is possible `state_post` for Idaho is 'Idaho'. But there are 6 duplicate rows. The query fails to use DISTINCT."
+     },
+     {
+      "type": "efficiency",
+      "description": "The query uses a subquery and CASE statement unnecessarily. A simple `SELECT DISTINCT state_post FROM state_sector_details WHERE state = 'Idaho'` would be more efficient and clear."
+     },
+     {
+      "type": "semantic",
+      "description": "The result contains 6 duplicate rows. The question asks for 'the post name', implying a single unique value. The query should include DISTINCT."
+     }
+    ],
+    "suggestions": [
+     "Use SELECT DISTINCT state_post FROM state_sector_details WHERE state = 'Idaho';",
+     "Ensure the column returned is indeed state_post and not state."
+    ]
+   },
+   "triggered": true,
+   "actions": [
+    "revise",
+    "accept"
+   ],
+   "gold_control_triggered": false,
+   "gold_control_score": 9.8,
+   "revisions": [
+    {
+     "sql": "SELECT DISTINCT state_post \nFROM state_sector_details \nWHERE state = 'Idaho'",
+     "same_as_previous": false,
+     "critic_score": 9.8,
+     "matches_gold": 1
+    }
+   ],
+   "final_sql": "SELECT DISTINCT state_post \nFROM state_sector_details \nWHERE state = 'Idaho'",
+   "final_matches_gold": 1
+  },
+  {
+   "class": "A_detected_and_repaired",
+   "id": "D044",
+   "category": "limit_change",
+   "source_qid": "bird_train:world:7875",
+   "db_id": "world",
+   "question": "What is the language of the smallest population country?",
+   "evidence": "smallest population refers to MIN(Population);",
+   "gold_sql": "SELECT T2.Language FROM Country AS T1 INNER JOIN CountryLanguage AS T2 ON T1.Code = T2.CountryCode ORDER BY T1.Population ASC LIMIT 1",
+   "injected_sql": "SELECT T2.Language FROM Country AS T1 INNER JOIN CountryLanguage AS T2 ON T1.Code = T2.CountryCode ORDER BY T1.Population ASC LIMIT 2",
+   "edit": {
+    "from": "LIMIT 1",
+    "to": "LIMIT 2"
+   },
+   "evaluated_variant": "pert",
+   "evaluated_sql": "SELECT T2.Language FROM Country AS T1 INNER JOIN CountryLanguage AS T2 ON T1.Code = T2.CountryCode ORDER BY T1.Population ASC LIMIT 2",
+   "critic": {
+    "score": 7.3,
+    "syntax": 10.0,
+    "semantic": 5.0,
+    "efficiency": 9.0,
+    "issues": [
+     {
+      "type": "semantic",
+      "description": "The query uses LIMIT 2 instead of LIMIT 1. The question asks for the language of the 'smallest population country' (singular). While the smallest country (Pitcairn Islands) has two languages, hardcoding LIMIT 2 is incorrect logic; it should either return all languages for the single smallest country (no limit or subquery) or just one if implied. If another country had 3 languages, this would fail."
+     },
+     {
+      "type": "semantic",
+      "description": "The query does not address the ambiguity of which language to return (official vs. most spoken vs. all). It returns all languages joined to the country with the minimum population. This might be acceptable, but the LIMIT 2 makes it fragile and semantically imprecise regarding the 'single' country constraint."
+     }
+    ],
+    "suggestions": [
+     "Use a subquery to find the CountryCode with the MIN(Population) and then select all languages for that country without an arbitrary LIMIT.",
+     "If only one language is expected, clarify if it should be the official one (IsOfficial = 'T') or the most spoken (ORDER BY Percentage DESC LIMIT 1)."
+    ]
+   },
+   "triggered": true,
+   "actions": [
+    "revise",
+    "accept"
+   ],
+   "gold_control_triggered": false,
+   "gold_control_score": 9.8,
+   "revisions": [
+    {
+     "sql": "SELECT T2.Language\nFROM Country AS T1\nINNER JOIN CountryLanguage AS T2 ON T1.Code = T2.CountryCode\nWHERE T1.Population = (SELECT MIN(Population) FROM Country)",
+     "same_as_previous": false,
+     "critic_score": 10.0,
+     "matches_gold": 1
+    }
+   ],
+   "final_sql": "SELECT T2.Language\nFROM Country AS T1\nINNER JOIN CountryLanguage AS T2 ON T1.Code = T2.CountryCode\nWHERE T1.Population = (SELECT MIN(Population) FROM Country)",
+   "final_matches_gold": 1
+  },
+  {
+   "class": "B_detected_not_repaired",
+   "id": "D008",
+   "category": "distinct_drop",
+   "source_qid": "bird_train:movie_3:9259",
+   "db_id": "movie_3",
+   "question": "Find and list the full name of customers who rented more family movies than Sci-Fi movies.",
+   "evidence": "full name refers to first_name, last_name; 'family' AND 'Sci-Fi' are names of the category; customers who rented more family movies than Sci-Fi movies refers to count(name = 'Family') > count(name = 'Sci-Fi')",
+   "gold_sql": "SELECT DISTINCT IIF(SUM(IIF(T5.name = 'Family', 1, 0)) - SUM(IIF(T5.name = 'Sci-Fi', 1, 0)) > 0, T1.first_name, 0) FROM customer AS T1 INNER JOIN rental AS T2 ON T1.customer_id = T2.customer_id INNER JOIN inventory AS T3 ON T2.inventory_id = T3.inventory_id INNER JOIN film_category AS T4 ON T4.film_id = T3.film_id INNER JOIN category AS T5 ON T4.category_id = T5.category_id GROUP BY T1.customer_id",
+   "injected_sql": "SELECT IIF(SUM(IIF(T5.name = 'Family', 1, 0)) - SUM(IIF(T5.name = 'Sci-Fi', 1, 0)) > 0, T1.first_name, 0) FROM customer AS T1 INNER JOIN rental AS T2 ON T1.customer_id = T2.customer_id INNER JOIN inventory AS T3 ON T2.inventory_id = T3.inventory_id INNER JOIN film_category AS T4 ON T4.film_id = T3.film_id INNER JOIN category AS T5 ON T4.category_id = T5.category_id GROUP BY T1.customer_id",
+   "edit": {
+    "from": "SELECT DISTINCT",
+    "to": "SELECT"
+   },
+   "evaluated_variant": "pert",
+   "evaluated_sql": "SELECT IIF(SUM(IIF(T5.name = 'Family', 1, 0)) - SUM(IIF(T5.name = 'Sci-Fi', 1, 0)) > 0, T1.first_name, 0) FROM customer AS T1 INNER JOIN rental AS T2 ON T1.customer_id = T2.customer_id INNER JOIN inventory AS T3 ON T2.inventory_id = T3.inventory_id INNER JOIN film_category AS T4 ON T4.film_id = T3.film_id INNER JOIN category AS T5 ON T4.category_id = T5.category_id GROUP BY T1.customer_id",
+   "critic": {
+    "score": 5.8,
+    "syntax": 10.0,
+    "semantic": 2.0,
+    "efficiency": 9.0,
+    "issues": [
+     {
+      "type": "semantic",
+      "description": "The query only returns the first name (or 0) instead of the full name (first_name and last_name) as requested."
+     },
+     {
+      "type": "semantic",
+      "description": "The query uses a conditional expression in the SELECT clause to filter results, returning '0' for customers who do not meet the criteria, rather than filtering them out with a HAVING clause. This results in a list containing mostly zeros and a few names, which is not a list of customers who rented more family movies."
+     },
+     {
+      "type": "semantic",
+      "description": "The GROUP BY clause groups by customer_id, but the SELECT clause references T1.first_name without including it in the GROUP BY or using an aggregate function, which is invalid in standard SQL and may produce unpredictable results in SQLite if not handled carefully, though the main issue is the logic."
+     }
+    ],
+    "suggestions": [
+     "Select both T1.first_name and T1.last_name to provide the full name.",
+     "Use a HAVING clause to filter groups where the count of Family movies is greater than the count of Sci-Fi movies: HAVING SUM(IIF(T5.name = 'Family', 1, 0)) > SUM(IIF(T5.name = 'Sci-Fi', 1, 0)).",
+     "Remove the IIF logic from the SELECT clause and simply select the names.",
+     "Ensure GROUP BY includes all non-aggregated columns in the SELECT clause (e.g., GROUP BY T1.customer_id, T1.first_name, T1.last_name)."
+    ]
+   },
+   "triggered": true,
+   "actions": [
+    "revise",
+    "accept"
+   ],
+   "gold_control_triggered": true,
+   "gold_control_score": 5.6,
+   "revisions": [
+    {
+     "sql": "SELECT T1.first_name, T1.last_name\nFROM customer AS T1\nINNER JOIN rental AS T2 ON T1.customer_id = T2.customer_id\nINNER JOIN inventory AS T3 ON T2.inventory_id = T3.inventory_id\nINNER JOIN film_category AS T4 ON T4.film_id = T3.film_id\nINNER JOIN category AS T5 ON T4.category_id = T5.category_id\nGROUP BY T1.customer_id, T1.first_name, T1.last_name\nHAVING SUM(IIF(T5.name = 'Family', 1, 0)) > SUM(IIF(T5.name = 'Sci-Fi', 1, 0))",
+     "same_as_previous": false,
+     "critic_score": 9.8,
+     "matches_gold": 0
+    }
+   ],
+   "final_sql": "SELECT T1.first_name, T1.last_name\nFROM customer AS T1\nINNER JOIN rental AS T2 ON T1.customer_id = T2.customer_id\nINNER JOIN inventory AS T3 ON T2.inventory_id = T3.inventory_id\nINNER JOIN film_category AS T4 ON T4.film_id = T3.film_id\nINNER JOIN category AS T5 ON T4.category_id = T5.category_id\nGROUP BY T1.customer_id, T1.first_name, T1.last_name\nHAVING SUM(IIF(T5.name = 'Family', 1, 0)) > SUM(IIF(T5.name = 'Sci-Fi', 1, 0))",
+   "final_matches_gold": 0
+  },
+  {
+   "class": "B_detected_not_repaired",
+   "id": "D051",
+   "category": "limit_change",
+   "source_qid": "bird_train:airline:5890",
+   "db_id": "airline",
+   "question": "Provide the origin of the flight that has the shortest actual elapsed time.",
+   "evidence": "shortest actual elapsed time refers to MIN(ACTUAL_ELAPSED_TIME);",
+   "gold_sql": "SELECT ORIGIN FROM Airlines ORDER BY ACTUAL_ELAPSED_TIME ASC LIMIT 1",
+   "injected_sql": "SELECT ORIGIN FROM Airlines ORDER BY ACTUAL_ELAPSED_TIME ASC LIMIT 2",
+   "edit": {
+    "from": "LIMIT 1",
+    "to": "LIMIT 2"
+   },
+   "evaluated_variant": "pert",
+   "evaluated_sql": "SELECT ORIGIN FROM Airlines ORDER BY ACTUAL_ELAPSED_TIME ASC LIMIT 2",
+   "critic": {
+    "score": 6.9,
+    "syntax": 10.0,
+    "semantic": 5.0,
+    "efficiency": 7.0,
+    "issues": [
+     {
+      "type": "semantic",
+      "description": "The query returns 2 rows (LIMIT 2) instead of the single flight with the shortest actual elapsed time (LIMIT 1). The question asks for 'the flight' (singular), implying a single result."
+     },
+     {
+      "type": "semantic",
+      "description": "The query does not filter out NULL values for ACTUAL_ELAPSED_TIME. If there are flights with NULL actual elapsed times, they might appear first depending on SQLite's sorting behavior for NULLs (which sort before numbers in ASC order), leading to an incorrect origin being returned."
+     }
+    ],
+    "suggestions": [
+     "Change LIMIT 2 to LIMIT 1 to return only the single flight with the shortest time.",
+     "Add a WHERE clause to exclude NULL values: WHERE ACTUAL_ELAPSED_TIME IS NOT NULL."
+    ]
+   },
+   "triggered": true,
+   "actions": [
+    "revise",
+    "accept"
+   ],
+   "gold_control_triggered": false,
+   "gold_control_score": 9.4,
+   "revisions": [
+    {
+     "sql": "SELECT ORIGIN FROM Airlines WHERE ACTUAL_ELAPSED_TIME IS NOT NULL ORDER BY ACTUAL_ELAPSED_TIME ASC LIMIT 1",
+     "same_as_previous": false,
+     "critic_score": 9.4,
+     "matches_gold": 0
+    }
+   ],
+   "final_sql": "SELECT ORIGIN FROM Airlines WHERE ACTUAL_ELAPSED_TIME IS NOT NULL ORDER BY ACTUAL_ELAPSED_TIME ASC LIMIT 1",
+   "final_matches_gold": 0
+  },
+  {
+   "class": "C_missed",
+   "id": "D001",
+   "category": "distinct_drop",
+   "source_qid": "bird_train:cars:3136",
+   "db_id": "cars",
+   "question": "List the price of Ford cars from model 1970 to 1980.",
+   "evidence": "Ford cars refers to car_name LIKE 'ford%'; from model 1970 to 1980 refers to model_year BETWEEN 1970 AND 1980",
+   "gold_sql": "SELECT DISTINCT T3.price FROM data AS T1 INNER JOIN production AS T2 ON T1.ID = T2.ID INNER JOIN price AS T3 ON T3.ID = T2.ID WHERE T1.car_name LIKE 'ford%' AND T2.model_year BETWEEN 1970 AND 1980",
+   "injected_sql": "SELECT T3.price FROM data AS T1 INNER JOIN production AS T2 ON T1.ID = T2.ID INNER JOIN price AS T3 ON T3.ID = T2.ID WHERE T1.car_name LIKE 'ford%' AND T2.model_year BETWEEN 1970 AND 1980",
+   "edit": {
+    "from": "SELECT DISTINCT",
+    "to": "SELECT"
+   },
+   "evaluated_variant": "pert",
+   "evaluated_sql": "SELECT T3.price FROM data AS T1 INNER JOIN production AS T2 ON T1.ID = T2.ID INNER JOIN price AS T3 ON T3.ID = T2.ID WHERE T1.car_name LIKE 'ford%' AND T2.model_year BETWEEN 1970 AND 1980",
+   "critic": {
+    "score": 10.0,
+    "syntax": 10.0,
+    "semantic": 10.0,
+    "efficiency": 10.0,
+    "issues": [],
+    "suggestions": []
+   },
+   "triggered": false,
+   "actions": [
+    "accept"
+   ],
+   "gold_control_triggered": false,
+   "gold_control_score": 9.8,
+   "revisions": [],
+   "final_sql": "SELECT T3.price FROM data AS T1 INNER JOIN production AS T2 ON T1.ID = T2.ID INNER JOIN price AS T3 ON T3.ID = T2.ID WHERE T1.car_name LIKE 'ford%' AND T2.model_year BETWEEN 1970 AND 1980",
+   "final_matches_gold": 0
+  },
+  {
+   "class": "C_missed",
+   "id": "D074",
+   "category": "limit_change",
+   "source_qid": "bird_train:talkingdata:1151",
+   "db_id": "talkingdata",
+   "question": "What is the device model used by the most female users over 30?",
+   "evidence": "female users refers to gender = 'F'; most female users refers to MAX(COUNT(gender = 'F')); over 30 refers to age > 30;",
+   "gold_sql": "SELECT T.device_model FROM ( SELECT T2.device_model, COUNT(T2.device_model) AS num FROM gender_age AS T1 INNER JOIN phone_brand_device_model2 AS T2 ON T1.device_id = T2.device_id WHERE T1.age > 30 AND T1.gender = 'F' GROUP BY T2.device_model ) AS T ORDER BY T.num DESC LIMIT 1",
+   "injected_sql": "SELECT T.device_model FROM ( SELECT T2.device_model, COUNT(T2.device_model) AS num FROM gender_age AS T1 INNER JOIN phone_brand_device_model2 AS T2 ON T1.device_id = T2.device_id WHERE T1.age > 30 AND T1.gender = 'F' GROUP BY T2.device_model ) AS T ORDER BY T.num DESC LIMIT 2",
+   "edit": {
+    "from": "LIMIT 1",
+    "to": "LIMIT 2"
+   },
+   "evaluated_variant": "pert",
+   "evaluated_sql": "SELECT T.device_model FROM ( SELECT T2.device_model, COUNT(T2.device_model) AS num FROM gender_age AS T1 INNER JOIN phone_brand_device_model2 AS T2 ON T1.device_id = T2.device_id WHERE T1.age > 30 AND T1.gender = 'F' GROUP BY T2.device_model ) AS T ORDER BY T.num DESC LIMIT 2",
+   "critic": {
+    "score": 8.6,
+    "syntax": 10.0,
+    "semantic": 8.0,
+    "efficiency": 8.0,
+    "issues": [
+     {
+      "type": "semantic",
+      "description": "The question asks for the single device model used by the 'most' female users (singular superlative), which implies returning only the top result. The query uses LIMIT 2, returning two rows instead of one."
+     }
+    ],
+    "suggestions": [
+     "Change LIMIT 2 to LIMIT 1 to strictly answer 'the device model' (singular)."
+    ]
+   },
+   "triggered": false,
+   "actions": [
+    "accept"
+   ],
+   "gold_control_triggered": null,
+   "gold_control_score": null,
+   "revisions": [],
+   "final_sql": "SELECT T.device_model FROM ( SELECT T2.device_model, COUNT(T2.device_model) AS num FROM gender_age AS T1 INNER JOIN phone_brand_device_model2 AS T2 ON T1.device_id = T2.device_id WHERE T1.age > 30 AND T1.gender = 'F' GROUP BY T2.device_model ) AS T ORDER BY T.num DESC LIMIT 2",
+   "final_matches_gold": 0
+  },
+  {
+   "class": "D_gold_false_positive",
+   "id": "D008",
+   "category": "distinct_drop",
+   "source_qid": "bird_train:movie_3:9259",
+   "db_id": "movie_3",
+   "question": "Find and list the full name of customers who rented more family movies than Sci-Fi movies.",
+   "evidence": "full name refers to first_name, last_name; 'family' AND 'Sci-Fi' are names of the category; customers who rented more family movies than Sci-Fi movies refers to count(name = 'Family') > count(name = 'Sci-Fi')",
+   "gold_sql": "SELECT DISTINCT IIF(SUM(IIF(T5.name = 'Family', 1, 0)) - SUM(IIF(T5.name = 'Sci-Fi', 1, 0)) > 0, T1.first_name, 0) FROM customer AS T1 INNER JOIN rental AS T2 ON T1.customer_id = T2.customer_id INNER JOIN inventory AS T3 ON T2.inventory_id = T3.inventory_id INNER JOIN film_category AS T4 ON T4.film_id = T3.film_id INNER JOIN category AS T5 ON T4.category_id = T5.category_id GROUP BY T1.customer_id",
+   "injected_sql": "SELECT IIF(SUM(IIF(T5.name = 'Family', 1, 0)) - SUM(IIF(T5.name = 'Sci-Fi', 1, 0)) > 0, T1.first_name, 0) FROM customer AS T1 INNER JOIN rental AS T2 ON T1.customer_id = T2.customer_id INNER JOIN inventory AS T3 ON T2.inventory_id = T3.inventory_id INNER JOIN film_category AS T4 ON T4.film_id = T3.film_id INNER JOIN category AS T5 ON T4.category_id = T5.category_id GROUP BY T1.customer_id",
+   "edit": {
+    "from": "SELECT DISTINCT",
+    "to": "SELECT"
+   },
+   "evaluated_variant": "gold",
+   "evaluated_sql": "SELECT DISTINCT IIF(SUM(IIF(T5.name = 'Family', 1, 0)) - SUM(IIF(T5.name = 'Sci-Fi', 1, 0)) > 0, T1.first_name, 0) FROM customer AS T1 INNER JOIN rental AS T2 ON T1.customer_id = T2.customer_id INNER JOIN inventory AS T3 ON T2.inventory_id = T3.inventory_id INNER JOIN film_category AS T4 ON T4.film_id = T3.film_id INNER JOIN category AS T5 ON T4.category_id = T5.category_id GROUP BY T1.customer_id",
+   "critic": {
+    "score": 5.6,
+    "syntax": 10.0,
+    "semantic": 2.0,
+    "efficiency": 8.0,
+    "issues": [
+     {
+      "type": "semantic",
+      "description": "The query only returns the first name (or 0) instead of the full name (first_name and last_name) as requested."
+     },
+     {
+      "type": "semantic",
+      "description": "The query returns '0' for customers who do not meet the condition, instead of filtering them out. The question asks to 'list' customers who meet the criteria, implying a filter (WHERE or HAVING), not a conditional display value."
+     },
+     {
+      "type": "semantic",
+      "description": "The GROUP BY clause uses customer_id, but the SELECT clause references first_name without including it in the GROUP BY or an aggregate function. While SQLite allows this, it is semantically ambiguous if multiple customers had the same ID (impossible here) or if the intent was to group by name. More importantly, since last_name is missing entirely, the 'full name' requirement is not met."
+     }
+    ],
+    "suggestions": [
+     "Select both T1.first_name and T1.last_name.",
+     "Use a HAVING clause to filter groups where SUM(IIF(T5.name = 'Family', 1, 0)) > SUM(IIF(T5.name = 'Sci-Fi', 1, 0)).",
+     "Remove the IIF wrapper in the SELECT statement and just return the names.",
+     "Group by T1.customer_id, T1.first_name, and T1.last_name to ensure correct association."
+    ]
+   },
+   "triggered": true,
+   "actions": [
+    "revise",
+    "accept"
+   ],
+   "gold_control_triggered": true,
+   "gold_control_score": 5.6,
+   "revisions": [
+    {
+     "sql": "SELECT T1.first_name, T1.last_name\nFROM customer AS T1\nINNER JOIN rental AS T2 ON T1.customer_id = T2.customer_id\nINNER JOIN inventory AS T3 ON T2.inventory_id = T3.inventory_id\nINNER JOIN film_category AS T4 ON T4.film_id = T3.film_id\nINNER JOIN category AS T5 ON T4.category_id = T5.category_id\nGROUP BY T1.customer_id, T1.first_name, T1.last_name\nHAVING SUM(IIF(T5.name = 'Family', 1, 0)) > SUM(IIF(T5.name = 'Sci-Fi', 1, 0))",
+     "same_as_previous": false,
+     "critic_score": 9.8,
+     "matches_gold": 0
+    }
+   ],
+   "final_sql": "SELECT T1.first_name, T1.last_name\nFROM customer AS T1\nINNER JOIN rental AS T2 ON T1.customer_id = T2.customer_id\nINNER JOIN inventory AS T3 ON T2.inventory_id = T3.inventory_id\nINNER JOIN film_category AS T4 ON T4.film_id = T3.film_id\nINNER JOIN category AS T5 ON T4.category_id = T5.category_id\nGROUP BY T1.customer_id, T1.first_name, T1.last_name\nHAVING SUM(IIF(T5.name = 'Family', 1, 0)) > SUM(IIF(T5.name = 'Sci-Fi', 1, 0))",
+   "final_matches_gold": 0
+  },
+  {
+   "class": "D_gold_false_positive",
+   "id": "D046",
+   "category": "limit_change",
+   "source_qid": "bird_train:computer_student:985",
+   "db_id": "computer_student",
+   "question": "Which course has more teachers, course no.16 or course no.18?",
+   "evidence": "teachers refers to taughtBy.p_id; course no.16 refers to course_id = 16; course no.18 refers to course_id = 18",
+   "gold_sql": "SELECT course_id FROM taughtBy WHERE course_id = 11 OR course_id = 18 GROUP BY course_id ORDER BY COUNT(course_id) DESC LIMIT 1",
+   "injected_sql": "SELECT course_id FROM taughtBy WHERE course_id = 11 OR course_id = 18 GROUP BY course_id ORDER BY COUNT(course_id) DESC LIMIT 2",
+   "edit": {
+    "from": "LIMIT 1",
+    "to": "LIMIT 2"
+   },
+   "evaluated_variant": "gold",
+   "evaluated_sql": "SELECT course_id FROM taughtBy WHERE course_id = 11 OR course_id = 18 GROUP BY course_id ORDER BY COUNT(course_id) DESC LIMIT 1",
+   "critic": {
+    "score": 4.8,
+    "syntax": 10.0,
+    "semantic": 0.0,
+    "efficiency": 9.0,
+    "issues": [
+     {
+      "type": "semantic",
+      "description": "The query filters for course_id = 11 instead of the requested course_id = 16. This is a critical error that changes the scope of the question entirely."
+     }
+    ],
+    "suggestions": [
+     "Change the filter condition from 'course_id = 11' to 'course_id = 16' to match the question's requirement."
+    ]
+   },
+   "triggered": true,
+   "actions": [
+    "revise",
+    "accept"
+   ],
+   "gold_control_triggered": true,
+   "gold_control_score": 4.8,
+   "revisions": [
+    {
+     "sql": "SELECT course_id FROM taughtBy WHERE course_id = 16 OR course_id = 18 GROUP BY course_id ORDER BY COUNT(p_id) DESC LIMIT 1",
+     "same_as_previous": false,
+     "critic_score": 9.8,
+     "matches_gold": 1
+    }
+   ],
+   "final_sql": "SELECT course_id FROM taughtBy WHERE course_id = 16 OR course_id = 18 GROUP BY course_id ORDER BY COUNT(p_id) DESC LIMIT 1",
+   "final_matches_gold": 1
+  }
+ ]
+}

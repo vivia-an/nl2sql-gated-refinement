@@ -1,0 +1,5 @@
+# E4 stream runs on HR: P0 pipeline, M6 parameters (tuned on the HT mini-stream: eta in {0.2,0.3,0.5}, rho in {0,0.1,0.2,0.4})
+temperature: 0.0
+m6:
+  policy: ws_full
+  params: {eta: 0.3, rho: 0.2, phi: 0.5, tau: 6.0}

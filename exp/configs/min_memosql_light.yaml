@@ -1,0 +1,9 @@
+# MIN M2 TEMPLATE -> frozen/memosql_light.yaml. Memo-SQL light preset (2 strategies x 1 style, 1 refine round; HT-10 smoke 18.1 calls/q = ~9x the budget of
+# full_gated, so it is NOT budget-matched and not eligible for B* (SAP 13.3 P2); reported as an out-of-budget reference row on a 500-question subset).
+# memory_path: copy pod b1_work/out/memo_memory_v1.json to exp/frozen/memo_memory_v1.json at freeze time and put its sha256 in memory_sha256 (freeze_configs.py does it).
+# The lock does not hash memory_path: tools/lock_gate.py checks memory_sha256. --system memosql.
+temperature: 0.0
+ddl: {quote_keywords: true}   # X6: same quoted identifiers as the ours-systems (SAP 13.6 rule 1); schema block only, no extra rule line
+preset: light
+memory_path: exp/frozen/memo_memory_v1.json
+memory_sha256: FILLED_AT_FREEZE

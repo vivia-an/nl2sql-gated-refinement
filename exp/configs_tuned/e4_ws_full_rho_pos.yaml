@@ -1,0 +1,6 @@
+# R0 tuned (P2) E4 ws_full, best setting with rho>0 on the first pass: eta=0.5, rho=0.2 (EX 0.7070 vs 0.7148 for rho=0; difference = 2 of 256 items).
+temperature: 0.0
+m3: {k_t: 6, k_e: 4}
+m6:
+  policy: ws_full
+  params: {eta: 0.5, rho: 0.2, phi: 0.5, tau: 6.0}

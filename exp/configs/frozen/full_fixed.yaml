@@ -1,0 +1,7 @@
+# FROZEN 2026-10-26 by code/tools/freeze_configs.py from exp/configs/min_full_fixed.yaml (sha256 2e4f1164da90e713). Do not edit: a change is a new lock entry (SPEC 1.3 step 6).
+# MIN plan TEMPLATE -> frozen as exp/configs/frozen/full_fixed.yaml. M1-M6 + patent loop P0 (V3 critic in the loop) + identifier quoting
+# (= full_quote.yaml). The freeze step appends the M6 line  m6: {policy: ws_full, path: exp/frozen/corpus_burnin_<sha8>.sqlite, update: false}.
+# Use with --system full_fixed.
+temperature: 0.0
+ddl: {quote_keywords: true}
+m6: {policy: ws_full, path: exp/frozen/corpus_burnin_39e2477c.sqlite, update: false}

@@ -1,0 +1,24 @@
+% HAND-WRITTEN (RW_D 2026-10-27; shortened in the CUT revision: the verdict column moved into the Discussion text). RW2: moved to the supplement (S16.9), used with \tabinput in supp_text/s_moved_cut.tex only. Not generated. Numbers only through \res / \xres / \tsres. Three columns: module, what the study tested, evidence status (scope label).
+% Rows follow docs/STORYLINE.md R3.8 (Table M).
+\begin{table}[!htb]
+\caption{Pipeline modules and the hand-off, what this study tested and the status of the evidence. The table maps evidence to modules; it does not assess the claims of the patent application. BIRD development set unless the row says otherwise.}\label{tab:patent_modules}
+\centering
+\footnotesize
+\begin{tabularx}{\linewidth}{Y{0.6}Y{1.65}Y{0.75}}
+\toprule
+Module & What the study tested & Evidence \\
+\midrule
+M1 intent model & Removal on Plus: $\Delta$EX \res{E3.abl_m1.delta_vs_full.delta_ex} pp (CI \res{E3.abl_m1.delta_vs_full.delta_ex.ci}). & Descriptive \\
+M2 knowledge fusion & Simulated enterprise sources; no ablation of its own. & None \\
+M3 retrieval, examples & Schema routing never triggered on BIRD development (\xres{RV3.retr.plus.routed_n} of \res{setup.bird_dev.n_questions} questions, every backbone and arm), so retrieval of tables was not tested. The four similar examples sit in the root-only arm (root-only minus single call, pooled: \xres{RV3.rep.stack.pooled3.s0} pp locked, \xres{RV3.rep.stack.pooled3.est} pp replication; Spider-Realistic \xres{EXT1.XB1_stack.delta_ex} pp, CI \xres{EXT1.XB1_stack.delta_ex.ci}). & Post hoc; external validity \\
+M4 generator & In every arm, not varied; legacy identifier rendering \res{E3.abl_q.delta_vs_full.delta_ex} pp. & Descriptive \\
+M5 execution gate & Calls ratio \res{P1prime.calls_ratio}, $\Delta$EX \res{P1prime.delta_ex} pp (CI \res{P1prime.delta_ex.ci}), pooled; on the \xres{ROB.n_same}-question subset (easier than the rest), corrected references: \xres{ROB.H1.pooled.corrected} pp; Spider-Realistic calls ratio \xres{EXT1.XB3.calls_ratio}. & Confirmatory; robustness (post hoc); external validity \\
+M5 semantic Critic & Plus only, fixed loop: \res{E10.revision.helped} helped, \res{E10.revision.hurt} hurt (execution count); flags \xres{DIAG.all.fpr}\% of unmodified reference queries; no variant met its rule. & Exploratory post hoc \\
+M5$'$ feedback-updated standard & Plus, simulated ideal user, \xres{PF.arm.pf_n0.fb} to \xres{PF.arm.pf_n1000_q100.fb} cases: $\Delta$EX \xres{PF.PF1.delta.d2} pp (CI \xres{PF.PF1.delta.ci.d2}). & Exploratory post hoc; simulated \\
+M6 value-weighted store & Tuning stream, wrong seed entries: EX \res{P4.ex_ws}\% against \res{P4.ex_append}\% append-only. & Tuning set \\
+M7 learned controller & Cross-validated PPO and A2C against the fixed loop (Figure~\ref{fig:negative}a). & Tuning set \\
+Hand-off by routing score & Fitted routing score minus unfitted Critic score V3: AUROC \res{P3.dauroc} (CI \res{P3.dauroc.ci}); refitted without the agreement feature \xres{RV3.route.diff.hr_refit_no_agreement_minus_v3}; majority vote of the same cost \xres{RV3.route.vote.A.auroc} against \res{P3.route_ca.auroc}. & Confirmatory; controls post hoc \\
+\bottomrule
+\end{tabularx}
+\tabfoot{Scope labels as in Table~\ref{tab:ladder}; ``None'' means that no test was run. Costs are in Section~\mref{sec:results}.}
+\end{table}

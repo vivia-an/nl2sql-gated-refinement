@@ -1,0 +1,3 @@
+# Critic = cross-vendor model (V4). Same pipeline otherwise.
+temperature: 0.0
+models: {critic: dsv41flash}

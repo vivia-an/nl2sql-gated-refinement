@@ -1,0 +1,880 @@
+{
+ "entries": [
+  {
+   "system": "zs_ours",
+   "config_path": "exp/configs/frozen/zs.yaml",
+   "config_sha256": "1b37212392fa559d02afbc168c614b1b6ff7120e1d4d2981e3783b8be628c388",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "900b6ea421330a01213d637e96b644122225db2a",
+   "date": "2026-10-26",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0,
+    101,
+    202
+   ],
+   "sap_commit": "900b6ea",
+   "controller_sha256": null,
+   "corpus_sha256": null,
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "sdebug",
+   "config_path": "exp/configs/frozen/sdebug.yaml",
+   "config_sha256": "1db04ebb645867643fda1e2be43b48cbebf2a91c0dd40818a7e9ac64c3ddfb7f",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "900b6ea421330a01213d637e96b644122225db2a",
+   "date": "2026-10-26",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": "900b6ea",
+   "controller_sha256": null,
+   "corpus_sha256": null,
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "acsql_s",
+   "config_path": "exp/configs/frozen/acsql_s.yaml",
+   "config_sha256": "ac443434f09a73b21f4ab90f4b098df2d1d2f279b27eb390e9635ac7a87caa7e",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "900b6ea421330a01213d637e96b644122225db2a",
+   "date": "2026-10-26",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": "900b6ea",
+   "controller_sha256": null,
+   "corpus_sha256": null,
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "macsql",
+   "config_path": "exp/configs/frozen/macsql.yaml",
+   "config_sha256": "f43d7cee5bd5ae1e086158e022001845a33e52d98a96d481c7eca7582316f3bf",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "900b6ea421330a01213d637e96b644122225db2a",
+   "date": "2026-10-26",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": "900b6ea",
+   "controller_sha256": null,
+   "corpus_sha256": null,
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "bon_vote",
+   "config_path": "exp/configs/frozen/bon_vote.yaml",
+   "config_sha256": "a7d88014cb1b532bf2777d075a4d96c1685e6b126a3d1a01a5c2958b5d187172",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "900b6ea421330a01213d637e96b644122225db2a",
+   "date": "2026-10-26",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": "900b6ea",
+   "controller_sha256": null,
+   "corpus_sha256": null,
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "bon_vote",
+   "config_path": "exp/configs/frozen/bon_vote_n3.yaml",
+   "config_sha256": "f5abdafbdb7074c291566d47e2fb0c9ce66cb1fb222545f44e8fa39aa75dc22d",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "900b6ea421330a01213d637e96b644122225db2a",
+   "date": "2026-10-26",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": "900b6ea",
+   "controller_sha256": null,
+   "corpus_sha256": null,
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "memosql",
+   "config_path": "exp/configs/frozen/memosql_light.yaml",
+   "config_sha256": "ca15780449da0b6e1c0f07017b64bd4ea769d935f1b930ce73ae05b10225c881",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "900b6ea421330a01213d637e96b644122225db2a",
+   "date": "2026-10-26",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": "900b6ea",
+   "controller_sha256": null,
+   "corpus_sha256": null,
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "e9_probes",
+   "config_path": "exp/configs/e9.yaml",
+   "config_sha256": "16120fee5d7aeac48f0310eb81d88eb82b0aa07cb27c29aa56705d85870ca701",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "900b6ea421330a01213d637e96b644122225db2a",
+   "date": "2026-10-26",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": "900b6ea",
+   "controller_sha256": null,
+   "corpus_sha256": null,
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "full_fixed",
+   "config_path": "exp/configs/frozen/full_fixed.yaml",
+   "config_sha256": "ec18530eeaa6a4a97f6685eadac268696a6217ad98a1527fc2a376f2a3326edf",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "899bdd245f05435a8b8dccba9529aa5ca620c7c5",
+   "date": "2026-10-26",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": "899bdd2",
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "full_gated",
+   "config_path": "exp/configs/frozen/full_gated.yaml",
+   "config_sha256": "2938ed6adf79784cc5156665ea4ccad95dba653f17c7ac88fd7b8d9d9ef0089e",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "899bdd245f05435a8b8dccba9529aa5ca620c7c5",
+   "date": "2026-10-26",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0,
+    101,
+    202
+   ],
+   "sap_commit": "899bdd2",
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "full_gated",
+   "config_path": "exp/configs/frozen/full_gated_route_ca.yaml",
+   "config_sha256": "348467d9c2a2741dcb14d494be2649eeb37823807b5dfe312078e3564b2c2174",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "899bdd245f05435a8b8dccba9529aa5ca620c7c5",
+   "date": "2026-10-26",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": "899bdd2",
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": "f2c7556f97c65a4bafc903f44b17911ee998c26d658c9e3552d95d3be7af2a71"
+  },
+  {
+   "system": "full_gated",
+   "config_path": "exp/configs/frozen/gated_noM1.yaml",
+   "config_sha256": "f7b6a7456948eb690895a771511a9818241bd366cb4092e455db3b37cf0b29fc",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "899bdd245f05435a8b8dccba9529aa5ca620c7c5",
+   "date": "2026-10-26",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": "899bdd2",
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "full_gated",
+   "config_path": "exp/configs/frozen/gated_m3force.yaml",
+   "config_sha256": "adf340738017470ff035535c15a7fd6ebea108a32b295fa856b357bf0811d96b",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "899bdd245f05435a8b8dccba9529aa5ca620c7c5",
+   "date": "2026-10-26",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": "899bdd2",
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "full_gated",
+   "config_path": "exp/configs/frozen/gated_rootonly.yaml",
+   "config_sha256": "58c8744e735ecfe3c02e401179b99ef45a071181b19e55be2e245f93e3bbf8a6",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "899bdd245f05435a8b8dccba9529aa5ca620c7c5",
+   "date": "2026-10-26",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": "899bdd2",
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "full_gated",
+   "config_path": "exp/configs/frozen/gated_legacyddl.yaml",
+   "config_sha256": "a897377226ddc1e2c56d541048ac4a8c5aa7a6e20496e77da931c276fa0c0448",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "899bdd245f05435a8b8dccba9529aa5ca620c7c5",
+   "date": "2026-10-26",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": "899bdd2",
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "full_gated_blind",
+   "config_path": "exp/configs/frozen/gated_blind.yaml",
+   "config_sha256": "c211c523de781dc2d0a9e0a0de225953b048515141b1c23cb5acbb0db81ba7d5",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "899bdd245f05435a8b8dccba9529aa5ca620c7c5",
+   "date": "2026-10-26",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": "899bdd2",
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "patent_fb",
+   "config_path": "exp/configs/pf/patent_fb_n0.yaml",
+   "config_sha256": "15d586a70eb525eafb4c3ee046c5d71be485e2b24116882ae0b5c1945b1145c8",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "32de07d63ae28624dd3819405bee050778abf187",
+   "date": "2026-10-27",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": "32de07d",
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "patent_fb",
+   "config_path": "exp/configs/pf/patent_fb_n250_q100.yaml",
+   "config_sha256": "54e8e4580faf0beb61ae96ec72e28c4102d730b08a7853e1ba76a50c3c4fc29a",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "32de07d63ae28624dd3819405bee050778abf187",
+   "date": "2026-10-27",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": "32de07d",
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "patent_fb",
+   "config_path": "exp/configs/pf/patent_fb_n1000_q100.yaml",
+   "config_sha256": "972a1c858ae3ff4e5a808a077152694e579c92f6c91b03e56e59e4fd266db245",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "32de07d63ae28624dd3819405bee050778abf187",
+   "date": "2026-10-27",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": "32de07d",
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "patent_fb",
+   "config_path": "exp/configs/pf/patent_fb_n1000_q085.yaml",
+   "config_sha256": "abb26caaf9438f41fb82182c6839773ee9838349125a972b99de63fa2aa710d1",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "32de07d63ae28624dd3819405bee050778abf187",
+   "date": "2026-10-27",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": "32de07d",
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "full_fixed",
+   "config_path": "exp/configs/frozen/full_fixed.yaml",
+   "config_sha256": "ec18530eeaa6a4a97f6685eadac268696a6217ad98a1527fc2a376f2a3326edf",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "2c086d9d38695a856b7fe05acab1eac8a2e798fe",
+   "date": "2026-10-28",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    101,
+    202
+   ],
+   "sap_commit": null,
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "full_gated",
+   "config_path": "exp/configs/frozen/gated_rootonly.yaml",
+   "config_sha256": "58c8744e735ecfe3c02e401179b99ef45a071181b19e55be2e245f93e3bbf8a6",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "2c086d9d38695a856b7fe05acab1eac8a2e798fe",
+   "date": "2026-10-28",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    101,
+    202
+   ],
+   "sap_commit": null,
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "zs_ex",
+   "config_path": "exp/configs/frozen/zs_ex.yaml",
+   "config_sha256": "90a9c68a195cbd06c244a84114c2bf2db75f693297727d35aac11b37f8b78378",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "2c086d9d38695a856b7fe05acab1eac8a2e798fe",
+   "date": "2026-10-28",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0,
+    101,
+    202
+   ],
+   "sap_commit": null,
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "full_fixed",
+   "config_path": "exp/configs/frozen/full_fixed.yaml",
+   "config_sha256": "ec18530eeaa6a4a97f6685eadac268696a6217ad98a1527fc2a376f2a3326edf",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "2c086d9d38695a856b7fe05acab1eac8a2e798fe",
+   "date": "2026-10-28",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    303
+   ],
+   "sap_commit": null,
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "full_gated",
+   "config_path": "exp/configs/frozen/gated_rootonly.yaml",
+   "config_sha256": "58c8744e735ecfe3c02e401179b99ef45a071181b19e55be2e245f93e3bbf8a6",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "2c086d9d38695a856b7fe05acab1eac8a2e798fe",
+   "date": "2026-10-28",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    303
+   ],
+   "sap_commit": null,
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "zs_ours",
+   "config_path": "exp/configs/frozen/zs.yaml",
+   "config_sha256": "1b37212392fa559d02afbc168c614b1b6ff7120e1d4d2981e3783b8be628c388",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "2c086d9d38695a856b7fe05acab1eac8a2e798fe",
+   "date": "2026-10-28",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    303
+   ],
+   "sap_commit": null,
+   "controller_sha256": null,
+   "corpus_sha256": null,
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "zs_ex",
+   "config_path": "exp/configs/frozen/zs_ex_s303.yaml",
+   "config_sha256": "6f0e2da260b542e3861e749ca9c5d4643772274afe2b3da574c253824a9a63c4",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "2c086d9d38695a856b7fe05acab1eac8a2e798fe",
+   "date": "2026-10-28",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    303
+   ],
+   "sap_commit": null,
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "full_gated",
+   "config_path": "exp/configs/frozen/full_gated.yaml",
+   "config_sha256": "2938ed6adf79784cc5156665ea4ccad95dba653f17c7ac88fd7b8d9d9ef0089e",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "2c086d9d38695a856b7fe05acab1eac8a2e798fe",
+   "date": "2026-10-28",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    303
+   ],
+   "sap_commit": null,
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "zs_ours",
+   "config_path": "exp/configs/frozen/zs.yaml",
+   "config_sha256": "1b37212392fa559d02afbc168c614b1b6ff7120e1d4d2981e3783b8be628c388",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "2c086d9d38695a856b7fe05acab1eac8a2e798fe",
+   "date": "2026-10-28",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": null,
+   "controller_sha256": null,
+   "corpus_sha256": null,
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "full_fixed",
+   "config_path": "exp/configs/frozen/full_fixed.yaml",
+   "config_sha256": "ec18530eeaa6a4a97f6685eadac268696a6217ad98a1527fc2a376f2a3326edf",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "2c086d9d38695a856b7fe05acab1eac8a2e798fe",
+   "date": "2026-10-28",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": null,
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "full_gated",
+   "config_path": "exp/configs/frozen/full_gated.yaml",
+   "config_sha256": "2938ed6adf79784cc5156665ea4ccad95dba653f17c7ac88fd7b8d9d9ef0089e",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "2c086d9d38695a856b7fe05acab1eac8a2e798fe",
+   "date": "2026-10-28",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": null,
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "full_gated",
+   "config_path": "exp/configs/frozen/gated_rootonly.yaml",
+   "config_sha256": "58c8744e735ecfe3c02e401179b99ef45a071181b19e55be2e245f93e3bbf8a6",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "2c086d9d38695a856b7fe05acab1eac8a2e798fe",
+   "date": "2026-10-28",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": null,
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null
+  },
+  {
+   "system": "zs_ours",
+   "config_path": "exp/configs/frozen/zs.yaml",
+   "config_sha256": "1b37212392fa559d02afbc168c614b1b6ff7120e1d4d2981e3783b8be628c388",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "2c086d9d38695a856b7fe05acab1eac8a2e798fe",
+   "date": "2026-10-28",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": null,
+   "controller_sha256": null,
+   "corpus_sha256": null,
+   "critic_sha256": null,
+   "route_sha256": null,
+   "note": "round-5 completion of the temperature-0 reruns (r1 only; seed parameter 0; post hoc, SAP 27); registration only, seed 0 was already authorised"
+  },
+  {
+   "system": "full_fixed",
+   "config_path": "exp/configs/frozen/full_fixed.yaml",
+   "config_sha256": "ec18530eeaa6a4a97f6685eadac268696a6217ad98a1527fc2a376f2a3326edf",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "2c086d9d38695a856b7fe05acab1eac8a2e798fe",
+   "date": "2026-10-28",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": null,
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null,
+   "note": "round-5 completion of the temperature-0 reruns (r1 only; seed parameter 0; post hoc, SAP 27); registration only, seed 0 was already authorised"
+  },
+  {
+   "system": "full_gated",
+   "config_path": "exp/configs/frozen/full_gated.yaml",
+   "config_sha256": "2938ed6adf79784cc5156665ea4ccad95dba653f17c7ac88fd7b8d9d9ef0089e",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "2c086d9d38695a856b7fe05acab1eac8a2e798fe",
+   "date": "2026-10-28",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": null,
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null,
+   "note": "round-5 completion of the temperature-0 reruns (r1 only; seed parameter 0; post hoc, SAP 27); registration only, seed 0 was already authorised"
+  },
+  {
+   "system": "full_gated",
+   "config_path": "exp/configs/frozen/gated_rootonly.yaml",
+   "config_sha256": "58c8744e735ecfe3c02e401179b99ef45a071181b19e55be2e245f93e3bbf8a6",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "2c086d9d38695a856b7fe05acab1eac8a2e798fe",
+   "date": "2026-10-28",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": null,
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null,
+   "note": "round-5 completion of the temperature-0 reruns (r1 only; seed parameter 0; post hoc, SAP 27); registration only, seed 0 was already authorised"
+  }
+ ]
+}

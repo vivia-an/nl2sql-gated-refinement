@@ -1,0 +1,5 @@
+# MIN baseline second pass. bon_vote trial 1 = the M2 starting point (n 2, T 0.7). Calls = n by construction: only the sampling temperature is tunable at a fixed budget.
+temperature: 0.0
+ddl: {quote_keywords: true}   # X6: same quoted identifiers as the ours-systems (SAP 13.6 rule 1); schema block only, no extra rule line
+n: 2
+sample_temperature: 0.7

@@ -1,0 +1,51 @@
+item_id,primary_label,secondary_label,rationale,notes
+A097,L6,L4,"Question asks 'how many users' but gold COUNT(T1.Id) over the users-posts join counts user-post rows (19) not users; prediction's COUNT(DISTINCT T1.Id) counts users.",gold counts joined rows
+A198,L6,L8,"Question asks to 'list the district' and state with the percentage but gold selects only the percentage expression and no district/state column.",pred also omits state (A3)
+A225,L3,L4,,gold has school IS NOT NULL and DISTINCT; pred lacks them; COUNT(*) vs COUNT(School) in ranking
+A256,L4,L1,,GROUP BY event_name vs event_id and COUNT(link_to_member) vs COUNT(link_to_event) (evidence says link_to_event)
+A243,L2,,,gold joins set_translations and returns setCode from it; pred has no join and returns sets.code
+A228,L3,L4,,gold adds full_name IS NOT NULL and DISTINCT; pred returns NULL and duplicate names
+A210,L8,,,pred returns one row (count + GROUP_CONCAT string) vs gold one id per row; output shape
+A100,L1,,,pred takes Diagnosis from Examination instead of Patient.Diagnosis
+A222,L7,,"No evidence given; 'first names among the school administrators' can mean AdmFName1 only (gold) or AdmFName1-3 pooled (pred); both readings acceptable.",
+A217,L1,,,pred reads table connected (returns both directions = 2 rows) while gold derives the pair from bond; table choice differs
+A107,L6,,"Evidence says 'more than 4 votes refer to PostId > 4' and question asks 'how many posts' (single count) but gold returns many group rows via HAVING COUNT(T4.Id) > 4, degenerate.",pred follows evidence literally via p.Id > 4
+A005,L3,,,date compared as '970101' string; actual stored format differs so zero rows; gold uses STRFTIME year
+A297,L2,,,gold uses client's own district; pred goes disp-account-district (account branch)
+A073,L4,,,pred LIMIT 1 drops ties; gold returns all users with MIN(Views)
+A041,L6,L8,"Question asks to 'list the district of the and the state' with the percentage but gold returns only the percentage expression.",pred adds district and state columns and DISTINCT
+A237,L1,,,pred uses constructorResults; gold uses constructorStandings
+A250,L5,,"D1: highest T-CHO is the primary criterion with oldest as tie-break (gold ORDER BY T-CHO DESC then Birthday); D2: pred ranks oldest birthday first then T-CHO, replacing the ranking criterion.",
+A292,L5,L2,"D1: evidence percentage = Spanish rows / all rows overall (gold scalar over foreign_data) listing Spanish names; D2: pred computes per-card-name percentage over all cards via GROUP BY name.",extra join to cards
+A136,L6,,"Schema comment on transactions_1k says 'total price = Amount x Price'; 'paid the most' needs that total but gold uses SUM(Price) only.",pred uses SUM(Amount*Price)
+A037,L8,,,pred omits the count column; same ranking and districts
+A144,L1,L2,,pred takes TP from Examination (no such column) instead of Laboratory.TP; extra Examination join
+A274,L6,,"Evidence says 'year(Description) = 1991' but gold filters STRFTIME('%Y', T1.`First Date`); pred follows the evidence column.",
+A257,L6,,"Question asks for the 'defence aggression class' but gold selects chanceCreationShootingClass.",pred selects defenceAggressionClass
+A220,L2,,,gold joins atom and bond on molecule_id; pred joins through connected
+A216,L8,,,pred returns atom_id and atom_id2 pairs; gold only atom_id; column set differs
+A203,L8,,,pred adds atom_id2 column and returns reversed row too
+A082,L1,,,pred uses results.position; gold uses driverStandings.position
+A150,L2,,,Latitude lives in schools; pred lacks join to schools and queries frpm only (ERROR no such column)
+A049,L8,,,pred omits Count and PopularityRank columns; ordering same
+A283,L4,,,gold GROUP BY city with SUM(enrollment); pred orders raw rows without aggregation
+A289,L1,L3,,pred uses expense_description instead of event.type and adds approved='true'
+A129,L8,L4,,gold subtracts date strings (SQLite numeric cast gives year difference 1); pred julianday days plus ORDER BY LIMIT 1; unit and value differ
+A126,L2,,,pred joins atom-connected-bond with OR giving no rows (NULL); gold joins atom and bond via molecule_id
+A044,L8,,,pred omits ID column and DISTINCT collapses to Admission values only
+A242,L4,L6,,gold LIMIT 1 returns single expense; pred returns all expenses of min-remaining budget (ties)
+A047,L8,,,pred adds Birthday column
+A125,L3,,,pred assumes YYMMDD with SUBSTR(issued 1 2); real format differs so year test wrong; gold uses STRFTIME
+A195,L8,L3,,pred omits AdmEmail2 column and uses District instead of City filter and null/empty filters
+A038,L8,,,pred returns atom_id and atom_id2 pairs; gold only atom_id
+A110,L6,,"Evidence says 'more converted mana ... refers to Max(faceConvertedManaCost)' but gold orders ASC with LIMIT 1 which returns the minimum.",
+A279,L6,,"Evidence defines difference as 'north Bohemia - east Bohemia' but gold computes east minus north.",pred follows the evidence sign
+A265,L3,,,pred filters both IDs NOT NULL (powerful foils) while question asks non-powerful (IS NULL OR IS NULL)
+A045,L8,,,same value row but column order Zip State swapped
+A241,L6,,"Evidence says 'lap record means the fastest time recorded' but gold lists all of Hamilton's lap times with no MIN/ordering.",pred MIN over text times gives 19:16.450
+A070,L2,,,gold joins atom to bond on molecule_id; pred joins through connected on atom
+A215,L8,,,pred returns only partner atom_id column; gold returns atom_id and atom_id2 pairs
+A154,L1,L3,,pred references nonexistent alias s for School Name and does integer division without CAST
+A020,L3,,,date compared as '930101' to '931231' strings; real format differs so zero rows
+A108,L6,L4,"Question asks 'how many account/s' but gold COUNT(T1.account_id) counts transaction rows (6) not accounts; pred counts DISTINCT accounts.",
+A161,L6,,"Evidence defines the average over parking cost 'where category = 'Parking'' but gold uses (SELECT AVG(cost) FROM expense) over all expenses.",pred restricts average to Parking and returns no rows

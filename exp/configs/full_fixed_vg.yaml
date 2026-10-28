@@ -1,0 +1,4 @@
+# X9: patent loop P0 (full_fixed) + ddl.quote_keywords + m2.value_grounding (see full_gated_vg.yaml for the mechanism). Compare with full_quote.yaml runs.
+temperature: 0.0
+ddl: {quote_keywords: true}
+m2: {value_grounding: true}

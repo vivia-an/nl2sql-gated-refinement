@@ -1,0 +1,49 @@
+{
+ "executable_roots": {
+  "disagree": 83,
+  "revision_right": 17,
+  "root_right": 25,
+  "revision_win_rate": 0.40476190476190477
+ },
+ "executable_roots_score<8.5": {
+  "disagree": 45,
+  "revision_right": 5,
+  "root_right": 10,
+  "revision_win_rate": 0.3333333333333333
+ },
+ "executable_roots_score>=8.5": {
+  "disagree": 38,
+  "revision_right": 12,
+  "root_right": 15,
+  "revision_win_rate": 0.4444444444444444
+ },
+ "executable_roots_score==10": {
+  "disagree": 3,
+  "revision_right": 1,
+  "root_right": 1,
+  "revision_win_rate": 0.5
+ },
+ "root_nonempty": {
+  "disagree": 57,
+  "revision_right": 10,
+  "root_right": 16,
+  "revision_win_rate": 0.38461538461538464
+ },
+ "root_empty": {
+  "disagree": 26,
+  "revision_right": 7,
+  "root_right": 9,
+  "revision_win_rate": 0.4375
+ },
+ "exec_error_roots": {
+  "disagree": 67,
+  "revision_right": 47,
+  "root_right": 0,
+  "revision_win_rate": 1.0
+ },
+ "escalate_vs_root_executable": {
+  "escalate_right": 18,
+  "root_right": 25,
+  "win_rate": 0.4186046511627907
+ }
+}

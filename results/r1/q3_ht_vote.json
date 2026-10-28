@@ -1,0 +1,105 @@
+{
+ "sanity_recomputed_vs_stored_EX": {
+  "zs": 1.0,
+  "zs_ours": 1.0,
+  "full_root": 1.0,
+  "full_final": 1.0
+ },
+ "policies": [
+  {
+   "policy": "zs",
+   "EX": [
+    0.6733333333333333,
+    0.5274725274725275,
+    0.7823691460055097
+   ],
+   "calls": 1.0
+  },
+  {
+   "policy": "zs_ours",
+   "EX": [
+    0.6966666666666667,
+    0.5347985347985348,
+    0.8016528925619835
+   ],
+   "calls": 1.0
+  },
+  {
+   "policy": "full_root",
+   "EX": [
+    0.6833333333333333,
+    0.5604395604395604,
+    0.7603305785123967
+   ],
+   "calls": 3.0
+  },
+  {
+   "policy": "full_final",
+   "EX": [
+    0.6933333333333334,
+    0.5860805860805861,
+    0.7651006711409396
+   ],
+   "calls": 3.25
+  },
+  {
+   "policy": "vote3(zs, zs_ours, full_final) tie->full_final",
+   "EX": [
+    0.6966666666666667,
+    0.5604395604395604,
+    0.7933884297520661
+   ],
+   "calls": 5.25
+  },
+  {
+   "policy": "vote3(zs, zs_ours, full_final) tie->zs_ours",
+   "EX": [
+    0.7,
+    0.5567765567765568,
+    0.8044077134986226
+   ],
+   "calls": 5.25
+  },
+  {
+   "policy": "vote3(zs, zs_ours, full_root) tie->zs_ours",
+   "EX": [
+    0.7,
+    0.5567765567765568,
+    0.8044077134986226
+   ],
+   "calls": 5.0
+  },
+  {
+   "policy": "oracle(any of zs, zs_ours, full_final)",
+   "EX": [
+    0.7333333333333333,
+    0.5860805860805861,
+    0.8171091445427728
+   ],
+   "calls": 5.25
+  },
+  {
+   "policy": "oracle(any of zs, zs_ours)",
+   "EX": [
+    0.7133333333333334,
+    0.5567765567765568,
+    0.8112094395280236
+   ],
+   "calls": 2.0
+  }
+ ],
+ "distinct_results_among_3_systems": {
+  "1": 247,
+  "2": 42,
+  "3": 11
+ },
+ "EX_when_all_three_agree": 0.7732793522267206,
+ "EX_when_not_all_agree": 0.32075471698113206,
+ "share_all_agree": 0.8233333333333334,
+ "pairwise_result_agreement": {
+  "zs~zs_ours": 0.8866666666666667,
+  "zs~full_final": 0.8533333333333334,
+  "zs_ours~full_final": 0.87,
+  "full_root~zs_ours": 0.8666666666666667
+ }
+}

@@ -1,0 +1,16 @@
+<<sections>>
+
+# Task
+You review a SQLite query written for the question below. Decide whether it is correct, given its execution result.
+Answer on the first line with exactly "yes" or "no", then one sentence of reason.
+
+# Question
+Question: <<question>>
+Evidence: <<evidence>>
+<<graph>>
+
+# SQL
+<<sql>>
+
+# Execution
+<<preview>>

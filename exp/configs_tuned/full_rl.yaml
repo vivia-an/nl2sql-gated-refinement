@@ -1,0 +1,10 @@
+# R0 tuned (P2): full_rl = full_fixed (tuned M3) + controller. The controller file does NOT exist yet: produced/selected at the lock step
+# (candidates: runs/P2_E6/final/ctl_ppo_ch*_lam*_s*.npz on the shared disk). Note: in R0 CV no PPO cell beat P0 -> primary rule gives full = full_fixed.
+temperature: 0.0
+m3: {k_t: 6, k_e: 4}
+m7:
+  controller: {path: exp/frozen/controller_headline.npz, greedy: true}
+  horizon: 6
+  call_budget: 8
+  max_gen_depth: 3
+  actions: 4

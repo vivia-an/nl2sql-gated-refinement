@@ -1,0 +1,77 @@
+{
+ "note": "LLM annotation: agreement between two independent Claude Sonnet 5.5 runs (SAP section 14); consistency of one model, not validity; reported before adjudication; exploratory",
+ "n_items": 300,
+ "boot_reps": 2000,
+ "boot_seed": 20261101,
+ "primary_label": {
+  "n": 300,
+  "pct_agree": 0.8833,
+  "kappa": 0.857,
+  "kappa_ci95": [
+   0.8086,
+   0.9003
+  ],
+  "kappa_boot_dropped": 0,
+  "ac1": 0.8679,
+  "ac1_ci95": [
+   0.8263,
+   0.9095
+  ],
+  "ac1_boot_dropped": 0
+ },
+ "L5_vs_rest": {
+  "n": 300,
+  "pct_agree": 0.9967,
+  "kappa": 0.9457,
+  "kappa_ci95": [
+   0.7917,
+   1.0
+  ],
+  "kappa_boot_dropped": 0,
+  "ac1": 0.9964,
+  "ac1_ci95": [
+   0.9887,
+   1.0
+  ],
+  "ac1_boot_dropped": 0
+ },
+ "counts_A1": {
+  "L1": 63,
+  "L2": 12,
+  "L3": 47,
+  "L4": 30,
+  "L5": 9,
+  "L6": 83,
+  "L7": 12,
+  "L8": 44
+ },
+ "counts_A2": {
+  "L1": 66,
+  "L2": 10,
+  "L3": 44,
+  "L4": 31,
+  "L5": 10,
+  "L6": 89,
+  "L7": 12,
+  "L8": 38
+ },
+ "per_system": {
+  "full": {
+   "n": 143,
+   "pct_agree": 0.8951,
+   "kappa": 0.8729,
+   "ac1": 0.8811
+  },
+  "zs": {
+   "n": 157,
+   "pct_agree": 0.8726,
+   "kappa": 0.8418,
+   "ac1": 0.8561
+  }
+ },
+ "n_disagree": 35,
+ "n_adjudicated_label_differs_from_both_runs": 0,
+ "n_adjudicated_equals_A1": 13,
+ "n_adjudicated_equals_A2": 22,
+ "prevalence_note": "weights = stratum population / stratum sample (annotation_key.csv); overall = weighted mix of the failures of the listed systems (a failure of each system counts once), per-system files = that system's failures only; CI = stratified bootstrap"
+}

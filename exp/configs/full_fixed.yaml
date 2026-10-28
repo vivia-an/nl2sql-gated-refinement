@@ -1,0 +1,3 @@
+# M1-M6 + patent policy P0 (theta_acc 8.5, theta_fb 7.5, T_max 3, theta_h 7.5). Defaults live in
+# nl2sql/systems/ours/defaults.py; only deviations are written here.
+temperature: 0.0

@@ -1,0 +1,3177 @@
+{
+ "P0_HR": {
+  "label": "P0_HR",
+  "split": "bird_train_HR",
+  "run": "<NL2SQL_ROOT>/runs/X5/1b-hr-quote",
+  "n_questions": 1101,
+  "n_roots": 1101,
+  "n_empty_roots": 78,
+  "gold_nonempty": 54,
+  "gold_empty": 24,
+  "gold_failed": 0,
+  "root_right": 21,
+  "root_wrong": 57,
+  "wrong_with_gold_nonempty": 54,
+  "revised_in_run": 19,
+  "repaired_in_run": 6,
+  "harmed_in_run": 2,
+  "repair_rate_of_wrong_in_run": 0.1111111111111111,
+  "repair_rate_of_revised_wrong_in_run": 0.42857142857142855,
+  "cause": {
+   "same_literals_other_reason": 15,
+   "same_column_other_value": 26,
+   "no_text_literal_in_root": 12,
+   "gold_filters_other_columns": 1
+  },
+  "same_column_other_value_format_only": 14,
+  "probe_shown_for_wrong": 27,
+  "probe_visible": 12,
+  "probe_visible_complete_list": 6,
+  "gold_literal_exists_in_root_column": 22,
+  "probe_visible_pp_of_all_questions": 1.0899182561307903,
+  "empty_wrong_pp_of_all_questions": 4.9046321525885554,
+  "probe_n": 8,
+  "zero_aggregate_roots": {
+   "n": 32,
+   "root_wrong": 27,
+   "wrong_with_nonzero_gold": 27
+  },
+  "rows": [
+   {
+    "qid": "bird_train:address:5101",
+    "db_id": "address",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:address:5120",
+    "db_id": "address",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "congress.first_name",
+    "root_literals": [
+     "Vicky"
+    ],
+    "gold_literals": [
+     "Hartzler"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:address:5122",
+    "db_id": "address",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "congress.first_name",
+    "root_literals": [
+     "Ron"
+    ],
+    "gold_literals": [
+     "DeSantis"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:address:5127",
+    "db_id": "address",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "congress.first_name",
+    "root_literals": [
+     "Steven"
+    ],
+    "gold_literals": [
+     "King"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:address:5177",
+    "db_id": "address",
+    "root_ex": 0,
+    "final_ex": 1,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": true,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "congress.House",
+    "root_literals": [
+     "Senate"
+    ],
+    "gold_literals": [
+     "House of Repsentatives"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:address:5209",
+    "db_id": "address",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "country.county",
+    "root_literals": [
+     "Noble"
+    ],
+    "gold_literals": [
+     "NOBLE"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:address:5225",
+    "db_id": "address",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "zip_data.type",
+    "root_literals": [
+     "Community Post Office"
+    ],
+    "gold_literals": [
+     "Community Post Office "
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:beer_factory:5257",
+    "db_id": "beer_factory",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:beer_factory:5298",
+    "db_id": "beer_factory",
+    "root_ex": 0,
+    "final_ex": 1,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": true,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:beer_factory:5302",
+    "db_id": "beer_factory",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:beer_factory:5327",
+    "db_id": "beer_factory",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:beer_factory:5336",
+    "db_id": "beer_factory",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:bike_share_1:8993",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:bike_share_1:8996",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:bike_share_1:8998",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "weather.events",
+    "root_literals": [
+     "Rain"
+    ],
+    "gold_literals": [
+     "Rain",
+     "rain"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:bike_share_1:9001",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9003",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "weather.date",
+    "root_literals": [
+     "/2013"
+    ],
+    "gold_literals": [
+     "2013"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": false
+   },
+   {
+    "qid": "bird_train:bike_share_1:9017",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 1,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": true,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "status.time",
+    "root_literals": [
+     "11/3/2013"
+    ],
+    "gold_literals": [
+     "2013/11/03"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": false
+   },
+   {
+    "qid": "bird_train:bike_share_1:9020",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9029",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9030",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:bike_share_1:9035",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9037",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "weather.events",
+    "root_literals": [
+     "Rain"
+    ],
+    "gold_literals": [
+     "Rain",
+     "rain"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:bike_share_1:9038",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "weather.events",
+    "root_literals": [
+     "Rain"
+    ],
+    "gold_literals": [
+     "Rain",
+     "rain"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:bike_share_1:9046",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9049",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9052",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9054",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9061",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "status.time",
+    "root_literals": [
+     "2013/8/29 12:06:01"
+    ],
+    "gold_literals": [
+     "2013/08/29 12:06:01"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:bike_share_1:9069",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9073",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9090",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 1,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": true,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "station.name",
+    "root_literals": [
+     "Townsend at 7th Station"
+    ],
+    "gold_literals": [
+     "Townsend at 7th"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:bike_share_1:9095",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9096",
+    "db_id": "bike_share_1",
+    "root_ex": 1,
+    "final_ex": 0,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": true
+   },
+   {
+    "qid": "bird_train:bike_share_1:9099",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 1,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": true,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9101",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:donor:3178",
+    "db_id": "donor",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:donor:3199",
+    "db_id": "donor",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:donor:3221",
+    "db_id": "donor",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:donor:3222",
+    "db_id": "donor",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:donor:3235",
+    "db_id": "donor",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "donations.donation_message",
+    "root_literals": [
+     "Donation on behalf of Matt Carpenter because I'm a strong believer in education"
+    ],
+    "gold_literals": [
+     "Donation on behalf of Matt Carpenter because I'm a strong believer in education."
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:donor:3237",
+    "db_id": "donor",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "essays.title",
+    "root_literals": [
+     "Engaging Young Readers with a Leveled Classroom Library"
+    ],
+    "gold_literals": [
+     "Engaging Young Readers with a Leveled Classroom Library "
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:donor:3239",
+    "db_id": "donor",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:donor:3241",
+    "db_id": "donor",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:donor:3247",
+    "db_id": "donor",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:donor:3259",
+    "db_id": "donor",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:donor:3263",
+    "db_id": "donor",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "projects.school_district",
+    "root_literals": [
+     "Los Angeles Unified School District"
+    ],
+    "gold_literals": [
+     "Los Angeles Unif Sch Dist"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:donor:3268",
+    "db_id": "donor",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "donations.payment_method",
+    "root_literals": [
+     "Amazon"
+    ],
+    "gold_literals": [
+     "amazon"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:donor:3272",
+    "db_id": "donor",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:donor:3282",
+    "db_id": "donor",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:donor:3284",
+    "db_id": "donor",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "projects.primary_focus_area",
+    "root_literals": [
+     "Literature"
+    ],
+    "gold_literals": [
+     "Literacy"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": false
+   },
+   {
+    "qid": "bird_train:public_review_platform:3781",
+    "db_id": "public_review_platform",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "Business.active",
+    "root_literals": [
+     "False"
+    ],
+    "gold_literals": [
+     "FALSE"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": false
+   },
+   {
+    "qid": "bird_train:public_review_platform:4020",
+    "db_id": "public_review_platform",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:public_review_platform:4132",
+    "db_id": "public_review_platform",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:retails:6749",
+    "db_id": "retails",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:retails:6812",
+    "db_id": "retails",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:retails:6826",
+    "db_id": "retails",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:retails:6856",
+    "db_id": "retails",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "nation.n_name",
+    "root_literals": [
+     "Indonesia"
+    ],
+    "gold_literals": [
+     "INDONESIA"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:retails:6903",
+    "db_id": "retails",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "nation.n_name",
+    "root_literals": [
+     "Argentina"
+    ],
+    "gold_literals": [
+     "ARGENTINA"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:retails:6908",
+    "db_id": "retails",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:sales:5377",
+    "db_id": "sales",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "gold_filters_other_columns",
+    "root_cols": [
+     "Customers.LastName"
+    ],
+    "gold_cols": [
+     "Employees.FirstName"
+    ],
+    "probe_visible": false,
+    "probe_shown": true
+   },
+   {
+    "qid": "bird_train:sales:5384",
+    "db_id": "sales",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:sales:5390",
+    "db_id": "sales",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "Customers.FirstName",
+    "root_literals": [
+     "Adrian"
+    ],
+    "gold_literals": [
+     "Adam"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:sales:5422",
+    "db_id": "sales",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:sales:5433",
+    "db_id": "sales",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:sales:5436",
+    "db_id": "sales",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:sales:5438",
+    "db_id": "sales",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:sales:5450",
+    "db_id": "sales",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "Products.Name",
+    "root_literals": [
+     "Mountain-500 Black 42"
+    ],
+    "gold_literals": [
+     "Mountain-500 Black, 42"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:sales:5459",
+    "db_id": "sales",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "Products.Name",
+    "root_literals": [
+     "Road-650, Red, 60"
+    ],
+    "gold_literals": [
+     "Road-650 Red, 60"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:simpson_episodes:4190",
+    "db_id": "simpson_episodes",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "Award.award",
+    "root_literals": [
+     "Best International TV Series Award"
+    ],
+    "gold_literals": [
+     "Best International TV Series"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:simpson_episodes:4218",
+    "db_id": "simpson_episodes",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "Character_Award.character",
+    "root_literals": [
+     "Homer simpson 20"
+    ],
+    "gold_literals": [
+     "Homer Simpson"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:simpson_episodes:4233",
+    "db_id": "simpson_episodes",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:simpson_episodes:4235",
+    "db_id": "simpson_episodes",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:simpson_episodes:4236",
+    "db_id": "simpson_episodes",
+    "root_ex": 0,
+    "final_ex": 1,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": true,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:simpson_episodes:4258",
+    "db_id": "simpson_episodes",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:simpson_episodes:4296",
+    "db_id": "simpson_episodes",
+    "root_ex": 1,
+    "final_ex": 0,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": true
+   },
+   {
+    "qid": "bird_train:simpson_episodes:4342",
+    "db_id": "simpson_episodes",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:simpson_episodes:4357",
+    "db_id": "simpson_episodes",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   }
+  ]
+ },
+ "P0_HT": {
+  "label": "P0_HT",
+  "split": "bird_train_HT",
+  "run": "<NL2SQL_ROOT>/runs/X5/1b-ht-quote",
+  "n_questions": 300,
+  "n_roots": 300,
+  "n_empty_roots": 15,
+  "gold_nonempty": 14,
+  "gold_empty": 1,
+  "gold_failed": 0,
+  "root_right": 1,
+  "root_wrong": 14,
+  "wrong_with_gold_nonempty": 14,
+  "revised_in_run": 3,
+  "repaired_in_run": 0,
+  "harmed_in_run": 0,
+  "repair_rate_of_wrong_in_run": 0.0,
+  "repair_rate_of_revised_wrong_in_run": 0.0,
+  "cause": {
+   "same_column_other_value": 6,
+   "gold_filters_other_columns": 3,
+   "same_literals_other_reason": 4,
+   "gold_has_no_text_literal": 1
+  },
+  "same_column_other_value_format_only": 2,
+  "probe_shown_for_wrong": 10,
+  "probe_visible": 4,
+  "probe_visible_complete_list": 4,
+  "gold_literal_exists_in_root_column": 4,
+  "probe_visible_pp_of_all_questions": 1.3333333333333333,
+  "empty_wrong_pp_of_all_questions": 4.666666666666667,
+  "probe_n": 8,
+  "zero_aggregate_roots": {
+   "n": 2,
+   "root_wrong": 1,
+   "wrong_with_nonzero_gold": 1
+  },
+  "rows": [
+   {
+    "qid": "bird_train:law_episode:1324",
+    "db_id": "law_episode",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "Award.result",
+    "root_literals": [
+     "Winner"
+    ],
+    "gold_literals": [
+     "Nominee"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:law_episode:1347",
+    "db_id": "law_episode",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "Award.series",
+    "root_literals": [
+     "Law & Order"
+    ],
+    "gold_literals": [
+     "Law and Order"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:law_episode:1349",
+    "db_id": "law_episode",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "gold_filters_other_columns",
+    "root_cols": [
+     "Credit.role"
+    ],
+    "gold_cols": [
+     "Award.role"
+    ],
+    "probe_visible": false,
+    "probe_shown": true
+   },
+   {
+    "qid": "bird_train:retail_complains:269",
+    "db_id": "retail_complains",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "gold_filters_other_columns",
+    "root_cols": [
+     "callcenterlogs.Complaint ID"
+    ],
+    "gold_cols": [
+     "events.Complaint ID"
+    ],
+    "probe_visible": false,
+    "probe_shown": true
+   },
+   {
+    "qid": "bird_train:retail_complains:276",
+    "db_id": "retail_complains",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:retail_complains:279",
+    "db_id": "retail_complains",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:retail_complains:383",
+    "db_id": "retail_complains",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "gold_filters_other_columns",
+    "root_cols": [
+     "state.Region"
+    ],
+    "gold_cols": [
+     "district.division"
+    ],
+    "probe_visible": false,
+    "probe_shown": true
+   },
+   {
+    "qid": "bird_train:retail_complains:384",
+    "db_id": "retail_complains",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "gold_has_no_text_literal",
+    "root_cols": [
+     "events.Issue"
+    ],
+    "gold_cols": [],
+    "probe_visible": false,
+    "probe_shown": true
+   },
+   {
+    "qid": "bird_train:world_development_indicators:2123",
+    "db_id": "world_development_indicators",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:world_development_indicators:2155",
+    "db_id": "world_development_indicators",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "Country.IncomeGroup",
+    "root_literals": [
+     "Low middle income"
+    ],
+    "gold_literals": [
+     "Lower middle income"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:world_development_indicators:2160",
+    "db_id": "world_development_indicators",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": true,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "Country.IncomeGroup",
+    "root_literals": [
+     "High income"
+    ],
+    "gold_literals": [
+     "high income"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": false
+   },
+   {
+    "qid": "bird_train:world_development_indicators:2165",
+    "db_id": "world_development_indicators",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "Country.IncomeGroup",
+    "root_literals": [
+     "High income"
+    ],
+    "gold_literals": [
+     "High income: OECD",
+     "High income: nonOECD"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:world_development_indicators:2179",
+    "db_id": "world_development_indicators",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "Country.IncomeGroup",
+    "root_literals": [
+     "Middle income"
+    ],
+    "gold_literals": [
+     "middle income"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": false
+   },
+   {
+    "qid": "bird_train:world_development_indicators:2237",
+    "db_id": "world_development_indicators",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:world_development_indicators:2245",
+    "db_id": "world_development_indicators",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   }
+  ]
+ },
+ "GATED_HR": {
+  "label": "GATED_HR",
+  "split": "bird_train_HR",
+  "run": "<NL2SQL_ROOT>/runs/X5/1b-hr-gated",
+  "n_questions": 1101,
+  "n_roots": 1101,
+  "n_empty_roots": 77,
+  "gold_nonempty": 53,
+  "gold_empty": 24,
+  "gold_failed": 0,
+  "root_right": 21,
+  "root_wrong": 56,
+  "wrong_with_gold_nonempty": 53,
+  "revised_in_run": 0,
+  "repaired_in_run": 0,
+  "harmed_in_run": 0,
+  "repair_rate_of_wrong_in_run": 0.0,
+  "repair_rate_of_revised_wrong_in_run": null,
+  "cause": {
+   "same_literals_other_reason": 15,
+   "same_column_other_value": 24,
+   "no_text_literal_in_root": 12,
+   "gold_filters_other_columns": 2
+  },
+  "same_column_other_value_format_only": 13,
+  "probe_shown_for_wrong": 26,
+  "probe_visible": 11,
+  "probe_visible_complete_list": 5,
+  "gold_literal_exists_in_root_column": 22,
+  "probe_visible_pp_of_all_questions": 0.9990917347865577,
+  "empty_wrong_pp_of_all_questions": 4.813805631244323,
+  "probe_n": 8,
+  "zero_aggregate_roots": {
+   "n": 33,
+   "root_wrong": 28,
+   "wrong_with_nonzero_gold": 28
+  },
+  "rows": [
+   {
+    "qid": "bird_train:address:5101",
+    "db_id": "address",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:address:5120",
+    "db_id": "address",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "congress.first_name",
+    "root_literals": [
+     "Vicky"
+    ],
+    "gold_literals": [
+     "Hartzler"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:address:5122",
+    "db_id": "address",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "congress.first_name",
+    "root_literals": [
+     "Ron"
+    ],
+    "gold_literals": [
+     "DeSantis"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:address:5127",
+    "db_id": "address",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "congress.first_name",
+    "root_literals": [
+     "Steven"
+    ],
+    "gold_literals": [
+     "King"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:address:5177",
+    "db_id": "address",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "congress.House",
+    "root_literals": [
+     "Senate"
+    ],
+    "gold_literals": [
+     "House of Repsentatives"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:address:5209",
+    "db_id": "address",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "country.county",
+    "root_literals": [
+     "Noble"
+    ],
+    "gold_literals": [
+     "NOBLE"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:address:5212",
+    "db_id": "address",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "country.county",
+    "root_literals": [
+     "Hampden"
+    ],
+    "gold_literals": [
+     "HAMPDEN"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:address:5225",
+    "db_id": "address",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "zip_data.type",
+    "root_literals": [
+     "Community Post Office"
+    ],
+    "gold_literals": [
+     "Community Post Office "
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:beer_factory:5257",
+    "db_id": "beer_factory",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:beer_factory:5298",
+    "db_id": "beer_factory",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:beer_factory:5302",
+    "db_id": "beer_factory",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:beer_factory:5327",
+    "db_id": "beer_factory",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:beer_factory:5336",
+    "db_id": "beer_factory",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:bike_share_1:8993",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:bike_share_1:8996",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:bike_share_1:8998",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "weather.events",
+    "root_literals": [
+     "Rain"
+    ],
+    "gold_literals": [
+     "Rain",
+     "rain"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:bike_share_1:9001",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9003",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9017",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "status.time",
+    "root_literals": [
+     "11/3/2013"
+    ],
+    "gold_literals": [
+     "2013/11/03"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": false
+   },
+   {
+    "qid": "bird_train:bike_share_1:9020",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9026",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9029",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9030",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:bike_share_1:9035",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9038",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "weather.events",
+    "root_literals": [
+     "Rain"
+    ],
+    "gold_literals": [
+     "Rain",
+     "rain"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:bike_share_1:9046",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9049",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9052",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9054",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9061",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "status.time",
+    "root_literals": [
+     "2013/8/29 12:06:01"
+    ],
+    "gold_literals": [
+     "2013/08/29 12:06:01"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:bike_share_1:9069",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9073",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9095",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:bike_share_1:9096",
+    "db_id": "bike_share_1",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:bike_share_1:9099",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "trip.end_date",
+    "root_literals": [
+     "8/29/2013 12:45:"
+    ],
+    "gold_literals": [
+     "8/29/2013 12:45"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:bike_share_1:9101",
+    "db_id": "bike_share_1",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:donor:3178",
+    "db_id": "donor",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:donor:3199",
+    "db_id": "donor",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:donor:3221",
+    "db_id": "donor",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:donor:3222",
+    "db_id": "donor",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:donor:3235",
+    "db_id": "donor",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "donations.donation_message",
+    "root_literals": [
+     "Donation on behalf of Matt Carpenter because I'm a strong believer in education"
+    ],
+    "gold_literals": [
+     "Donation on behalf of Matt Carpenter because I'm a strong believer in education."
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:donor:3237",
+    "db_id": "donor",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "essays.title",
+    "root_literals": [
+     "Engaging Young Readers with a Leveled Classroom Library"
+    ],
+    "gold_literals": [
+     "Engaging Young Readers with a Leveled Classroom Library "
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:donor:3239",
+    "db_id": "donor",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:donor:3241",
+    "db_id": "donor",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "no_text_literal_in_root"
+   },
+   {
+    "qid": "bird_train:donor:3247",
+    "db_id": "donor",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:donor:3259",
+    "db_id": "donor",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:donor:3263",
+    "db_id": "donor",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "projects.school_district",
+    "root_literals": [
+     "Los Angeles Unified School District"
+    ],
+    "gold_literals": [
+     "Los Angeles Unif Sch Dist"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:donor:3268",
+    "db_id": "donor",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "donations.payment_method",
+    "root_literals": [
+     "Amazon"
+    ],
+    "gold_literals": [
+     "amazon"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:donor:3272",
+    "db_id": "donor",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:donor:3282",
+    "db_id": "donor",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:donor:3284",
+    "db_id": "donor",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "projects.primary_focus_area",
+    "root_literals": [
+     "Literature"
+    ],
+    "gold_literals": [
+     "Literacy"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": false
+   },
+   {
+    "qid": "bird_train:public_review_platform:3936",
+    "db_id": "public_review_platform",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "gold_filters_other_columns",
+    "root_cols": [
+     "Compliments.compliment_type"
+    ],
+    "gold_cols": [
+     "Users_Compliments.number_of_compliments"
+    ],
+    "probe_visible": false,
+    "probe_shown": true
+   },
+   {
+    "qid": "bird_train:public_review_platform:4020",
+    "db_id": "public_review_platform",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:public_review_platform:4132",
+    "db_id": "public_review_platform",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:retails:6749",
+    "db_id": "retails",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:retails:6812",
+    "db_id": "retails",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:retails:6826",
+    "db_id": "retails",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:retails:6856",
+    "db_id": "retails",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "nation.n_name",
+    "root_literals": [
+     "Indonesia"
+    ],
+    "gold_literals": [
+     "INDONESIA"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:retails:6903",
+    "db_id": "retails",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "nation.n_name",
+    "root_literals": [
+     "Argentina"
+    ],
+    "gold_literals": [
+     "ARGENTINA"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:retails:6908",
+    "db_id": "retails",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:sales:5377",
+    "db_id": "sales",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "gold_filters_other_columns",
+    "root_cols": [
+     "Customers.LastName"
+    ],
+    "gold_cols": [
+     "Employees.FirstName"
+    ],
+    "probe_visible": false,
+    "probe_shown": true
+   },
+   {
+    "qid": "bird_train:sales:5384",
+    "db_id": "sales",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:sales:5390",
+    "db_id": "sales",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "Customers.FirstName",
+    "root_literals": [
+     "Adrian"
+    ],
+    "gold_literals": [
+     "Adam"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:sales:5422",
+    "db_id": "sales",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:sales:5433",
+    "db_id": "sales",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:sales:5436",
+    "db_id": "sales",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:sales:5438",
+    "db_id": "sales",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:sales:5450",
+    "db_id": "sales",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "Products.Name",
+    "root_literals": [
+     "Mountain-500 Black 42"
+    ],
+    "gold_literals": [
+     "Mountain-500 Black, 42"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:sales:5459",
+    "db_id": "sales",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "Products.Name",
+    "root_literals": [
+     "Road-650, Red, 60"
+    ],
+    "gold_literals": [
+     "Road-650 Red, 60"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:simpson_episodes:4190",
+    "db_id": "simpson_episodes",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "Award.award",
+    "root_literals": [
+     "Best International TV Series Award"
+    ],
+    "gold_literals": [
+     "Best International TV Series"
+    ],
+    "probe_shown": true,
+    "probe_complete": false,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:simpson_episodes:4218",
+    "db_id": "simpson_episodes",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "Character_Award.character",
+    "root_literals": [
+     "Homer simpson 20"
+    ],
+    "gold_literals": [
+     "Homer Simpson"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:simpson_episodes:4233",
+    "db_id": "simpson_episodes",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:simpson_episodes:4235",
+    "db_id": "simpson_episodes",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:simpson_episodes:4236",
+    "db_id": "simpson_episodes",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:simpson_episodes:4258",
+    "db_id": "simpson_episodes",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:simpson_episodes:4296",
+    "db_id": "simpson_episodes",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:simpson_episodes:4342",
+    "db_id": "simpson_episodes",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   }
+  ]
+ },
+ "GATED_HT": {
+  "label": "GATED_HT",
+  "split": "bird_train_HT",
+  "run": "<NL2SQL_ROOT>/runs/X5/1b-ht-gated",
+  "n_questions": 300,
+  "n_roots": 300,
+  "n_empty_roots": 15,
+  "gold_nonempty": 14,
+  "gold_empty": 1,
+  "gold_failed": 0,
+  "root_right": 1,
+  "root_wrong": 14,
+  "wrong_with_gold_nonempty": 14,
+  "revised_in_run": 0,
+  "repaired_in_run": 0,
+  "harmed_in_run": 0,
+  "repair_rate_of_wrong_in_run": 0.0,
+  "repair_rate_of_revised_wrong_in_run": null,
+  "cause": {
+   "same_column_other_value": 6,
+   "gold_filters_other_columns": 4,
+   "same_literals_other_reason": 3,
+   "gold_has_no_text_literal": 1
+  },
+  "same_column_other_value_format_only": 2,
+  "probe_shown_for_wrong": 11,
+  "probe_visible": 4,
+  "probe_visible_complete_list": 4,
+  "gold_literal_exists_in_root_column": 4,
+  "probe_visible_pp_of_all_questions": 1.3333333333333333,
+  "empty_wrong_pp_of_all_questions": 4.666666666666667,
+  "probe_n": 8,
+  "zero_aggregate_roots": {
+   "n": 2,
+   "root_wrong": 1,
+   "wrong_with_nonzero_gold": 1
+  },
+  "rows": [
+   {
+    "qid": "bird_train:law_episode:1324",
+    "db_id": "law_episode",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "Award.result",
+    "root_literals": [
+     "Winner"
+    ],
+    "gold_literals": [
+     "Nominee"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:law_episode:1347",
+    "db_id": "law_episode",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "Award.series",
+    "root_literals": [
+     "Law & Order"
+    ],
+    "gold_literals": [
+     "Law and Order"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:law_episode:1349",
+    "db_id": "law_episode",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "gold_filters_other_columns",
+    "root_cols": [
+     "Credit.role"
+    ],
+    "gold_cols": [
+     "Award.role"
+    ],
+    "probe_visible": false,
+    "probe_shown": true
+   },
+   {
+    "qid": "bird_train:retail_complains:269",
+    "db_id": "retail_complains",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "gold_filters_other_columns",
+    "root_cols": [
+     "callcenterlogs.Complaint ID"
+    ],
+    "gold_cols": [
+     "events.Complaint ID"
+    ],
+    "probe_visible": false,
+    "probe_shown": true
+   },
+   {
+    "qid": "bird_train:retail_complains:276",
+    "db_id": "retail_complains",
+    "root_ex": 1,
+    "final_ex": 1,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": true,
+    "repaired": false,
+    "harmed": false
+   },
+   {
+    "qid": "bird_train:retail_complains:279",
+    "db_id": "retail_complains",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:retail_complains:383",
+    "db_id": "retail_complains",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "gold_filters_other_columns",
+    "root_cols": [
+     "state.Region"
+    ],
+    "gold_cols": [
+     "district.division"
+    ],
+    "probe_visible": false,
+    "probe_shown": true
+   },
+   {
+    "qid": "bird_train:retail_complains:384",
+    "db_id": "retail_complains",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "gold_has_no_text_literal",
+    "root_cols": [
+     "events.Issue"
+    ],
+    "gold_cols": [],
+    "probe_visible": false,
+    "probe_shown": true
+   },
+   {
+    "qid": "bird_train:world_development_indicators:2123",
+    "db_id": "world_development_indicators",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "gold_filters_other_columns",
+    "root_cols": [
+     "Country.Region",
+     "Indicators.IndicatorName"
+    ],
+    "gold_cols": [
+     "Series.IndicatorName",
+     "SeriesNotes.Year"
+    ],
+    "probe_visible": false,
+    "probe_shown": true
+   },
+   {
+    "qid": "bird_train:world_development_indicators:2155",
+    "db_id": "world_development_indicators",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "Country.IncomeGroup",
+    "root_literals": [
+     "Low middle income"
+    ],
+    "gold_literals": [
+     "Lower middle income"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:world_development_indicators:2160",
+    "db_id": "world_development_indicators",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "Country.IncomeGroup",
+    "root_literals": [
+     "High income"
+    ],
+    "gold_literals": [
+     "high income"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": false
+   },
+   {
+    "qid": "bird_train:world_development_indicators:2165",
+    "db_id": "world_development_indicators",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": false,
+    "wrong_column": "Country.IncomeGroup",
+    "root_literals": [
+     "High income"
+    ],
+    "gold_literals": [
+     "High income: OECD",
+     "High income: nonOECD"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": true,
+    "gold_literal_exists_in_root_column": true
+   },
+   {
+    "qid": "bird_train:world_development_indicators:2179",
+    "db_id": "world_development_indicators",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_column_other_value",
+    "format_only": true,
+    "wrong_column": "Country.IncomeGroup",
+    "root_literals": [
+     "Middle income"
+    ],
+    "gold_literals": [
+     "middle income"
+    ],
+    "probe_shown": true,
+    "probe_complete": true,
+    "probe_visible": false,
+    "gold_literal_exists_in_root_column": false
+   },
+   {
+    "qid": "bird_train:world_development_indicators:2237",
+    "db_id": "world_development_indicators",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   },
+   {
+    "qid": "bird_train:world_development_indicators:2245",
+    "db_id": "world_development_indicators",
+    "root_ex": 0,
+    "final_ex": 0,
+    "revised": false,
+    "gold_ok": true,
+    "gold_empty": false,
+    "repaired": false,
+    "harmed": false,
+    "cause": "same_literals_other_reason"
+   }
+  ]
+ }
+}

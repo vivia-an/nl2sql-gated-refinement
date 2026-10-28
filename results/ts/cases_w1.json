@@ -1,0 +1,134 @@
+{
+ "_meta": {
+  "scope": "tuning-set",
+  "author": "W1",
+  "date": "2026-10-26",
+  "note": "Item-level excerpts for the worked examples in paper/sections/05_results.tex and Fig. 1 (01_intro.tex). Hand-extracted from stored tuning-set runs (BIRD train, never the dev set). Not read by make_macros*.py. Reference SQL comes from the BIRD train file (tuning data).",
+  "sources": {
+   "X8": "results/raw-ignored/X8/x8-qwen37flash-{zs,fixed,gated}/{preds,cands}.jsonl (split bird_train_HT, qwen3.7-flash-2026-07-15, seed 0)",
+   "P2_HR": "worker machine runs/P2_HR/P2_HR-full_fixed-qwen37plus-s0-38ee3ec2 (legacy renderer, split bird_train_HR)",
+   "X5_beer": "worker machine runs/X5/1a-beer-quote (quoted renderer, split bird_train_HR)"
+  }
+ },
+ "A_repair": {
+  "qid": "bird_train:law_episode:1294",
+  "split": "HT",
+  "backbone": "qwen3.7-flash-2026-07-15",
+  "question": "How many people did not enjoy the finale episode?",
+  "evidence": "did not enjoy refers to stars = 1; the finale episode refers to episode = 24",
+  "root_sql": "SELECT COUNT(T1.person_id) FROM Vote AS T1 INNER JOIN Episode AS T2 ON T1.episode_id = T2.episode_id WHERE T1.stars = 1 AND T2.episode = 24",
+  "root_status": "err_identifier",
+  "error_text": "Execution error: no such column: T1.person_id",
+  "gated_final_sql": "SELECT SUM(T1.votes) FROM Vote AS T1 INNER JOIN Episode AS T2 ON T1.episode_id = T2.episode_id WHERE T1.stars = 1 AND T2.episode = 24",
+  "ex": {
+   "zs": 1,
+   "fixed": 1,
+   "gated": 1
+  },
+  "calls": {
+   "zs": 1,
+   "fixed": 5,
+   "gated": 3
+  },
+  "fixed_stage_calls": {
+   "m1": 1,
+   "gen": 1,
+   "crit": 2,
+   "rev": 1
+  },
+  "gated_stage_calls": {
+   "m1": 1,
+   "gen": 1,
+   "rev": 1
+  },
+  "reference_sql": "SELECT COUNT(T1.episode_id) FROM Episode AS T1 INNER JOIN Vote AS T2 ON T1.episode_id = T2.episode_id WHERE T1.episode = 24 AND T2.stars = 1"
+ },
+ "B_gate_loses": {
+  "qid": "bird_train:video_games:3359",
+  "split": "HT",
+  "backbone": "qwen3.7-flash-2026-07-15",
+  "question": "List down the record ID of records released between 2000 to 2003.",
+  "evidence": "record ID refers to game.id; released between 2000 to 2003 refers to release_year BETWEEN 2000 AND 2003",
+  "root_sql": "SELECT T1.game_id FROM game_platform AS T1 WHERE T1.release_year BETWEEN 2000 AND 2003",
+  "root_status": "err_identifier",
+  "error_text": "Execution error: no such column: T1.game_id",
+  "gated_final_sql": "SELECT T2.id FROM game_platform AS T1 INNER JOIN game_publisher AS T2 ON T1.game_publisher_id = T2.id WHERE T1.release_year BETWEEN 2000 AND 2003",
+  "fixed_candidates": [
+   "rev1: SELECT T3.id FROM game_platform AS T1 INNER JOIN game_publisher AS T2 ... INNER JOIN game AS T3 ON T2.game_id = T3.id WHERE ... (EX 0)",
+   "rev2: SELECT T1.id FROM game_platform AS T1 WHERE T1.release_year BETWEEN 2000 AND 2003 (EX 1)",
+   "rev3: SELECT DISTINCT T3.id FROM ... (EX 0)"
+  ],
+  "fixed_actions": [
+   "revise",
+   "revise",
+   "revise",
+   "stop_best"
+  ],
+  "ex": {
+   "zs": 1,
+   "fixed": 1,
+   "gated": 0
+  },
+  "calls": {
+   "zs": 1,
+   "fixed": 10,
+   "gated": 3
+  },
+  "reference_sql": "SELECT T.id FROM game_platform AS T WHERE T.release_year BETWEEN 2000 AND 2003"
+ },
+ "C_silent_and_reference_conflict": {
+  "qid": "bird_train:law_episode:1339",
+  "split": "HT",
+  "backbone": "qwen3.7-flash-2026-07-15",
+  "question": "What is the difference of 10 stars votes between the first episode and the last episode?",
+  "evidence": "... the difference = subtract(votes where episode = 1, votes where episode = 24) where stars = 10",
+  "gated_final_sql": "SELECT SUM(CASE WHEN T1.episode = 1 THEN T2.votes ELSE 0 END) - SUM(CASE WHEN T1.episode = 24 THEN T2.votes ELSE 0 END) FROM Episode AS T1 INNER JOIN Vote AS T2 ON T1.episode_id = T2.episode_id WHERE T2.stars = 10",
+  "reference_sql": "SELECT SUM(CASE WHEN T2.episode = 24 THEN T1.votes ELSE 0 END) - SUM(CASE WHEN T2.episode = 1 THEN T1.votes ELSE 0 END) FROM Vote AS T1 INNER JOIN Episode AS T2 ON T2.episode_id = T1.episode_id WHERE T1.stars = 10",
+  "ex": {
+   "zs": 0,
+   "fixed": 0,
+   "gated": 0,
+   "qwen3.5-27b gated": 0
+  },
+  "fixed_critic": {
+   "syntax": 10.0,
+   "semantic": 10.0,
+   "efficiency": 10.0,
+   "score": 10.0
+  },
+  "fixed_iterations": 0,
+  "related": {
+   "qid": "bird_train:law_episode:1324",
+   "note": "reference uses result = 'Nominee' although the evidence says result = 'Winner'; zs, fixed, gated all follow the evidence and score EX 0; gated revision repaired a column error (no such column: T2.role) and returned an empty result"
+  }
+ },
+ "D_interface_defect": {
+  "qid": "bird_train:beer_factory:5238",
+  "split": "HR",
+  "backbone": "qwen3.7-plus (full_fixed)",
+  "question": "How many transactions had Frank-Paul Santangelo made in July, 2014?",
+  "legacy_root_sql": "SELECT COUNT(T1.TransactionID) FROM transaction AS T1 INNER JOIN customers AS T2 ON T1.CustomerID = T2.CustomerID WHERE T2.First = 'Frank-Paul' AND T2.Last = 'Santangelo' AND SUBSTR(T1.TransactionDate, 1, 4) = '2014' AND SUBSTR(T1.TransactionDate, 6, 2) = '07'",
+  "legacy_root_status": "err_syntax",
+  "quoted_root_sql_fragment": "... FROM \"transaction\" AS T1 ... WHERE T2.\"First\" = 'Frank-Paul' AND T2.\"Last\" = 'Santangelo' ...",
+  "quoted_root_status": "ok_nonempty",
+  "ex": {
+   "legacy_final": 1,
+   "quoted_final": 1
+  },
+  "calls": {
+   "legacy": 5,
+   "quoted": 3
+  },
+  "stage_calls_legacy": {
+   "m1": 1,
+   "gen": 1,
+   "crit": 2,
+   "rev": 1
+  },
+  "stage_calls_quoted": {
+   "m1": 1,
+   "gen": 1,
+   "crit": 1
+  }
+ }
+}

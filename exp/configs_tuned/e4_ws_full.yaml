@@ -1,0 +1,7 @@
+# R0 tuned (P2) E4 ws_full: eta=0.5, rho=0.0 (first-pass best on the HT mini-stream, 11 trials, replicate noise ~1 pp: see docs/TUNING.md).
+# NOTE rho=0 makes ws_full rank exactly like ws_evict (eviction by WS stays). Alternative with rho>0: e4_ws_full_rho_pos.yaml.
+temperature: 0.0
+m3: {k_t: 6, k_e: 4}
+m6:
+  policy: ws_full
+  params: {eta: 0.5, rho: 0.0, phi: 0.5, tau: 6.0}

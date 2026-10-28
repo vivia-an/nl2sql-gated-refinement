@@ -1,0 +1,216 @@
+{
+ "by_backbone": {
+  "plus": {
+   "rootonly": {
+    "n": 1534,
+    "full_schema": 1534,
+    "routed": 0,
+    "no_field": 0,
+    "max_ctx_tokens": 4732,
+    "n_examples_min": 4,
+    "n_examples_max": 4
+   },
+   "gated": {
+    "n": 1534,
+    "full_schema": 1534,
+    "routed": 0,
+    "no_field": 0,
+    "max_ctx_tokens": 4732,
+    "n_examples_min": 4,
+    "n_examples_max": 4
+   },
+   "fixed": {
+    "n": 1534,
+    "full_schema": 1534,
+    "routed": 0,
+    "no_field": 0,
+    "max_ctx_tokens": 4732,
+    "n_examples_min": 4,
+    "n_examples_max": 4
+   }
+  },
+  "flash": {
+   "rootonly": {
+    "n": 1534,
+    "full_schema": 1534,
+    "routed": 0,
+    "no_field": 0,
+    "max_ctx_tokens": 4732,
+    "n_examples_min": 4,
+    "n_examples_max": 4
+   },
+   "gated": {
+    "n": 1534,
+    "full_schema": 1534,
+    "routed": 0,
+    "no_field": 0,
+    "max_ctx_tokens": 4732,
+    "n_examples_min": 4,
+    "n_examples_max": 4
+   },
+   "fixed": {
+    "n": 1534,
+    "full_schema": 1534,
+    "routed": 0,
+    "no_field": 0,
+    "max_ctx_tokens": 4732,
+    "n_examples_min": 4,
+    "n_examples_max": 4
+   }
+  },
+  "27b": {
+   "rootonly": {
+    "n": 1534,
+    "full_schema": 1534,
+    "routed": 0,
+    "no_field": 0,
+    "max_ctx_tokens": 4732,
+    "n_examples_min": 4,
+    "n_examples_max": 4
+   },
+   "gated": {
+    "n": 1534,
+    "full_schema": 1534,
+    "routed": 0,
+    "no_field": 0,
+    "max_ctx_tokens": 4732,
+    "n_examples_min": 4,
+    "n_examples_max": 4
+   },
+   "fixed": {
+    "n": 1534,
+    "full_schema": 1534,
+    "routed": 0,
+    "no_field": 0,
+    "max_ctx_tokens": 4732,
+    "n_examples_min": 4,
+    "n_examples_max": 4
+   }
+  }
+ },
+ "by_db": {
+  "california_schools": {
+   "n_tables": 3,
+   "ctx_tokens": 4132,
+   "n_questions": 89
+  },
+  "card_games": {
+   "n_tables": 6,
+   "ctx_tokens": 4716,
+   "n_questions": 191
+  },
+  "codebase_community": {
+   "n_tables": 8,
+   "ctx_tokens": 2087,
+   "n_questions": 186
+  },
+  "debit_card_specializing": {
+   "n_tables": 5,
+   "ctx_tokens": 393,
+   "n_questions": 64
+  },
+  "european_football_2": {
+   "n_tables": 7,
+   "ctx_tokens": 4603,
+   "n_questions": 129
+  },
+  "financial": {
+   "n_tables": 8,
+   "ctx_tokens": 1530,
+   "n_questions": 106
+  },
+  "formula_1": {
+   "n_tables": 13,
+   "ctx_tokens": 2730,
+   "n_questions": 174
+  },
+  "student_club": {
+   "n_tables": 8,
+   "ctx_tokens": 2320,
+   "n_questions": 158
+  },
+  "superhero": {
+   "n_tables": 10,
+   "ctx_tokens": 1389,
+   "n_questions": 129
+  },
+  "thrombosis_prediction": {
+   "n_tables": 3,
+   "ctx_tokens": 1612,
+   "n_questions": 163
+  },
+  "toxicology": {
+   "n_tables": 4,
+   "ctx_tokens": 588,
+   "n_questions": 145
+  }
+ },
+ "k_t": 6,
+ "fallback_tokens": 6000,
+ "dbs_more_than_kt_tables": 6,
+ "share_questions_dbs_more_than_kt_tables": 57.496740547588004,
+ "max_tokens_any_db": 4716,
+ "strata_threshold_tokens": 3000,
+ "stack_by_stratum": {
+  "plus": {
+   "large": {
+    "est": -0.7334963325183375,
+    "item_ci": [
+     -3.6674816625916873,
+     2.2004889975550124
+    ],
+    "n": 409,
+    "n_dbs": 3
+   },
+   "small": {
+    "est": 0.8888888888888888,
+    "item_ci": [
+     -0.8888888888888888,
+     2.666666666666667
+    ],
+    "n": 1125,
+    "n_dbs": 8
+   }
+  },
+  "flash": {
+   "large": {
+    "est": -1.9559902200488997,
+    "item_ci": [
+     -5.134474327628362,
+     1.2224938875305624
+    ],
+    "n": 409,
+    "n_dbs": 3
+   },
+   "small": {
+    "est": 2.488888888888889,
+    "item_ci": [
+     0.17777777777777778,
+     4.711111111111111
+    ],
+    "n": 1125,
+    "n_dbs": 8
+   }
+  },
+  "27b": {
+   "large": {
+    "est": 3.9119804400977993,
+    "item_ci": [
+     0.7334963325183375,
+     7.090464547677261
+    ],
+    "n": 409,
+    "n_dbs": 3
+   },
+   "small": {
+    "est": 1.7777777777777777,
+    "item_ci": [
+     -0.26666666666666666,
+     3.822222222222222
+    ],
+    "n": 1125,
+    "n_dbs": 8
+   }
+  }
+ }
+}

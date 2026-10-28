@@ -1,0 +1,11 @@
+# X9 (M2 business-metadata source): full_gated + ddl.quote_keywords + m2.value_grounding. IDENTICAL to full_gated.yaml except the switch below.
+# m2.value_grounding: each database gets an offline value index (distinct short text values, <= 60 characters, <= 10000 per column, first 1 M rows
+# per table, 90 s build budget; cached under the pod-local cache); at question time n-grams of question + evidence are matched to stored values
+# (normalised exact, then contained-in-longer-value, then trigram / edit-distance fuzzy >= 0.85) and a `# Value hints` block
+# (`- table.column: 'stored literal'`, <= 8 pairs, shown tables only) is added after the schema / examples of the generation and revision prompts.
+# Questions without any hint produce the same prompt as full_gated (same cache key). Logged: preds `value_hints` {n, cols, lits, used, used_root, tokens, ms}.
+temperature: 0.0
+ddl: {quote_keywords: true}
+m2: {value_grounding: true}
+m5: {policy: gated, gate_empty: false, score_for_routing: false, t_max: 3}
+route: {score: exec, theta_h: 7.5}

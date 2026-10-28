@@ -1,0 +1,7 @@
+# MIN M4: memrl comparator, lambda_m 1.0 (HT mini-stream pick, docs/TUNING.md), pipeline P0 + identifier quoting. Use: stream e4 --policy memrl.
+temperature: 0.0
+ddl: {quote_keywords: true}
+m3: {k_t: 6, k_e: 4}
+m6:
+  policy: memrl
+  params: {lambda_m: 1.0, phi: 0.5, memrl_eta: 0.3, memrl_q0: 0.5}

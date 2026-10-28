@@ -1,0 +1,23 @@
+{
+ "_meta": {
+  "scope": "tuning-set",
+  "split": "bird_train_HR, 8 dbs, pollution 40%, 2 permutations, final-checkpoint probes n=660",
+  "sources": "runs/MIN/E4/*, code/tools/analysis_misc/e4_min_summary.py",
+  "note": "p0 reference runs pending at time of writing; no CIs computed in this summary"
+ },
+ "final_probe_ex": {
+  "append": 0.703,
+  "ws_full": 0.6879,
+  "memrl": 0.6879
+ },
+ "ws_full_minus_append_pp": -1.52,
+ "ws_full_minus_memrl_pp": 0.0,
+ "eviction_ws_full": {
+  "evicted_total": 847,
+  "evicted_polluted": 69,
+  "evicted_clean": 778,
+  "recall_polluted": 0.548,
+  "precision": 0.081,
+  "fpr": 0.557
+ }
+}

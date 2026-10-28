@@ -1,0 +1,6 @@
+# X5: full_gated + the semantic (V3) critic score of the FINAL answer, for routing only (one extra critic call per question, not in the
+# loop; about 3.1 calls/q instead of 2.1 for full_gated and 3.4 for the patent loop). route.score v3 = patent routing (theta_h 7.5).
+temperature: 0.0
+ddl: {quote_keywords: true}
+m5: {policy: gated, gate_empty: false, score_for_routing: true, t_max: 3}
+route: {score: v3}

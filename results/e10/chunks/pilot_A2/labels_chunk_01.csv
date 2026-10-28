@@ -1,0 +1,31 @@
+item_id,primary_label,secondary_label,rationale,notes
+P015,L6,L3,"Evidence says 'seconds < 120' but gold parses time with SUBSTR(time,1,2)/SUBSTR(time,4,2)/SUBSTR(time,7,2)/1000 which mis-slices the 'm:ss.mmm' format (sample '1:49.088'); pred 'milliseconds < 120000' implements the evidence.","Counts differ by only 3 (24465 vs 24462)."
+P018,L1,L5,"",Pred uses cards/foreign_data instead of sets/set_translations; it also moves the language filter into WHERE which changes the denominator.
+P023,L3,,"",Pred lacks dob IS NOT NULL so NULL dob sorts first in SQLite ASC.
+P005,L1,L5,"",Pred uses cards/foreign_data instead of sets/set_translations; language filter in WHERE changes denominator.
+P026,L3,,"","Literal 'New York, NY' instead of 'New York'."
+P016,L2,L3,"",Gold joins only away_player_1 while pred joins any of home_player_1..11 (OR); also age computed differently (year diff vs fractional years). Gold is odd but does not clearly contradict the text.
+P013,L8,,"",Same decision (T-CHO < 250); only the output labels differ ('Normal'/'Abnormal' vs 'Yes'/'No').
+P007,L4,,"",Gold counts DISTINCT molecule_id per element while pred counts atom_id (atoms); least-common element differs (cu vs y); ties on count also possible.
+P024,L6,L3,"Evidence 'normal anti-DNA level refers to DNA < 8' but DNA is a TEXT column so gold 'T2.DNA < 8' compares as text (e.g. '18' < '8') and yields 4; pred casts to REAL and gets 0.","Inference from schema (DNA TEXT; samples 41.9 18 4.3) not from running SQL; moderate confidence."
+P020,L1,L2,"",Question asks which atoms are connected (atom_id atom_id2 of connected) but pred returns element names via two extra joins to atom.
+P022,L6,L4,"Evidence says 'legility status refers to status = ''legal''' and the question asks for the legality status but gold returns only COUNT(T1.id) with no status column or status filter.",Pred returns count per status (extra column + GROUP BY) and also lacks the status='legal' filter.
+P009,L5,,"D1: evidence defines 'average number of posts voted' as AVG(PostId) FROM votes for the oldest users; D2: pred computes the average of per-user vote counts (COUNT(PostId) grouped by UserId).",Linking right and same one-value output shape.
+P006,L6,L3,"Evidence defines ratio = count(locally funded) / count(all funding type schools in Santa Clara) * 100 but gold divides by SUM(FundingType != 'Locally funded') and adds Charter = 1; pred uses COUNT(*) as in the evidence formula.","Pred lacks Charter = 1 (question mentions charter school funding) so L3 secondary."
+P008,L8,,"",Pred concatenates forename || ' ' || surname into one column (evidence says full name = forename+surname) while gold returns forename and surname separately; rows and order identical.
+P017,L2,,"",Gold joins client to district via client.district_id; pred goes client-disp-account-district (account branch) which can duplicate clients with several dispositions. Gold arguably ignores the accounts of the question; kept as join path.
+P014,L5,,"D1: question says 'first 10 years' and gold takes races in the date range divided by 10 years; D2: pred averages per-year race counts over the 11 distinct years present (AVG of GROUP BY year).","Gold date range spans 11 calendar years yet divides by 10; judged as defined quantity differing not as gold error."
+P021,L2,,"",Gold joins atom-molecule-bond on molecule_id (atoms repeated per bond of molecule) while pred joins atom-connected-bond on atom_id/bond_id; same percentage formula.
+P012,L6,L5,"Evidence formula is DIVIDE(SUM(PT >= 14 AND SEX = 'F') SUM(PT >= 14)) * 100 but gold divides by COUNT(*) of all joined rows (1.2) while pred (PT >= 14 in WHERE and COUNT(*)) matches the evidence denominator (78.4).",
+P030,L8,L1,"",Pred returns first_name and last_name instead of link_to_member id; link_to_event values same; DISTINCT rows differ due to output columns. Question 'identify the member' is open on id vs name.
+P019,L6,L4,"Question asks for the fastest lap speed but fastestLapSpeed is a TEXT column and gold ORDER BY fastestLapSpeed DESC sorts text so '99.x' ranks above '2xx.x'; pred casts to REAL.","Inference from schema (fastestLapSpeed TEXT) not from running SQL."
+P001,L4,L8,"",Pred picks the min-artist with tie handling on count of cards (gold counts rows after joining legalities) returns empty (chosen artist has no joined row or NULL) and omits the artist column. Gold returns a single format via LIMIT 1.
+P027,L2,,"",Gold also joins Examination (not mentioned in the question) restricting patients; pred omits it (136 vs 9). Both use COUNT(DISTINCT T1.ID) and IGG >= 2000.
+P004,L4,L2,"",Gold COUNT(T1.ID) counts joined rows (7) while pred COUNT(DISTINCT ID) counts patients (1) and skips the Patient table.
+P025,L1,,"",Pred uses event.type but gold uses budget.category through a join on link_to_event.
+P029,L3,,"",Pred lacks potential IS NOT NULL so a NULL potential sorts first and the row has NULL preferred_foot.
+P003,L6,,"Evidence says 'involved atom 12 refers to atom_id = ''TR009_12'' or atom_id2 = ''TR009_12''' but gold filters atom_id = molecule_id || '_1' AND atom_id2 = molecule_id || '_2'; pred implements the evidence.",
+P028,L5,,"D1: question says 'first 10 years' and gold takes races in the date range divided by 10 years; D2: pred divides total races by COUNT(DISTINCT year) (11 years present).","Same as P014 reasoning."
+P002,L8,,"",Gold SUM/COUNT is integer division and truncates to 69 while pred AVG gives 70.43; same population and evidence formula so only rounding/truncation differs.
+P011,L7,L1,"Evidence 'introduction of races refers to url' does not say which table's url: races.url (pred) is a defensible reading of 'introduction of the races' while gold uses circuits.url.",
+P010,L6,L1,"Evidence says 'finisher refers to time is not null' but gold COUNT(time IS NOT NULL) counts every row (the boolean is never NULL) so the finisher filter is not implemented; pred filters time IS NOT NULL.",Pred also returns round instead of raceId for 'race number'.

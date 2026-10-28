@@ -1,0 +1,25 @@
+{
+ "_meta": {
+  "frozen_at": "2026-10-27 (worker machine time CST) / 2026-10-26 EDT, after tuning on the fresh draw and before the first evaluation call (SAP 19.6, 19.8)",
+  "rule": "docs/SAP.md 19.6 / 19.8",
+  "tuning_items_sha256": "7283db2051e66c428f7494d03cec2d4dbca6574d67e0b8630c9b66ceeb538c7a",
+  "eval_items_sha256": "208504194921c78b38a724219725b921bc8e35639274f81603d79008ba855d18",
+  "eval_units_sha256": "3599992358a0c522ed58e0ee2b7b07143c9ab03fbef00783a5f40657d5a31c4c",
+  "eval_units_file": "results/diag/critic_ve_units.json.gz (gzip of the units.json with this sha256)",
+  "va_records_sha256": "e6eb85fe82f92b56dd273ae887754f5b41e8748c396be95cad3b54a331d783f9",
+  "code_defaults": {
+   "max_tokens_arbiter": 1000,
+   "min_evidence_chars": 10,
+   "temperature": 0.0,
+   "seed": 0,
+   "arm_models": {"A": "qwen37plus", "A0": "qwen37plus", "B": "dsv41flash", "C": "qwen37plus"},
+   "user_rebuttal": "verdict-only fixed templates USER_FLAG / USER_PASS in code/tools/critic_ve.py",
+   "arbiter_inputs": "question, evidence, M1 task graph (cached, as the critic saw it), complete schema listing, SQL, real execution, review, user statement, for flags the stored fix and its real execution"
+  }
+ },
+ "prompts": {
+  "ve_arbiter_flag.user.txt": "aca7811e1b7780fc0845993849296edbbd37802948089d3ad4c35138967f894d",
+  "ve_arbiter_pass.user.txt": "8cd0778ed2b4b55e4f81c7dedfc0241866b1c7551b79164beb7ae0bb8136b79c",
+  "vd_appeal.user.txt": "aab465a6d5be723a7d97a70a60f8b354e47aa095c642f5110417fd27b804cf04"
+ }
+}

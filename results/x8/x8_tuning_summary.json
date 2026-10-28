@@ -1,0 +1,59 @@
+{
+ "_meta": {
+  "scope": "tuning-set",
+  "split": "bird_train_HT (300 q, 4 dbs)",
+  "sources": "runs/X8/*, queue X8 (exp/queues/X8_weak.jsonl), paired_compare logs, cost_report --by run",
+  "cost_basis": "list price exp/prices.yaml, CNY, per question"
+ },
+ "qwen37flash": {
+  "zs_ex": 0.6267,
+  "fixed_ex": 0.6533,
+  "fixed_calls": 3.73,
+  "gated_ex": 0.6667,
+  "gated_calls": 2.06,
+  "gated_minus_fixed_pp": 1.33,
+  "gated_minus_fixed_ci95": [
+   0.0,
+   3.83
+  ],
+  "cost_cny_per_q": {
+   "zs": 0.0002,
+   "fixed": 0.00183,
+   "gated": 0.00087
+  }
+ },
+ "qwen3527b": {
+  "zs_ex": 0.6533,
+  "fixed_ex": 0.6867,
+  "fixed_calls": 3.72,
+  "gated_ex": 0.68,
+  "gated_calls": 2.05,
+  "gated_minus_fixed_pp": -0.67,
+  "gated_minus_fixed_ci95": [
+   -1.95,
+   0.0
+  ],
+  "cost_cny_per_q": {
+   "zs": 0.0013,
+   "fixed": 0.0065,
+   "gated": 0.0031
+  }
+ },
+ "qwen37plus_ref": {
+  "zs_ours_ex": 0.697,
+  "fixed_ex": 0.6933,
+  "fixed_calls": 3.24,
+  "gated_ex": 0.6833,
+  "gated_calls": 2.01,
+  "gated_minus_fixed_pp": -1.0,
+  "gated_minus_fixed_ci95": [
+   -2.2,
+   0.0
+  ],
+  "cost_cny_per_q": {
+   "zs": 0.0017,
+   "fixed": 0.0093,
+   "gated": 0.0052
+  }
+ }
+}

@@ -1,0 +1,122 @@
+{
+ "n": 1101,
+ "n_scored": 1101,
+ "ex": 0.6548592188919165,
+ "ex_all_abstain_wrong": 0.6512261580381471,
+ "coverage": 0.9863760217983651,
+ "ex_accepted": 0.6602209944751382,
+ "ex_ci": [
+  0.5623130608175474,
+  0.7104149026248942
+ ],
+ "soft_f1": 0.6709989609445959,
+ "jaccard": 0.6671382497729337,
+ "overlap": 0.692604931880109,
+ "exec_ok_rate": 0.9981834695731153,
+ "calls_per_q": 3.3669391462306995,
+ "prompt_tokens_per_q": 7404.330608537693,
+ "completion_tokens_per_q": 404.13623978201633,
+ "cached_tokens_per_q": 4733.326067211626,
+ "embed_calls_per_q": 1.4069028156221617,
+ "rerank_calls_per_q": 2.66394187102634,
+ "exec_s_per_q": 0.8983896457765668,
+ "latency_mean_s": 29.68458583106267,
+ "latency_p50_s": 18.744,
+ "latency_p95_s": 66.715,
+ "api_fail": 0,
+ "parse_fail": 0,
+ "sys_error": 0,
+ "error_breakdown": {
+  "value_mismatch": 251,
+  "empty_result": 27,
+  "shape_mismatch": 54,
+  "column_permutation": 2,
+  "row_subset": 23,
+  "row_superset": 14,
+  "gold_fail": 7,
+  "timeout": 2
+ },
+ "stages_per_q": {
+  "crit": {
+   "calls": 1.203,
+   "prompt": 3438.062,
+   "completion": 98.069,
+   "cached": 2523.146,
+   "latency_s": 9.398
+  },
+  "gen": {
+   "calls": 1.0,
+   "prompt": 3095.758,
+   "completion": 57.546,
+   "cached": 1781.188,
+   "latency_s": 7.987
+  },
+  "m1": {
+   "calls": 1.0,
+   "prompt": 272.344,
+   "completion": 233.768,
+   "cached": 7.789,
+   "latency_s": 10.339
+  },
+  "rev": {
+   "calls": 0.164,
+   "prompt": 598.166,
+   "completion": 14.753,
+   "cached": 421.203,
+   "latency_s": 1.063
+  }
+ },
+ "actions": {
+  "accept": 1082,
+  "revise": 181,
+  "revise_noop": 8,
+  "stop_best": 19
+ },
+ "iterations_mean": 0.16439600363306087,
+ "ex_by_db": {
+  "address": [
+   0.68,
+   150
+  ],
+  "beer_factory": [
+   0.7252,
+   131
+  ],
+  "bike_share_1": [
+   0.3097,
+   113
+  ],
+  "donor": [
+   0.6667,
+   150
+  ],
+  "public_review_platform": [
+   0.7,
+   150
+  ],
+  "retails": [
+   0.7333,
+   150
+  ],
+  "sales": [
+   0.7009,
+   107
+  ],
+  "simpson_episodes": [
+   0.66,
+   150
+  ]
+ },
+ "client_stats": {
+  "calls": 2004,
+  "cache_hits": 763,
+  "n429": 0,
+  "n5xx": 0,
+  "ntimeout": 0,
+  "retries": 0,
+  "failures": 0,
+  "embed_calls": 766,
+  "rerank_calls": 1055
+ },
+ "wall_s": 4020.4
+}

@@ -1,0 +1,17 @@
+{
+ "P2.p_adj_sa": 1.0,
+ "P2.sa_family_m": 8,
+ "P2.sa_note": "S-A secondary row (SAP 15.2): Holm over the E1.full_vs comparisons; not part of the confirmatory family",
+ "P2.verdict_sa": "direction consistent, not confirmed",
+ "P4.p_adj_se": 0.31922975128516917,
+ "P4.se_family_m": 8,
+ "P4.se_note": "S-E headline row (SAP 15.2): Holm over the seven S-E rows of 13.5 plus ws_full - append at 40 % (m = 8)",
+ "P4.verdict_se": "not confirmed",
+ "_meta": {
+  "created": "2026-10-27 20:31:15",
+  "git": "unknown",
+  "name": "Psec",
+  "notes": [],
+  "scope": "confirmatory"
+ }
+}

@@ -1,0 +1,3867 @@
+{
+ "_meta": {
+  "scope": "posthoc-secondary",
+  "sap": "docs/SAP.md section 27",
+  "api_calls": 0,
+  "B": 10000,
+  "seed_boot": 20261101,
+  "created": "2026-10-28 03:42:19",
+  "inputs": [
+   "critic_cost.json",
+   "margin_rep.json",
+   "mde_cluster.json",
+   "p5_units.json",
+   "regen.json",
+   "rv4_summary.json",
+   "silent.json",
+   "widest.json"
+  ],
+  "missing_keys": []
+ },
+ "keys": {
+  "wide.rep.stack.plus.rep_wide": {
+   "v": [
+    -2.1577381018334596,
+    1.8740888832999556
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.stack.plus.s0_wide": {
+   "v": [
+    -1.6129032318533432,
+    2.5396825498277154
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.stack.plus.rep_t": {
+   "v": [
+    -2.004466979779747,
+    1.8740888832999556
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.stack.plus.rep_sf": {
+   "v": [
+    -2.1577381018334596,
+    1.750625226444938
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.stack.plus.rep_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.stack.plus.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.stack.plus.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.stack.plus.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.stack.plus.rep_lo_raw": {
+   "v": "-2.2e+00",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.stack.flash.rep_wide": {
+   "v": [
+    -0.6506506568327086,
+    5.12265512996627
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.stack.flash.s0_wide": {
+   "v": [
+    -1.4897579212008891,
+    3.898879494425593
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.stack.flash.rep_t": {
+   "v": [
+    -0.5155219043439203,
+    5.078755281136618
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.stack.flash.rep_sf": {
+   "v": [
+    -0.6506506568327086,
+    5.12265512996627
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.stack.flash.rep_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.stack.flash.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.stack.flash.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.stack.flash.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.stack.flash.rep_lo_raw": {
+   "v": "-6.5e-01",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.stack.27b.rep_wide": {
+   "v": [
+    0.5524861832438602,
+    3.6821705495260493
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.stack.27b.s0_wide": {
+   "v": [
+    -0.24154590226981984,
+    4.914529921480094
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.stack.27b.rep_t": {
+   "v": [
+    0.6022125877278295,
+    3.6133458651187578
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.stack.27b.rep_sf": {
+   "v": [
+    0.5524861832438602,
+    3.6821705495260493
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.stack.27b.rep_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.stack.27b.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.stack.27b.agrees": {
+   "v": "no",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.stack.27b.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.stack.27b.rep_lo_raw": {
+   "v": "5.5e-01",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.stack.pooled3.rep_wide": {
+   "v": [
+    -0.24366472318233004,
+    3.0393132158143032
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.stack.pooled3.s0_wide": {
+   "v": [
+    -0.04873294683726337,
+    2.65848672027818
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.stack.pooled3.rep_t": {
+   "v": [
+    -0.1565086380944718,
+    3.0393132158143032
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.stack.pooled3.rep_sf": {
+   "v": [
+    -0.24366472318233004,
+    3.0178326512205813
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.stack.pooled3.rep_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.stack.pooled3.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.stack.pooled3.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.stack.pooled3.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.stack.pooled3.rep_lo_raw": {
+   "v": "-2.4e-01",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.loop_g.plus.rep_wide": {
+   "v": [
+    -1.9071340803572107e-09,
+    0.7045354484958277
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.loop_g.plus.s0_wide": {
+   "v": [
+    -0.0651890482398957,
+    0.5215123859191656
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.loop_g.plus.rep_t": {
+   "v": [
+    0.020916475772460585,
+    0.6744333721197601
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.loop_g.plus.rep_sf": {
+   "v": [
+    -1.9071340803572107e-09,
+    0.7045354484958277
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.loop_g.plus.rep_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.loop_g.plus.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.loop_g.plus.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.loop_g.plus.agrees_prev": {
+   "v": "no",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.loop_g.plus.rep_lo_raw": {
+   "v": "-1.9e-09",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.loop_g.flash.rep_wide": {
+   "v": [
+    1.2800337982091714,
+    3.392568662135907
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.loop_g.flash.s0_wide": {
+   "v": [
+    0.5867014341590613,
+    1.694915254237288
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.loop_g.flash.rep_t": {
+   "v": [
+    1.2800337982091714,
+    3.3701183095700546
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.loop_g.flash.rep_sf": {
+   "v": [
+    1.3389711025231075,
+    3.392568662135907
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.loop_g.flash.rep_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.loop_g.flash.s0_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.loop_g.flash.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.loop_g.flash.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.loop_g.flash.rep_lo_raw": {
+   "v": "1.3e+00",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.loop_g.27b.rep_wide": {
+   "v": [
+    1.0471204168203059,
+    2.6335590707298597
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.loop_g.27b.s0_wide": {
+   "v": [
+    0.651890482398957,
+    1.6297262059973925
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.loop_g.27b.rep_t": {
+   "v": [
+    1.069457108530548,
+    2.6245889583968744
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.loop_g.27b.rep_sf": {
+   "v": [
+    1.0471204168203059,
+    2.6335590707298597
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.loop_g.27b.rep_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.loop_g.27b.s0_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.loop_g.27b.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.loop_g.27b.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.loop_g.27b.rep_lo_raw": {
+   "v": "1.0e+00",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.loop_g.pooled3.rep_wide": {
+   "v": [
+    0.9313416777865549,
+    2.085235922769623
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.loop_g.pooled3.s0_wide": {
+   "v": [
+    0.5215123859191656,
+    1.108213820078227
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.loop_g.pooled3.rep_t": {
+   "v": [
+    0.9313416777865549,
+    2.081840996413069
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.loop_g.pooled3.rep_sf": {
+   "v": [
+    0.9329940601771571,
+    2.085235922769623
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.loop_g.pooled3.rep_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.loop_g.pooled3.s0_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.loop_g.pooled3.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.loop_g.pooled3.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.loop_g.pooled3.rep_lo_raw": {
+   "v": "9.3e-01",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.loop_f.plus.rep_wide": {
+   "v": [
+    0.09144947219946703,
+    1.544050867399879
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.loop_f.plus.s0_wide": {
+   "v": [
+    -0.3259452411994785,
+    0.9794654498044092
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.loop_f.plus.rep_t": {
+   "v": [
+    0.09554803708987392,
+    1.4689891206676227
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.loop_f.plus.rep_sf": {
+   "v": [
+    0.09144947219946703,
+    1.544050867399879
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.loop_f.plus.rep_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.loop_f.plus.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.loop_f.plus.agrees": {
+   "v": "no",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.loop_f.plus.agrees_prev": {
+   "v": "no",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.loop_f.plus.rep_lo_raw": {
+   "v": "9.1e-02",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.loop_f.flash.rep_wide": {
+   "v": [
+    1.6586306887083904,
+    5.190058485926849
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.loop_f.flash.s0_wide": {
+   "v": [
+    0.35144723047665893,
+    3.3625731031510293
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.loop_f.flash.rep_t": {
+   "v": [
+    1.6586306887083904,
+    5.077570962747497
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.loop_f.flash.rep_sf": {
+   "v": [
+    1.7025089538213176,
+    5.190058485926849
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.loop_f.flash.rep_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.loop_f.flash.s0_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.loop_f.flash.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.loop_f.flash.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.loop_f.flash.rep_lo_raw": {
+   "v": "1.7e+00",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.loop_f.27b.rep_wide": {
+   "v": [
+    0.7380073760655468,
+    3.710812545029885
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.loop_f.27b.s0_wide": {
+   "v": [
+    -0.3096854333018484,
+    2.526113073458302
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.loop_f.27b.rep_t": {
+   "v": [
+    0.7473371404992792,
+    3.6420587743203634
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.loop_f.27b.rep_sf": {
+   "v": [
+    0.7380073760655468,
+    3.710812545029885
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.loop_f.27b.rep_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.loop_f.27b.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.loop_f.27b.agrees": {
+   "v": "no",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.loop_f.27b.agrees_prev": {
+   "v": "no",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.loop_f.27b.rep_lo_raw": {
+   "v": "7.4e-01",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.loop_f.pooled3.rep_wide": {
+   "v": [
+    0.9991791879288923,
+    3.311480924485581
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.loop_f.pooled3.s0_wide": {
+   "v": [
+    0.27006733754429757,
+    1.956181537783005
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.loop_f.pooled3.rep_t": {
+   "v": [
+    0.9991791879288923,
+    3.2308657200821176
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.loop_f.pooled3.rep_sf": {
+   "v": [
+    1.0256410231522444,
+    3.311480924485581
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.loop_f.pooled3.rep_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.loop_f.pooled3.s0_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.loop_f.pooled3.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.loop_f.pooled3.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.loop_f.pooled3.rep_lo_raw": {
+   "v": "1.0e+00",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.g_minus_f.plus.rep_wide": {
+   "v": [
+    -1.04477612167355,
+    0.12733416273936327
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.g_minus_f.plus.s0_wide": {
+   "v": [
+    -0.7822685788787485,
+    0.5215123859191656
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.g_minus_f.plus.rep_t": {
+   "v": [
+    -0.9965214726046391,
+    0.12733416273936327
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.g_minus_f.plus.rep_sf": {
+   "v": [
+    -1.04477612167355,
+    0.10101010290500449
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.g_minus_f.plus.rep_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.g_minus_f.plus.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.g_minus_f.plus.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.g_minus_f.plus.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.g_minus_f.plus.rep_lo_raw": {
+   "v": "-1.0e+00",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.g_minus_f.flash.rep_wide": {
+   "v": [
+    -2.207001527083877,
+    -0.020633536983194256
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.g_minus_f.flash.s0_wide": {
+   "v": [
+    -2.3255814010512315,
+    0.8727307681513737
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.g_minus_f.flash.rep_t": {
+   "v": [
+    -2.065416006693468,
+    -0.020633536983194256
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.g_minus_f.flash.rep_sf": {
+   "v": [
+    -2.207001527083877,
+    -0.11223344368614814
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.g_minus_f.flash.rep_reading": {
+   "v": "negative",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.g_minus_f.flash.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.g_minus_f.flash.agrees": {
+   "v": "no",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.g_minus_f.flash.agrees_prev": {
+   "v": "no",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.g_minus_f.flash.rep_lo_raw": {
+   "v": "-2.2e+00",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.g_minus_f.27b.rep_wide": {
+   "v": [
+    -1.715265870353932,
+    0.8897663612973901
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.g_minus_f.27b.s0_wide": {
+   "v": [
+    -1.2987013026976124,
+    1.29264563100246
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.g_minus_f.27b.rep_t": {
+   "v": [
+    -1.5851162091896107,
+    0.8897663612973901
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.g_minus_f.27b.rep_sf": {
+   "v": [
+    -1.715265870353932,
+    0.8812856433441956
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.g_minus_f.27b.rep_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.g_minus_f.27b.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.g_minus_f.27b.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.g_minus_f.27b.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.g_minus_f.27b.rep_lo_raw": {
+   "v": "-1.7e+00",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.g_minus_f.pooled3.rep_wide": {
+   "v": [
+    -1.4122035746766624,
+    0.10460780146464621
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.g_minus_f.pooled3.s0_wide": {
+   "v": [
+    -1.062801934864727,
+    0.46358041140718204
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.g_minus_f.pooled3.rep_t": {
+   "v": [
+    -1.3214700352760325,
+    0.10460780146464621
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.g_minus_f.pooled3.rep_sf": {
+   "v": [
+    -1.4122035746766624,
+    0.061642782016117094
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.g_minus_f.pooled3.rep_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.g_minus_f.pooled3.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.g_minus_f.pooled3.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.g_minus_f.pooled3.agrees_prev": {
+   "v": "no",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.g_minus_f.pooled3.rep_lo_raw": {
+   "v": "-1.4e+00",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.g_minus_f.pooled3.rep_run_sd": {
+   "v": 0.1697142476294362,
+   "kind": "x2",
+   "meaning": "SD over the three per-run estimates of the contrast (pp)"
+  },
+  "wide.rep.g_minus_f.pooled3.rep_allow_lo": {
+   "v": -1.4783158700830874,
+   "kind": "pp2",
+   "meaning": "replication: lower end of rep_wide widened in quadrature by 1.96 x rep_run_sd (pp)"
+  },
+  "wide.rep.g_minus_f.pooled3.rep_allow_clearance": {
+   "v": 0.021684129916912598,
+   "kind": "pp2",
+   "meaning": "that widened lower end minus the margin of P1' (pp); positive = margin kept"
+  },
+  "wide.rep.g_minus_zs.plus.rep_wide": {
+   "v": [
+    -1.6941973775229502,
+    2.136185256537235
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.g_minus_zs.plus.s0_wide": {
+   "v": [
+    -1.3706607245862017,
+    2.7100271088301575
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.g_minus_zs.plus.rep_t": {
+   "v": [
+    -1.5712135051248057,
+    2.136185256537235
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.g_minus_zs.plus.rep_sf": {
+   "v": [
+    -1.6941973775229502,
+    2.007168464932693
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.g_minus_zs.plus.rep_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.g_minus_zs.plus.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.g_minus_zs.plus.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.g_minus_zs.plus.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.g_minus_zs.plus.rep_lo_raw": {
+   "v": "-1.7e+00",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.g_minus_zs.flash.rep_wide": {
+   "v": [
+    1.7429193644573595,
+    7.3337964116876595
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.g_minus_zs.flash.s0_wide": {
+   "v": [
+    -0.6060606120450421,
+    5.293119200119749
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.g_minus_zs.flash.rep_t": {
+   "v": [
+    1.8795890728842655,
+    7.3337964116876595
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.g_minus_zs.flash.rep_sf": {
+   "v": [
+    1.7429193644573595,
+    7.235142125504421
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.g_minus_zs.flash.rep_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.g_minus_zs.flash.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.g_minus_zs.flash.agrees": {
+   "v": "no",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.g_minus_zs.flash.agrees_prev": {
+   "v": "no",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.g_minus_zs.flash.rep_lo_raw": {
+   "v": "1.7e+00",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.g_minus_zs.27b.rep_wide": {
+   "v": [
+    2.5089605666754053,
+    5.323440890688571
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.g_minus_zs.27b.s0_wide": {
+   "v": [
+    1.060070665374702,
+    5.882352946444785
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.g_minus_zs.27b.rep_t": {
+   "v": [
+    2.5861636290854397,
+    5.323440890688571
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.g_minus_zs.27b.rep_sf": {
+   "v": [
+    2.5089605666754053,
+    5.146705149466277
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.g_minus_zs.27b.rep_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.g_minus_zs.27b.s0_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.g_minus_zs.27b.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.g_minus_zs.27b.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.g_minus_zs.27b.rep_lo_raw": {
+   "v": "2.5e+00",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.g_minus_zs.pooled3.rep_wide": {
+   "v": [
+    1.3605442113020207,
+    4.426125562698917
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.g_minus_zs.pooled3.s0_wide": {
+   "v": [
+    0.7974481548094208,
+    3.4104922843751644
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.g_minus_zs.pooled3.rep_t": {
+   "v": [
+    1.469861689220538,
+    4.426125562698917
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.g_minus_zs.pooled3.rep_sf": {
+   "v": [
+    1.3605442113020207,
+    4.321932962404068
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.g_minus_zs.pooled3.rep_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.g_minus_zs.pooled3.s0_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.g_minus_zs.pooled3.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.g_minus_zs.pooled3.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.g_minus_zs.pooled3.rep_lo_raw": {
+   "v": "1.4e+00",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.f_minus_zs.plus.rep_wide": {
+   "v": [
+    -1.0875475842487117,
+    2.4076442942126848
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.f_minus_zs.plus.s0_wide": {
+   "v": [
+    -1.173020532170548,
+    2.739726034196253
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.f_minus_zs.plus.rep_t": {
+   "v": [
+    -0.9734852329349795,
+    2.4076442942126848
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.f_minus_zs.plus.rep_sf": {
+   "v": [
+    -1.0875475842487117,
+    2.363488189375081
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.f_minus_zs.plus.rep_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.f_minus_zs.plus.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.f_minus_zs.plus.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.f_minus_zs.plus.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.f_minus_zs.plus.rep_lo_raw": {
+   "v": "-1.1e+00",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.f_minus_zs.flash.rep_wide": {
+   "v": [
+    2.867383504515412,
+    8.354057175280818
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.f_minus_zs.flash.s0_wide": {
+   "v": [
+    0.43165467087394016,
+    5.460006987838506
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.f_minus_zs.flash.rep_t": {
+   "v": [
+    2.945377852967767,
+    8.354057175280818
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.f_minus_zs.flash.rep_sf": {
+   "v": [
+    2.867383504515412,
+    8.315098476281838
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.f_minus_zs.flash.rep_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.f_minus_zs.flash.s0_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.f_minus_zs.flash.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.f_minus_zs.flash.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.f_minus_zs.flash.rep_lo_raw": {
+   "v": "2.9e+00",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.f_minus_zs.27b.rep_wide": {
+   "v": [
+    2.154626103150826,
+    6.442577044248509
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.f_minus_zs.27b.s0_wide": {
+   "v": [
+    0.7207207142341203,
+    6.349206361066817
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.f_minus_zs.27b.rep_t": {
+   "v": [
+    2.216072512681455,
+    6.388881854984778
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.f_minus_zs.27b.rep_sf": {
+   "v": [
+    2.154626103150826,
+    6.442577044248509
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.f_minus_zs.27b.rep_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.f_minus_zs.27b.s0_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.f_minus_zs.27b.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.f_minus_zs.27b.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.f_minus_zs.27b.rep_lo_raw": {
+   "v": "2.2e+00",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.f_minus_zs.pooled3.rep_wide": {
+   "v": [
+    1.9323671438727046,
+    5.1044919130326925
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.f_minus_zs.pooled3.s0_wide": {
+   "v": [
+    1.0622154745908299,
+    3.7518037565229627
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.f_minus_zs.pooled3.rep_t": {
+   "v": [
+    2.0083575726981473,
+    5.1044919130326925
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.f_minus_zs.pooled3.rep_sf": {
+   "v": [
+    1.9323671438727046,
+    5.037037042202058
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.f_minus_zs.pooled3.rep_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.f_minus_zs.pooled3.s0_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.f_minus_zs.pooled3.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.f_minus_zs.pooled3.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.f_minus_zs.pooled3.rep_lo_raw": {
+   "v": "1.9e+00",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.w1.weak2.rep_wide": {
+   "v": [
+    2.39808152948653,
+    6.071330913746545
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.rep.w1.weak2.s0_wide": {
+   "v": [
+    1.264044940107775,
+    4.440272723580655
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.rep.w1.weak2.rep_t": {
+   "v": [
+    2.4901640884264236,
+    6.071330913746545
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.rep.w1.weak2.rep_sf": {
+   "v": [
+    2.39808152948653,
+    5.829995552735912
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.rep.w1.weak2.rep_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.rep.w1.weak2.s0_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.rep.w1.weak2.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.rep.w1.weak2.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.rep.w1.weak2.rep_lo_raw": {
+   "v": "2.4e+00",
+   "kind": "str",
+   "meaning": "unrounded lower end of rep_wide in scientific notation (a sign-flip end at zero is about +-1e-9)"
+  },
+  "wide.rep.n_contrasts": {
+   "v": 25,
+   "kind": "int",
+   "meaning": "contrasts compared between the two settings"
+  },
+  "wide.rep.n_agree": {
+   "v": 20,
+   "kind": "int",
+   "meaning": "contrasts whose reading word is the same in both settings (single widest definition)"
+  },
+  "wide.rep.n_agree_zero_positive": {
+   "v": 19,
+   "kind": "int",
+   "meaning": "the same count if an interval end at zero within 1e-6 were read as positive instead of containing 0"
+  },
+  "wide.rep.n_agree_prev": {
+   "v": 19,
+   "kind": "int",
+   "meaning": "the same count under the earlier definition"
+  },
+  "wide.samex.ex_minus_zs.plus.rep_wide": {
+   "v": [
+    -0.45662101205937605,
+    2.059019061453508
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.samex.ex_minus_zs.plus.s0_wide": {
+   "v": [
+    -0.7170795306388527,
+    1.8904823989569755
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.samex.ex_minus_zs.plus.rep_t": {
+   "v": [
+    -0.4075631727094843,
+    2.059019061453508
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.samex.ex_minus_zs.plus.rep_sf": {
+   "v": [
+    -0.45662101205937605,
+    2.043199069537441
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.samex.ex_minus_zs.plus.rep_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.samex.ex_minus_zs.plus.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.samex.ex_minus_zs.plus.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.samex.ex_minus_zs.plus.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.samex.ex_minus_zs.flash.rep_wide": {
+   "v": [
+    -1.313002969277246,
+    3.4200634332837234
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.samex.ex_minus_zs.flash.s0_wide": {
+   "v": [
+    -1.955671447196871,
+    1.564537157757497
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.samex.ex_minus_zs.flash.rep_t": {
+   "v": [
+    -1.20363579312727,
+    3.4200634332837234
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.samex.ex_minus_zs.flash.rep_sf": {
+   "v": [
+    -1.313002969277246,
+    3.3882783968013226
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.samex.ex_minus_zs.flash.rep_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.samex.ex_minus_zs.flash.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.samex.ex_minus_zs.flash.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.samex.ex_minus_zs.flash.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.samex.ex_minus_zs.27b.rep_wide": {
+   "v": [
+    -1.6622922214697946,
+    2.393222740634594
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.samex.ex_minus_zs.27b.s0_wide": {
+   "v": [
+    -1.9726858925049746,
+    2.2471910429949515
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.samex.ex_minus_zs.27b.rep_t": {
+   "v": [
+    -1.567494796262582,
+    2.393222740634594
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.samex.ex_minus_zs.27b.rep_sf": {
+   "v": [
+    -1.6622922214697946,
+    2.380952386531292
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.samex.ex_minus_zs.27b.rep_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.samex.ex_minus_zs.27b.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.samex.ex_minus_zs.27b.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.samex.ex_minus_zs.27b.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.samex.ex_minus_zs.pooled3.rep_wide": {
+   "v": [
+    -0.37453183836890686,
+    1.950113382784335
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.samex.ex_minus_zs.pooled3.s0_wide": {
+   "v": [
+    -0.8474576271186439,
+    1.1951325510647544
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.samex.ex_minus_zs.pooled3.rep_t": {
+   "v": [
+    -0.36405955324521977,
+    1.9285967110027162
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.samex.ex_minus_zs.pooled3.rep_sf": {
+   "v": [
+    -0.37453183836890686,
+    1.950113382784335
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.samex.ex_minus_zs.pooled3.rep_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.samex.ex_minus_zs.pooled3.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.samex.ex_minus_zs.pooled3.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.samex.ex_minus_zs.pooled3.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.samex.root_minus_ex.plus.rep_wide": {
+   "v": [
+    -2.551020414575073,
+    0.5884717731449951
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.samex.root_minus_ex.plus.s0_wide": {
+   "v": [
+    -1.7821782227320266,
+    1.515151520848813
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.samex.root_minus_ex.plus.rep_t": {
+   "v": [
+    -2.3703057583688105,
+    0.5884717731449951
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.samex.root_minus_ex.plus.rep_sf": {
+   "v": [
+    -2.551020414575073,
+    0.5257623591142099
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.samex.root_minus_ex.plus.rep_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.samex.root_minus_ex.plus.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.samex.root_minus_ex.plus.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.samex.root_minus_ex.plus.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.samex.root_minus_ex.flash.rep_wide": {
+   "v": [
+    -0.08691873098652764,
+    2.4554541503694045
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.samex.root_minus_ex.flash.s0_wide": {
+   "v": [
+    -1.1611030529498654,
+    3.9748954045365363
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.samex.root_minus_ex.flash.rep_t": {
+   "v": [
+    0.15797196347584253,
+    2.188833773160402
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.samex.root_minus_ex.flash.rep_sf": {
+   "v": [
+    0.08250824607308861,
+    2.192326858941886
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.samex.root_minus_ex.flash.rep_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.samex.root_minus_ex.flash.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.samex.root_minus_ex.flash.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.samex.root_minus_ex.flash.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.samex.root_minus_ex.27b.rep_wide": {
+   "v": [
+    0.10647938589983919,
+    3.3500837585372376
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.samex.root_minus_ex.27b.s0_wide": {
+   "v": [
+    0.7170795306388527,
+    3.780964797913951
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.samex.root_minus_ex.27b.rep_t": {
+   "v": [
+    0.10647938589983919,
+    3.2833511225747367
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.samex.root_minus_ex.27b.rep_sf": {
+   "v": [
+    0.12547051138192444,
+    3.3500837585372376
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.samex.root_minus_ex.27b.rep_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.samex.root_minus_ex.27b.s0_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.samex.root_minus_ex.27b.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.samex.root_minus_ex.27b.agrees_prev": {
+   "v": "no",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.samex.root_minus_ex.pooled3.rep_wide": {
+   "v": [
+    -0.46204620839358446,
+    1.7176596931728878
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.samex.root_minus_ex.pooled3.s0_wide": {
+   "v": [
+    -0.10010010325443021,
+    2.3911612620256726
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.samex.root_minus_ex.pooled3.rep_t": {
+   "v": [
+    -0.3896347705781872,
+    1.7079021905405223
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.samex.root_minus_ex.pooled3.rep_sf": {
+   "v": [
+    -0.46204620839358446,
+    1.7176596931728878
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.samex.root_minus_ex.pooled3.rep_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.samex.root_minus_ex.pooled3.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.samex.root_minus_ex.pooled3.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.samex.root_minus_ex.pooled3.agrees_prev": {
+   "v": "no",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.samex.stack.plus.rep_wide": {
+   "v": [
+    -2.1577381018334596,
+    1.8740888832999556
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.samex.stack.plus.s0_wide": {
+   "v": [
+    -1.6129032318533432,
+    2.5396825498277154
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.samex.stack.plus.rep_t": {
+   "v": [
+    -2.004466979779747,
+    1.8740888832999556
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.samex.stack.plus.rep_sf": {
+   "v": [
+    -2.1577381018334596,
+    1.750625226444938
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.samex.stack.plus.rep_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.samex.stack.plus.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.samex.stack.plus.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.samex.stack.plus.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.samex.stack.flash.rep_wide": {
+   "v": [
+    -0.6506506568327086,
+    5.12265512996627
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.samex.stack.flash.s0_wide": {
+   "v": [
+    -1.4897579212008891,
+    3.898879494425593
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.samex.stack.flash.rep_t": {
+   "v": [
+    -0.5155219043439203,
+    5.078755281136618
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.samex.stack.flash.rep_sf": {
+   "v": [
+    -0.6506506568327086,
+    5.12265512996627
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.samex.stack.flash.rep_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.samex.stack.flash.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.samex.stack.flash.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.samex.stack.flash.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.samex.stack.27b.rep_wide": {
+   "v": [
+    0.5524861832438602,
+    3.6821705495260493
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.samex.stack.27b.s0_wide": {
+   "v": [
+    -0.24154590226981984,
+    4.914529921480094
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.samex.stack.27b.rep_t": {
+   "v": [
+    0.6022125877278295,
+    3.6133458651187578
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.samex.stack.27b.rep_sf": {
+   "v": [
+    0.5524861832438602,
+    3.6821705495260493
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.samex.stack.27b.rep_reading": {
+   "v": "positive",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.samex.stack.27b.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.samex.stack.27b.agrees": {
+   "v": "no",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.samex.stack.27b.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.samex.stack.pooled3.rep_wide": {
+   "v": [
+    -0.24366472318233004,
+    3.0393132158143032
+   ],
+   "kind": "pp2",
+   "meaning": "replication (T 0.7, run-averaged): hull of the clustered, item-level, cluster-robust t(G-1) and sign-flip intervals, pp; round-4 statistics, post hoc, no model call (SAP section 27)"
+  },
+  "wide.samex.stack.pooled3.s0_wide": {
+   "v": [
+    -0.04873294683726337,
+    2.65848672027818
+   ],
+   "kind": "pp2",
+   "meaning": "locked run (T 0): the same hull, pp"
+  },
+  "wide.samex.stack.pooled3.rep_t": {
+   "v": [
+    -0.1565086380944718,
+    3.0393132158143032
+   ],
+   "kind": "pp2",
+   "meaning": "replication: cluster-robust t(G-1) interval, pp"
+  },
+  "wide.samex.stack.pooled3.rep_sf": {
+   "v": [
+    -0.24366472318233004,
+    3.0178326512205813
+   ],
+   "kind": "pp2",
+   "meaning": "replication: exact sign-flip interval (size-weighted database means), pp"
+  },
+  "wide.samex.stack.pooled3.rep_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the replication under the single widest definition"
+  },
+  "wide.samex.stack.pooled3.s0_reading": {
+   "v": "contains 0",
+   "kind": "str",
+   "meaning": "reading word of the locked run under the single widest definition"
+  },
+  "wide.samex.stack.pooled3.agrees": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same reading word in both settings under the single widest definition"
+  },
+  "wide.samex.stack.pooled3.agrees_prev": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "same flag under the definition of the earlier version (locked run: cluster and item hull; replication: cluster, item, run range, t(2))"
+  },
+  "wide.samex.n_contrasts": {
+   "v": 12,
+   "kind": "int",
+   "meaning": "contrasts compared between the two settings"
+  },
+  "wide.samex.n_agree": {
+   "v": 11,
+   "kind": "int",
+   "meaning": "contrasts whose reading word is the same in both settings (single widest definition)"
+  },
+  "wide.samex.n_agree_zero_positive": {
+   "v": 11,
+   "kind": "int",
+   "meaning": "the same count if an interval end at zero within 1e-6 were read as positive instead of containing 0"
+  },
+  "wide.samex.n_agree_prev": {
+   "v": 10,
+   "kind": "int",
+   "meaning": "the same count under the earlier definition"
+  },
+  "regen.s0.plus.n_diff": {
+   "v": 2,
+   "kind": "int",
+   "meaning": "questions whose root SQL differs between the gated and the fixed run, locked run"
+  },
+  "regen.s0.plus.share": {
+   "v": 0.1303780964797914,
+   "kind": "pctv2",
+   "meaning": "share of the development questions with a different root between gated and fixed (locked run), percent"
+  },
+  "regen.s0.plus.net_diff": {
+   "v": 0.0,
+   "kind": "int",
+   "meaning": "net questions (gated right minus fixed right) on the questions with a different root"
+  },
+  "regen.s0.plus.net_all": {
+   "v": -2.0,
+   "kind": "int",
+   "meaning": "net questions, gated minus fixed, all questions"
+  },
+  "regen.s0.plus.net_same": {
+   "v": -2.0,
+   "kind": "int",
+   "meaning": "net questions on the questions with an identical root"
+  },
+  "regen.s0.plus.est_all": {
+   "v": -0.1303780964797914,
+   "kind": "pp2",
+   "meaning": "gated minus fixed, all questions, pp"
+  },
+  "regen.s0.plus.est_same": {
+   "v": -0.13054830287206268,
+   "kind": "pp2",
+   "meaning": "gated minus fixed on the questions with an identical root, pp"
+  },
+  "regen.s0.plus.retry_net": {
+   "v": 3.0,
+   "kind": "int",
+   "meaning": "net questions, gated loop minus separate root-only run, locked run (the questions behind the retry's gain)"
+  },
+  "regen.rep.plus.max_diff": {
+   "v": 4,
+   "kind": "int",
+   "meaning": "largest number of questions with a different gated/fixed root in one replication run"
+  },
+  "regen.s0.flash.n_diff": {
+   "v": 29,
+   "kind": "int",
+   "meaning": "questions whose root SQL differs between the gated and the fixed run, locked run"
+  },
+  "regen.s0.flash.share": {
+   "v": 1.8904823989569755,
+   "kind": "pctv2",
+   "meaning": "share of the development questions with a different root between gated and fixed (locked run), percent"
+  },
+  "regen.s0.flash.net_diff": {
+   "v": 3.0,
+   "kind": "int",
+   "meaning": "net questions (gated right minus fixed right) on the questions with a different root"
+  },
+  "regen.s0.flash.net_all": {
+   "v": -10.0,
+   "kind": "int",
+   "meaning": "net questions, gated minus fixed, all questions"
+  },
+  "regen.s0.flash.net_same": {
+   "v": -13.0,
+   "kind": "int",
+   "meaning": "net questions on the questions with an identical root"
+  },
+  "regen.s0.flash.est_all": {
+   "v": -0.651890482398957,
+   "kind": "pp2",
+   "meaning": "gated minus fixed, all questions, pp"
+  },
+  "regen.s0.flash.est_same": {
+   "v": -0.8637873754152824,
+   "kind": "pp2",
+   "meaning": "gated minus fixed on the questions with an identical root, pp"
+  },
+  "regen.s0.flash.retry_net": {
+   "v": 17.0,
+   "kind": "int",
+   "meaning": "net questions, gated loop minus separate root-only run, locked run (the questions behind the retry's gain)"
+  },
+  "regen.rep.flash.max_diff": {
+   "v": 5,
+   "kind": "int",
+   "meaning": "largest number of questions with a different gated/fixed root in one replication run"
+  },
+  "regen.s0.27b.n_diff": {
+   "v": 12,
+   "kind": "int",
+   "meaning": "questions whose root SQL differs between the gated and the fixed run, locked run"
+  },
+  "regen.s0.27b.share": {
+   "v": 0.7822685788787485,
+   "kind": "pctv2",
+   "meaning": "share of the development questions with a different root between gated and fixed (locked run), percent"
+  },
+  "regen.s0.27b.net_diff": {
+   "v": -1.0,
+   "kind": "int",
+   "meaning": "net questions (gated right minus fixed right) on the questions with a different root"
+  },
+  "regen.s0.27b.net_all": {
+   "v": 0.0,
+   "kind": "int",
+   "meaning": "net questions, gated minus fixed, all questions"
+  },
+  "regen.s0.27b.net_same": {
+   "v": 1.0,
+   "kind": "int",
+   "meaning": "net questions on the questions with an identical root"
+  },
+  "regen.s0.27b.est_all": {
+   "v": 0.0,
+   "kind": "pp2",
+   "meaning": "gated minus fixed, all questions, pp"
+  },
+  "regen.s0.27b.est_same": {
+   "v": 0.0657030223390276,
+   "kind": "pp2",
+   "meaning": "gated minus fixed on the questions with an identical root, pp"
+  },
+  "regen.s0.27b.retry_net": {
+   "v": 17.0,
+   "kind": "int",
+   "meaning": "net questions, gated loop minus separate root-only run, locked run (the questions behind the retry's gain)"
+  },
+  "regen.rep.27b.max_diff": {
+   "v": 3,
+   "kind": "int",
+   "meaning": "largest number of questions with a different gated/fixed root in one replication run"
+  },
+  "regen.s0.cheap.n_diff": {
+   "v": 41,
+   "kind": "int",
+   "meaning": "Flash and 27B together: questions with a different gated/fixed root, locked run"
+  },
+  "regen.s0.cheap.net_diff": {
+   "v": 2.0,
+   "kind": "int",
+   "meaning": "Flash and 27B together: net questions carried by them"
+  },
+  "regen.s0.cheap.share": {
+   "v": 1.3363754889178618,
+   "kind": "pctv2",
+   "meaning": "share of the Flash and 27B questions (2 x 1 534) with a different gated/fixed root, percent"
+  },
+  "ccost.plus.dex": {
+   "v": 0.1303780964797914,
+   "kind": "pp2",
+   "ci": [
+    -0.26019221729854114,
+    0.5326231691078562
+   ],
+   "item_ci": [
+    -0.5215123859191656,
+    0.7822685788787485
+   ],
+   "n": 1534,
+   "meaning": "Critic increment: (fixed final - fixed root) - (gated final - gated root), pp, locked run"
+  },
+  "ccost.plus.dex_wide": {
+   "v": [
+    -0.5215123859191656,
+    0.7822685788787485
+   ],
+   "kind": "pp2",
+   "meaning": "widest interval of the Critic increment (cluster, item-level, t(G-1), sign-flip), pp"
+  },
+  "ccost.plus.net_q": {
+   "v": 2.0,
+   "kind": "int",
+   "meaning": "net questions of the Critic increment"
+  },
+  "ccost.plus.dcost_disc": {
+   "v": 4.387663885267268,
+   "kind": "cny2",
+   "meaning": "extra CNY per 1,000 questions, fixed loop minus gated loop, with the cache discount"
+  },
+  "ccost.plus.dcost_nodisc": {
+   "v": 9.935821382007813,
+   "kind": "cny2",
+   "meaning": "the same at full price"
+  },
+  "ccost.plus.extra_correct_1000": {
+   "v": 1.303780964797914,
+   "kind": "pp",
+   "ci": [
+    -2.6019221729854114,
+    5.326231691078562
+   ],
+   "meaning": "extra correct answers per 1,000 questions (10 x increment in pp); cluster interval"
+  },
+  "ccost.plus.extra_correct_1000_wide": {
+   "v": [
+    -5.215123859191656,
+    7.822685788787485
+   ],
+   "kind": "pp",
+   "meaning": "extra correct answers per 1,000, widest interval"
+  },
+  "ccost.plus.icer_disc": {
+   "v": "3.37",
+   "kind": "str",
+   "meaning": "CNY per extra correct answer of the Critic increment (disc), point estimate; 'undefined' where the increment is not positive"
+  },
+  "ccost.plus.icer_disc_iv": {
+   "v": "[0.82, unbounded]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer (disc, cl interval of the increment): [price at the largest gain the interval allows, price at the smallest; 'unbounded' if the interval of the increment includes 0]"
+  },
+  "ccost.plus.icer_disc_wide_iv": {
+   "v": "[0.56, unbounded]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer (disc, wide interval of the increment): [price at the largest gain the interval allows, price at the smallest; 'unbounded' if the interval of the increment includes 0]"
+  },
+  "ccost.plus.icer_nodisc": {
+   "v": "7.62",
+   "kind": "str",
+   "meaning": "CNY per extra correct answer of the Critic increment (nodisc), point estimate; 'undefined' where the increment is not positive"
+  },
+  "ccost.plus.icer_nodisc_iv": {
+   "v": "[1.87, unbounded]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer (nodisc, cl interval of the increment): [price at the largest gain the interval allows, price at the smallest; 'unbounded' if the interval of the increment includes 0]"
+  },
+  "ccost.plus.icer_nodisc_wide_iv": {
+   "v": "[1.27, unbounded]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer (nodisc, wide interval of the increment): [price at the largest gain the interval allows, price at the smallest; 'unbounded' if the interval of the increment includes 0]"
+  },
+  "ccost.plus.defined": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "increment positive and extra cost positive"
+  },
+  "ccost.plus.fa.dex": {
+   "v": 0.1303780964797914,
+   "kind": "pp2",
+   "ci": [
+    -0.26019221729854114,
+    0.5326231691078562
+   ],
+   "item_ci": [
+    -0.5215123859191656,
+    0.7822685788787485
+   ],
+   "n": 1534,
+   "meaning": "EX difference of the final answers, Critic: fixed-loop final answer minus gated-loop final answer, pp, locked run"
+  },
+  "ccost.plus.fa.dex_wide": {
+   "v": [
+    -0.5215123859191656,
+    0.7822685788787485
+   ],
+   "kind": "pp2",
+   "meaning": "widest interval (cluster, item-level, t(G-1), sign-flip) of fa.dex"
+  },
+  "ccost.plus.fa.net_q": {
+   "v": 2.0,
+   "kind": "int",
+   "meaning": "net questions behind fa.dex (the point estimate rests on this many questions)"
+  },
+  "ccost.plus.fa.dcost_disc": {
+   "v": 4.387663885267268,
+   "kind": "cny2",
+   "meaning": "extra CNY per 1,000 questions, Critic: fixed-loop final answer minus gated-loop final answer, with the cache discount"
+  },
+  "ccost.plus.fa.dcost_nodisc": {
+   "v": 9.935821382007813,
+   "kind": "cny2",
+   "meaning": "the same at full price"
+  },
+  "ccost.plus.fa.extra_correct_1000": {
+   "v": 1.303780964797914,
+   "kind": "pp",
+   "ci": [
+    -2.6019221729854114,
+    5.326231691078562
+   ],
+   "meaning": "extra correct answers per 1,000 questions on this basis; cluster interval"
+  },
+  "ccost.plus.fa.icer_disc": {
+   "v": "3.37",
+   "kind": "str",
+   "meaning": "CNY per extra correct answer, Critic: fixed-loop final answer minus gated-loop final answer (disc), point estimate; 'undefined' where the difference is not positive"
+  },
+  "ccost.plus.fa.icer_disc_iv": {
+   "v": "[0.82, unbounded]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (disc, cl interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.plus.fa.icer_disc_wide_iv": {
+   "v": "[0.56, unbounded]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (disc, wide interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.plus.fa.icer_disc_wide_lo": {
+   "v": "0.56",
+   "kind": "str",
+   "meaning": "lower end of the widest interval of the price (disc): the price of the largest gain the data allow; the price is unbounded above where the interval of the difference includes 0"
+  },
+  "ccost.plus.fa.icer_nodisc": {
+   "v": "7.62",
+   "kind": "str",
+   "meaning": "CNY per extra correct answer, Critic: fixed-loop final answer minus gated-loop final answer (nodisc), point estimate; 'undefined' where the difference is not positive"
+  },
+  "ccost.plus.fa.icer_nodisc_iv": {
+   "v": "[1.87, unbounded]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (nodisc, cl interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.plus.fa.icer_nodisc_wide_iv": {
+   "v": "[1.27, unbounded]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (nodisc, wide interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.plus.fa.icer_nodisc_wide_lo": {
+   "v": "1.27",
+   "kind": "str",
+   "meaning": "lower end of the widest interval of the price (nodisc): the price of the largest gain the data allow; the price is unbounded above where the interval of the difference includes 0"
+  },
+  "ccost.plus.fa.defined": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "difference positive and extra cost positive"
+  },
+  "ccost.plus.retry.dex": {
+   "v": 0.1955671447196871,
+   "kind": "pp2",
+   "ci": [
+    0.0,
+    0.42919222982417865
+   ],
+   "item_ci": [
+    -0.0651890482398957,
+    0.5215123859191656
+   ],
+   "n": 1534,
+   "meaning": "EX difference of the final answers, retry: gated-loop final answer minus root-only final answer (separate run), pp, locked run"
+  },
+  "ccost.plus.retry.dex_wide": {
+   "v": [
+    -0.0651890482398957,
+    0.5215123859191656
+   ],
+   "kind": "pp2",
+   "meaning": "widest interval (cluster, item-level, t(G-1), sign-flip) of retry.dex"
+  },
+  "ccost.plus.retry.net_q": {
+   "v": 3.0,
+   "kind": "int",
+   "meaning": "net questions behind retry.dex (the point estimate rests on this many questions)"
+  },
+  "ccost.plus.retry.dcost_disc": {
+   "v": 0.04076271186440484,
+   "kind": "cny2",
+   "meaning": "extra CNY per 1,000 questions, retry: gated-loop final answer minus root-only final answer (separate run), with the cache discount"
+  },
+  "ccost.plus.retry.dcost_nodisc": {
+   "v": 0.16025162972620535,
+   "kind": "cny2",
+   "meaning": "the same at full price"
+  },
+  "ccost.plus.retry.extra_correct_1000": {
+   "v": 1.9556714471968712,
+   "kind": "pp",
+   "ci": [
+    0.0,
+    4.291922298241786
+   ],
+   "meaning": "extra correct answers per 1,000 questions on this basis; cluster interval"
+  },
+  "ccost.plus.retry.icer_disc": {
+   "v": "0.021",
+   "kind": "str",
+   "meaning": "CNY per extra correct answer, retry: gated-loop final answer minus root-only final answer (separate run) (disc), point estimate; 'undefined' where the difference is not positive"
+  },
+  "ccost.plus.retry.icer_disc_iv": {
+   "v": "[0.009, unbounded]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (disc, cl interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.plus.retry.icer_disc_wide_iv": {
+   "v": "[0.008, unbounded]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (disc, wide interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.plus.retry.icer_disc_wide_lo": {
+   "v": "0.008",
+   "kind": "str",
+   "meaning": "lower end of the widest interval of the price (disc): the price of the largest gain the data allow; the price is unbounded above where the interval of the difference includes 0"
+  },
+  "ccost.plus.retry.icer_nodisc": {
+   "v": "0.082",
+   "kind": "str",
+   "meaning": "CNY per extra correct answer, retry: gated-loop final answer minus root-only final answer (separate run) (nodisc), point estimate; 'undefined' where the difference is not positive"
+  },
+  "ccost.plus.retry.icer_nodisc_iv": {
+   "v": "[0.037, unbounded]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (nodisc, cl interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.plus.retry.icer_nodisc_wide_iv": {
+   "v": "[0.031, unbounded]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (nodisc, wide interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.plus.retry.icer_nodisc_wide_lo": {
+   "v": "0.031",
+   "kind": "str",
+   "meaning": "lower end of the widest interval of the price (nodisc): the price of the largest gain the data allow; the price is unbounded above where the interval of the difference includes 0"
+  },
+  "ccost.plus.retry.defined": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "difference positive and extra cost positive"
+  },
+  "ccost.flash.dex": {
+   "v": 0.9126466753585397,
+   "kind": "pp2",
+   "ci": [
+    -0.2343772897127784,
+    2.312158389367307
+   ],
+   "item_ci": [
+    -0.0651890482398957,
+    1.8904823989569755
+   ],
+   "n": 1534,
+   "meaning": "Critic increment: (fixed final - fixed root) - (gated final - gated root), pp, locked run"
+  },
+  "ccost.flash.dex_wide": {
+   "v": [
+    -0.5677193575990741,
+    2.506963792062651
+   ],
+   "kind": "pp2",
+   "meaning": "widest interval of the Critic increment (cluster, item-level, t(G-1), sign-flip), pp"
+  },
+  "ccost.flash.net_q": {
+   "v": 14.0,
+   "kind": "int",
+   "meaning": "net questions of the Critic increment"
+  },
+  "ccost.flash.dcost_disc": {
+   "v": 1.313045684485002,
+   "kind": "cny2",
+   "meaning": "extra CNY per 1,000 questions, fixed loop minus gated loop, with the cache discount"
+  },
+  "ccost.flash.dcost_nodisc": {
+   "v": 1.452013298565836,
+   "kind": "cny2",
+   "meaning": "the same at full price"
+  },
+  "ccost.flash.extra_correct_1000": {
+   "v": 9.126466753585397,
+   "kind": "pp",
+   "ci": [
+    -2.343772897127784,
+    23.12158389367307
+   ],
+   "meaning": "extra correct answers per 1,000 questions (10 x increment in pp); cluster interval"
+  },
+  "ccost.flash.extra_correct_1000_wide": {
+   "v": [
+    -5.677193575990741,
+    25.06963792062651
+   ],
+   "kind": "pp",
+   "meaning": "extra correct answers per 1,000, widest interval"
+  },
+  "ccost.flash.icer_disc": {
+   "v": "0.14",
+   "kind": "str",
+   "meaning": "CNY per extra correct answer of the Critic increment (disc), point estimate; 'undefined' where the increment is not positive"
+  },
+  "ccost.flash.icer_disc_iv": {
+   "v": "[0.06, unbounded]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer (disc, cl interval of the increment): [price at the largest gain the interval allows, price at the smallest; 'unbounded' if the interval of the increment includes 0]"
+  },
+  "ccost.flash.icer_disc_wide_iv": {
+   "v": "[0.05, unbounded]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer (disc, wide interval of the increment): [price at the largest gain the interval allows, price at the smallest; 'unbounded' if the interval of the increment includes 0]"
+  },
+  "ccost.flash.icer_nodisc": {
+   "v": "0.16",
+   "kind": "str",
+   "meaning": "CNY per extra correct answer of the Critic increment (nodisc), point estimate; 'undefined' where the increment is not positive"
+  },
+  "ccost.flash.icer_nodisc_iv": {
+   "v": "[0.06, unbounded]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer (nodisc, cl interval of the increment): [price at the largest gain the interval allows, price at the smallest; 'unbounded' if the interval of the increment includes 0]"
+  },
+  "ccost.flash.icer_nodisc_wide_iv": {
+   "v": "[0.06, unbounded]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer (nodisc, wide interval of the increment): [price at the largest gain the interval allows, price at the smallest; 'unbounded' if the interval of the increment includes 0]"
+  },
+  "ccost.flash.defined": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "increment positive and extra cost positive"
+  },
+  "ccost.flash.fa.dex": {
+   "v": 0.651890482398957,
+   "kind": "pp2",
+   "ci": [
+    -0.5412719891745602,
+    2.075772572308368
+   ],
+   "item_ci": [
+    -0.3259452411994785,
+    1.6297262059973925
+   ],
+   "n": 1534,
+   "meaning": "EX difference of the final answers, Critic: fixed-loop final answer minus gated-loop final answer, pp, locked run"
+  },
+  "ccost.flash.fa.dex_wide": {
+   "v": [
+    -0.8727307681513737,
+    2.3255814010512315
+   ],
+   "kind": "pp2",
+   "meaning": "widest interval (cluster, item-level, t(G-1), sign-flip) of fa.dex"
+  },
+  "ccost.flash.fa.net_q": {
+   "v": 10.0,
+   "kind": "int",
+   "meaning": "net questions behind fa.dex (the point estimate rests on this many questions)"
+  },
+  "ccost.flash.fa.dcost_disc": {
+   "v": 1.313045684485002,
+   "kind": "cny2",
+   "meaning": "extra CNY per 1,000 questions, Critic: fixed-loop final answer minus gated-loop final answer, with the cache discount"
+  },
+  "ccost.flash.fa.dcost_nodisc": {
+   "v": 1.452013298565836,
+   "kind": "cny2",
+   "meaning": "the same at full price"
+  },
+  "ccost.flash.fa.extra_correct_1000": {
+   "v": 6.51890482398957,
+   "kind": "pp",
+   "ci": [
+    -5.412719891745602,
+    20.75772572308368
+   ],
+   "meaning": "extra correct answers per 1,000 questions on this basis; cluster interval"
+  },
+  "ccost.flash.fa.icer_disc": {
+   "v": "0.20",
+   "kind": "str",
+   "meaning": "CNY per extra correct answer, Critic: fixed-loop final answer minus gated-loop final answer (disc), point estimate; 'undefined' where the difference is not positive"
+  },
+  "ccost.flash.fa.icer_disc_iv": {
+   "v": "[0.06, unbounded]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (disc, cl interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.flash.fa.icer_disc_wide_iv": {
+   "v": "[0.06, unbounded]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (disc, wide interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.flash.fa.icer_disc_wide_lo": {
+   "v": "0.06",
+   "kind": "str",
+   "meaning": "lower end of the widest interval of the price (disc): the price of the largest gain the data allow; the price is unbounded above where the interval of the difference includes 0"
+  },
+  "ccost.flash.fa.icer_nodisc": {
+   "v": "0.22",
+   "kind": "str",
+   "meaning": "CNY per extra correct answer, Critic: fixed-loop final answer minus gated-loop final answer (nodisc), point estimate; 'undefined' where the difference is not positive"
+  },
+  "ccost.flash.fa.icer_nodisc_iv": {
+   "v": "[0.07, unbounded]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (nodisc, cl interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.flash.fa.icer_nodisc_wide_iv": {
+   "v": "[0.06, unbounded]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (nodisc, wide interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.flash.fa.icer_nodisc_wide_lo": {
+   "v": "0.06",
+   "kind": "str",
+   "meaning": "lower end of the widest interval of the price (nodisc): the price of the largest gain the data allow; the price is unbounded above where the interval of the difference includes 0"
+  },
+  "ccost.flash.fa.defined": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "difference positive and extra cost positive"
+  },
+  "ccost.flash.retry.dex": {
+   "v": 1.108213820078227,
+   "kind": "pp2",
+   "ci": [
+    0.7936507936507936,
+    1.4294232005718281
+   ],
+   "item_ci": [
+    0.5867014341590613,
+    1.694915254237288
+   ],
+   "n": 1534,
+   "meaning": "EX difference of the final answers, retry: gated-loop final answer minus root-only final answer (separate run), pp, locked run"
+  },
+  "ccost.flash.retry.dex_wide": {
+   "v": [
+    0.5867014341590613,
+    1.694915254237288
+   ],
+   "kind": "pp2",
+   "meaning": "widest interval (cluster, item-level, t(G-1), sign-flip) of retry.dex"
+  },
+  "ccost.flash.retry.net_q": {
+   "v": 17.0,
+   "kind": "int",
+   "meaning": "net questions behind retry.dex (the point estimate rests on this many questions)"
+  },
+  "ccost.flash.retry.dcost_disc": {
+   "v": 0.05336466753585404,
+   "kind": "cny2",
+   "meaning": "extra CNY per 1,000 questions, retry: gated-loop final answer minus root-only final answer (separate run), with the cache discount"
+  },
+  "ccost.flash.retry.dcost_nodisc": {
+   "v": 0.05536727509778305,
+   "kind": "cny2",
+   "meaning": "the same at full price"
+  },
+  "ccost.flash.retry.extra_correct_1000": {
+   "v": 11.08213820078227,
+   "kind": "pp",
+   "ci": [
+    7.936507936507936,
+    14.294232005718282
+   ],
+   "meaning": "extra correct answers per 1,000 questions on this basis; cluster interval"
+  },
+  "ccost.flash.retry.icer_disc": {
+   "v": "0.005",
+   "kind": "str",
+   "meaning": "CNY per extra correct answer, retry: gated-loop final answer minus root-only final answer (separate run) (disc), point estimate; 'undefined' where the difference is not positive"
+  },
+  "ccost.flash.retry.icer_disc_iv": {
+   "v": "[0.004, 0.007]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (disc, cl interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.flash.retry.icer_disc_wide_iv": {
+   "v": "[0.003, 0.009]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (disc, wide interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.flash.retry.icer_disc_wide_lo": {
+   "v": "0.003",
+   "kind": "str",
+   "meaning": "lower end of the widest interval of the price (disc): the price of the largest gain the data allow; the price is unbounded above where the interval of the difference includes 0"
+  },
+  "ccost.flash.retry.icer_nodisc": {
+   "v": "0.005",
+   "kind": "str",
+   "meaning": "CNY per extra correct answer, retry: gated-loop final answer minus root-only final answer (separate run) (nodisc), point estimate; 'undefined' where the difference is not positive"
+  },
+  "ccost.flash.retry.icer_nodisc_iv": {
+   "v": "[0.004, 0.007]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (nodisc, cl interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.flash.retry.icer_nodisc_wide_iv": {
+   "v": "[0.003, 0.009]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (nodisc, wide interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.flash.retry.icer_nodisc_wide_lo": {
+   "v": "0.003",
+   "kind": "str",
+   "meaning": "lower end of the widest interval of the price (nodisc): the price of the largest gain the data allow; the price is unbounded above where the interval of the difference includes 0"
+  },
+  "ccost.flash.retry.defined": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "difference positive and extra cost positive"
+  },
+  "ccost.27b.dex": {
+   "v": 0.0,
+   "kind": "pp2",
+   "ci": [
+    -1.1050287189789951,
+    1.053417646587017
+   ],
+   "item_ci": [
+    -1.0430247718383312,
+    1.0430247718383312
+   ],
+   "n": 1534,
+   "meaning": "Critic increment: (fixed final - fixed root) - (gated final - gated root), pp, locked run"
+  },
+  "ccost.27b.dex_wide": {
+   "v": [
+    -1.29264563100246,
+    1.2987013026976124
+   ],
+   "kind": "pp2",
+   "meaning": "widest interval of the Critic increment (cluster, item-level, t(G-1), sign-flip), pp"
+  },
+  "ccost.27b.net_q": {
+   "v": 0.0,
+   "kind": "int",
+   "meaning": "net questions of the Critic increment"
+  },
+  "ccost.27b.dcost_disc": {
+   "v": 4.6234130378096765,
+   "kind": "cny2",
+   "meaning": "extra CNY per 1,000 questions, fixed loop minus gated loop, with the cache discount"
+  },
+  "ccost.27b.dcost_nodisc": {
+   "v": 4.6234130378096765,
+   "kind": "cny2",
+   "meaning": "the same at full price"
+  },
+  "ccost.27b.extra_correct_1000": {
+   "v": 0.0,
+   "kind": "pp",
+   "ci": [
+    -11.050287189789952,
+    10.534176465870171
+   ],
+   "meaning": "extra correct answers per 1,000 questions (10 x increment in pp); cluster interval"
+  },
+  "ccost.27b.extra_correct_1000_wide": {
+   "v": [
+    -12.926456310024601,
+    12.987013026976124
+   ],
+   "kind": "pp",
+   "meaning": "extra correct answers per 1,000, widest interval"
+  },
+  "ccost.27b.icer_disc": {
+   "v": "undefined",
+   "kind": "str",
+   "meaning": "CNY per extra correct answer of the Critic increment (disc), point estimate; 'undefined' where the increment is not positive"
+  },
+  "ccost.27b.icer_disc_iv": {
+   "v": "undefined",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer (disc, cl interval of the increment): [price at the largest gain the interval allows, price at the smallest; 'unbounded' if the interval of the increment includes 0]"
+  },
+  "ccost.27b.icer_disc_wide_iv": {
+   "v": "undefined",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer (disc, wide interval of the increment): [price at the largest gain the interval allows, price at the smallest; 'unbounded' if the interval of the increment includes 0]"
+  },
+  "ccost.27b.icer_nodisc": {
+   "v": "undefined",
+   "kind": "str",
+   "meaning": "CNY per extra correct answer of the Critic increment (nodisc), point estimate; 'undefined' where the increment is not positive"
+  },
+  "ccost.27b.icer_nodisc_iv": {
+   "v": "undefined",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer (nodisc, cl interval of the increment): [price at the largest gain the interval allows, price at the smallest; 'unbounded' if the interval of the increment includes 0]"
+  },
+  "ccost.27b.icer_nodisc_wide_iv": {
+   "v": "undefined",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer (nodisc, wide interval of the increment): [price at the largest gain the interval allows, price at the smallest; 'unbounded' if the interval of the increment includes 0]"
+  },
+  "ccost.27b.defined": {
+   "v": "no",
+   "kind": "str",
+   "meaning": "increment positive and extra cost positive"
+  },
+  "ccost.27b.fa.dex": {
+   "v": 0.0,
+   "kind": "pp2",
+   "ci": [
+    -1.1050287189789951,
+    1.053417646587017
+   ],
+   "item_ci": [
+    -1.0430247718383312,
+    1.0430247718383312
+   ],
+   "n": 1534,
+   "meaning": "EX difference of the final answers, Critic: fixed-loop final answer minus gated-loop final answer, pp, locked run"
+  },
+  "ccost.27b.fa.dex_wide": {
+   "v": [
+    -1.29264563100246,
+    1.2987013026976124
+   ],
+   "kind": "pp2",
+   "meaning": "widest interval (cluster, item-level, t(G-1), sign-flip) of fa.dex"
+  },
+  "ccost.27b.fa.net_q": {
+   "v": 0.0,
+   "kind": "int",
+   "meaning": "net questions behind fa.dex (the point estimate rests on this many questions)"
+  },
+  "ccost.27b.fa.dcost_disc": {
+   "v": 4.6234130378096765,
+   "kind": "cny2",
+   "meaning": "extra CNY per 1,000 questions, Critic: fixed-loop final answer minus gated-loop final answer, with the cache discount"
+  },
+  "ccost.27b.fa.dcost_nodisc": {
+   "v": 4.6234130378096765,
+   "kind": "cny2",
+   "meaning": "the same at full price"
+  },
+  "ccost.27b.fa.extra_correct_1000": {
+   "v": 0.0,
+   "kind": "pp",
+   "ci": [
+    -11.050287189789952,
+    10.534176465870171
+   ],
+   "meaning": "extra correct answers per 1,000 questions on this basis; cluster interval"
+  },
+  "ccost.27b.fa.icer_disc": {
+   "v": "undefined",
+   "kind": "str",
+   "meaning": "CNY per extra correct answer, Critic: fixed-loop final answer minus gated-loop final answer (disc), point estimate; 'undefined' where the difference is not positive"
+  },
+  "ccost.27b.fa.icer_disc_iv": {
+   "v": "undefined",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (disc, cl interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.27b.fa.icer_disc_wide_iv": {
+   "v": "undefined",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (disc, wide interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.27b.fa.icer_disc_wide_lo": {
+   "v": "undefined",
+   "kind": "str",
+   "meaning": "lower end of the widest interval of the price (disc): the price of the largest gain the data allow; the price is unbounded above where the interval of the difference includes 0"
+  },
+  "ccost.27b.fa.icer_nodisc": {
+   "v": "undefined",
+   "kind": "str",
+   "meaning": "CNY per extra correct answer, Critic: fixed-loop final answer minus gated-loop final answer (nodisc), point estimate; 'undefined' where the difference is not positive"
+  },
+  "ccost.27b.fa.icer_nodisc_iv": {
+   "v": "undefined",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (nodisc, cl interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.27b.fa.icer_nodisc_wide_iv": {
+   "v": "undefined",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (nodisc, wide interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.27b.fa.icer_nodisc_wide_lo": {
+   "v": "undefined",
+   "kind": "str",
+   "meaning": "lower end of the widest interval of the price (nodisc): the price of the largest gain the data allow; the price is unbounded above where the interval of the difference includes 0"
+  },
+  "ccost.27b.fa.defined": {
+   "v": "no",
+   "kind": "str",
+   "meaning": "difference positive and extra cost positive"
+  },
+  "ccost.27b.retry.dex": {
+   "v": 1.108213820078227,
+   "kind": "pp2",
+   "ci": [
+    0.8165765049738489,
+    1.4065661064507342
+   ],
+   "item_ci": [
+    0.651890482398957,
+    1.6297262059973925
+   ],
+   "n": 1534,
+   "meaning": "EX difference of the final answers, retry: gated-loop final answer minus root-only final answer (separate run), pp, locked run"
+  },
+  "ccost.27b.retry.dex_wide": {
+   "v": [
+    0.651890482398957,
+    1.6297262059973925
+   ],
+   "kind": "pp2",
+   "meaning": "widest interval (cluster, item-level, t(G-1), sign-flip) of retry.dex"
+  },
+  "ccost.27b.retry.net_q": {
+   "v": 17.0,
+   "kind": "int",
+   "meaning": "net questions behind retry.dex (the point estimate rests on this many questions)"
+  },
+  "ccost.27b.retry.dcost_disc": {
+   "v": 0.11609687092567966,
+   "kind": "cny2",
+   "meaning": "extra CNY per 1,000 questions, retry: gated-loop final answer minus root-only final answer (separate run), with the cache discount"
+  },
+  "ccost.27b.retry.dcost_nodisc": {
+   "v": 0.11609687092567966,
+   "kind": "cny2",
+   "meaning": "the same at full price"
+  },
+  "ccost.27b.retry.extra_correct_1000": {
+   "v": 11.08213820078227,
+   "kind": "pp",
+   "ci": [
+    8.16576504973849,
+    14.065661064507342
+   ],
+   "meaning": "extra correct answers per 1,000 questions on this basis; cluster interval"
+  },
+  "ccost.27b.retry.icer_disc": {
+   "v": "0.010",
+   "kind": "str",
+   "meaning": "CNY per extra correct answer, retry: gated-loop final answer minus root-only final answer (separate run) (disc), point estimate; 'undefined' where the difference is not positive"
+  },
+  "ccost.27b.retry.icer_disc_iv": {
+   "v": "[0.008, 0.014]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (disc, cl interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.27b.retry.icer_disc_wide_iv": {
+   "v": "[0.007, 0.018]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (disc, wide interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.27b.retry.icer_disc_wide_lo": {
+   "v": "0.007",
+   "kind": "str",
+   "meaning": "lower end of the widest interval of the price (disc): the price of the largest gain the data allow; the price is unbounded above where the interval of the difference includes 0"
+  },
+  "ccost.27b.retry.icer_nodisc": {
+   "v": "0.010",
+   "kind": "str",
+   "meaning": "CNY per extra correct answer, retry: gated-loop final answer minus root-only final answer (separate run) (nodisc), point estimate; 'undefined' where the difference is not positive"
+  },
+  "ccost.27b.retry.icer_nodisc_iv": {
+   "v": "[0.008, 0.014]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (nodisc, cl interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.27b.retry.icer_nodisc_wide_iv": {
+   "v": "[0.007, 0.018]",
+   "kind": "str",
+   "meaning": "interval of CNY per extra correct answer on this basis (nodisc, wide interval of the difference); 'unbounded' where that interval includes 0"
+  },
+  "ccost.27b.retry.icer_nodisc_wide_lo": {
+   "v": "0.007",
+   "kind": "str",
+   "meaning": "lower end of the widest interval of the price (nodisc): the price of the largest gain the data allow; the price is unbounded above where the interval of the difference includes 0"
+  },
+  "ccost.27b.retry.defined": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "difference positive and extra cost positive"
+  },
+  "rmargin.s0.ratio": {
+   "v": 1.2783333333333333,
+   "kind": "x2",
+   "ci": [
+    0.7885322299651567,
+    2.7675733695652163
+   ],
+   "item_ci": [
+    0.8316867469879519,
+    2.7612000000000005
+   ],
+   "n": 1534,
+   "meaning": "margin (1.5 pp) divided by the fixed loop's pooled effect (final minus own root, within run)"
+  },
+  "rmargin.s0.ratio_wide": {
+   "v": [
+    0.7279411753441286,
+    4.030343244273436
+   ],
+   "kind": "x2",
+   "meaning": "widest interval of the ratio: hull of the intervals of the clustered bootstrap, the item-level bootstrap, the cluster-robust t(G-1) and the sign-flip test of the fixed-loop effect, each mapped through 1.5 / x (round 5; the four-interval definition of the Methods)"
+  },
+  "rmargin.s0.share": {
+   "v": 0.7037037037037036,
+   "kind": "x2",
+   "ci": [
+    0.4383446205941202,
+    1.3849358974358932
+   ],
+   "item_ci": [
+    0.4516129032258064,
+    1.3824660633484147
+   ],
+   "n": 1534,
+   "meaning": "share of the fixed loop's effect kept by the gated loop (gated effect / fixed effect, within run)"
+  },
+  "rmargin.s0.share_wide": {
+   "v": [
+    0.4074073217393698,
+    2.0292764813367157
+   ],
+   "kind": "x2",
+   "meaning": "widest interval of the share kept: hull of the clustered and item-level bootstrap intervals and of the test-inversion intervals (cluster-robust t(G-1); exact sign flip) of the ratio gated effect / fixed effect (round 5)"
+  },
+  "rmargin.s0.eff_fixed": {
+   "v": 1.1734028683181226,
+   "kind": "pp2",
+   "ci": [
+    0.5397755273013997,
+    1.902205451939768
+   ],
+   "item_ci": [
+    0.5432420686657974,
+    1.8035636679704474
+   ],
+   "meaning": "fixed loop effect, final minus root of the same run, pooled over backbones, pp"
+  },
+  "rmargin.s0.eff_gated": {
+   "v": 0.825727944372012,
+   "kind": "pp2",
+   "ci": [
+    0.654837346852556,
+    0.9935158810225571
+   ],
+   "item_ci": [
+    0.5649717514124294,
+    1.108213820078227
+   ],
+   "meaning": "gated loop effect, final minus root of the same run, pooled over backbones, pp"
+  },
+  "rmargin.s0.gap": {
+   "v": -0.3476749239461104,
+   "kind": "pp2",
+   "ci": [
+    -1.043115438108484,
+    0.22358064604135972
+   ],
+   "item_ci": [
+    -0.9126466753585397,
+    0.21729682746631898
+   ],
+   "meaning": "gated loop effect minus fixed loop effect, both final minus own root within the run, pooled over backbones, pp: the quantity whose widest interval decides whether a share of 1 is excluded"
+  },
+  "rmargin.s0.gap_wide": {
+   "v": [
+    -1.1764705933389272,
+    0.39481103234278847
+   ],
+   "kind": "pp2",
+   "meaning": "widest interval (four intervals) of the within-run difference gated effect minus fixed effect"
+  },
+  "rmargin.rep.ratio": {
+   "v": 0.7116494845360827,
+   "kind": "x2",
+   "ci": [
+    0.48204970929229507,
+    1.1906164333087692
+   ],
+   "item_ci": [
+    0.5642779291553135,
+    0.9632093023255813
+   ],
+   "n": 1534,
+   "meaning": "margin (1.5 pp) divided by the fixed loop's pooled effect (final minus own root, within run)"
+  },
+  "rmargin.rep.ratio_wide": {
+   "v": [
+    0.45431137671013727,
+    1.5143991643172654
+   ],
+   "kind": "x2",
+   "meaning": "widest interval of the ratio: hull of the intervals of the clustered bootstrap, the item-level bootstrap, the cluster-robust t(G-1) and the sign-flip test of the fixed-loop effect, each mapped through 1.5 / x (round 5; the four-interval definition of the Methods)"
+  },
+  "rmargin.rep.share": {
+   "v": 0.7113402061855673,
+   "kind": "x2",
+   "ci": [
+    0.556463852629953,
+    0.9573228255867465
+   ],
+   "item_ci": [
+    0.5809511178476695,
+    0.9055797743029502
+   ],
+   "n": 1534,
+   "meaning": "share of the fixed loop's effect kept by the gated loop (gated effect / fixed effect, within run)"
+  },
+  "rmargin.rep.share_wide": {
+   "v": [
+    0.5272726641591745,
+    1.1070986628031925
+   ],
+   "kind": "x2",
+   "meaning": "widest interval of the share kept: hull of the clustered and item-level bootstrap intervals and of the test-inversion intervals (cluster-robust t(G-1); exact sign flip) of the ratio gated effect / fixed effect (round 5)"
+  },
+  "rmargin.rep.eff_fixed": {
+   "v": 2.1077792264232937,
+   "kind": "pp2",
+   "ci": [
+    1.2598516031328773,
+    3.111712293561937
+   ],
+   "item_ci": [
+    1.5572939301752862,
+    2.6582645226713018
+   ],
+   "meaning": "fixed loop effect, final minus root of the same run, pooled over backbones, pp"
+  },
+  "rmargin.rep.eff_gated": {
+   "v": 1.4993481095176011,
+   "kind": "pp2",
+   "ci": [
+    1.039471223777014,
+    1.979777496388968
+   ],
+   "item_ci": [
+    1.2313486889758074,
+    1.7963204403882371
+   ],
+   "meaning": "gated loop effect, final minus root of the same run, pooled over backbones, pp"
+  },
+  "rmargin.rep.gap": {
+   "v": -0.6084311169056931,
+   "kind": "pp2",
+   "ci": [
+    -1.2882648236972851,
+    -0.062488368486352516
+   ],
+   "item_ci": [
+    -1.050267999420542,
+    -0.15210777922642335
+   ],
+   "meaning": "gated loop effect minus fixed loop effect, both final minus own root within the run, pooled over backbones, pp: the quantity whose widest interval decides whether a share of 1 is excluded"
+  },
+  "rmargin.rep.gap_wide": {
+   "v": [
+    -1.4132553632009877,
+    0.11692989057218672
+   ],
+   "kind": "pp2",
+   "meaning": "widest interval (four intervals) of the within-run difference gated effect minus fixed effect"
+  },
+  "rmargin.rep.ratio_range": {
+   "v": [
+    0.6767647058823528,
+    0.7422580645161292
+   ],
+   "kind": "x2",
+   "meaning": "range of the margin ratio over the three replication runs"
+  },
+  "rmargin.rep.share_range": {
+   "v": [
+    0.6372549019607842,
+    0.7526881720430109
+   ],
+   "kind": "x2",
+   "meaning": "range of the share kept over the three replication runs"
+  },
+  "loopshare.s0.flash": {
+   "v": 45.94594594594595,
+   "kind": "pctv",
+   "meaning": "locked run: the gated loop's contrast (gated minus root-only) as a share of the pipeline's gain over the single call (gated minus single call), point estimate, percent; round 5"
+  },
+  "loopshare.s0.27b": {
+   "v": 32.07547169811321,
+   "kind": "pctv",
+   "meaning": "locked run: the gated loop's contrast (gated minus root-only) as a share of the pipeline's gain over the single call (gated minus single call), point estimate, percent; round 5"
+  },
+  "mde4.G": {
+   "v": 11,
+   "kind": "int",
+   "meaning": "databases (clusters) of the development set"
+  },
+  "mde4.t_sum": {
+   "v": 3.1071966805155227,
+   "kind": "x2",
+   "meaning": "t(0.975, G-1) + t(0.80, G-1)"
+  },
+  "mde4.P1p.item": {
+   "v": 0.8076799641706606,
+   "kind": "x2",
+   "meaning": "minimum detectable effect, questions (items) as the unit, pp"
+  },
+  "mde4.P1p.cluster": {
+   "v": 0.9744124283259769,
+   "kind": "x2",
+   "meaning": "minimum detectable effect, databases as the unit, pp"
+  },
+  "mde4.P1p.n": {
+   "v": 1534,
+   "kind": "int",
+   "meaning": "units at question level"
+  },
+  "mde4.P1p.G": {
+   "v": 11,
+   "kind": "int",
+   "meaning": "databases contributing"
+  },
+  "mde4.W1.item": {
+   "v": 1.9133025312933034,
+   "kind": "x2",
+   "meaning": "minimum detectable effect, questions (items) as the unit, pp"
+  },
+  "mde4.W1.cluster": {
+   "v": 2.040402742471532,
+   "kind": "x2",
+   "meaning": "minimum detectable effect, databases as the unit, pp"
+  },
+  "mde4.W1.n": {
+   "v": 1534,
+   "kind": "int",
+   "meaning": "units at question level"
+  },
+  "mde4.W1.G": {
+   "v": 11,
+   "kind": "int",
+   "meaning": "databases contributing"
+  },
+  "mde4.P5p.item": {
+   "v": 8.830048070787598,
+   "kind": "x2",
+   "meaning": "minimum detectable effect, questions (items) as the unit, pp"
+  },
+  "mde4.P5p.cluster": {
+   "v": 12.264950854511307,
+   "kind": "x2",
+   "meaning": "minimum detectable effect, databases as the unit, pp"
+  },
+  "mde4.P5p.n": {
+   "v": 135,
+   "kind": "int",
+   "meaning": "units at question level"
+  },
+  "mde4.P5p.G": {
+   "v": 11,
+   "kind": "int",
+   "meaning": "databases contributing"
+  },
+  "mde4.P3.item": {
+   "v": 0.02944730026284969,
+   "kind": "x3",
+   "meaning": "minimum detectable AUROC difference, DeLong standard error (questions as the unit)"
+  },
+  "mde4.P3.cluster": {
+   "v": 0.019511889610713175,
+   "kind": "x3",
+   "meaning": "minimum detectable AUROC difference, database-clustered bootstrap standard error"
+  },
+  "p5u.n_roots": {
+   "v": 135,
+   "kind": "int",
+   "meaning": "failing roots pooled over the three backbones"
+  },
+  "p5u.n_questions": {
+   "v": 115,
+   "kind": "int",
+   "meaning": "distinct questions among the failing roots"
+  },
+  "p5u.fail_on_1": {
+   "v": 100,
+   "kind": "int",
+   "meaning": "questions whose root fails on 1 backbone(s)"
+  },
+  "p5u.fail_on_2": {
+   "v": 10,
+   "kind": "int",
+   "meaning": "questions whose root fails on 2 backbone(s)"
+  },
+  "p5u.fail_on_3": {
+   "v": 5,
+   "kind": "int",
+   "meaning": "questions whose root fails on 3 backbone(s)"
+  },
+  "p5u.diff": {
+   "v": 1.3043478260869565,
+   "kind": "pp",
+   "ci": [
+    -6.8181818181818175,
+    11.215191684150293
+   ],
+   "item_ci": [
+    -6.086956521739131,
+    8.26086956521739
+   ],
+   "n": 115,
+   "meaning": "P5': gated minus blind retry repair rate, one unit per distinct question (mean over the backbones where the root failed), pp"
+  },
+  "p5u.rate_gated": {
+   "v": 29.71014492753623,
+   "kind": "pctv",
+   "meaning": "repair rate with the error text, question as the unit, percent"
+  },
+  "p5u.rate_blind": {
+   "v": 28.405797101449277,
+   "kind": "pctv",
+   "meaning": "repair rate of the blind retry, question as the unit, percent"
+  },
+  "p5u.b": {
+   "v": 10,
+   "kind": "int",
+   "meaning": "questions repaired more often with the error text"
+  },
+  "p5u.c": {
+   "v": 8,
+   "kind": "int",
+   "meaning": "questions repaired more often without it"
+  },
+  "p5u.p_two": {
+   "v": 0.8145294189453127,
+   "kind": "p",
+   "meaning": "exact two-sided sign test over the discordant questions"
+  },
+  "silent.plus.zs.rate": {
+   "v": 31.877444589308997,
+   "kind": "pctv",
+   "ci": [
+    24.67991199619293,
+    38.28241197958188
+   ],
+   "n": 1534,
+   "meaning": "silent-error rate: share of questions answered by an executable query that is wrong, percent"
+  },
+  "silent.plus.zs.share_wrong": {
+   "v": 97.02380952380952,
+   "kind": "pctv",
+   "meaning": "silent errors as a share of all wrong answers, percent"
+  },
+  "silent.plus.zs.reach": {
+   "v": 2.976190476190476,
+   "kind": "pctv",
+   "meaning": "wrong answers whose query fails to execute (what the gate can reach), as a share of all wrong answers, percent"
+  },
+  "silent.plus.zs.n_wrong": {
+   "v": 504,
+   "kind": "int",
+   "meaning": "wrong answers"
+  },
+  "silent.plus.zs.n_fail": {
+   "v": 15,
+   "kind": "int",
+   "meaning": "wrong answers whose query fails to execute"
+  },
+  "silent.plus.rootonly.rate": {
+   "v": 30.899608865710558,
+   "kind": "pctv",
+   "ci": [
+    24.39020360130898,
+    36.30018058822244
+   ],
+   "n": 1534,
+   "meaning": "silent-error rate: share of questions answered by an executable query that is wrong, percent"
+  },
+  "silent.plus.rootonly.share_wrong": {
+   "v": 95.37223340040242,
+   "kind": "pctv",
+   "meaning": "silent errors as a share of all wrong answers, percent"
+  },
+  "silent.plus.rootonly.reach": {
+   "v": 4.627766599597585,
+   "kind": "pctv",
+   "meaning": "wrong answers whose query fails to execute (what the gate can reach), as a share of all wrong answers, percent"
+  },
+  "silent.plus.rootonly.n_wrong": {
+   "v": 497,
+   "kind": "int",
+   "meaning": "wrong answers"
+  },
+  "silent.plus.rootonly.n_fail": {
+   "v": 23,
+   "kind": "int",
+   "meaning": "wrong answers whose query fails to execute"
+  },
+  "silent.plus.gated.rate": {
+   "v": 31.94263363754889,
+   "kind": "pctv",
+   "ci": [
+    25.260521873519675,
+    37.42574160092408
+   ],
+   "n": 1534,
+   "meaning": "silent-error rate: share of questions answered by an executable query that is wrong, percent"
+  },
+  "silent.plus.gated.share_wrong": {
+   "v": 99.19028340080972,
+   "kind": "pctv",
+   "meaning": "silent errors as a share of all wrong answers, percent"
+  },
+  "silent.plus.gated.reach": {
+   "v": 0.8097165991902834,
+   "kind": "pctv",
+   "meaning": "wrong answers whose query fails to execute (what the gate can reach), as a share of all wrong answers, percent"
+  },
+  "silent.plus.gated.n_wrong": {
+   "v": 494,
+   "kind": "int",
+   "meaning": "wrong answers"
+  },
+  "silent.plus.gated.n_fail": {
+   "v": 4,
+   "kind": "int",
+   "meaning": "wrong answers whose query fails to execute"
+  },
+  "silent.flash.zs.rate": {
+   "v": 35.33246414602347,
+   "kind": "pctv",
+   "ci": [
+    28.49053210261979,
+    41.1627657481015
+   ],
+   "n": 1534,
+   "meaning": "silent-error rate: share of questions answered by an executable query that is wrong, percent"
+  },
+  "silent.flash.zs.share_wrong": {
+   "v": 91.70896785109983,
+   "kind": "pctv",
+   "meaning": "silent errors as a share of all wrong answers, percent"
+  },
+  "silent.flash.zs.reach": {
+   "v": 8.29103214890017,
+   "kind": "pctv",
+   "meaning": "wrong answers whose query fails to execute (what the gate can reach), as a share of all wrong answers, percent"
+  },
+  "silent.flash.zs.n_wrong": {
+   "v": 591,
+   "kind": "int",
+   "meaning": "wrong answers"
+  },
+  "silent.flash.zs.n_fail": {
+   "v": 49,
+   "kind": "int",
+   "meaning": "wrong answers whose query fails to execute"
+  },
+  "silent.flash.rootonly.rate": {
+   "v": 32.85528031290743,
+   "kind": "pctv",
+   "ci": [
+    25.777570985445003,
+    39.13604778946324
+   ],
+   "n": 1534,
+   "meaning": "silent-error rate: share of questions answered by an executable query that is wrong, percent"
+  },
+  "silent.flash.rootonly.share_wrong": {
+   "v": 88.2661996497373,
+   "kind": "pctv",
+   "meaning": "silent errors as a share of all wrong answers, percent"
+  },
+  "silent.flash.rootonly.reach": {
+   "v": 11.733800350262696,
+   "kind": "pctv",
+   "meaning": "wrong answers whose query fails to execute (what the gate can reach), as a share of all wrong answers, percent"
+  },
+  "silent.flash.rootonly.n_wrong": {
+   "v": 571,
+   "kind": "int",
+   "meaning": "wrong answers"
+  },
+  "silent.flash.rootonly.n_fail": {
+   "v": 67,
+   "kind": "int",
+   "meaning": "wrong answers whose query fails to execute"
+  },
+  "silent.flash.gated.rate": {
+   "v": 36.049543676662324,
+   "kind": "pctv",
+   "ci": [
+    28.589528173794974,
+    42.758723249082664
+   ],
+   "n": 1534,
+   "meaning": "silent-error rate: share of questions answered by an executable query that is wrong, percent"
+  },
+  "silent.flash.gated.share_wrong": {
+   "v": 99.81949458483754,
+   "kind": "pctv",
+   "meaning": "silent errors as a share of all wrong answers, percent"
+  },
+  "silent.flash.gated.reach": {
+   "v": 0.18050541516245489,
+   "kind": "pctv",
+   "meaning": "wrong answers whose query fails to execute (what the gate can reach), as a share of all wrong answers, percent"
+  },
+  "silent.flash.gated.n_wrong": {
+   "v": 554,
+   "kind": "int",
+   "meaning": "wrong answers"
+  },
+  "silent.flash.gated.n_fail": {
+   "v": 1,
+   "kind": "int",
+   "meaning": "wrong answers whose query fails to execute"
+  },
+  "silent.27b.zs.rate": {
+   "v": 35.20208604954368,
+   "kind": "pctv",
+   "ci": [
+    28.12904501014945,
+    41.099782001799475
+   ],
+   "n": 1534,
+   "meaning": "silent-error rate: share of questions answered by an executable query that is wrong, percent"
+  },
+  "silent.27b.zs.share_wrong": {
+   "v": 94.90333919156416,
+   "kind": "pctv",
+   "meaning": "silent errors as a share of all wrong answers, percent"
+  },
+  "silent.27b.zs.reach": {
+   "v": 5.0966608084358525,
+   "kind": "pctv",
+   "meaning": "wrong answers whose query fails to execute (what the gate can reach), as a share of all wrong answers, percent"
+  },
+  "silent.27b.zs.n_wrong": {
+   "v": 569,
+   "kind": "int",
+   "meaning": "wrong answers"
+  },
+  "silent.27b.zs.n_fail": {
+   "v": 29,
+   "kind": "int",
+   "meaning": "wrong answers whose query fails to execute"
+  },
+  "silent.27b.rootonly.rate": {
+   "v": 31.616688396349414,
+   "kind": "pctv",
+   "ci": [
+    25.46261866593653,
+    36.81747550979713
+   ],
+   "n": 1534,
+   "meaning": "silent-error rate: share of questions answered by an executable query that is wrong, percent"
+  },
+  "silent.27b.rootonly.share_wrong": {
+   "v": 90.99437148217636,
+   "kind": "pctv",
+   "meaning": "silent errors as a share of all wrong answers, percent"
+  },
+  "silent.27b.rootonly.reach": {
+   "v": 9.00562851782364,
+   "kind": "pctv",
+   "meaning": "wrong answers whose query fails to execute (what the gate can reach), as a share of all wrong answers, percent"
+  },
+  "silent.27b.rootonly.n_wrong": {
+   "v": 533,
+   "kind": "int",
+   "meaning": "wrong answers"
+  },
+  "silent.27b.rootonly.n_fail": {
+   "v": 48,
+   "kind": "int",
+   "meaning": "wrong answers whose query fails to execute"
+  },
+  "silent.27b.gated.rate": {
+   "v": 33.63754889178618,
+   "kind": "pctv",
+   "ci": [
+    27.188986621762,
+    39.09731512849837
+   ],
+   "n": 1534,
+   "meaning": "silent-error rate: share of questions answered by an executable query that is wrong, percent"
+  },
+  "silent.27b.gated.share_wrong": {
+   "v": 100.0,
+   "kind": "pctv",
+   "meaning": "silent errors as a share of all wrong answers, percent"
+  },
+  "silent.27b.gated.reach": {
+   "v": 0.0,
+   "kind": "pctv",
+   "meaning": "wrong answers whose query fails to execute (what the gate can reach), as a share of all wrong answers, percent"
+  },
+  "silent.27b.gated.n_wrong": {
+   "v": 516,
+   "kind": "int",
+   "meaning": "wrong answers"
+  },
+  "silent.27b.gated.n_fail": {
+   "v": 0,
+   "kind": "int",
+   "meaning": "wrong answers whose query fails to execute"
+  },
+  "silent.pooled.rootonly.reach": {
+   "v": 8.619612742036228,
+   "kind": "pctv",
+   "meaning": "pooled over the three backbones: wrong answers that fail to execute, percent of wrong answers"
+  },
+  "silent.pooled.rootonly.share_wrong": {
+   "v": 91.38038725796378,
+   "kind": "pctv",
+   "meaning": "pooled: silent errors, percent of wrong answers"
+  },
+  "silent.pooled.rootonly.n_wrong": {
+   "v": 1601,
+   "kind": "int",
+   "meaning": "pooled wrong answers"
+  },
+  "silent.pooled.rootonly.n_fail": {
+   "v": 138,
+   "kind": "int",
+   "meaning": "pooled wrong answers that fail to execute"
+  },
+  "silent.pooled.gated.reach": {
+   "v": 0.319693094629156,
+   "kind": "pctv",
+   "meaning": "pooled over the three backbones: wrong answers that fail to execute, percent of wrong answers"
+  },
+  "silent.pooled.gated.share_wrong": {
+   "v": 99.68030690537084,
+   "kind": "pctv",
+   "meaning": "pooled: silent errors, percent of wrong answers"
+  },
+  "silent.pooled.gated.n_wrong": {
+   "v": 1564,
+   "kind": "int",
+   "meaning": "pooled wrong answers"
+  },
+  "silent.pooled.gated.n_fail": {
+   "v": 5,
+   "kind": "int",
+   "meaning": "pooled wrong answers that fail to execute"
+  },
+  "mult.n_s32": {
+   "v": 110,
+   "kind": "int",
+   "meaning": "contrasts of the dual-interval table (Table S32)"
+  },
+  "mult.n_loop": {
+   "v": 20,
+   "kind": "int",
+   "meaning": "loop effects with the small-cluster readings"
+  },
+  "mult.n_rep": {
+   "v": 25,
+   "kind": "int",
+   "meaning": "replication: 6 contrasts x 4 scopes and W1"
+  },
+  "mult.n_samex": {
+   "v": 12,
+   "kind": "int",
+   "meaning": "same-examples control: 3 contrasts x 4 scopes"
+  },
+  "mult.n_route": {
+   "v": 7,
+   "kind": "int",
+   "meaning": "routing AUROC differences"
+  },
+  "mult.n_p5": {
+   "v": 2,
+   "kind": "int",
+   "meaning": "P5' repeated without time-out roots"
+  },
+  "mult.n_q360": {
+   "v": 18,
+   "kind": "int",
+   "meaning": "corrected-subset contrasts: gated minus fixed and stack, 3 backbones, 3 question sets"
+  },
+  "mult.n_ret": {
+   "v": 6,
+   "kind": "int",
+   "meaning": "retrieval strata: stack on large and small schemas, 3 backbones"
+  },
+  "mult.n_critic": {
+   "v": 3,
+   "kind": "int",
+   "meaning": "Critic increment, 3 backbones"
+  },
+  "mult.n_spider": {
+   "v": 6,
+   "kind": "int",
+   "meaning": "Spider-Realistic decomposition: root-only minus single call and gated minus root-only, 3 backbones"
+  },
+  "mult.n_round2": {
+   "v": 130,
+   "kind": "int",
+   "meaning": "post hoc contrasts before the replication (110 table rows and 20 loop effects)"
+  },
+  "mult.n_round3": {
+   "v": 203,
+   "kind": "int",
+   "meaning": "post hoc contrasts after the replication and its controls"
+  },
+  "mult.n_total": {
+   "v": 209,
+   "kind": "int",
+   "meaning": "post hoc contrasts in all result tables (confirmatory family excluded), including the Spider-Realistic decomposition"
+  },
+  "mult.n_dup": {
+   "v": 4,
+   "kind": "int",
+   "meaning": "contrasts counted twice: the stack contrast of the same-examples control is the stack contrast of the replication, one per scope (round 5)"
+  },
+  "mult.n_distinct": {
+   "v": 205,
+   "kind": "int",
+   "meaning": "post hoc contrasts after removing the stack contrasts that appear in both blocks"
+  },
+  "mult.expected_false_pos": {
+   "v": 10.450000000000001,
+   "kind": "x1",
+   "meaning": "nominally significant contrasts expected by chance at 0.05 if every null held (illustration, not a correction)"
+  },
+  "lock.hash_orig": {
+   "v": "b1fdf416a276",
+   "kind": "str",
+   "meaning": "sha256 (first 12 hex) of exp/dev_lock.json at the stage-2 registration"
+  },
+  "lock.n_orig": {
+   "v": 16,
+   "kind": "int",
+   "meaning": "entries of exp/dev_lock.json at the stage-2 registration"
+  },
+  "lock.hash_primary": {
+   "v": "d97296311b75",
+   "kind": "str",
+   "meaning": "sha256 (first 12 hex) of exp/dev_lock.json at the end of the primary runs"
+  },
+  "lock.n_primary": {
+   "v": 20,
+   "kind": "int",
+   "meaning": "entries of exp/dev_lock.json at the end of the primary runs"
+  },
+  "lock.hash_r3": {
+   "v": "5fa2aca433b9",
+   "kind": "str",
+   "meaning": "sha256 (first 12 hex) of exp/dev_lock.json at the commit of the replication runs"
+  },
+  "lock.n_r3": {
+   "v": 28,
+   "kind": "int",
+   "meaning": "entries of exp/dev_lock.json at the commit of the replication runs"
+  },
+  "lock.orig_unchanged": {
+   "v": "yes",
+   "kind": "str",
+   "meaning": "the entries of the stage-2 registration are identical in the later versions of the lock file"
+  }
+ }
+}

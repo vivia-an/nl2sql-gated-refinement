@@ -1,0 +1,11 @@
+# R3 control (SAP section 26, docs/handoff/R3EXP.md), written 2026-10-28 before any call of this system. Use with --system zs_ex.
+# Single call of zs.yaml (same schema renderer, quoting rule, evidence, prompt gen_zs.user) plus the few-shot examples that the root-only arm of the SAME
+# backbone and seed retrieved for the same question (stored `exemplar_ids`), looked up in the frozen M6 store. No task graph, no routed schema, no lineage, no terms.
+temperature: 0.0
+ddl: {quote_keywords: true}
+m6: {policy: ws_full, path: exp/frozen/corpus_burnin_39e2477c.sqlite, update: false}
+zs_ex:
+  sources:
+    qwen37plus: {0: MIN/M3/rootonly-s0, 101: R3/rootonly-plus-s101, 202: R3/rootonly-plus-s202}
+    qwen37flash: {0: MIN/M5/rootonly-flash-s0, 101: R3/rootonly-flash-s101, 202: R3/rootonly-flash-s202}
+    qwen3527b: {0: MIN/M5/rootonly-27b-s0, 101: R3/rootonly-27b-s101, 202: R3/rootonly-27b-s202}

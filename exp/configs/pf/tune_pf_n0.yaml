@@ -1,0 +1,12 @@
+# patent_fb tuning config (SAP 22.7), BIRD train only. Not frozen; not for dev.
+temperature: 0.0
+ddl: {quote_keywords: true}
+m6: {policy: ws_full, path: exp/frozen/corpus_burnin_39e2477c.sqlite, update: false}
+pf:
+  n: 0
+  q: 1.0
+  k: 4
+  seed: 20261128
+  verdicts: exp/pf_data/burnin_verdicts.jsonl
+  verdicts_sha256: b0b749ee84055dfc7dad06a990fe90c21c9059fcb3613726d4a801f2e3a57fef
+  forbid_files: [results/diag/items.json, results/diag/tuning/items_tune.json, results/diag/tuning_ve/items_tune_ve.json, results/pf/tuning/items_tune_pf.json]

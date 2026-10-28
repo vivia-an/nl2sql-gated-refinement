@@ -1,0 +1,4 @@
+# MIN M2 TEMPLATE -> frozen/macsql.yaml. MAC-SQL, Refiner <= 3 rounds as in the paper (HT-10 smoke: 2.0 calls/q, inside the window). --system macsql.
+temperature: 0.0
+ddl: {quote_keywords: true}   # X6: same quoted identifiers as the ours-systems (SAP 13.6 rule 1); schema block only, no extra rule line
+max_refine: 3

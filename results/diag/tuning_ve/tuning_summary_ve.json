@@ -1,0 +1,217 @@
+{
+ "_meta": {
+  "scope": "diagnostic-posthoc",
+  "block": "SAP 19.6 tuning draw (seed 20261115; 180 injected + 81 gold controls); units from the frozen VA critic root nodes; arbiter prompts iterated here only",
+  "items_sha256": "7283db2051e66c428f7494d03cec2d4dbca6574d67e0b8630c9b66ceeb538c7a",
+  "n_units": 261,
+  "unit_counts": {
+   "F-inj-wrong": 44,
+   "P-gold": 59,
+   "P-inj": 28,
+   "F-gold-wrong": 22,
+   "F-inj-right": 108
+  },
+  "reading": "q-independent hold/yield rates over the units that could be disputed (firmness = hold rate on right critic decisions; responsiveness = yield rate on wrong ones); balanced = mean"
+ },
+ "drafts": {
+  "d1_A": {
+   "n": 261,
+   "invalid": 2,
+   "rates": {
+    "firmness_all": {
+     "n": 167,
+     "rate": 0.9101796407185628
+    },
+    "responsiveness_all": {
+     "n": 94,
+     "rate": 0.36170212765957444
+    },
+    "firmness_F_claim_correct": {
+     "n": 108,
+     "rate": 0.9351851851851852
+    },
+    "responsiveness_F_claim_wrong": {
+     "n": 66,
+     "rate": 0.33333333333333337
+    },
+    "responsiveness_F_claim_wrong_injected": {
+     "n": 44,
+     "rate": 0.2727272727272727
+    },
+    "responsiveness_F_gold_flag": {
+     "n": 22,
+     "rate": 0.4545454545454546
+    },
+    "firmness_P_gold": {
+     "n": 59,
+     "rate": 0.864406779661017
+    },
+    "responsiveness_P_injected": {
+     "n": 28,
+     "rate": 0.4285714285714286
+    },
+    "balanced_accuracy": 0.6359408841890686
+   }
+  },
+  "d2_A": {
+   "n": 261,
+   "invalid": 0,
+   "rates": {
+    "firmness_all": {
+     "n": 167,
+     "rate": 0.9281437125748503
+    },
+    "responsiveness_all": {
+     "n": 94,
+     "rate": 0.3191489361702128
+    },
+    "firmness_F_claim_correct": {
+     "n": 108,
+     "rate": 0.9537037037037037
+    },
+    "responsiveness_F_claim_wrong": {
+     "n": 66,
+     "rate": 0.303030303030303
+    },
+    "responsiveness_F_claim_wrong_injected": {
+     "n": 44,
+     "rate": 0.25
+    },
+    "responsiveness_F_gold_flag": {
+     "n": 22,
+     "rate": 0.40909090909090906
+    },
+    "firmness_P_gold": {
+     "n": 59,
+     "rate": 0.8813559322033898
+    },
+    "responsiveness_P_injected": {
+     "n": 28,
+     "rate": 0.3571428571428571
+    },
+    "balanced_accuracy": 0.6236463243725315
+   }
+  },
+  "d2_A0": {
+   "n": 261,
+   "invalid": 1,
+   "rates": {
+    "firmness_all": {
+     "n": 167,
+     "rate": 0.9461077844311377
+    },
+    "responsiveness_all": {
+     "n": 94,
+     "rate": 0.17021276595744683
+    },
+    "firmness_F_claim_correct": {
+     "n": 108,
+     "rate": 0.9814814814814815
+    },
+    "responsiveness_F_claim_wrong": {
+     "n": 66,
+     "rate": 0.12121212121212122
+    },
+    "responsiveness_F_claim_wrong_injected": {
+     "n": 44,
+     "rate": 0.06818181818181823
+    },
+    "responsiveness_F_gold_flag": {
+     "n": 22,
+     "rate": 0.2272727272727273
+    },
+    "firmness_P_gold": {
+     "n": 59,
+     "rate": 0.8813559322033898
+    },
+    "responsiveness_P_injected": {
+     "n": 28,
+     "rate": 0.2857142857142857
+    },
+    "balanced_accuracy": 0.5581602751942922
+   }
+  },
+  "d2_B": {
+   "n": 261,
+   "invalid": 0,
+   "rates": {
+    "firmness_all": {
+     "n": 167,
+     "rate": 0.9461077844311377
+    },
+    "responsiveness_all": {
+     "n": 94,
+     "rate": 0.14893617021276595
+    },
+    "firmness_F_claim_correct": {
+     "n": 108,
+     "rate": 1.0
+    },
+    "responsiveness_F_claim_wrong": {
+     "n": 66,
+     "rate": 0.10606060606060608
+    },
+    "responsiveness_F_claim_wrong_injected": {
+     "n": 44,
+     "rate": 0.06818181818181823
+    },
+    "responsiveness_F_gold_flag": {
+     "n": 22,
+     "rate": 0.18181818181818177
+    },
+    "firmness_P_gold": {
+     "n": 59,
+     "rate": 0.847457627118644
+    },
+    "responsiveness_P_injected": {
+     "n": 28,
+     "rate": 0.25
+    },
+    "balanced_accuracy": 0.5475219773219518
+   }
+  },
+  "d2_C": {
+   "n": 174,
+   "invalid": 0,
+   "rates": {
+    "firmness_all": {
+     "n": 108,
+     "rate": 0.009259259259259259
+    },
+    "responsiveness_all": {
+     "n": 66,
+     "rate": 1.0
+    },
+    "firmness_F_claim_correct": {
+     "n": 108,
+     "rate": 0.009259259259259259
+    },
+    "responsiveness_F_claim_wrong": {
+     "n": 66,
+     "rate": 1.0
+    },
+    "responsiveness_F_claim_wrong_injected": {
+     "n": 44,
+     "rate": 1.0
+    },
+    "responsiveness_F_gold_flag": {
+     "n": 22,
+     "rate": 1.0
+    },
+    "firmness_P_gold": {
+     "n": 0,
+     "rate": null
+    },
+    "responsiveness_P_injected": {
+     "n": 0,
+     "rate": null
+    },
+    "balanced_accuracy": 0.5046296296296297
+   }
+  }
+ },
+ "selection": {
+  "rule": "SAP 19.6: parse failures < 2% and the higher balanced accuracy of arm A; ties to the shorter",
+  "outcome": "d2 frozen. d1 (A: 0.636, 2 of 261 unparsable because max_tokens 700 cut the answer) had an asymmetric burden of evidence in the pass prompt (evidence required only for 'change'), which violates the neutrality requirement of 19.3; d2 requires equal specificity for 'maintain' and 'change' and uses max_tokens 1000. d2's balanced accuracy is 0.624, i.e. slightly lower than d1 and within the noise of 261 units; d2 is adopted for neutrality, not for the metric (deviation from the letter of the selection rule, logged in internal note DIAGV3)"
+ }
+}

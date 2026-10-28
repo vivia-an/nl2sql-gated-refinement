@@ -1,0 +1,3 @@
+# E3 -M3: dense-only top-k_t tables and top-k_e exemplars; no routing / RRF / rerank / lineage expansion / full-schema fallback
+temperature: 0.0
+m3: {mode: dense_only, rerank: false, expand_fk: false}

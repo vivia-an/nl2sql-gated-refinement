@@ -1,0 +1,34 @@
+# Complete list of tables and columns of the database
+<<full_schema>>
+
+# Task
+You reviewed a SQLite query and made the claim below. A verifier checked the claim against the question, the evidence and real executions and did not accept it. Decide, for this claim, whether to "maintain" or to "withdraw" it.
+Withdrawing is the correct answer when your claim is not supported by the evidence. Maintaining requires NEW evidence, quoted from the question, the evidence, the schema or the execution results, that answers the verifier's points one by one; restating the claim is not new evidence. A claim you maintain without addressing the verifier's points counts as withdrawn.
+
+Return one JSON object and nothing else:
+{"decision": "maintain" | "withdraw", "justification": str}
+For "maintain", the justification must address the verifier's points point by point and quote the new evidence. For "withdraw", one sentence.
+
+# Question
+Question: <<question>>
+Evidence: <<evidence>>
+
+# SQL
+<<sql>>
+
+# Execution of this SQL
+<<preview>>
+
+# Your claim
+Quoted question phrase: <<question_phrase>>
+Quoted SQL fragment: <<sql_fragment>>
+Claim: <<description>>
+
+# The verifier's response
+<<verdict>>: <<rebuttal>>
+
+# Mechanical evidence
+A fix was generated for your claim(s) taken together. Its SQL and its real execution:
+<<probe_sql>>
+<<probe_preview>>
+Comparison: <<comparison>>

@@ -1,0 +1,12 @@
+{
+ "_meta": {
+  "rule": "docs/SAP.md 22.7 / 22.12",
+  "tuning_items_sha256": "1e8726970eda0fe11b768e7c604a09f9ef56acf0171b1d5bdc5330b7cd52626d",
+  "verdicts_sha256": "b0b749ee84055dfc7dad06a990fe90c21c9059fcb3613726d4a801f2e3a57fef",
+  "note": "draft 1 of pf_standard.txt frozen; draft 2 not selected (SAP 22.12)"
+ },
+ "prompts": {
+  "pf_critic.user.txt": "f364ea775a1a8c38aaa092d3ef9fbc2df65bedd8c07e6b781010cc717c628cdc",
+  "pf_standard.txt": "87350a38af4553fa36b1dc186e8686b55758732ef1b83baa97587434c2157896"
+ }
+}

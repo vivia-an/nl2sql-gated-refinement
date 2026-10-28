@@ -1,0 +1,16 @@
+{
+ "TS\\.hr\\.gated_vs_fixed\\.delta_ex\\.ci_lo$": "x3s",
+ "TS\\.sel\\.rule3\\.hr\\.delta_ex\\.ci_lo$": "x3s",
+ "(judge_acc|revise_always_acc)$": "pct",
+ "(ppo_best_ex|a2c_best_ex|\\.p0_ex)$": "pct",
+ "(ppo_best_calls|a2c_best_calls|\\.p0_calls)$": "x2",
+ "(ub_pp|ideal_gate_gain_pp)$": "x1",
+ "_share$": "pct",
+ "cost_ratio$": "x2",
+ "\\.recall_polluted$": "pct",
+ "setup\\.(resolution_pp|p4_mde_pp)$": "x1",
+ "setup\\.design_effect$": "x1",
+ "setup\\.design_effect_emp\\.": "x2",
+ "setup\\.design_effect\\.rho_assumed$": "x2",
+ "TS\\.r1\\.tree_nodes_per_q$": "x1"
+}

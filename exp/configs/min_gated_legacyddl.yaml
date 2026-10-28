@@ -1,0 +1,5 @@
+# MIN M3 ablation -Q (legacy identifier rendering) on full_gated: ddl.quote_keywords false = pre-X5 prompts. TEMPLATE -> frozen/gated_legacyddl.yaml. --system full_gated.
+temperature: 0.0
+ddl: {quote_keywords: false}
+m5: {policy: gated, gate_empty: false, score_for_routing: false, t_max: 3}
+route: {score: exec, theta_h: 7.5}

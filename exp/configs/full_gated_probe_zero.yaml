@@ -1,0 +1,7 @@
+# X7 extension of full_gated_probe.yaml: m5.gate_zero also revises an executable one-cell result equal to 0 (COUNT = 0, SUM = 0), with the value
+# probe on the filtered text columns. Tuning data (X5 1b-hr-quote roots): 32 such roots in HR, 27 of them wrong with a non-zero gold answer
+# (2.5 pp of all questions; HT: 2 roots, 1 wrong); 5 are right (a true zero) and are at risk of being changed. Not in the default X7 queue.
+temperature: 0.0
+ddl: {quote_keywords: true}
+m5: {policy: gated, gate_empty: true, gate_zero: true, probe_values: true, probe_n: 8, probe_max_len: 40, probe_max_cols: 4, probe_timeout_s: 5.0, score_for_routing: false, t_max: 3}
+route: {score: exec, theta_h: 7.5}

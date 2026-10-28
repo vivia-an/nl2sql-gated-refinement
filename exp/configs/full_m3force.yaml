@@ -1,0 +1,5 @@
+# X5 (HEADROOM row 4): M3 sensitivity. Identical to full_fixed except m3.schema_fallback_tokens: 0, so the full-schema fallback never fires
+# (default 6000 estimated tokens: every HT/HR database falls under it and M3 routing / rerank / FK expansion is never exercised).
+# Compare with full_fixed.yaml on HT-300 (same system, same model, same seed).
+temperature: 0.0
+m3: {schema_fallback_tokens: 0}

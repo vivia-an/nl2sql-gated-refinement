@@ -1,0 +1,24 @@
+# secrets and local configuration
+*.env
+.env*
+*.pem
+*.key
+credentials*
+secrets/
+# caches and build products
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+*.sqlite
+*.db
+nohup.out
+*.log
+# data and run archives are not part of the repository (see README)
+data/
+cache/
+results/raw-ignored/
+results/raw/
+results/_reports/
+results/ts/keymap_ts.md

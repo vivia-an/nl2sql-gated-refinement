@@ -1,0 +1,5 @@
+# X5 (HEADROOM row 3): patent loop P0 + quoted reserved words + arbitration: when the final answer is a revision of an executable root and
+# the two results differ, one judge call (critic model) sees both SQL + result previews and picks one (A/B order flipped by qid hash).
+temperature: 0.0
+ddl: {quote_keywords: true}
+m5: {arbitrate: true}

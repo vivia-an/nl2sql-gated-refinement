@@ -1,0 +1,683 @@
+{
+ "PF1": {
+  "a": "pf_n1000_q100",
+  "b": "pf_n0",
+  "a_right_b_wrong": [
+   {
+    "qid": "bird_dev:california_schools:68",
+    "db_id": "california_schools",
+    "pf_n1000_q100": {
+     "final_sql": "SELECT T1.County\nFROM schools AS T1\nWHERE T1.SOC = '11'\n  AND T1.ClosedDate >= '1980-01-01'\n  AND T1.ClosedDate <= '1989-12-31'\nGROUP BY T1.County\nORDER BY COUNT(T1.CDSCode) DESC\nLIMIT 1",
+     "ex": 1,
+     "actions": [
+      "revise",
+      "accept"
+     ],
+     "calls": 5,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 4.0,
+       "semantic": 0.0,
+       "ex": 0
+      },
+      {
+       "action": "revise",
+       "score": 9.6,
+       "semantic": 10.0,
+       "ex": 1
+      }
+     ],
+     "memory_verdicts": [
+      0,
+      1,
+      1,
+      0
+     ]
+    },
+    "pf_n0": {
+     "final_sql": "SELECT T1.\"County Name\"\nFROM frpm AS T1\nINNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode\nWHERE T2.SOC = '11'\n  AND T2.ClosedDate >= '1980-01-01'\n  AND T2.ClosedDate <= '1989-12-31'\nGROUP BY T1.\"County Name\"\nORDER BY COUNT(T2.CDSCode) DESC\nLIMIT 1",
+     "ex": 0,
+     "actions": [
+      "accept"
+     ],
+     "calls": 3,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 9.0,
+       "semantic": 10.0,
+       "ex": 0
+      }
+     ],
+     "memory_verdicts": []
+    }
+   },
+   {
+    "qid": "bird_dev:california_schools:88",
+    "db_id": "california_schools",
+    "pf_n1000_q100": {
+     "final_sql": "SELECT T1.\"AdmEmail1\", T1.\"School\"\nFROM schools AS T1\nINNER JOIN satscores AS T2 ON T1.CDSCode = T2.cds\nORDER BY T2.NumGE1500 DESC\nLIMIT 1",
+     "ex": 1,
+     "actions": [
+      "accept"
+     ],
+     "calls": 3,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 9.8,
+       "semantic": 10.0,
+       "ex": 1
+      }
+     ],
+     "memory_verdicts": [
+      0,
+      1,
+      1,
+      0
+     ]
+    },
+    "pf_n0": {
+     "final_sql": "SELECT T1.\"AdmEmail1\", T2.sname\nFROM schools AS T1\nINNER JOIN satscores AS T2 ON T1.CDSCode = T2.cds\nWHERE T2.sname IS NOT NULL AND T2.NumGE1500 IS NOT NULL\nORDER BY T2.NumGE1500 DESC\nLIMIT 1",
+     "ex": 0,
+     "actions": [
+      "revise",
+      "revise",
+      "accept"
+     ],
+     "calls": 7,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 4.8,
+       "semantic": 0.0,
+       "ex": 1
+      },
+      {
+       "action": "revise",
+       "score": 4.8,
+       "semantic": 0.0,
+       "ex": 1
+      },
+      {
+       "action": "revise",
+       "score": 9.8,
+       "semantic": 10.0,
+       "ex": 0
+      }
+     ],
+     "memory_verdicts": []
+    }
+   },
+   {
+    "qid": "bird_dev:codebase_community:673",
+    "db_id": "codebase_community",
+    "pf_n1000_q100": {
+     "final_sql": "SELECT AVG(CAST(T1.PostId AS REAL))\nFROM votes AS T1\nINNER JOIN users AS T2 ON T1.UserId = T2.Id\nWHERE T2.Age = (SELECT MAX(Age) FROM users)",
+     "ex": 1,
+     "actions": [
+      "accept"
+     ],
+     "calls": 3,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 10.0,
+       "semantic": 10.0,
+       "ex": 1
+      }
+     ],
+     "memory_verdicts": [
+      1,
+      1,
+      1,
+      1
+     ]
+    },
+    "pf_n0": {
+     "final_sql": "SELECT AVG(vote_count)\nFROM (\n    SELECT COUNT(*) AS vote_count\n    FROM votes AS T1\n    INNER JOIN users AS T2 ON T1.UserId = T2.Id\n    WHERE T2.Age = (SELECT MAX(Age) FROM users)\n    GROUP BY T1.UserId\n) AS sub",
+     "ex": 0,
+     "actions": [
+      "revise",
+      "accept"
+     ],
+     "calls": 5,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 5.0,
+       "semantic": 0.0,
+       "ex": 1
+      },
+      {
+       "action": "revise",
+       "score": 9.3,
+       "semantic": 9.0,
+       "ex": 0
+      }
+     ],
+     "memory_verdicts": []
+    }
+   }
+  ],
+  "a_wrong_b_right": [
+   {
+    "qid": "bird_dev:california_schools:36",
+    "db_id": "california_schools",
+    "pf_n1000_q100": {
+     "final_sql": "SELECT T3.AdmFName1, T3.AdmLName1\nFROM satscores AS T1\nINNER JOIN schools AS T3 ON T1.cds = T3.CDSCode\nORDER BY T1.NumGE1500 DESC\nLIMIT 1",
+     "ex": 0,
+     "actions": [
+      "accept"
+     ],
+     "calls": 3,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 9.8,
+       "semantic": 10.0,
+       "ex": 0
+      }
+     ],
+     "memory_verdicts": [
+      1,
+      0,
+      1,
+      1
+     ]
+    },
+    "pf_n0": {
+     "final_sql": "SELECT T3.AdmFName1, T3.AdmLName1, T3.AdmFName2, T3.AdmLName2, T3.AdmFName3, T3.AdmLName3\nFROM satscores AS T1\nINNER JOIN schools AS T3 ON T1.cds = T3.CDSCode\nORDER BY T1.NumGE1500 DESC\nLIMIT 1",
+     "ex": 1,
+     "actions": [
+      "revise",
+      "accept"
+     ],
+     "calls": 5,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 7.8,
+       "semantic": 6.0,
+       "ex": 0
+      },
+      {
+       "action": "revise",
+       "score": 9.8,
+       "semantic": 10.0,
+       "ex": 1
+      }
+     ],
+     "memory_verdicts": []
+    }
+   },
+   {
+    "qid": "bird_dev:california_schools:77",
+    "db_id": "california_schools",
+    "pf_n1000_q100": {
+     "final_sql": "SELECT \n    T1.School,\n    T2.\"Percent (%) Eligible FRPM (Ages 5-17)\"\nFROM schools AS T1\nINNER JOIN frpm AS T2 ON T1.CDSCode = T2.CDSCode\nWHERE T1.County = 'Los Angeles'\n  AND T1.GSserved = 'K-9'",
+     "ex": 0,
+     "actions": [
+      "revise",
+      "accept"
+     ],
+     "calls": 5,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 0.9,
+       "semantic": 0.0,
+       "ex": 0
+      },
+      {
+       "action": "revise",
+       "score": 10.0,
+       "semantic": 10.0,
+       "ex": 0
+      }
+     ],
+     "memory_verdicts": [
+      0,
+      1,
+      0,
+      1
+     ]
+    },
+    "pf_n0": {
+     "final_sql": "SELECT \n    T1.School,\n    (T2.\"FRPM Count (Ages 5-17)\" * 100.0 / T2.\"Enrollment (Ages 5-17)\") AS \"Percent (%) Eligible FRPM (Ages 5-17)\"\nFROM schools AS T1\nINNER JOIN frpm AS T2 ON T1.CDSCode = T2.CDSCode\nWHERE T1.County = 'Los Angeles'\n  AND T1.GSserved = 'K-9'",
+     "ex": 1,
+     "actions": [
+      "revise",
+      "accept"
+     ],
+     "calls": 5,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 0.9,
+       "semantic": 0.0,
+       "ex": 0
+      },
+      {
+       "action": "revise",
+       "score": 10.0,
+       "semantic": 10.0,
+       "ex": 1
+      }
+     ],
+     "memory_verdicts": []
+    }
+   },
+   {
+    "qid": "bird_dev:debit_card_specializing:1510",
+    "db_id": "debit_card_specializing",
+    "pf_n1000_q100": {
+     "final_sql": "SELECT AVG(T1.Amount * T1.Price) AS average_total_price\nFROM transactions_1k AS T1\nINNER JOIN gasstations AS T2 ON T1.GasStationID = T2.GasStationID\nWHERE T2.Country = 'CZE'",
+     "ex": 0,
+     "actions": [
+      "revise",
+      "accept"
+     ],
+     "calls": 5,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 5.0,
+       "semantic": 0.0,
+       "ex": 1
+      },
+      {
+       "action": "revise",
+       "score": 10.0,
+       "semantic": 10.0,
+       "ex": 0
+      }
+     ],
+     "memory_verdicts": [
+      1,
+      0,
+      1,
+      1
+     ]
+    },
+    "pf_n0": {
+     "final_sql": "SELECT AVG(T1.Price) AS average_total_price\nFROM transactions_1k AS T1\nINNER JOIN gasstations AS T2 ON T1.GasStationID = T2.GasStationID\nWHERE T2.Country = 'CZE'",
+     "ex": 1,
+     "actions": [
+      "accept"
+     ],
+     "calls": 3,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 10.0,
+       "semantic": 10.0,
+       "ex": 1
+      }
+     ],
+     "memory_verdicts": []
+    }
+   }
+  ]
+ },
+ "PF2": {
+  "a": "pf_n1000_q085",
+  "b": "full_fixed",
+  "a_right_b_wrong": [
+   {
+    "qid": "bird_dev:california_schools:68",
+    "db_id": "california_schools",
+    "pf_n1000_q085": {
+     "final_sql": "SELECT T1.County\nFROM schools AS T1\nWHERE T1.SOC = '11'\n  AND T1.ClosedDate >= '1980-01-01'\n  AND T1.ClosedDate <= '1989-12-31'\nGROUP BY T1.County\nORDER BY COUNT(T1.CDSCode) DESC\nLIMIT 1",
+     "ex": 1,
+     "actions": [
+      "revise",
+      "accept"
+     ],
+     "calls": 5,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 4.0,
+       "semantic": 0.0,
+       "ex": 0
+      },
+      {
+       "action": "revise",
+       "score": 9.6,
+       "semantic": 10.0,
+       "ex": 1
+      }
+     ],
+     "memory_verdicts": [
+      1,
+      1,
+      1,
+      0
+     ]
+    },
+    "full_fixed": {
+     "final_sql": "SELECT T1.\"County Name\"\nFROM frpm AS T1\nINNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode\nWHERE T2.SOC = '11'\n  AND T2.ClosedDate >= '1980-01-01'\n  AND T2.ClosedDate <= '1989-12-31'\nGROUP BY T1.\"County Name\"\nORDER BY COUNT(T2.CDSCode) DESC\nLIMIT 1",
+     "ex": 0,
+     "actions": [
+      "accept"
+     ],
+     "calls": 3,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 9.0,
+       "semantic": 10.0,
+       "ex": 0
+      }
+     ]
+    }
+   },
+   {
+    "qid": "bird_dev:california_schools:77",
+    "db_id": "california_schools",
+    "pf_n1000_q085": {
+     "final_sql": "SELECT \n    T1.\"School\",\n    (T2.\"FRPM Count (Ages 5-17)\" * 100.0 / T2.\"Enrollment (Ages 5-17)\") AS \"Percent (%) Eligible FRPM (Ages 5-17)\"\nFROM schools AS T1\nINNER JOIN frpm AS T2 ON T1.CDSCode = T2.CDSCode\nWHERE T1.County = 'Los Angeles'\n  AND T1.GSserved = 'K-9'",
+     "ex": 1,
+     "actions": [
+      "revise",
+      "accept"
+     ],
+     "calls": 5,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 0.9,
+       "semantic": 0.0,
+       "ex": 0
+      },
+      {
+       "action": "revise",
+       "score": 10.0,
+       "semantic": 10.0,
+       "ex": 1
+      }
+     ],
+     "memory_verdicts": [
+      1,
+      1,
+      1,
+      1
+     ]
+    },
+    "full_fixed": {
+     "final_sql": "SELECT \n    T1.\"School Name\",\n    (T2.\"FRPM Count (Ages 5-17)\" * 100.0 / T2.\"Enrollment (Ages 5-17)\") AS \"Percent (%) Eligible FRPM (Ages 5-17)\"\nFROM schools AS T1\nINNER JOIN frpm AS T2 ON T1.CDSCode = T2.CDSCode\nWHERE T1.County = 'Los Angeles'\n  AND T1.GSserved = 'K-9'",
+     "ex": 0,
+     "actions": [
+      "revise",
+      "revise_noop",
+      "stop_best"
+     ],
+     "calls": 5,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 0.9,
+       "semantic": 0.0,
+       "ex": 0
+      },
+      {
+       "action": "revise",
+       "score": 0.9,
+       "semantic": 0.0,
+       "ex": 0
+      }
+     ]
+    }
+   },
+   {
+    "qid": "bird_dev:card_games:451",
+    "db_id": "card_games",
+    "pf_n1000_q085": {
+     "final_sql": "SELECT COUNT(*)\nFROM cards\nWHERE availability LIKE '%paper%'\n  AND hand = '3'",
+     "ex": 1,
+     "actions": [
+      "accept"
+     ],
+     "calls": 3,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 9.6,
+       "semantic": 10.0,
+       "ex": 1
+      }
+     ],
+     "memory_verdicts": [
+      1,
+      1,
+      1,
+      1
+     ]
+    },
+    "full_fixed": {
+     "final_sql": "SELECT COUNT(*)\nFROM cards\nWHERE availability LIKE '%paper%'\n  AND hand LIKE '+%'",
+     "ex": 0,
+     "actions": [
+      "revise",
+      "revise",
+      "revise",
+      "stop_best"
+     ],
+     "calls": 9,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 5.6,
+       "semantic": 2.0,
+       "ex": 1
+      },
+      {
+       "action": "revise",
+       "score": 7.1,
+       "semantic": 5.0,
+       "ex": 0
+      },
+      {
+       "action": "revise",
+       "score": 5.6,
+       "semantic": 2.0,
+       "ex": 1
+      },
+      {
+       "action": "revise",
+       "score": 7.1,
+       "semantic": 5.0,
+       "ex": 0
+      }
+     ]
+    }
+   }
+  ],
+  "a_wrong_b_right": [
+   {
+    "qid": "bird_dev:california_schools:36",
+    "db_id": "california_schools",
+    "pf_n1000_q085": {
+     "final_sql": "SELECT T3.AdmFName1, T3.AdmLName1\nFROM satscores AS T1\nINNER JOIN schools AS T3 ON T1.cds = T3.CDSCode\nORDER BY T1.NumGE1500 DESC\nLIMIT 1",
+     "ex": 0,
+     "actions": [
+      "accept"
+     ],
+     "calls": 3,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 9.8,
+       "semantic": 10.0,
+       "ex": 0
+      }
+     ],
+     "memory_verdicts": [
+      1,
+      1,
+      1,
+      1
+     ]
+    },
+    "full_fixed": {
+     "final_sql": "SELECT T3.AdmFName1, T3.AdmLName1, T3.AdmFName2, T3.AdmLName2, T3.AdmFName3, T3.AdmLName3\nFROM satscores AS T1\nINNER JOIN schools AS T3 ON T1.cds = T3.CDSCode\nORDER BY T1.NumGE1500 DESC\nLIMIT 1",
+     "ex": 1,
+     "actions": [
+      "revise",
+      "accept"
+     ],
+     "calls": 5,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 7.3,
+       "semantic": 5.0,
+       "ex": 0
+      },
+      {
+       "action": "revise",
+       "score": 9.8,
+       "semantic": 10.0,
+       "ex": 1
+      }
+     ]
+    }
+   },
+   {
+    "qid": "bird_dev:debit_card_specializing:1510",
+    "db_id": "debit_card_specializing",
+    "pf_n1000_q085": {
+     "final_sql": "SELECT AVG(T1.Amount * T1.Price) AS average_total_price\nFROM transactions_1k AS T1\nINNER JOIN gasstations AS T2 ON T1.GasStationID = T2.GasStationID\nWHERE T2.Country = 'CZE'",
+     "ex": 0,
+     "actions": [
+      "revise",
+      "accept"
+     ],
+     "calls": 5,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 5.0,
+       "semantic": 0.0,
+       "ex": 1
+      },
+      {
+       "action": "revise",
+       "score": 10.0,
+       "semantic": 10.0,
+       "ex": 0
+      }
+     ],
+     "memory_verdicts": [
+      1,
+      0,
+      1,
+      0
+     ]
+    },
+    "full_fixed": {
+     "final_sql": "SELECT AVG(T1.Price) AS average_total_price\nFROM transactions_1k AS T1\nINNER JOIN gasstations AS T2 ON T1.GasStationID = T2.GasStationID\nWHERE T2.Country = 'CZE'",
+     "ex": 1,
+     "actions": [
+      "accept"
+     ],
+     "calls": 3,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 10.0,
+       "semantic": 10.0,
+       "ex": 1
+      }
+     ]
+    }
+   },
+   {
+    "qid": "bird_dev:debit_card_specializing:1524",
+    "db_id": "debit_card_specializing",
+    "pf_n1000_q085": {
+     "final_sql": "SELECT T1.Segment\nFROM customers AS T1\nINNER JOIN transactions_1k AS T2 ON T1.CustomerID = T2.CustomerID\nWHERE T2.Date = '2012-08-24' AND T2.Price = 548.4",
+     "ex": 0,
+     "actions": [
+      "revise",
+      "revise",
+      "revise",
+      "stop_best"
+     ],
+     "calls": 10,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 0.9,
+       "semantic": 0.0,
+       "ex": 0
+      },
+      {
+       "action": "revise",
+       "score": 5.0,
+       "semantic": 0.0,
+       "ex": 0
+      },
+      {
+       "action": "revise",
+       "score": 4.4,
+       "semantic": 0.0,
+       "ex": 0
+      },
+      {
+       "action": "revise",
+       "score": 4.4,
+       "semantic": 0.0,
+       "ex": 0
+      }
+     ],
+     "memory_verdicts": [
+      0,
+      1,
+      0,
+      1
+     ]
+    },
+    "full_fixed": {
+     "final_sql": "SELECT T3.Country\nFROM customers AS T1\nINNER JOIN transactions_1k AS T2 ON T1.CustomerID = T2.CustomerID\nINNER JOIN gasstations AS T3 ON T2.GasStationID = T3.GasStationID\nWHERE T2.Date = '2012-08-24'\n  AND T2.Price = 548.4",
+     "ex": 1,
+     "actions": [
+      "revise",
+      "revise",
+      "revise",
+      "stop_best"
+     ],
+     "calls": 9,
+     "candidates": [
+      {
+       "action": "root",
+       "score": 0.9,
+       "semantic": 0.0,
+       "ex": 0
+      },
+      {
+       "action": "revise",
+       "score": 6.0,
+       "semantic": 2.0,
+       "ex": 1
+      },
+      {
+       "action": "revise",
+       "score": 5.4,
+       "semantic": 2.0,
+       "ex": 0
+      },
+      {
+       "action": "revise",
+       "score": 5.4,
+       "semantic": 2.0,
+       "ex": 0
+      }
+     ]
+    }
+   }
+  ]
+ }
+}

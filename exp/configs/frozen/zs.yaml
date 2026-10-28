@@ -1,0 +1,5 @@
+# FROZEN 2026-10-26 by code/tools/freeze_configs.py from exp/configs/min_zs.yaml (sha256 d5b2b595f1d91ade). Do not edit: a change is a new lock entry (SPEC 1.3 step 6).
+# MIN plan (F0, 2026-10-26) TEMPLATE -> frozen as exp/configs/frozen/zs.yaml (code/tools/freeze_configs.py). Use with --system zs_ours.
+# Zero-shot with the shared identifier-quoting renderer (SAP 13.6 rule 1): the B1 system `zs` ignores ddl.quote_keywords, `zs_ours` honours it.
+temperature: 0.0
+ddl: {quote_keywords: true}

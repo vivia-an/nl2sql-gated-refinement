@@ -1,0 +1,90 @@
+{
+ "root_vs_revise_T0": {
+  "disagree_questions": 150,
+  "exactly_one_correct": 89,
+  "revision_correct": 64,
+  "root_correct": 25
+ },
+ "depth1_pool": {
+  "questions_with_disagreement": 273,
+  "with_both_a_correct_and_a_wrong_candidate": 154
+ },
+ "pool_disagree_by_db": {
+  "address": 25,
+  "beer_factory": 67,
+  "bike_share_1": 49,
+  "donor": 43,
+  "public_review_platform": 27,
+  "retails": 15,
+  "sales": 14,
+  "simpson_episodes": 33
+ },
+ "train_dbs_total": 69,
+ "train_dbs_with_keyword_identifiers": 8,
+ "train_dbs_with_keyword_TABLE_names": {
+  "soccer_2016": {
+   "tables": [
+    "Match"
+   ],
+   "columns": [],
+   "n_questions": 258
+  },
+  "legislator": {
+   "tables": [
+    "current"
+   ],
+   "columns": [
+    "end",
+    "last"
+   ],
+   "n_questions": 177
+  },
+  "beer_factory": {
+   "tables": [
+    "transaction"
+   ],
+   "columns": [
+    "First",
+    "Last"
+   ],
+   "n_questions": 131
+  }
+ },
+ "train_questions_in_dbs_with_keyword_table": 566,
+ "train_questions_total": 9428,
+ "keyword_column_dbs": {
+  "works_cycles": [
+   "Group",
+   "Primary"
+  ],
+  "legislator": [
+   "end",
+   "last"
+  ],
+  "synthea": [
+   "first",
+   "last"
+  ],
+  "talkingdata": [
+   "group"
+  ],
+  "beer_factory": [
+   "First",
+   "Last"
+  ],
+  "music_tracker": [
+   "index"
+  ],
+  "retail_complains": [
+   "first",
+   "last"
+  ]
+ },
+ "MDE_pp": {
+  "n1101_pd0.03_deff2": 2.066997717471574,
+  "n1101_pd0.05_deff2": 2.6684825788053836,
+  "n1534_pd0.05_deff2.4": 2.476486555265218,
+  "n1534_pd0.03_deff2.4": 1.9182782371297527,
+  "n300_pd0.08_deff2": 6.466323014923808
+ }
+}

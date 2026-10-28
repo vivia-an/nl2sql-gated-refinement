@@ -1,0 +1,6 @@
+# MIN M3 ablation -M1 on full_gated: no task graph anywhere (prompts, retrieval queries). TEMPLATE -> frozen/gated_noM1.yaml. --system full_gated.
+temperature: 0.0
+ddl: {quote_keywords: true}
+m1: {enabled: false}
+m5: {policy: gated, gate_empty: false, score_for_routing: false, t_max: 3}
+route: {score: exec, theta_h: 7.5}

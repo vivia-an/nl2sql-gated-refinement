@@ -1,0 +1,51 @@
+item_id,primary_label,secondary_label,rationale,notes
+A294,L6,L5,"Evidence formula is DIVIDE(SUM(position = 'Member' and major_name = 'Business') COUNT(member_id)) so the denominator is all members; gold moves position = 'Member' into WHERE which shrinks the denominator (3.85 vs 3.125); the prediction follows the evidence literally.",
+A251,L5,L4,"D1 (evidence): per-month SUM of T-CHO and a decrease rate relative to the December total (gold divides the difference by the December sum); D2 (prediction): MAX of T-CHO per month and a raw difference without any ratio (12 vs 0.06).",linking right; aggregate also differs
+A221,L6,L2,"Question/evidence: elements with double bond (bond_type = '=') in TR024; gold joins atom to bond only on molecule_id so it returns every atom of the molecule (includes s and duplicates) without tying the atom to the double bond via connected; prediction links atoms to the bond through connected.",
+A280,L1,L4,,pred takes points from results (race points) instead of driverStandings.points and orders by results.position ASC (NULL positions first) instead of points DESC
+A279,L6,,"Evidence: Difference = Total crimes in north Bohemia - Total crimes in east Bohemia; gold computes east Bohemia minus north Bohemia (-17734) which reverses the stated formula; prediction follows the evidence (17734).",
+A274,L6,,"Evidence: data that was first recorded in 1991 refers to year(Description) = 1991; gold filters STRFTIME('%Y' T1.`First Date`) instead of Description; prediction follows the evidence.",
+A024,L6,,"Question asks about molecule TR346 but gold filters T1.molecule_id = 'TR000' (and groups by atom_id and bond_type); the gold result is for a different molecule.",prediction returns no rows
+A158,L6,L8,"Question/evidence: percentage of carcinogenic molecules that do NOT contain fluorine; gold counts molecules having at least one non-f atom (CASE element <> 'f') giving a degenerate 100.0 instead of molecules with no f atom.",prediction is two concatenated SELECTs with comments -> syntax error (second query looks like the intended logic)
+A195,L8,L3,,prediction returns only AdmEmail1 while gold returns AdmEmail1 and AdmEmail2 (missing output column); District filter and NOT NULL filters also differ from gold's City filter
+A004,L6,,"Evidence: less than average parking cost refers to cost < DIVIDE(SUM(cost) COUNT(event_id)) where category = 'Parking'; gold compares against AVG(cost) over all expenses without the Parking restriction.",prediction returns no rows
+A040,L8,,,prediction returns SELECT T3.* (all trans columns) instead of trans_id only; join skips account but that is equivalent
+A076,L6,L2,"Question/evidence: elements with double bond in TR024; gold joins atom to bond only on molecule_id so atoms not in any double bond (s) are returned with duplicates; prediction ties atoms to the double bond via connected.",
+A222,L7,,"No evidence given for two most common first names among school administrators: gold counts only AdmFName1 while the prediction counts AdmFName1 AdmFName2 and AdmFName3; both readings of administrators are defensible.",
+A245,L6,L4,"Question: How many patients; gold COUNT(T1.ID) over the Patient-Laboratory join counts laboratory rows (2044) not patients (54 distinct).",
+A099,L6,,"Evidence: normal anti-SSA refers to SSA IN('-' '+-') and first date refers to YEAR(`First Date`) < 2000; gold uses SSA IN ('negative' '0') and T2.Date instead; prediction follows the evidence literally and returns 0.",
+A143,L8,,,gold SQL timed out (ERROR: timeout) so there is no comparable gold result; logic of gold and prediction looks the same (posts of the max-reputation user)
+A278,L6,L1,"Question: how many of the comments have 0 score; gold filters T2.Score = 0 (post score) rather than comment score; prediction uses comments.Score.",
+A276,L6,L1,"Question: count the number of posts with tag careers; gold counts rows of the tags table (result 1) which is not a count of posts; prediction counts posts whose Tags contain <careers>.",tags.Count would be the post count
+A223,L1,L3,,prediction uses county filter and schools.FundingType and frpm-vs-schools aliases swapped instead of District Name LIKE 'Riverside%' and frpm Charter Funding Type; AVG vs sum/count equivalent
+A242,L4,,,tie handling: prediction returns all expenses of the budget(s) with the minimum remaining (2 rows) while gold uses ORDER BY LIMIT 1
+A194,L8,,,prediction omits expense_id output column
+A026,L3,,,date literal format '981014' instead of '1998-10-14'
+A042,L6,L3,"Evidence: platelet level lower than normal refers to PLT < 100 and higher refers to PLT > 400; gold uses PLT <= 100 and PLT >= 400 (taken from the abnormal definition); prediction uses the strict bounds and returns three columns.",prediction also lacks the Patient join and returns 3 columns
+A231,L4,,,tie handling: gold returns all users with MIN(Views) while prediction uses LIMIT 1
+A193,L8,,,prediction uses SELECT * (extra columns) instead of budget_id
+A297,L2,,,gold joins client to district via client.district_id while prediction goes client-disp-account-district (account branch); same filters and select
+A070,L6,L2,"Question/evidence: elements in a double type bond; gold joins atom to bond only on molecule_id and so returns elements (h cl f etc.) of any molecule having a double bond not atoms in a double bond; prediction uses connected.",
+A232,L1,,,prediction uses driverStandings.position = 2 instead of results.rank = 2
+A138,L3,,,evidence prescribes birthday > '1990' and prediction changes the literal to '1990-12-31 23:59:59'
+A087,L1,L3,,prediction uses schools.School and schools.County = 'Riverside' instead of frpm District Name LIKE 'Riverside%' and frpm Charter Funding Type
+A259,L1,,,prediction selects r.year instead of the race name and takes points from results instead of driverStandings
+A074,L6,L2,"Question: languages available for the set that card 'Angel of Mercy' is in; gold matches set_translations.id with cards.id (unrelated keys) and returns 2 languages; prediction goes cards-sets-set_translations by set code and returns 10.",
+A295,L4,,,gold COUNT(frameEffects) ignores NULL group while prediction COUNT(*) makes the NULL group the most common
+A219,L6,L2,"Question/evidence: elements in a double type bond; gold joins atom to bond only on molecule_id so elements of atoms not in a double bond appear; prediction ties atoms to bonds through connected.",
+A171,L7,L3,"Question: districts which have transactions greater than USS$10000 in 1997 with no evidence: gold reads it as the SUM of amounts per district > 10000 while the prediction reads it as a single transaction amount > 10000.",prediction also uses date LIKE '97%' (wrong format; empty result) and outputs A2 instead of district_id
+A112,L6,L8,"Question: which user created post ID 1; gold finds the user through comments.UserId (a commenter) instead of the post owner and returns Id.",prediction returns DisplayName instead of Id; same reputation 6764
+A008,L3,,,date literal format '960103' instead of '1996-01-03'
+A196,L4,L8,,gold ranks drivers by their best lap time (GROUP BY driver) while prediction ranks individual lap rows so drivers repeat; gold also outputs driverId
+A136,L6,,"Schema comment on Price: total price = Amount x Price and the question asks who paid the most; gold SUM(Price) ignores Amount while prediction sums Amount*Price.",
+A062,L4,,,prediction groups by event_name instead of event_id so same-named events are merged (adds Football game)
+A139,L6,L4,"Question: How many male patients; gold COUNT(T1.ID) over the Patient-Laboratory join counts laboratory rows (1696) not patients (46 distinct).",
+A240,L4,,,prediction lacks DISTINCT so the same card repeats
+A262,L1,,,gold counts postHistory rows (CreationDate as in the evidence) while prediction counts posts via CreaionDate
+A236,L3,L4,,prediction adds status = 'Legal' and LIMIT 1 so returns 1 row instead of 5
+A144,L1,,,prediction uses Examination.TP which does not exist; TP is in Laboratory
+A281,L6,,"Evidence: having at least 1000 views refers to Views >= 1000 (users.Views); gold filters posts.ViewCount >= 1000 and uses COUNT(DISTINCT PostHistoryTypeId) = 1 instead of one history record per post.",prediction implements per-post count but not all posts per user
+A092,L6,L2,"Question: how many bond ids have element iodine; gold joins atom to bond only on molecule_id and counts all bonds of molecules containing iodine (12) without DISTINCT; prediction counts bonds connected to iodine atoms (6).",
+A090,L6,L4,"Question: How many female patients; gold COUNT(T1.ID) over the Patient-Laboratory join counts laboratory rows (641) not patients (88 distinct).",
+A081,L5,L3,"D1: only the county with the most closed schools (gold restricts to that county); D2: all closed schools in every county ordered by county size; also the prediction does not filter school IS NOT NULL.",
+A189,L8,,,prediction omits the milliseconds output column

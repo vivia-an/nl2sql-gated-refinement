@@ -1,0 +1,13 @@
+contrast,scope,n_runs,est_s101,est_s202,est_s303,mean_T07,cl_lo,cl_hi,item_lo,item_hi,range_lo,range_hi,wide_lo,wide_hi,reading_cluster,reading_wide,s0_est,s0_reading_cluster,s0_reading_wide,agrees_with_s0_cluster,agrees_with_s0_wide
+ex_minus_zs,plus,3,1.239,0.652,0.587,0.826,-0.227,1.829,-0.261,1.912,0.587,1.239,-0.261,1.912,contains 0,contains 0,0.587,contains 0,contains 0,yes,yes
+ex_minus_zs,flash,3,0.522,1.434,1.369,1.108,-0.824,2.958,-0.304,2.499,0.522,1.434,-0.824,2.958,contains 0,contains 0,-0.196,contains 0,contains 0,yes,yes
+ex_minus_zs,27b,3,0.913,0.522,-0.196,0.413,-1.290,2.012,-0.782,1.608,-0.196,0.913,-1.290,2.012,contains 0,contains 0,0.130,contains 0,contains 0,yes,yes
+ex_minus_zs,pooled3,3,0.891,0.869,0.587,0.782,-0.192,1.702,-0.007,1.550,0.587,0.891,-0.192,1.702,contains 0,contains 0,0.174,contains 0,contains 0,yes,yes
+root_minus_ex,plus,3,-0.717,-1.173,-0.782,-0.891,-2.252,0.287,-1.934,0.174,-1.173,-0.717,-2.252,0.287,contains 0,contains 0,-0.130,contains 0,contains 0,yes,yes
+root_minus_ex,flash,3,1.825,0.326,1.369,1.173,0.319,2.041,-0.087,2.455,0.326,1.825,-0.736,3.083,positive,contains 0,1.499,contains 0,contains 0,no,yes
+root_minus_ex,27b,3,1.890,0.782,2.412,1.695,0.419,3.065,0.522,2.912,0.782,2.412,-0.373,3.762,positive,contains 0,2.216,positive,positive,yes,no
+root_minus_ex,pooled3,3,1.000,-0.022,1.000,0.659,-0.225,1.532,-0.087,1.405,-0.022,1.000,-0.806,2.124,contains 0,contains 0,1.195,positive,positive,no,no
+stack,plus,3,0.522,-0.522,-0.196,-0.065,-1.731,1.524,-1.369,1.195,-0.522,0.522,-1.731,1.524,contains 0,contains 0,0.456,contains 0,contains 0,yes,yes
+stack,flash,3,2.347,1.760,2.738,2.282,-0.132,4.494,0.782,3.803,1.760,2.738,-0.132,4.494,contains 0,contains 0,1.304,contains 0,contains 0,yes,yes
+stack,27b,3,2.803,1.304,2.216,2.108,0.802,3.338,0.826,3.433,1.304,2.803,0.231,3.985,positive,positive,2.347,positive,positive,yes,yes
+stack,pooled3,3,1.890,0.847,1.586,1.441,0.059,2.722,0.536,2.354,0.847,1.890,0.059,2.774,positive,positive,1.369,positive,positive,yes,yes

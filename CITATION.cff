@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use this software or its archived outputs, please cite the article below and the software archive."
+title: "Execution-Gated Refinement for Text-to-SQL with Frozen Language Models: code, frozen configurations, analysis plan and replay archive"
+type: software
+abstract: >-
+  Code, frozen configurations, pre-specified statistical analysis plan with dated amendments, lock file, result files and replay
+  scripts for a seven-module text-to-SQL pipeline around frozen, API-hosted language models, evaluated on the BIRD benchmark.
+version: "1.0.0"
+date-released: "<YYYY-MM-DD>"            # PLACEHOLDER: date of the GitHub release v1.0.0
+doi: "<ZENODO_CODE_DOI>"                 # PLACEHOLDER: Zenodo version DOI of the GitHub release
+repository-code: "<GITHUB_URL>"          # PLACEHOLDER: URL of the GitHub repository
+url: "<GITHUB_URL>"                      # PLACEHOLDER
+license: "MIT"
+keywords:
+  - text-to-SQL
+  - large language models
+  - execution feedback
+  - selective prediction
+  - cost-effectiveness
+authors:
+  - family-names: "Li"
+    given-names: "Shikai"
+  - family-names: "Song"
+    given-names: "Xue"
+  - family-names: "Wang"
+    given-names: "Dongwei"
+preferred-citation:
+  type: article
+  title: "What Does Execution-Gated Refinement Buy in Text-to-SQL? Cost, Accuracy Across Backbones, and Negative Results"
+  authors:
+    - family-names: "Li"
+      given-names: "Shikai"
+    - family-names: "Song"
+      given-names: "Xue"
+    - family-names: "Wang"
+      given-names: "Dongwei"
+  journal: "Applied Sciences"
+  publisher:
+    name: "MDPI"
+  year: 2026
+  volume: "<VOLUME>"                     # PLACEHOLDER: assigned by the journal
+  issue: "<ISSUE>"                       # PLACEHOLDER
+  doi: "<PAPER_DOI>"                     # PLACEHOLDER: 10.3390/app... assigned by the journal

@@ -1,0 +1,10 @@
+backbone,arm,n,full_schema,routed,max_ctx_tokens
+plus,rootonly,1534,1534,0,4732
+plus,gated,1534,1534,0,4732
+plus,fixed,1534,1534,0,4732
+flash,rootonly,1534,1534,0,4732
+flash,gated,1534,1534,0,4732
+flash,fixed,1534,1534,0,4732
+27b,rootonly,1534,1534,0,4732
+27b,gated,1534,1534,0,4732
+27b,fixed,1534,1534,0,4732

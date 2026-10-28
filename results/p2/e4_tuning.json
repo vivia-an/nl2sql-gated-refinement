@@ -1,0 +1,255 @@
+{
+ "rows": [
+  {
+   "trial": "m01_lam0.25",
+   "system": "e4_memrl",
+   "params": {
+    "lambda_m": 0.25
+   },
+   "v1": {
+    "ex": 0.6992,
+    "probe_final": 0.6562,
+    "stream": 0.725,
+    "calls_per_q": 3.308,
+    "evicted": 0,
+    "evicted_polluted": 0
+   },
+   "ex_mean": 0.6992,
+   "calls_mean": 3.308,
+   "n_rep": 1
+  },
+  {
+   "trial": "m02_lam0.5",
+   "system": "e4_memrl",
+   "params": {
+    "lambda_m": 0.5
+   },
+   "v1": {
+    "ex": 0.7031,
+    "probe_final": 0.6562,
+    "stream": 0.7312,
+    "calls_per_q": 3.33,
+    "evicted": 0,
+    "evicted_polluted": 0
+   },
+   "v2": {
+    "ex": 0.707,
+    "probe_final": 0.625,
+    "stream": 0.7562,
+    "calls_per_q": 3.35,
+    "evicted": 0,
+    "evicted_polluted": 0
+   },
+   "ex_mean": 0.705,
+   "calls_mean": 3.34,
+   "n_rep": 2
+  },
+  {
+   "trial": "m03_lam1",
+   "system": "e4_memrl",
+   "params": {
+    "lambda_m": 1.0
+   },
+   "v1": {
+    "ex": 0.707,
+    "probe_final": 0.6458,
+    "stream": 0.7438,
+    "calls_per_q": 3.339,
+    "evicted": 0,
+    "evicted_polluted": 0
+   },
+   "v2": {
+    "ex": 0.6953,
+    "probe_final": 0.6354,
+    "stream": 0.7312,
+    "calls_per_q": 3.33,
+    "evicted": 0,
+    "evicted_polluted": 0
+   },
+   "ex_mean": 0.7011,
+   "calls_mean": 3.335,
+   "n_rep": 2
+  },
+  {
+   "trial": "t01_eta0.3_rho0.2",
+   "system": "e4_ws_full",
+   "params": {
+    "eta": 0.3,
+    "rho": 0.2
+   },
+   "v1": {
+    "ex": 0.6914,
+    "probe_final": 0.6458,
+    "stream": 0.7188,
+    "calls_per_q": 3.337,
+    "evicted": 73,
+    "evicted_polluted": 5
+   },
+   "v2": {
+    "ex": 0.6992,
+    "probe_final": 0.6458,
+    "stream": 0.7312,
+    "calls_per_q": 3.312,
+    "evicted": 70,
+    "evicted_polluted": 5
+   },
+   "ex_mean": 0.6953,
+   "calls_mean": 3.325,
+   "n_rep": 2
+  },
+  {
+   "trial": "t02_eta0.3_rho0",
+   "system": "e4_ws_full",
+   "params": {
+    "eta": 0.3,
+    "rho": 0.0
+   },
+   "v1": {
+    "ex": 0.707,
+    "probe_final": 0.6667,
+    "stream": 0.7312,
+    "calls_per_q": 3.299,
+    "evicted": 76,
+    "evicted_polluted": 4
+   },
+   "v2": {
+    "ex": 0.6953,
+    "probe_final": 0.6458,
+    "stream": 0.725,
+    "calls_per_q": 3.317,
+    "evicted": 79,
+    "evicted_polluted": 4
+   },
+   "ex_mean": 0.7011,
+   "calls_mean": 3.308,
+   "n_rep": 2
+  },
+  {
+   "trial": "t03_eta0.3_rho0.1",
+   "system": "e4_ws_full",
+   "params": {
+    "eta": 0.3,
+    "rho": 0.1
+   },
+   "v1": {
+    "ex": 0.6875,
+    "probe_final": 0.6458,
+    "stream": 0.7125,
+    "calls_per_q": 3.324,
+    "evicted": 78,
+    "evicted_polluted": 5
+   },
+   "ex_mean": 0.6875,
+   "calls_mean": 3.324,
+   "n_rep": 1
+  },
+  {
+   "trial": "t04_eta0.3_rho0.4",
+   "system": "e4_ws_full",
+   "params": {
+    "eta": 0.3,
+    "rho": 0.4
+   },
+   "v1": {
+    "ex": 0.6914,
+    "probe_final": 0.6458,
+    "stream": 0.7188,
+    "calls_per_q": 3.31,
+    "evicted": 67,
+    "evicted_polluted": 5
+   },
+   "ex_mean": 0.6914,
+   "calls_mean": 3.31,
+   "n_rep": 1
+  },
+  {
+   "trial": "t05_eta0.2_rho0.2",
+   "system": "e4_ws_full",
+   "params": {
+    "eta": 0.2,
+    "rho": 0.2
+   },
+   "v1": {
+    "ex": 0.6953,
+    "probe_final": 0.6458,
+    "stream": 0.725,
+    "calls_per_q": 3.33,
+    "evicted": 67,
+    "evicted_polluted": 4
+   },
+   "ex_mean": 0.6953,
+   "calls_mean": 3.33,
+   "n_rep": 1
+  },
+  {
+   "trial": "t06_eta0.5_rho0.2",
+   "system": "e4_ws_full",
+   "params": {
+    "eta": 0.5,
+    "rho": 0.2
+   },
+   "v1": {
+    "ex": 0.707,
+    "probe_final": 0.6667,
+    "stream": 0.7312,
+    "calls_per_q": 3.333,
+    "evicted": 76,
+    "evicted_polluted": 8
+   },
+   "ex_mean": 0.707,
+   "calls_mean": 3.333,
+   "n_rep": 1
+  },
+  {
+   "trial": "t07_eta0.5_rho0",
+   "system": "e4_ws_full",
+   "params": {
+    "eta": 0.5,
+    "rho": 0.0
+   },
+   "v1": {
+    "ex": 0.7148,
+    "probe_final": 0.6667,
+    "stream": 0.7438,
+    "calls_per_q": 3.301,
+    "evicted": 83,
+    "evicted_polluted": 9
+   },
+   "v2": {
+    "ex": 0.6992,
+    "probe_final": 0.6458,
+    "stream": 0.7312,
+    "calls_per_q": 3.304,
+    "evicted": 90,
+    "evicted_polluted": 10
+   },
+   "ex_mean": 0.707,
+   "calls_mean": 3.303,
+   "n_rep": 2
+  },
+  {
+   "trial": "t08_eta0.2_rho0",
+   "system": "e4_ws_full",
+   "params": {
+    "eta": 0.2,
+    "rho": 0.0
+   },
+   "v1": {
+    "ex": 0.707,
+    "probe_final": 0.6667,
+    "stream": 0.7312,
+    "calls_per_q": 3.295,
+    "evicted": 74,
+    "evicted_polluted": 3
+   },
+   "ex_mean": 0.707,
+   "calls_mean": 3.295,
+   "n_rep": 1
+  }
+ ],
+ "choice": {
+  "e4_ws_full": "t07_eta0.5_rho0",
+  "e4_ws_full_rho_positive": "t06_eta0.5_rho0.2",
+  "e4_memrl": "m03_lam1"
+ }
+}

@@ -1,0 +1,31 @@
+item_id,primary_label,secondary_label,rationale,notes
+P001,L4,L8,,Gold counts rows after joining legalities (COUNT(T1.id) over the join) while pred counts cards per artist before the join; pred also omits the artist column and returns 0 rows
+P002,L4,L8,,Gold SUM/COUNT is integer division (69) while pred AVG gives 70.43; evidence defines DIVIDE(SUM COUNT)
+P003,L6,,Evidence says involved atom 12 refers to atom_id = 'TR009_12' or atom_id2 = 'TR009_12' but gold filters atom_id = molecule_id||'_1' AND atom_id2 = molecule_id||'_2' (atoms 1 and 2),
+P004,L4,,,Gold counts joined rows without DISTINCT (7) while pred uses COUNT(DISTINCT ID) (1); Patient join is not needed
+P005,L1,L5,,Pred uses cards and foreign_data instead of sets and set_translations (question says the set of cards); denominator also restricted by WHERE
+P006,L6,L3,Evidence says ratio = count(locally funded) / count(all funding type schools in Santa Clara) * 100 but gold divides by the count of non-locally-funded schools (question text says compared to all other types); pred follows the evidence but lacks Charter = 1,
+P007,L7,L4,Least common element of carcinogenic molecules is not defined by evidence: gold counts DISTINCT molecules per element while pred counts atoms per element; both readings are defensible,
+P008,L8,,,Pred concatenates forename and surname into one full_name column; same rows and values otherwise
+P009,L5,,D1: evidence defines average number of posts voted as AVG(PostId) FROM votes of the oldest users; D2: pred averages the per-user count of votes (1.0 vs 170.0),
+P010,L6,L1,Evidence says finisher refers to time is not null but gold uses COUNT(time IS NOT NULL) which counts every row; pred filters properly,Pred returns round instead of raceId
+P011,L7,L1,Evidence says introduction of races refers to url without naming the table: races.url (pred one per race) and circuits.url (gold DISTINCT) are both accepted readings,
+P012,L6,,Evidence formula is DIVIDE(SUM(PT >= 14 AND SEX = 'F') SUM(PT >= 14)) * 100 so the denominator is abnormal-PT rows but gold divides by COUNT(*) of all older patients; pred follows the evidence,
+P013,L8,,,Output labels differ: Normal/Abnormal in gold vs Yes/No in pred; the comparison T-CHO < 250 is the same
+P014,L5,,D1: annual average = races in the range divided by 10 years (first 10 years) as the question and gold define; D2: pred averages the per-year counts over the 11 distinct years present (17.5 vs 19.3),
+P015,L6,L1,"Evidence says lap time < 120 seconds but gold parses the time string with SUBSTR(time,4,2) on formats like 1:49.088 which misreads the seconds; pred uses the milliseconds column < 120000",Pred uses lapTimes.milliseconds instead of time
+P016,L6,L2,Question asks home team goals scored by players of age <= 30 but gold joins only away_player_1 to sum home_team_goal; pred uses the 11 home player slots,
+P017,L6,L2,Evidence says female clients with accounts in Prague branch but gold joins district to client directly with no account or disp so it uses client district; pred goes client to disp to account to district,
+P018,L1,L5,,Pred uses cards and foreign_data instead of sets and set_translations (question says the set of cards)
+P019,L6,L3,Question asks the fastest lap speed but gold orders the TEXT column fastestLapSpeed as strings so it returns Liuzzi; pred orders numerically via CAST and returns Barrichello,
+P020,L1,L2,,Pred outputs atom element via two extra atom joins instead of atom_id and atom_id2 of connected
+P021,L2,,,Gold reaches atoms through molecule to bond; pred reaches atoms through connected to bond; same percentage formula and filter
+P022,L6,L4,Question asks for the count and the legality status of these cards but gold returns only one total count with no status column; pred groups by status,
+P023,L3,,,Gold has dob IS NOT NULL; pred lacks it so a NULL dob sorts first
+P024,L6,L3,Evidence says normal anti-DNA is DNA < 8 but Laboratory.DNA is TEXT so gold compares as strings (e.g. '18' < '8' is true); pred casts to REAL and gets the numeric reading,
+P025,L1,L2,,Pred uses event.type instead of budget.category and no join to budget
+P026,L3,,,"Pred uses Location = 'New York, NY' instead of the literal 'New York'"
+P027,L2,,,Gold has an extra join to Examination restricting patients; pred omits it (136 vs 9)
+P028,L5,,D1: annual average = races divided by 10 years as the question and gold define; D2: pred divides by COUNT(DISTINCT year) = 11 (17.5 vs 19.3),
+P029,L3,,,Pred lacks potential IS NOT NULL so the NULL potential row is first
+P030,L1,L8,,Pred returns first_name and last_name instead of link_to_member; date filter is equivalent for plain YYYY-MM-DD values

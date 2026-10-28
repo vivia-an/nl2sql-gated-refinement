@@ -1,0 +1,413 @@
+{
+ "_meta": {
+  "B": 10000,
+  "interval": "95% database-clustered paired percentile bootstrap, one resample shared by original and corrected gold",
+  "p1_margin_pp": -1.5,
+  "primary": "G1 / S_same",
+  "reading": "robustness-posthoc; rule of SAP 20.7: robust = sign unchanged and intervals overlap; stable = shift interval contains 0 or |shift| < 1 pp",
+  "scope": "robustness-posthoc",
+  "script": "code/tools/make_xfigs.py",
+  "seed": 20261101,
+  "source": "results/robust/rescore.json",
+  "source_sha256": "344f09b4b576c481f8473640a7b44bc4c55958aa874c9bab1daa2d5e2fb0f473",
+  "unit": "percentage points of EX"
+ },
+ "sets": {
+  "S_all": {
+   "H1": [
+    {
+     "corr": -0.6263048016701461,
+     "corr_ci": [
+      -1.663211270420143,
+      0.4950802152175511
+     ],
+     "desc": "gated - fixed, qwen3.7-plus",
+     "key": "H1.plus",
+     "n": 479,
+     "n_dbs": 11,
+     "orig": -0.6263048016701461,
+     "orig_ci": [
+      -1.5717865816871122,
+      0.437636761487965
+     ],
+     "robust": true,
+     "row": "plus",
+     "shift": 0.0,
+     "shift_ci": [
+      -0.6198667932857657,
+      0.6651884700665188
+     ],
+     "stable": true
+    },
+    {
+     "corr": -2.7139874739039667,
+     "corr_ci": [
+      -5.400009310986965,
+      -0.19119546655379283
+     ],
+     "desc": "gated - fixed, qwen3.5-27b",
+     "key": "H1.q27b",
+     "n": 479,
+     "n_dbs": 11,
+     "orig": -0.41753653444676403,
+     "orig_ci": [
+      -1.9189765458422177,
+      1.079913606911447
+     ],
+     "robust": false,
+     "row": "q27b",
+     "shift": -2.2964509394572024,
+     "shift_ci": [
+      -3.9911308203991127,
+      -0.6521385456946153
+     ],
+     "stable": false
+    },
+    {
+     "corr": -3.7578288100208765,
+     "corr_ci": [
+      -5.578534565317632,
+      -1.9999001996008
+     ],
+     "desc": "gated - fixed, qwen3.7-flash",
+     "key": "H1.flash",
+     "n": 479,
+     "n_dbs": 11,
+     "orig": -0.20876826722338201,
+     "orig_ci": [
+      -1.5453393307155834,
+      1.2219959266802443
+     ],
+     "robust": false,
+     "row": "flash",
+     "shift": -3.549060542797495,
+     "shift_ci": [
+      -5.594405594405594,
+      -1.8180993235439709
+     ],
+     "stable": false
+    },
+    {
+     "corr": -2.366040361864996,
+     "corr_ci": [
+      -3.74015748031496,
+      -1.0014306151645207
+     ],
+     "desc": "P1' pooled over three backbones",
+     "key": "H1.pooled3",
+     "n": 479,
+     "n_dbs": 11,
+     "orig": -0.41753653444676403,
+     "orig_ci": [
+      -1.200595123232453,
+      0.47527329642393557
+     ],
+     "robust": false,
+     "row": "pooled",
+     "shift": -1.9485038274182322,
+     "shift_ci": [
+      -2.943058221369162,
+      -1.0140963386399506
+     ],
+     "stable": false
+    }
+   ],
+   "H2": [
+    {
+     "corr": 1.4613778705636742,
+     "corr_ci": [
+      -2.178307830783078,
+      5.8983726482890475
+     ],
+     "desc": "gated - zs, qwen3.7-plus (strong-backbone control)",
+     "key": "H2.plus_control",
+     "n": 479,
+     "n_dbs": 11,
+     "orig": -1.6701461377870561,
+     "orig_ci": [
+      -4.703662589824096,
+      1.89877176102709
+     ],
+     "robust": true,
+     "row": "plus",
+     "shift": 3.1315240083507305,
+     "shift_ci": [
+      0.7561436672967864,
+      6.460087543437581
+     ],
+     "stable": false
+    },
+    {
+     "corr": 3.7578288100208765,
+     "corr_ci": [
+      0.6493155872205548,
+      6.4078292257903895
+     ],
+     "desc": "gated - zs, qwen3.5-27b",
+     "key": "H2.q27b",
+     "n": 479,
+     "n_dbs": 11,
+     "orig": 3.966597077244259,
+     "orig_ci": [
+      0.6548800544433733,
+      7.129094412331407
+     ],
+     "robust": true,
+     "row": "q27b",
+     "shift": -0.20876826722338201,
+     "shift_ci": [
+      -2.42914979757085,
+      2.242221103688111
+     ],
+     "stable": true
+    },
+    {
+     "corr": -0.41753653444676403,
+     "corr_ci": [
+      -2.644316446028513,
+      1.639344262295082
+     ],
+     "desc": "gated - zs, qwen3.7-flash",
+     "key": "H2.flash",
+     "n": 479,
+     "n_dbs": 11,
+     "orig": 0.6263048016701461,
+     "orig_ci": [
+      -3.4486490520973274,
+      4.337363151235077
+     ],
+     "robust": false,
+     "row": "flash",
+     "shift": -1.0438413361169103,
+     "shift_ci": [
+      -4.487419700214133,
+      2.41229540002822
+     ],
+     "stable": false
+    },
+    {
+     "corr": 1.6701461377870561,
+     "corr_ci": [
+      -0.32332845575585306,
+      3.459119496855346
+     ],
+     "desc": "W1 pooled over the two weak backbones",
+     "key": "H2.pooled_weak",
+     "n": 479,
+     "n_dbs": 11,
+     "orig": 2.2964509394572024,
+     "orig_ci": [
+      0.12528218810052427,
+      4.184697527079499
+     ],
+     "robust": true,
+     "row": "pooled",
+     "shift": -0.6263048016701461,
+     "shift_ci": [
+      -2.5813371431026706,
+      1.4257369231600516
+     ],
+     "stable": true
+    }
+   ]
+  },
+  "S_same": {
+   "H1": [
+    {
+     "corr": 0.0,
+     "corr_ci": [
+      -0.7614213197969544,
+      0.8928571428571428
+     ],
+     "desc": "gated - fixed, qwen3.7-plus",
+     "key": "H1.plus",
+     "n": 360,
+     "n_dbs": 11,
+     "orig": -0.2777777777777778,
+     "orig_ci": [
+      -1.2945193420192165,
+      0.625
+     ],
+     "robust": true,
+     "row": "plus",
+     "shift": 0.2777777777777778,
+     "shift_ci": [
+      0.0,
+      1.0135135135135136
+     ],
+     "stable": true
+    },
+    {
+     "corr": -2.2222222222222223,
+     "corr_ci": [
+      -4.361396851282694,
+      -0.2688172043010753
+     ],
+     "desc": "gated - fixed, qwen3.5-27b",
+     "key": "H1.q27b",
+     "n": 360,
+     "n_dbs": 11,
+     "orig": 0.2777777777777778,
+     "orig_ci": [
+      -1.3201320132013201,
+      1.9444444444444444
+     ],
+     "robust": false,
+     "row": "q27b",
+     "shift": -2.5,
+     "shift_ci": [
+      -4.891304347826087,
+      -0.4986912371676277
+     ],
+     "stable": false
+    },
+    {
+     "corr": -3.6111111111111107,
+     "corr_ci": [
+      -5.382535775653316,
+      -1.7282886334610488
+     ],
+     "desc": "gated - fixed, qwen3.7-flash",
+     "key": "H1.flash",
+     "n": 360,
+     "n_dbs": 11,
+     "orig": -0.5555555555555556,
+     "orig_ci": [
+      -2.3255813953488373,
+      1.3662137884572185
+     ],
+     "robust": false,
+     "row": "flash",
+     "shift": -3.0555555555555554,
+     "shift_ci": [
+      -5.1020408163265305,
+      -1.358695652173913
+     ],
+     "stable": false
+    },
+    {
+     "corr": -1.9444444444444444,
+     "corr_ci": [
+      -3.218423458725182,
+      -0.7894736842105263
+     ],
+     "desc": "P1' pooled over three backbones",
+     "key": "H1.pooled3",
+     "n": 360,
+     "n_dbs": 11,
+     "orig": -0.1851851851851852,
+     "orig_ci": [
+      -1.0156971375807942,
+      0.720762558223858
+     ],
+     "robust": false,
+     "row": "pooled",
+     "shift": -1.759259259259259,
+     "shift_ci": [
+      -2.7950853494331747,
+      -0.7334739425203975
+     ],
+     "stable": false
+    }
+   ],
+   "H2": [
+    {
+     "corr": 1.3888888888888888,
+     "corr_ci": [
+      -1.728395061728395,
+      5.172413793103448
+     ],
+     "desc": "gated - zs, qwen3.7-plus (strong-backbone control)",
+     "key": "H2.plus_control",
+     "n": 360,
+     "n_dbs": 11,
+     "orig": -0.8333333333333334,
+     "orig_ci": [
+      -3.389830508474576,
+      2.2222222222222223
+     ],
+     "robust": true,
+     "row": "plus",
+     "shift": 2.2222222222222223,
+     "shift_ci": [
+      0.2617801047120419,
+      4.620557431465689
+     ],
+     "stable": false
+    },
+    {
+     "corr": 2.7777777777777777,
+     "corr_ci": [
+      -0.7576237054085155,
+      6.211267852756429
+     ],
+     "desc": "gated - zs, qwen3.5-27b",
+     "key": "H2.q27b",
+     "n": 360,
+     "n_dbs": 11,
+     "orig": 2.7777777777777777,
+     "orig_ci": [
+      -0.9316951164777252,
+      6.116363976783371
+     ],
+     "robust": true,
+     "row": "q27b",
+     "shift": 0.0,
+     "shift_ci": [
+      -2.0408163265306123,
+      2.3529411764705883
+     ],
+     "stable": true
+    },
+    {
+     "corr": -0.2777777777777778,
+     "corr_ci": [
+      -2.6471075185040904,
+      1.8869199388067295
+     ],
+     "desc": "gated - zs, qwen3.7-flash",
+     "key": "H2.flash",
+     "n": 360,
+     "n_dbs": 11,
+     "orig": 1.3888888888888888,
+     "orig_ci": [
+      -2.735562310030395,
+      5.822784810126582
+     ],
+     "robust": false,
+     "row": "flash",
+     "shift": -1.6666666666666667,
+     "shift_ci": [
+      -6.111111111111111,
+      2.7694444444444413
+     ],
+     "stable": false
+    },
+    {
+     "corr": 1.25,
+     "corr_ci": [
+      -1.2281061259706645,
+      3.5623409669211195
+     ],
+     "desc": "W1 pooled over the two weak backbones",
+     "key": "H2.pooled_weak",
+     "n": 360,
+     "n_dbs": 11,
+     "orig": 2.083333333333333,
+     "orig_ci": [
+      -0.31849677458741177,
+      4.166666666666666
+     ],
+     "robust": true,
+     "row": "pooled",
+     "shift": -0.8333333333333334,
+     "shift_ci": [
+      -3.1095710891907244,
+      1.6714259037363237
+     ],
+     "stable": true
+    }
+   ]
+  }
+ }
+}

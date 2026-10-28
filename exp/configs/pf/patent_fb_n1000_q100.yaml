@@ -1,0 +1,15 @@
+# FROZEN by code/tools/pf_freeze.py (SAP 22.12). patent_fb, arm n=1000 q=1.0. Do not edit: a change is a new lock entry (SPEC 1.3 step 6).
+# Fixed patent loop P0 + identifier quoting + frozen M6 store = exp/configs/frozen/full_fixed.yaml; only the Critic input differs (pf).
+temperature: 0.0
+ddl: {quote_keywords: true}
+m6: {policy: ws_full, path: exp/frozen/corpus_burnin_39e2477c.sqlite, update: false}
+pf:
+  n: 1000
+  q: 1.0
+  k: 4
+  seed: 20261128
+  verdicts: exp/pf_data/burnin_verdicts.jsonl
+  verdicts_sha256: b0b749ee84055dfc7dad06a990fe90c21c9059fcb3613726d4a801f2e3a57fef
+  prompt_dir: exp/pf_prompts
+  prompt_sha256: {pf_critic.user.txt: f364ea775a1a8c38aaa092d3ef9fbc2df65bedd8c07e6b781010cc717c628cdc, pf_standard.txt: 87350a38af4553fa36b1dc186e8686b55758732ef1b83baa97587434c2157896}
+  forbid_files: [results/diag/items.json, results/diag/tuning/items_tune.json, results/diag/tuning_ve/items_tune_ve.json, results/pf/tuning/items_tune_pf.json]

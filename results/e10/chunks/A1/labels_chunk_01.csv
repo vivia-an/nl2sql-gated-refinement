@@ -1,0 +1,51 @@
+item_id,primary_label,secondary_label,rationale,notes
+A223,L1,L3,"Pred takes FundingType from schools instead of frpm ""Charter Funding Type"" and filters County instead of District Name.",
+A061,L6,L4,"Gold ""ORDER BY T1.Amount DESC LIMIT 5"" ranks single transaction rows and returns Nafta four times; the question asks for the top five best selling products.",
+A128,L3,,"Pred lacks the gold predicate T3.type = 'OWNER'.",
+A042,L6,L8,"Evidence says lower = ""PLT < 100"" and higher = ""PLT > 400"" but gold uses PLT <= 100 and PLT >= 400; pred follows the evidence.","pred also adds extra output columns"
+A076,L6,L2,"Gold joins atom to bond only on molecule_id with no link to the bond's atoms so elements not in a double bond (e.g. s) are listed with duplicates; question asks for ""elements with double bond"".",
+A182,L1,,"Pred uses results.fastestLapTime while evidence says lap record refers to time (lapTimes.time).",
+A278,L6,,"Question: ""how many of the comments have 0 score"" but gold filters T2.Score (post score) not the comment score; pred uses c.Score.",
+A211,L8,L2,,"Same winner (Harvey Motulsky) but pred returns extra columns OwnerUserId and TotalViewCount; join path also differs (posts.OwnerUserId vs postHistory)"
+A175,L1,L2,,"Pred uses transactions_1k.Date instead of yearmonth.Date = '201306' as the evidence says"
+A193,L8,,,"SELECT * returns extra columns; budget_id value equal"
+A104,L5,,"D1 = age as YEAR(now) - YEAR(birthday) per evidence; D2 = julianday difference / 365.0 (fractional age); linking filters and output shape right.",
+A163,L1,L2,,"Pred searches cards.text instead of foreign_data.flavorText; no evidence given"
+A247,L8,,,"Same ClosedDate logic but pred returns 0/1 flag instead of the text label"
+A200,L8,L2,,"Same driver (Jarno Trulli = driverId 15) but pred returns names instead of driverId; extra results join and milliseconds order"
+A001,L1,,,"Pred refers to T1.""School Name"" which is not a column of schools (column is School); execution error"
+A147,L8,,,"Pred runs into execution error: ft.trans_id not in CTE; logic otherwise plausible"
+A169,L3,,"Pred uses colour 'blue' lowercase and gender 'Male' so no rows; data values are capitalised 'Blue'.",
+A207,L8,,,"Pred omits molecule_id output column; label values equal"
+A057,L1,L8,,"Pred takes laps from results.laps instead of lapTimes.lap and omits the laps column"
+A119,L4,,,"Pred sums Views into one value where gold lists views per user"
+A103,L8,,,"Pred returns raw label '+' instead of YES/NO flag"
+A098,L1,,,"Pred selects name instead of id"
+A023,L3,L1,,"Pred uses literal 'Behcet''s' (evidence: 'Behcet') and Patient.Diagnosis instead of Examination.Diagnosis"
+A053,L6,L1,"Gold orders pitStops rows by pit stop time and returns duplicate driverIds (4 37 4 ...) although the question asks for top 10 drivers by ""latest lap time"" (lapTimes).",
+A253,L2,,,"Pred adds a join client-account on district_id which multiplies rows; gold joins client-district only"
+A281,L6,L1,"Evidence ""having at least 1000 view refers to Views >= 1000"" (users.Views) but gold filters posts.ViewCount and counts DISTINCT PostHistoryTypeId per user, not ""one post history per post"".",
+A133,L6,L4,"Evidence: average age = Divide(Sum(Age) Count(UserId)) which pred implements; gold AVG(Age) ignores NULL ages and gives 34.08.",
+A177,L3,,,"Pred compares account date with '970101' format; data is ISO so no rows"
+A016,L1,L3,,"Pred uses foreign_data.text equality instead of flavorText LIKE; no evidence"
+A118,L1,,,"Pred selects name instead of id"
+A086,L3,,,"Pred literal 'Provision 2' instead of 'Lunch Provision 2'"
+A231,L4,,,"Ties at minimum Views: gold returns all and pred LIMIT 1"
+A124,L6,,"Question: ""how many of the comments have 0 score"" but gold filters T2.Score (post score); pred filters the comment score T1.Score.",
+A028,L1,L8,,"Pred uses foreign_data instead of set_translations and returns language list instead of YES/NO"
+A096,L6,L4,"Question: ""biggest number of inhabitants"" but gold orders district.A4 which is TEXT so the sort is lexicographic; pred casts A4 to integer. Inferred from the column type only.",
+A205,L6,L8,"Evidence: ""generate the highest income refers to MAX(income.amount)"" but gold orders by SUM(T2.amount) per member and source; pred uses the maximum single amount.","pred also concatenates full name into one column"
+A266,L6,,"Question: ""first time ... highest crossing score"" but gold outer query ORDER BY date DESC LIMIT 1 returns the latest date regardless of crossing max.",
+A162,L1,,,"Pred filters frpm County Name and School Name instead of satscores cname and sname"
+A087,L1,L3,,"Pred takes FundingType from schools instead of frpm Charter Funding Type and filters County"
+A233,L3,,,"Pred lacks subtypes IS NOT NULL AND supertypes IS NOT NULL"
+A239,L3,,,"Pred lacks originalType IS NOT NULL"
+A300,L8,L4,,"Gold execution timed out so no comparable gold result; pred logic (top reputation user via LIMIT 1) looks equivalent in shape except ties"
+A167,L6,L3,"Question says transaction on 1998/9/2 but gold filters T3.date='1997-08-20'; pred uses wrong date format '980902'.",
+A018,L1,,,"Pred uses results.fastestLapTime instead of lapTimes.time"
+A148,L1,,,"Pred uses nonexistent budget.event_id; error"
+A111,L1,,,"Pred selects amount instead of budget_id"
+A101,L7,L4,"Question gives no evidence: highest average Reading score per school row (gold) versus average of school averages per district (pred) are both defensible.",
+A263,L1,L4,,"Pred uses order table instead of trans and counts DISTINCT clients"
+A190,L8,,,"Time value equal but gold also returns date column"
+A218,L4,,,"Four leagues tie on match count; gold returns all and pred LIMIT 1"

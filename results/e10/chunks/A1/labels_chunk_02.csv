@@ -1,0 +1,51 @@
+item_id,primary_label,secondary_label,rationale,notes
+A065,L4,,,"Gold returns all ties at MIN; prediction uses ORDER BY ... LIMIT 1 (tie handling)"
+A245,L6,L4,"Question asks ""How many patients"" but gold is COUNT(T1.ID) over the Patient-Laboratory join (2044 lab rows); prediction counts distinct patients (54).",
+A003,L1,L5,"Prediction uses T2.""Charter School Number"" on schools but that column is in frpm (gold uses CharterNum); error is a wrong column.","Also no RANK and AVG grouping instead of per-school rank"
+A064,L6,L3,"Evidence says ""COUNT(ID) > 2"" but gold uses HAVING COUNT(ID) >= 2; prediction follows the evidence (> 2) and loses one patient.","Question says two or more which matches gold"
+A294,L6,L5,"Evidence formula DIVIDE(SUM(position = 'Member' and major_name = 'Business') COUNT(member_id)) divides by all members but gold puts position = 'Member' in WHERE shrinking the denominator; prediction follows the evidence.",
+A201,L8,,,"Extra output column expense_description; values of approved equal"
+A072,L3,,,"Missing translation IS NOT NULL filter gives 2 NULL rows; extra join to sets harmless"
+A075,L3,,,"Missing Website IS NOT NULL filter gives extra NULL row; School vs School Name same values"
+A007,L6,L3,"Evidence says date = '2012-02-22' while gold filters '2011-02-22' (matches question text 2011/2/22); prediction follows the evidence but also uses a '00:00:00' literal and returns no rows.","Question and evidence disagree on year"
+A232,L1,L4,,"Prediction uses driverStandings.position instead of results.rank; also DISTINCT"
+A262,L7,L1,"Question says posts (posts table) but evidence names CreationDate which exists only in postHistory (gold) while posts has the typo column CreaionDate (prediction); both tables defensible.",
+A171,L3,L1,,"Date LIKE '97%' does not match ISO dates so empty; also selects A2 not district_id and single-transaction amount instead of SUM per district"
+A090,L6,L4,"Question asks ""How many patients"" but gold is COUNT(T1.ID) over the join (641 lab rows); prediction counts distinct patients (88).",
+A236,L3,L4,,"Extra l.status = 'Legal' filter and LIMIT 1"
+A048,L1,,,"Gas use is yearmonth.Consumption in gold; prediction sums transactions_1k.Amount"
+A173,L6,,"Gold joins set_translations.id to sets.id (WHERE id IN (SELECT id FROM sets ...)) which is not a key relation; the result Chinese Simplified is accidental while setCode-code join returns no rows.",
+A132,L1,,,"Evidence says MIN(time) but prediction orders by milliseconds; extra joins harmless"
+A251,L5,L4,"D1: decrease rate = (Nov sum - Dec sum) / Dec sum (a rate with SUM per evidence); D2: prediction returns raw difference of MAX values with no division (12 vs 0.060).",
+A156,L1,L2,,"Invented column e.link_to_event on expense (execution error); gold needs member and attendance joins"
+A015,L6,L3,"Evidence says in 2014 refers to date between '2014-01-01' and '2014-01-31' but gold uses SUBSTR(date 1 4) = '2014' whole year; prediction follows the evidence literally and returns no rows.",
+A066,L6,L5,"Evidence says ""atom_id NOT in connected table"" (atom level) but gold excludes whole elements via element NOT IN (elements of connected atoms); prediction implements atom-level reading.",
+A230,L3,,,"Missing promoTypes IS NOT NULL gives NULL rows"
+A033,L1,L3,,"GSserved used instead of GSoffered; NSLP condition counted not filtered; extra columns"
+A079,L2,,,"Extra join to molecule drops molecules present in bond/atom but not in molecule (TR447 missing)"
+A288,L6,L8,"Evidence defines rate = divide(COUNT(time not null) COUNT(raceID)) with no x100 but gold multiplies by 100; prediction follows the evidence (0.227 vs 22.7).",
+A249,L4,L3,,"COUNT(*) ranks NULL Symptoms group first; gold COUNT(Symptoms) ignores NULLs"
+A084,L4,,,"DISTINCT removes duplicate display names"
+A141,L3,L4,,"Case 'restricted' vs data value 'Restricted' gives 0; also COUNT(*) vs COUNT(DISTINCT id)"
+A178,L3,,,"q2 = '0:01:40' equality vs LIKE '1:40%' (format)"
+A261,L1,,,"Prediction returns customers.Currency; gold returns gasstations.Country"
+A121,L7,L5,"Evidence Divide(Count(UserId where Teacher) Count(UserId)) does not say whether the denominator is users (gold) or badge rows (prediction).",
+A035,L4,L8,,"No DISTINCT and extra Birthday output column"
+A012,L1,L2,,"Prediction filters schools.County and returns schools.School instead of satscores.cname/sname; empty result"
+A058,L8,,,"Missing id output column; finishing and curve values equal"
+A275,L6,L1,"Question says ""Name all cards"" but gold selects id; prediction selects name.",
+A105,L7,L5,"Evidence says average refers to AVG(aCL IgM) without a population: gold averages within Thrombosis = 2 and ANA Pattern = 'S' while prediction averages over all Examination rows.",
+A152,L1,L5,,"Invented column i.link_to_event on income (execution error); evidence says income > 40 (amount) but prediction counts incomes"
+A122,L1,,,"Prediction returns frpm.School Code instead of CDSCode"
+A116,L1,L2,,"Diagnosis taken from Examination instead of Patient; extra Examination join"
+A221,L7,L2,"Elements with double bond in molecule TR024 can mean elements of the atoms in the double bond (prediction via connected) or all elements of the molecule having a double bond (gold joins atom-bond on molecule_id).",
+A032,L8,,,"Missing name output column"
+A158,L6,L8,"Question asks percentage of carcinogenic molecules without fluorine but gold counts molecules with any atom <> 'f' (degenerate 100.0).","Prediction has two SELECT statements and comment text so syntax error"
+A260,L3,,,"Date compared as '961231' instead of year from ISO date"
+A199,L1,L3,,"Orders by convertedManaCost instead of manaCost; extra status filter and column"
+A062,L4,,,"GROUP BY event_name merges events and counts link_to_member; filter before grouping"
+A022,L7,L1,"Evidence set number 5 refers to id = 5 does not say sets.id (prediction) or set_translations.id (gold).",
+A184,L4,L8,,"HAVING inside GROUP BY member and event is always false so empty; outputs names not member_id"
+A188,L8,,,"Missing type output column"
+A006,L3,,,"CharterNum '40' vs stored '0040'"
+A040,L8,,,"SELECT T3.* extra columns instead of trans_id"

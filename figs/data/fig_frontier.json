@@ -1,0 +1,333 @@
+{
+ "_meta": {
+  "B": 10000,
+  "front": "point-estimate Pareto over the 21 configurations; panel a front = cost with the discount (RV2 definition; recomputed here, equal to pareto.csv); panel b front = same rule on the cost without the discount (not in RV2; computed here)",
+  "front_without_discount": [
+   "27b gated",
+   "27b rootonly",
+   "flash fixed",
+   "flash gated",
+   "flash rootonly",
+   "flash zs",
+   "plus gated",
+   "plus macsql",
+   "plus rootonly",
+   "plus zs"
+  ],
+  "front_without_discount_same_set": false,
+  "interval": "95% database-clustered percentile bootstrap (11 clusters)",
+  "layout": "round 4: (a) with the cache discount and (b) full price show the 12 study configurations (3 backbones x single call, root-only, gated, fixed); ring = not dominated among all 21 on that price basis; (c) Plus configurations and comparators as a dot plot, cost printed, bold = not dominated; root-only and gated markers are drawn 4 pt apart horizontally (display only)",
+  "n_clusters_dev": 11,
+  "n_dev": 1534,
+  "price_date": "2026-10-26",
+  "sap": "docs/SAP.md section 23 (Amendment 10)",
+  "scope": "posthoc-secondary",
+  "script": "code/tools/make_xfigs.py",
+  "seed": 20261101,
+  "sources": {
+   "results/posthoc2/cost.csv": "e15a4a0c75f4ed97ef9ce8a441d433dea3e3ab13327259fc931bec7b4c253ef6",
+   "results/posthoc2/pareto.csv": "48b32a42c7d174afd767100b35e9e88de8453213958a5113f901b6329a220887",
+   "results/posthoc2/rv2_summary.json": "68797ddd3938896cb5b49c01d698e00c5f195bfa7e1b271bf7fdf67c5cfeaf38"
+  },
+  "unit_x": "CNY per 1000 questions, list price (chat models only; embedding and rerank not priced)",
+  "unit_y": "EX, % of 1534 BIRD dev questions",
+  "x_discount": "panel a: cost with the cache discount (cny_q); panel b: every prompt token at the full input price (cny_q_nodisc); 27b records no cached tokens (its points coincide in the two panels); flash records cached tokens only in the single call and the fixed loop (small shift except the single call)"
+ },
+ "front": [
+  "flash gated",
+  "flash rootonly",
+  "flash zs",
+  "plus acsql",
+  "plus gated",
+  "plus macsql",
+  "plus rootonly",
+  "plus zs"
+ ],
+ "front_nodisc": [
+  "27b gated",
+  "27b rootonly",
+  "flash fixed",
+  "flash gated",
+  "flash rootonly",
+  "flash zs",
+  "plus gated",
+  "plus macsql",
+  "plus rootonly",
+  "plus zs"
+ ],
+ "points": [
+  {
+   "backbone": "plus",
+   "cfg": "zs",
+   "cny_1000": 2.2645102998696216,
+   "cny_1000_nodisc": 5.9852216427640155,
+   "ex": 67.14471968709258,
+   "ex_ci": [
+    60.79517602495543,
+    74.27676670133214
+   ],
+   "n": 1534,
+   "nondominated_rv2": true
+  },
+  {
+   "backbone": "plus",
+   "cfg": "rootonly",
+   "cny_1000": 6.887465710560616,
+   "cny_1000_nodisc": 10.641286831812259,
+   "ex": 67.60104302477184,
+   "ex_ci": [
+    62.05507301734923,
+    74.21044166870765
+   ],
+   "n": 1534,
+   "nondominated_rv2": true
+  },
+  {
+   "backbone": "plus",
+   "cfg": "gated",
+   "cny_1000": 6.928228422425021,
+   "cny_1000_nodisc": 10.801538461538465,
+   "ex": 67.79661016949152,
+   "ex_ci": [
+    62.22073819777362,
+    74.54025744625531
+   ],
+   "n": 1534,
+   "nondominated_rv2": true
+  },
+  {
+   "backbone": "plus",
+   "cfg": "blind",
+   "cny_1000": 6.947068057366354,
+   "cny_1000_nodisc": 10.82705345501955,
+   "ex": 67.66623207301173,
+   "ex_ci": [
+    62.032067335206996,
+    74.41923191519389
+   ],
+   "n": 1534,
+   "nondominated_rv2": false
+  },
+  {
+   "backbone": "plus",
+   "cfg": "fixed",
+   "cny_1000": 11.315892307692287,
+   "cny_1000_nodisc": 20.73735984354628,
+   "ex": 67.92698826597132,
+   "ex_ci": [
+    62.34904042221423,
+    74.7630918582771
+   ],
+   "n": 1534,
+   "nondominated_rv2": false
+  },
+  {
+   "backbone": "plus",
+   "cfg": "route",
+   "cny_1000": 16.682180964797915,
+   "cny_1000_nodisc": 28.217601043024708,
+   "ex": 67.79661016949152,
+   "ex_ci": [
+    62.22073819777362,
+    74.54025744625531
+   ],
+   "n": 1534,
+   "nondominated_rv2": false
+  },
+  {
+   "backbone": "plus",
+   "cfg": "acsql",
+   "cny_1000": 4.16953402868319,
+   "cny_1000_nodisc": 12.074627118644102,
+   "ex": 67.47066492829205,
+   "ex_ci": [
+    61.29826409422433,
+    74.48938066185059
+   ],
+   "n": 1534,
+   "nondominated_rv2": true
+  },
+  {
+   "backbone": "plus",
+   "cfg": "bonvote2",
+   "cny_1000": 4.201207301173398,
+   "cny_1000_nodisc": 11.698302477183828,
+   "ex": 66.16688396349413,
+   "ex_ci": [
+    58.91530229033657,
+    73.9911600030867
+   ],
+   "n": 1534,
+   "nondominated_rv2": false
+  },
+  {
+   "backbone": "plus",
+   "cfg": "bonvote3",
+   "cny_1000": 6.303117340286831,
+   "cny_1000_nodisc": 17.56311212516287,
+   "ex": 65.97131681877445,
+   "ex_ci": [
+    59.04669019680624,
+    73.53150702389787
+   ],
+   "n": 1534,
+   "nondominated_rv2": false
+  },
+  {
+   "backbone": "plus",
+   "cfg": "macsql",
+   "cny_1000": 7.689807301173389,
+   "cny_1000_nodisc": 15.322679269882704,
+   "ex": 68.83963494132985,
+   "ex_ci": [
+    63.46151026392961,
+    75.52409604685381
+   ],
+   "n": 1534,
+   "nondominated_rv2": true
+  },
+  {
+   "backbone": "plus",
+   "cfg": "sdebug",
+   "cny_1000": 7.858828683181218,
+   "cny_1000_nodisc": 15.951499348109563,
+   "ex": 66.88396349413298,
+   "ex_ci": [
+    60.124587808319376,
+    74.31079660863665
+   ],
+   "n": 1534,
+   "nondominated_rv2": false
+  },
+  {
+   "backbone": "flash",
+   "cfg": "zs",
+   "cny_1000": 0.22462323337679282,
+   "cny_1000_nodisc": 0.6024084745762719,
+   "ex": 61.47327249022164,
+   "ex_ci": [
+    55.43064948970602,
+    68.3092253629148
+   ],
+   "n": 1534,
+   "nondominated_rv2": true
+  },
+  {
+   "backbone": "flash",
+   "cfg": "rootonly",
+   "cny_1000": 1.0618997653194275,
+   "cny_1000_nodisc": 1.067867535853978,
+   "ex": 62.77705345501956,
+   "ex_ci": [
+    56.140294790685154,
+    70.0761404299629
+   ],
+   "n": 1534,
+   "nondominated_rv2": true
+  },
+  {
+   "backbone": "flash",
+   "cfg": "gated",
+   "cny_1000": 1.1152644328552819,
+   "cny_1000_nodisc": 1.1232348109517611,
+   "ex": 63.88526727509778,
+   "ex_ci": [
+    57.161115323035986,
+    71.39099698960739
+   ],
+   "n": 1534,
+   "nondominated_rv2": true
+  },
+  {
+   "backbone": "flash",
+   "cfg": "blind",
+   "cny_1000": 1.1320141851368979,
+   "cny_1000_nodisc": 1.1420672750977843,
+   "ex": 63.88526727509778,
+   "ex_ci": [
+    57.393648706506305,
+    71.11379644017727
+   ],
+   "n": 1534,
+   "nondominated_rv2": false
+  },
+  {
+   "backbone": "flash",
+   "cfg": "fixed",
+   "cny_1000": 2.428310117340284,
+   "cny_1000_nodisc": 2.5752481095175974,
+   "ex": 64.53715775749674,
+   "ex_ci": [
+    58.45818728686094,
+    71.64576794948758
+   ],
+   "n": 1534,
+   "nondominated_rv2": false
+  },
+  {
+   "backbone": "27b",
+   "cfg": "zs",
+   "cny_1000": 1.9152535853976544,
+   "cny_1000_nodisc": 1.9152535853976547,
+   "ex": 62.90743155149935,
+   "ex_ci": [
+    56.54639481759113,
+    70.4454524963372
+   ],
+   "n": 1534,
+   "nondominated_rv2": false
+  },
+  {
+   "backbone": "27b",
+   "cfg": "rootonly",
+   "cny_1000": 3.8027151238591843,
+   "cny_1000_nodisc": 3.8027151238591848,
+   "ex": 65.2542372881356,
+   "ex_ci": [
+    59.88925540698457,
+    71.55298165892852
+   ],
+   "n": 1534,
+   "nondominated_rv2": false
+  },
+  {
+   "backbone": "27b",
+   "cfg": "gated",
+   "cny_1000": 3.9188119947848645,
+   "cny_1000_nodisc": 3.918811994784864,
+   "ex": 66.36245110821382,
+   "ex_ci": [
+    60.902684871501634,
+    72.811013378238
+   ],
+   "n": 1534,
+   "nondominated_rv2": false
+  },
+  {
+   "backbone": "27b",
+   "cfg": "blind",
+   "cny_1000": 3.972596870925674,
+   "cny_1000_nodisc": 3.9725968709256736,
+   "ex": 66.36245110821382,
+   "ex_ci": [
+    60.860318523419885,
+    72.90522768705952
+   ],
+   "n": 1534,
+   "nondominated_rv2": false
+  },
+  {
+   "backbone": "27b",
+   "cfg": "fixed",
+   "cny_1000": 8.542225032594539,
+   "cny_1000_nodisc": 8.54222503259454,
+   "ex": 66.36245110821382,
+   "ex_ci": [
+    61.002569964848576,
+    72.71540890013475
+   ],
+   "n": 1534,
+   "nondominated_rv2": false
+  }
+ ]
+}

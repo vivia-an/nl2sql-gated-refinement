@@ -1,0 +1,8 @@
+set,kind,n
+dev,n,70
+dev,helped,11
+dev,hurt,11
+dev,neutral,48
+dev,repair_helped,6
+dev,repair_hurt,0
+dev,repair_neutral,9

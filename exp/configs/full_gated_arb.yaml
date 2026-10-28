@@ -1,0 +1,5 @@
+# X5 (HEADROOM row 3): full_gated with gate_empty (an empty root is revised) + arbitration of root vs revision when both execute and differ.
+temperature: 0.0
+ddl: {quote_keywords: true}
+m5: {policy: gated, gate_empty: true, score_for_routing: false, arbitrate: true, t_max: 3}
+route: {score: exec, theta_h: 7.5}

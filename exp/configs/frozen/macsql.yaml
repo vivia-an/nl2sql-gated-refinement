@@ -1,0 +1,5 @@
+# FROZEN 2026-10-26 by code/tools/freeze_configs.py from exp/configs/min_tune_macsql_t1.yaml (sha256 13ac5791a69dcdab). Do not edit: a change is a new lock entry (SPEC 1.3 step 6).
+# MIN baseline second pass. MAC-SQL trial 1 = the M2 starting point (Refiner <= 3, paper).
+temperature: 0.0
+ddl: {quote_keywords: true}   # X6: same quoted identifiers as the ours-systems (SAP 13.6 rule 1); schema block only, no extra rule line
+max_refine: 3

@@ -1,0 +1,3 @@
+# E5 variant V1: binary critic (AC-SQL style)
+temperature: 0.0
+m5: {variant: v1}

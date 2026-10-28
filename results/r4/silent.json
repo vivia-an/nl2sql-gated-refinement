@@ -1,0 +1,184 @@
+{
+ "plus|zs": {
+  "n": 1534,
+  "n_wrong": 504,
+  "n_silent": 489,
+  "n_exec_fail_wrong": 15,
+  "silent_rate_pct": 31.877444589308997,
+  "silent_rate_ci": [
+   24.67991199619293,
+   38.28241197958188
+  ],
+  "silent_share_of_wrong_pct": 97.02380952380952,
+  "reach_share_pct": 2.976190476190476,
+  "ex_pct": 67.14471968709258
+ },
+ "plus|rootonly": {
+  "n": 1534,
+  "n_wrong": 497,
+  "n_silent": 474,
+  "n_exec_fail_wrong": 23,
+  "silent_rate_pct": 30.899608865710558,
+  "silent_rate_ci": [
+   24.39020360130898,
+   36.30018058822244
+  ],
+  "silent_share_of_wrong_pct": 95.37223340040242,
+  "reach_share_pct": 4.627766599597585,
+  "ex_pct": 67.60104302477184
+ },
+ "plus|gated": {
+  "n": 1534,
+  "n_wrong": 494,
+  "n_silent": 490,
+  "n_exec_fail_wrong": 4,
+  "silent_rate_pct": 31.94263363754889,
+  "silent_rate_ci": [
+   25.260521873519675,
+   37.42574160092408
+  ],
+  "silent_share_of_wrong_pct": 99.19028340080972,
+  "reach_share_pct": 0.8097165991902834,
+  "ex_pct": 67.79661016949152
+ },
+ "plus|fixed": {
+  "n": 1534,
+  "n_wrong": 492,
+  "n_silent": 489,
+  "n_exec_fail_wrong": 3,
+  "silent_rate_pct": 31.877444589308997,
+  "silent_rate_ci": [
+   25.047162124463817,
+   37.4212079436305
+  ],
+  "silent_share_of_wrong_pct": 99.39024390243902,
+  "reach_share_pct": 0.6097560975609756,
+  "ex_pct": 67.92698826597132
+ },
+ "flash|zs": {
+  "n": 1534,
+  "n_wrong": 591,
+  "n_silent": 542,
+  "n_exec_fail_wrong": 49,
+  "silent_rate_pct": 35.33246414602347,
+  "silent_rate_ci": [
+   28.49053210261979,
+   41.1627657481015
+  ],
+  "silent_share_of_wrong_pct": 91.70896785109983,
+  "reach_share_pct": 8.29103214890017,
+  "ex_pct": 61.47327249022164
+ },
+ "flash|rootonly": {
+  "n": 1534,
+  "n_wrong": 571,
+  "n_silent": 504,
+  "n_exec_fail_wrong": 67,
+  "silent_rate_pct": 32.85528031290743,
+  "silent_rate_ci": [
+   25.777570985445003,
+   39.13604778946324
+  ],
+  "silent_share_of_wrong_pct": 88.2661996497373,
+  "reach_share_pct": 11.733800350262696,
+  "ex_pct": 62.77705345501956
+ },
+ "flash|gated": {
+  "n": 1534,
+  "n_wrong": 554,
+  "n_silent": 553,
+  "n_exec_fail_wrong": 1,
+  "silent_rate_pct": 36.049543676662324,
+  "silent_rate_ci": [
+   28.589528173794974,
+   42.758723249082664
+  ],
+  "silent_share_of_wrong_pct": 99.81949458483754,
+  "reach_share_pct": 0.18050541516245489,
+  "ex_pct": 63.88526727509778
+ },
+ "flash|fixed": {
+  "n": 1534,
+  "n_wrong": 544,
+  "n_silent": 544,
+  "n_exec_fail_wrong": 0,
+  "silent_rate_pct": 35.462842242503264,
+  "silent_rate_ci": [
+   28.354232050512422,
+   41.54181271313906
+  ],
+  "silent_share_of_wrong_pct": 100.0,
+  "reach_share_pct": 0.0,
+  "ex_pct": 64.53715775749674
+ },
+ "27b|zs": {
+  "n": 1534,
+  "n_wrong": 569,
+  "n_silent": 540,
+  "n_exec_fail_wrong": 29,
+  "silent_rate_pct": 35.20208604954368,
+  "silent_rate_ci": [
+   28.12904501014945,
+   41.099782001799475
+  ],
+  "silent_share_of_wrong_pct": 94.90333919156416,
+  "reach_share_pct": 5.0966608084358525,
+  "ex_pct": 62.90743155149935
+ },
+ "27b|rootonly": {
+  "n": 1534,
+  "n_wrong": 533,
+  "n_silent": 485,
+  "n_exec_fail_wrong": 48,
+  "silent_rate_pct": 31.616688396349414,
+  "silent_rate_ci": [
+   25.46261866593653,
+   36.81747550979713
+  ],
+  "silent_share_of_wrong_pct": 90.99437148217636,
+  "reach_share_pct": 9.00562851782364,
+  "ex_pct": 65.2542372881356
+ },
+ "27b|gated": {
+  "n": 1534,
+  "n_wrong": 516,
+  "n_silent": 516,
+  "n_exec_fail_wrong": 0,
+  "silent_rate_pct": 33.63754889178618,
+  "silent_rate_ci": [
+   27.188986621762,
+   39.09731512849837
+  ],
+  "silent_share_of_wrong_pct": 100.0,
+  "reach_share_pct": 0.0,
+  "ex_pct": 66.36245110821382
+ },
+ "27b|fixed": {
+  "n": 1534,
+  "n_wrong": 516,
+  "n_silent": 516,
+  "n_exec_fail_wrong": 0,
+  "silent_rate_pct": 33.63754889178618,
+  "silent_rate_ci": [
+   27.284591099865246,
+   38.99743003515142
+  ],
+  "silent_share_of_wrong_pct": 100.0,
+  "reach_share_pct": 0.0,
+  "ex_pct": 66.36245110821382
+ },
+ "pooled|rootonly": {
+  "n_wrong": 1601,
+  "n_exec_fail_wrong": 138,
+  "n_silent": 1463,
+  "reach_share_pct": 8.619612742036228,
+  "silent_share_of_wrong_pct": 91.38038725796378
+ },
+ "pooled|gated": {
+  "n_wrong": 1564,
+  "n_exec_fail_wrong": 5,
+  "n_silent": 1559,
+  "reach_share_pct": 0.319693094629156,
+  "silent_share_of_wrong_pct": 99.68030690537084
+ }
+}

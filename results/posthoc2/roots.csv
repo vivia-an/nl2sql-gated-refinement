@@ -1,0 +1,4 @@
+backbone,n_fail_gated,n_fail_fixed,both,only_gated,only_fixed,diff_same_sql,diff_timeout,qids_differ
+plus,23,18,18,5,0,5,5,bird_dev:california_schools:49;bird_dev:codebase_community:596;bird_dev:formula_1:1002;bird_dev:formula_1:1016;bird_dev:formula_1:903
+flash,68,66,64,4,2,0,0,bird_dev:california_schools:3;bird_dev:debit_card_specializing:1524;bird_dev:formula_1:1012;bird_dev:formula_1:991;bird_dev:student_club:1450;bird_dev:thrombosis_prediction:1300
+27b,44,45,44,0,1,0,0,bird_dev:california_schools:43

@@ -1,0 +1,6 @@
+# MIN M2 TEMPLATE -> frozen/sdebug.yaml. Self-Debug at the budget of full_gated (~2.0 calls/q). Starting point: E.6 "simple" feedback, <= 3 rounds
+# (smoke on HT-10: 2.2 calls/q). Knobs may change ONLY in the HT-300 second pass (<= 3 trials, equal-effort rule; docs/FREEZE.md). --system sdebug.
+temperature: 0.0
+ddl: {quote_keywords: true}   # X6: same quoted identifiers as the ours-systems (SAP 13.6 rule 1); schema block only, no extra rule line
+max_rounds: 3
+feedback: simple

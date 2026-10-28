@@ -1,0 +1,358 @@
+{
+ "oracle_sets": [
+  {
+   "set": "root only",
+   "oracle_EX": 0.623069936421435,
+   "lo": 0.5229858476311989,
+   "hi": 0.7019924772945569,
+   "gain_pp_vs_root": 0.0,
+   "mean_calls_if_all_generated": 3.017257039055404,
+   "mean_nodes": 1.0
+  },
+  {
+   "set": "P0 chain (root + serial T=0 revisions, <=3)",
+   "oracle_EX": 0.6857402361489555,
+   "lo": 0.58922424885954,
+   "hi": 0.7381387896710883,
+   "gain_pp_vs_root": 6.267029972752047,
+   "mean_calls_if_all_generated": 9.05812897366031,
+   "mean_nodes": 4.0
+  },
+  {
+   "set": "root + depth-1 revise (T=0 and T=0.7)",
+   "oracle_EX": 0.6848319709355132,
+   "lo": 0.5900631096158966,
+   "hi": 0.7363882378272755,
+   "gain_pp_vs_root": 6.1762034514078135,
+   "mean_calls_if_all_generated": 5.193460490463215,
+   "mean_nodes": 2.076294277929155
+  },
+  {
+   "set": "root + depth-1 re_retrieve",
+   "oracle_EX": 0.6494096276112625,
+   "lo": 0.5517300917273528,
+   "hi": 0.7277441659464131,
+   "gain_pp_vs_root": 2.6339691189827485,
+   "mean_calls_if_all_generated": 5.900090826521344,
+   "mean_nodes": 2.4268846503178927
+  },
+  {
+   "set": "root + depth-1 escalate (qwen3.8-max reviser)",
+   "oracle_EX": 0.6811989100817438,
+   "lo": 0.5879541108986616,
+   "hi": 0.733941325895303,
+   "gain_pp_vs_root": 5.812897366030878,
+   "mean_calls_if_all_generated": 5.038147138964578,
+   "mean_nodes": 2.0
+  },
+  {
+   "set": "root + all depth-1 (<=5 nodes)",
+   "oracle_EX": 0.706630336058129,
+   "lo": 0.6195028680688337,
+   "hi": 0.7551423567522412,
+   "gain_pp_vs_root": 8.356039963669392,
+   "mean_calls_if_all_generated": 10.097184377838328,
+   "mean_nodes": 4.503178928247048
+  },
+  {
+   "set": "root + all depth<=2",
+   "oracle_EX": 0.7447774750227066,
+   "lo": 0.6593130388448979,
+   "hi": 0.7934973637961336,
+   "gain_pp_vs_root": 12.17075386012716,
+   "mean_calls_if_all_generated": 29.2897366030881,
+   "mean_nodes": 14.012715712988193
+  },
+  {
+   "set": "whole tree (<=23.5 nodes/q)",
+   "oracle_EX": 0.7520435967302452,
+   "lo": 0.6701720841300192,
+   "hi": 0.7994814174589455,
+   "gain_pp_vs_root": 12.897366030881019,
+   "mean_calls_if_all_generated": 48.47593097184378,
+   "mean_nodes": 23.522252497729337
+  },
+  {
+   "set": "whole tree minus escalate-lineage (tier-1 model only)",
+   "oracle_EX": 0.7148047229791099,
+   "lo": 0.6308536726654824,
+   "hi": 0.7622877569258266,
+   "gain_pp_vs_root": 9.173478655767486,
+   "mean_calls_if_all_generated": 28.267938237965485,
+   "mean_nodes": 13.51589464123524
+  }
+ ],
+ "wrong_roots": 415,
+ "first_correct_depth_among_wrong_roots": {
+  "none": 273,
+  "2": 42,
+  "1": 92,
+  "3": 8
+ },
+ "first_correct_by_action": {
+  "(2, 're_retrieve', 1)": 30,
+  "(1, 're_retrieve', 0)": 18,
+  "(1, 'revise', 0)": 68,
+  "(2, 'escalate', 1)": 3,
+  "(2, 'revise', 0)": 8,
+  "(3, 'revise', 1)": 5,
+  "(3, 'revise', 0)": 3,
+  "(1, 'escalate', 1)": 6,
+  "(2, 're_retrieve', 0)": 1
+ },
+ "share_correct_nodes_wrong_roots_by_depth": {
+  "1": {
+   "nodes": 1525,
+   "share_correct": 0.11147540983606558
+  },
+  "2": {
+   "nodes": 4160,
+   "share_correct": 0.12355769230769231
+  },
+  "3": {
+   "nodes": 4160,
+   "share_correct": 0.17379807692307692
+  }
+ },
+ "depth1_by_action_wrong_root": {
+  "revise": {
+   "nodes": 469,
+   "weighted_share_correct": 0.15903614457831325
+  },
+  "re_retrieve": {
+   "nodes": 641,
+   "weighted_share_correct": 0.051807228915662654
+  },
+  "escalate": {
+   "nodes": 415,
+   "weighted_share_correct": 0.15421686746987953
+  }
+ },
+ "depth1_by_action_right_root": {
+  "revise": {
+   "nodes": 716,
+   "weighted_share_correct": 0.9628279883381924
+  },
+  "re_retrieve": {
+   "nodes": 930,
+   "weighted_share_correct": 0.9606413994169096
+  },
+  "escalate": {
+   "nodes": 686,
+   "weighted_share_correct": 0.9635568513119533
+  }
+ },
+ "right_roots": 686,
+ "right_root_with_any_depth1_wrong": 0.09037900874635568,
+ "right_root_forced_revise_T0_wrong": 0.03644314868804665,
+ "wrong_root_forced_revise_T0_right": 0.15421686746987953,
+ "wrong_root_forced_escalate_right": 0.15421686746987953,
+ "right_root_forced_escalate_wrong": 0.03644314868804665,
+ "replay_P0": {
+  "EX_all": [
+   0.6584922797456857,
+   0.5579437204815769,
+   0.7188773335373584
+  ],
+  "calls": 3.3832879200726613,
+  "abstain_rate": 0.014532243415077202,
+  "n_revised": 135
+ },
+ "live_P0": {
+  "EX_all": [
+   0.6548592188919165,
+   0.5623087715820035,
+   0.7086629174528458
+  ],
+  "calls": 3.3669391462306995,
+  "root_EX_live": [
+   0.6167120799273388,
+   0.5176394799743486,
+   0.6966292134831461
+  ],
+  "abstain": 15
+ },
+ "tree_root_EX": [
+  0.623069936421435,
+  0.5229858476311989,
+  0.7019924772945569
+ ],
+ "live_final_vs_live_root": {
+  "gain_root_wrong_final_right": 53,
+  "harm_root_right_final_wrong": 11,
+  "delta_EX": [
+   0.03814713896457766,
+   -0.007392330134923059,
+   0.1194765554387324
+  ],
+  "n_revised": 139
+ },
+ "replay_P0_vs_tree_root": {
+  "gain": 50,
+  "harm": 11,
+  "delta_EX": [
+   0.035422343324250684,
+   -0.01021355617455896,
+   0.11571025399811853
+  ]
+ },
+ "replay_P0_harm_by_abstain": 3,
+ "ideal_gate_P0chain": {
+  "EX": [
+   0.6857402361489555,
+   0.58922424885954,
+   0.7381387896710883
+  ],
+  "gain_pp_vs_replay_P0": 2.7247956403269824
+ },
+ "per_db": [
+  {
+   "db": "address",
+   "n": 150,
+   "root_EX": 0.6866666666666666,
+   "P0_replay_EX": 0.7,
+   "live_EX": 0.68,
+   "oracle_chain": 0.7066666666666667,
+   "oracle_depth1": 0.72,
+   "oracle_tree": 0.7666666666666667,
+   "oracle_tier1_only": 0.7266666666666667,
+   "gain_replay": 2,
+   "harm_replay": 0,
+   "root_exec_err": 0.0,
+   "root_empty": 0.05333333333333334,
+   "root_score_ge_9.5": 0.8733333333333333
+  },
+  {
+   "db": "beer_factory",
+   "n": 131,
+   "root_EX": 0.42748091603053434,
+   "P0_replay_EX": 0.7404580152671756,
+   "live_EX": 0.7251908396946565,
+   "oracle_chain": 0.7557251908396947,
+   "oracle_depth1": 0.7480916030534351,
+   "oracle_tree": 0.8015267175572519,
+   "oracle_tier1_only": 0.7786259541984732,
+   "gain_replay": 41,
+   "harm_replay": 0,
+   "root_exec_err": 0.42748091603053434,
+   "root_empty": 0.022900763358778626,
+   "root_score_ge_9.5": 0.549618320610687
+  },
+  {
+   "db": "bike_share_1",
+   "n": 113,
+   "root_EX": 0.3185840707964602,
+   "P0_replay_EX": 0.2920353982300885,
+   "live_EX": 0.30973451327433627,
+   "oracle_chain": 0.3274336283185841,
+   "oracle_depth1": 0.3805309734513274,
+   "oracle_tree": 0.45132743362831856,
+   "oracle_tier1_only": 0.39823008849557523,
+   "gain_replay": 0,
+   "harm_replay": 3,
+   "root_exec_err": 0.02654867256637168,
+   "root_empty": 0.20353982300884957,
+   "root_score_ge_9.5": 0.6194690265486725
+  },
+  {
+   "db": "donor",
+   "n": 150,
+   "root_EX": 0.64,
+   "P0_replay_EX": 0.66,
+   "live_EX": 0.6666666666666666,
+   "oracle_chain": 0.7066666666666667,
+   "oracle_depth1": 0.7333333333333333,
+   "oracle_tree": 0.8,
+   "oracle_tier1_only": 0.7266666666666667,
+   "gain_replay": 6,
+   "harm_replay": 3,
+   "root_exec_err": 0.04666666666666667,
+   "root_empty": 0.1,
+   "root_score_ge_9.5": 0.5933333333333334
+  },
+  {
+   "db": "public_review_platform",
+   "n": 150,
+   "root_EX": 0.7,
+   "P0_replay_EX": 0.7,
+   "live_EX": 0.7,
+   "oracle_chain": 0.7266666666666667,
+   "oracle_depth1": 0.7266666666666667,
+   "oracle_tree": 0.7466666666666667,
+   "oracle_tier1_only": 0.74,
+   "gain_replay": 0,
+   "harm_replay": 0,
+   "root_exec_err": 0.013333333333333334,
+   "root_empty": 0.04,
+   "root_score_ge_9.5": 0.8466666666666667
+  },
+  {
+   "db": "retails",
+   "n": 150,
+   "root_EX": 0.7466666666666667,
+   "P0_replay_EX": 0.7466666666666667,
+   "live_EX": 0.7333333333333333,
+   "oracle_chain": 0.76,
+   "oracle_depth1": 0.7866666666666666,
+   "oracle_tree": 0.8266666666666667,
+   "oracle_tier1_only": 0.78,
+   "gain_replay": 0,
+   "harm_replay": 0,
+   "root_exec_err": 0.006666666666666667,
+   "root_empty": 0.04,
+   "root_score_ge_9.5": 0.8
+  },
+  {
+   "db": "sales",
+   "n": 107,
+   "root_EX": 0.7102803738317757,
+   "P0_replay_EX": 0.7102803738317757,
+   "live_EX": 0.7009345794392523,
+   "oracle_chain": 0.7289719626168224,
+   "oracle_depth1": 0.7570093457943925,
+   "oracle_tree": 0.794392523364486,
+   "oracle_tier1_only": 0.7663551401869159,
+   "gain_replay": 0,
+   "harm_replay": 0,
+   "root_exec_err": 0.009345794392523364,
+   "root_empty": 0.08411214953271028,
+   "root_score_ge_9.5": 0.7757009345794392
+  },
+  {
+   "db": "simpson_episodes",
+   "n": 150,
+   "root_EX": 0.68,
+   "P0_replay_EX": 0.6533333333333333,
+   "live_EX": 0.66,
+   "oracle_chain": 0.7066666666666667,
+   "oracle_depth1": 0.74,
+   "oracle_tree": 0.7733333333333333,
+   "oracle_tier1_only": 0.7466666666666667,
+   "gain_replay": 1,
+   "harm_replay": 5,
+   "root_exec_err": 0.0,
+   "root_empty": 0.08,
+   "root_score_ge_9.5": 0.8666666666666667
+  }
+ ],
+ "P0_gains_by_root_status": {
+  "err_syntax": 39,
+  "err_identifier": 8,
+  "ok_nonempty": 2,
+  "ok_empty": 1
+ },
+ "wrong_roots_by_status": {
+  "ok_nonempty": 284,
+  "ok_empty": 61,
+  "err_syntax": 54,
+  "err_identifier": 13,
+  "timeout": 3
+ },
+ "excl_beer_factory": {
+  "root_EX": 0.6494845360824743,
+  "P0_replay_EX": 0.6474226804123712,
+  "delta_pp": -0.20618556701030855,
+  "oracle_chain": 0.6762886597938145,
+  "oracle_tree": 0.7453608247422681
+ }
+}

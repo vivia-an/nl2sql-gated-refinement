@@ -1,0 +1,2378 @@
+{
+ "ch0.1_lam0.0": {
+  "P0_theta7.0": {
+   "ret": 0.3315168029064487,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.298819255222525,
+   "tokens_k": 7.048844242615661,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.13124432334241598,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta7.5": {
+   "ret": 0.329700272479564,
+   "ex_all": 0.6648501362397821,
+   "deferral": 0.0,
+   "calls": 3.346049046321526,
+   "tokens_k": 7.213463225005216,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.15258855585831063,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.0": {
+   "ret": 0.3206176203451408,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.3987284287011805,
+   "tokens_k": 7.398777029711371,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.17620345140781107,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.5": {
+   "ret": 0.3206176203451408,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.4118982742960946,
+   "tokens_k": 7.447642606134094,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.18256130790190736,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.0": {
+   "ret": 0.31970935513169846,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 3.5154405086285196,
+   "tokens_k": 7.798244331664762,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.23342415985467757,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.5": {
+   "ret": 0.31970935513169846,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 4.158492279745686,
+   "tokens_k": 9.772055411317151,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.5535876475930972,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k0": {
+   "ret": 0.24613987284287012,
+   "ex_all": 0.623069936421435,
+   "deferral": 0.0,
+   "calls": 3.017257039055404,
+   "tokens_k": 6.097711183719479,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k1": {
+   "ret": 0.31970935513169846,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 5.033151680290645,
+   "tokens_k": 12.299675758809636,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 1.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k2": {
+   "ret": 0.3260672116257947,
+   "ex_all": 0.6630336058128974,
+   "deferral": 0.0,
+   "calls": 7.044959128065395,
+   "tokens_k": 18.468648511858877,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 2.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k3": {
+   "ret": 0.3215258855585831,
+   "ex_all": 0.6607629427792916,
+   "deferral": 0.0,
+   "calls": 9.055858310626704,
+   "tokens_k": 24.630366952282856,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 3.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.3": {
+   "ret": 0.3315168029064487,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.1403269754768393,
+   "tokens_k": 6.503622174371274,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.06085376930063579,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.5": {
+   "ret": 0.2970027247956403,
+   "ex_all": 0.6485013623978202,
+   "deferral": 0.0,
+   "calls": 3.094459582198002,
+   "tokens_k": 6.34884969501686,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.03814713896457766,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.7": {
+   "ret": 0.28247048138056313,
+   "ex_all": 0.6412352406902816,
+   "deferral": 0.0,
+   "calls": 3.0663033605812897,
+   "tokens_k": 6.25558266436155,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.02452316076294278,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "oracle_upper_bound_return": 0.6792915531335151
+ },
+ "ch0.1_lam0.01": {
+  "P0_theta7.0": {
+   "ret": 0.3220054723174871,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.298819255222525,
+   "tokens_k": 7.048844242615661,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.13124432334241598,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta7.5": {
+   "ret": 0.3185427520667069,
+   "ex_all": 0.6648501362397821,
+   "deferral": 0.0,
+   "calls": 3.346049046321526,
+   "tokens_k": 7.213463225005216,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.15258855585831063,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.0": {
+   "ret": 0.3076069618852221,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.3987284287011805,
+   "tokens_k": 7.398777029711371,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.17620345140781107,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.5": {
+   "ret": 0.30711830612099483,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.4118982742960946,
+   "tokens_k": 7.447642606134094,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.18256130790190736,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.0": {
+   "ret": 0.30270402365224564,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 3.5154405086285196,
+   "tokens_k": 7.798244331664762,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.23342415985467757,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.5": {
+   "ret": 0.2829659128557218,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 4.158492279745686,
+   "tokens_k": 9.772055411317151,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.5535876475930972,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k0": {
+   "ret": 0.24613987284287012,
+   "ex_all": 0.623069936421435,
+   "deferral": 0.0,
+   "calls": 3.017257039055404,
+   "tokens_k": 6.097711183719479,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k1": {
+   "ret": 0.25768970938079666,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 5.033151680290645,
+   "tokens_k": 12.299675758809636,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 1.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k2": {
+   "ret": 0.2023578383444008,
+   "ex_all": 0.6630336058128974,
+   "deferral": 0.0,
+   "calls": 7.044959128065395,
+   "tokens_k": 18.468648511858877,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 2.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k3": {
+   "ret": 0.1361993278729492,
+   "ex_all": 0.6607629427792916,
+   "deferral": 0.0,
+   "calls": 9.055858310626704,
+   "tokens_k": 24.630366952282856,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 3.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.3": {
+   "ret": 0.3274576929999308,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.1403269754768393,
+   "tokens_k": 6.503622174371274,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.06085376930063579,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.5": {
+   "ret": 0.29449133968266655,
+   "ex_all": 0.6485013623978202,
+   "deferral": 0.0,
+   "calls": 3.094459582198002,
+   "tokens_k": 6.34884969501686,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.03814713896457766,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.7": {
+   "ret": 0.2808917665741424,
+   "ex_all": 0.6412352406902816,
+   "deferral": 0.0,
+   "calls": 3.0663033605812897,
+   "tokens_k": 6.25558266436155,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.02452316076294278,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "oracle_upper_bound_return": 0.672294918271653
+ },
+ "ch0.1_lam0.03": {
+  "P0_theta7.0": {
+   "ret": 0.30298281113956343,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.298819255222525,
+   "tokens_k": 7.048844242615661,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.13124432334241598,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta7.5": {
+   "ret": 0.29622771124099206,
+   "ex_all": 0.6648501362397821,
+   "deferral": 0.0,
+   "calls": 3.346049046321526,
+   "tokens_k": 7.213463225005216,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.15258855585831063,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.0": {
+   "ret": 0.2815856449653843,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.3987284287011805,
+   "tokens_k": 7.398777029711371,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.17620345140781107,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.5": {
+   "ret": 0.2801196776727025,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.4118982742960946,
+   "tokens_k": 7.447642606134094,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.18256130790190736,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.0": {
+   "ret": 0.26869336069334016,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 3.5154405086285196,
+   "tokens_k": 7.798244331664762,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.23342415985467757,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.5": {
+   "ret": 0.20947902830376836,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 4.158492279745686,
+   "tokens_k": 9.772055411317151,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.5535876475930972,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k0": {
+   "ret": 0.24613987284287012,
+   "ex_all": 0.623069936421435,
+   "deferral": 0.0,
+   "calls": 3.017257039055404,
+   "tokens_k": 6.097711183719479,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k1": {
+   "ret": 0.1336504178789937,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 5.033151680290645,
+   "tokens_k": 12.299675758809636,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 1.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k2": {
+   "ret": -0.04506090821838711,
+   "ex_all": 0.6630336058128974,
+   "deferral": 0.0,
+   "calls": 7.044959128065395,
+   "tokens_k": 18.468648511858877,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 2.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k3": {
+   "ret": -0.23445378749831813,
+   "ex_all": 0.6607629427792916,
+   "deferral": 0.0,
+   "calls": 9.055858310626704,
+   "tokens_k": 24.630366952282856,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 3.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.3": {
+   "ret": 0.3193394731868949,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.1403269754768393,
+   "tokens_k": 6.503622174371274,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.06085376930063579,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.5": {
+   "ret": 0.28946856945671895,
+   "ex_all": 0.6485013623978202,
+   "deferral": 0.0,
+   "calls": 3.094459582198002,
+   "tokens_k": 6.34884969501686,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.03814713896457766,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.7": {
+   "ret": 0.27773433696130106,
+   "ex_all": 0.6412352406902816,
+   "deferral": 0.0,
+   "calls": 3.0663033605812897,
+   "tokens_k": 6.25558266436155,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.02452316076294278,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "oracle_upper_bound_return": 0.6583016485479288
+ },
+ "ch0.25_lam0.0": {
+  "P0_theta7.0": {
+   "ret": 0.3315168029064487,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.298819255222525,
+   "tokens_k": 7.048844242615661,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.13124432334241598,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta7.5": {
+   "ret": 0.329700272479564,
+   "ex_all": 0.6648501362397821,
+   "deferral": 0.0,
+   "calls": 3.346049046321526,
+   "tokens_k": 7.213463225005216,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.15258855585831063,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.0": {
+   "ret": 0.3206176203451408,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.3987284287011805,
+   "tokens_k": 7.398777029711371,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.17620345140781107,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.5": {
+   "ret": 0.3206176203451408,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.4118982742960946,
+   "tokens_k": 7.447642606134094,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.18256130790190736,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.0": {
+   "ret": 0.31970935513169846,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 3.5154405086285196,
+   "tokens_k": 7.798244331664762,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.23342415985467757,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.5": {
+   "ret": 0.31970935513169846,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 4.158492279745686,
+   "tokens_k": 9.772055411317151,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.5535876475930972,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k0": {
+   "ret": 0.24613987284287012,
+   "ex_all": 0.623069936421435,
+   "deferral": 0.0,
+   "calls": 3.017257039055404,
+   "tokens_k": 6.097711183719479,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k1": {
+   "ret": 0.31970935513169846,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 5.033151680290645,
+   "tokens_k": 12.299675758809636,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 1.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k2": {
+   "ret": 0.3260672116257947,
+   "ex_all": 0.6630336058128974,
+   "deferral": 0.0,
+   "calls": 7.044959128065395,
+   "tokens_k": 18.468648511858877,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 2.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k3": {
+   "ret": 0.3215258855585831,
+   "ex_all": 0.6607629427792916,
+   "deferral": 0.0,
+   "calls": 9.055858310626704,
+   "tokens_k": 24.630366952282856,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 3.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.3": {
+   "ret": 0.3315168029064487,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.1403269754768393,
+   "tokens_k": 6.503622174371274,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.06085376930063579,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.5": {
+   "ret": 0.2970027247956403,
+   "ex_all": 0.6485013623978202,
+   "deferral": 0.0,
+   "calls": 3.094459582198002,
+   "tokens_k": 6.34884969501686,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.03814713896457766,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.7": {
+   "ret": 0.28247048138056313,
+   "ex_all": 0.6412352406902816,
+   "deferral": 0.0,
+   "calls": 3.0663033605812897,
+   "tokens_k": 6.25558266436155,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.02452316076294278,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "oracle_upper_bound_return": 0.635558583106267
+ },
+ "ch0.25_lam0.01": {
+  "P0_theta7.0": {
+   "ret": 0.3220054723174871,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.298819255222525,
+   "tokens_k": 7.048844242615661,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.13124432334241598,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta7.5": {
+   "ret": 0.3185427520667069,
+   "ex_all": 0.6648501362397821,
+   "deferral": 0.0,
+   "calls": 3.346049046321526,
+   "tokens_k": 7.213463225005216,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.15258855585831063,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.0": {
+   "ret": 0.3076069618852221,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.3987284287011805,
+   "tokens_k": 7.398777029711371,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.17620345140781107,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.5": {
+   "ret": 0.30711830612099483,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.4118982742960946,
+   "tokens_k": 7.447642606134094,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.18256130790190736,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.0": {
+   "ret": 0.30270402365224564,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 3.5154405086285196,
+   "tokens_k": 7.798244331664762,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.23342415985467757,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.5": {
+   "ret": 0.2829659128557218,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 4.158492279745686,
+   "tokens_k": 9.772055411317151,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.5535876475930972,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k0": {
+   "ret": 0.24613987284287012,
+   "ex_all": 0.623069936421435,
+   "deferral": 0.0,
+   "calls": 3.017257039055404,
+   "tokens_k": 6.097711183719479,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k1": {
+   "ret": 0.25768970938079666,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 5.033151680290645,
+   "tokens_k": 12.299675758809636,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 1.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k2": {
+   "ret": 0.2023578383444008,
+   "ex_all": 0.6630336058128974,
+   "deferral": 0.0,
+   "calls": 7.044959128065395,
+   "tokens_k": 18.468648511858877,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 2.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k3": {
+   "ret": 0.1361993278729492,
+   "ex_all": 0.6607629427792916,
+   "deferral": 0.0,
+   "calls": 9.055858310626704,
+   "tokens_k": 24.630366952282856,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 3.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.3": {
+   "ret": 0.3274576929999308,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.1403269754768393,
+   "tokens_k": 6.503622174371274,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.06085376930063579,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.5": {
+   "ret": 0.29449133968266655,
+   "ex_all": 0.6485013623978202,
+   "deferral": 0.0,
+   "calls": 3.094459582198002,
+   "tokens_k": 6.34884969501686,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.03814713896457766,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.7": {
+   "ret": 0.2808917665741424,
+   "ex_all": 0.6412352406902816,
+   "deferral": 0.0,
+   "calls": 3.0663033605812897,
+   "tokens_k": 6.25558266436155,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.02452316076294278,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "oracle_upper_bound_return": 0.6285619482444049
+ },
+ "ch0.25_lam0.03": {
+  "P0_theta7.0": {
+   "ret": 0.30298281113956343,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.298819255222525,
+   "tokens_k": 7.048844242615661,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.13124432334241598,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta7.5": {
+   "ret": 0.29622771124099206,
+   "ex_all": 0.6648501362397821,
+   "deferral": 0.0,
+   "calls": 3.346049046321526,
+   "tokens_k": 7.213463225005216,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.15258855585831063,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.0": {
+   "ret": 0.2815856449653843,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.3987284287011805,
+   "tokens_k": 7.398777029711371,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.17620345140781107,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.5": {
+   "ret": 0.2801196776727025,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.4118982742960946,
+   "tokens_k": 7.447642606134094,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.18256130790190736,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.0": {
+   "ret": 0.26869336069334016,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 3.5154405086285196,
+   "tokens_k": 7.798244331664762,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.23342415985467757,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.5": {
+   "ret": 0.20947902830376836,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 4.158492279745686,
+   "tokens_k": 9.772055411317151,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.5535876475930972,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k0": {
+   "ret": 0.24613987284287012,
+   "ex_all": 0.623069936421435,
+   "deferral": 0.0,
+   "calls": 3.017257039055404,
+   "tokens_k": 6.097711183719479,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k1": {
+   "ret": 0.1336504178789937,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 5.033151680290645,
+   "tokens_k": 12.299675758809636,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 1.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k2": {
+   "ret": -0.04506090821838711,
+   "ex_all": 0.6630336058128974,
+   "deferral": 0.0,
+   "calls": 7.044959128065395,
+   "tokens_k": 18.468648511858877,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 2.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k3": {
+   "ret": -0.23445378749831813,
+   "ex_all": 0.6607629427792916,
+   "deferral": 0.0,
+   "calls": 9.055858310626704,
+   "tokens_k": 24.630366952282856,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 3.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.3": {
+   "ret": 0.3193394731868949,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.1403269754768393,
+   "tokens_k": 6.503622174371274,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.06085376930063579,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.5": {
+   "ret": 0.28946856945671895,
+   "ex_all": 0.6485013623978202,
+   "deferral": 0.0,
+   "calls": 3.094459582198002,
+   "tokens_k": 6.34884969501686,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.03814713896457766,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.7": {
+   "ret": 0.27773433696130106,
+   "ex_all": 0.6412352406902816,
+   "deferral": 0.0,
+   "calls": 3.0663033605812897,
+   "tokens_k": 6.25558266436155,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.02452316076294278,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "oracle_upper_bound_return": 0.6145686785206808
+ },
+ "ch0.5_lam0.0": {
+  "P0_theta7.0": {
+   "ret": 0.3315168029064487,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.298819255222525,
+   "tokens_k": 7.048844242615661,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.13124432334241598,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta7.5": {
+   "ret": 0.329700272479564,
+   "ex_all": 0.6648501362397821,
+   "deferral": 0.0,
+   "calls": 3.346049046321526,
+   "tokens_k": 7.213463225005216,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.15258855585831063,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.0": {
+   "ret": 0.3206176203451408,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.3987284287011805,
+   "tokens_k": 7.398777029711371,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.17620345140781107,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.5": {
+   "ret": 0.3206176203451408,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.4118982742960946,
+   "tokens_k": 7.447642606134094,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.18256130790190736,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.0": {
+   "ret": 0.31970935513169846,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 3.5154405086285196,
+   "tokens_k": 7.798244331664762,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.23342415985467757,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.5": {
+   "ret": 0.31970935513169846,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 4.158492279745686,
+   "tokens_k": 9.772055411317151,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.5535876475930972,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k0": {
+   "ret": 0.24613987284287012,
+   "ex_all": 0.623069936421435,
+   "deferral": 0.0,
+   "calls": 3.017257039055404,
+   "tokens_k": 6.097711183719479,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k1": {
+   "ret": 0.31970935513169846,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 5.033151680290645,
+   "tokens_k": 12.299675758809636,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 1.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k2": {
+   "ret": 0.3260672116257947,
+   "ex_all": 0.6630336058128974,
+   "deferral": 0.0,
+   "calls": 7.044959128065395,
+   "tokens_k": 18.468648511858877,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 2.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k3": {
+   "ret": 0.3215258855585831,
+   "ex_all": 0.6607629427792916,
+   "deferral": 0.0,
+   "calls": 9.055858310626704,
+   "tokens_k": 24.630366952282856,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 3.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.3": {
+   "ret": 0.3315168029064487,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.1403269754768393,
+   "tokens_k": 6.503622174371274,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.06085376930063579,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.5": {
+   "ret": 0.2970027247956403,
+   "ex_all": 0.6485013623978202,
+   "deferral": 0.0,
+   "calls": 3.094459582198002,
+   "tokens_k": 6.34884969501686,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.03814713896457766,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.7": {
+   "ret": 0.28247048138056313,
+   "ex_all": 0.6412352406902816,
+   "deferral": 0.0,
+   "calls": 3.0663033605812897,
+   "tokens_k": 6.25558266436155,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.02452316076294278,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "oracle_upper_bound_return": 0.5626702997275205
+ },
+ "ch0.5_lam0.01": {
+  "P0_theta7.0": {
+   "ret": 0.3220054723174871,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.298819255222525,
+   "tokens_k": 7.048844242615661,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.13124432334241598,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta7.5": {
+   "ret": 0.3185427520667069,
+   "ex_all": 0.6648501362397821,
+   "deferral": 0.0,
+   "calls": 3.346049046321526,
+   "tokens_k": 7.213463225005216,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.15258855585831063,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.0": {
+   "ret": 0.3076069618852221,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.3987284287011805,
+   "tokens_k": 7.398777029711371,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.17620345140781107,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.5": {
+   "ret": 0.30711830612099483,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.4118982742960946,
+   "tokens_k": 7.447642606134094,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.18256130790190736,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.0": {
+   "ret": 0.30270402365224564,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 3.5154405086285196,
+   "tokens_k": 7.798244331664762,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.23342415985467757,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.5": {
+   "ret": 0.2829659128557218,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 4.158492279745686,
+   "tokens_k": 9.772055411317151,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.5535876475930972,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k0": {
+   "ret": 0.24613987284287012,
+   "ex_all": 0.623069936421435,
+   "deferral": 0.0,
+   "calls": 3.017257039055404,
+   "tokens_k": 6.097711183719479,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k1": {
+   "ret": 0.25768970938079666,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 5.033151680290645,
+   "tokens_k": 12.299675758809636,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 1.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k2": {
+   "ret": 0.2023578383444008,
+   "ex_all": 0.6630336058128974,
+   "deferral": 0.0,
+   "calls": 7.044959128065395,
+   "tokens_k": 18.468648511858877,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 2.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k3": {
+   "ret": 0.1361993278729492,
+   "ex_all": 0.6607629427792916,
+   "deferral": 0.0,
+   "calls": 9.055858310626704,
+   "tokens_k": 24.630366952282856,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 3.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.3": {
+   "ret": 0.3274576929999308,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.1403269754768393,
+   "tokens_k": 6.503622174371274,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.06085376930063579,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.5": {
+   "ret": 0.29449133968266655,
+   "ex_all": 0.6485013623978202,
+   "deferral": 0.0,
+   "calls": 3.094459582198002,
+   "tokens_k": 6.34884969501686,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.03814713896457766,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.7": {
+   "ret": 0.2808917665741424,
+   "ex_all": 0.6412352406902816,
+   "deferral": 0.0,
+   "calls": 3.0663033605812897,
+   "tokens_k": 6.25558266436155,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.02452316076294278,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "oracle_upper_bound_return": 0.5556736648656584
+ },
+ "ch0.5_lam0.03": {
+  "P0_theta7.0": {
+   "ret": 0.30298281113956343,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.298819255222525,
+   "tokens_k": 7.048844242615661,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.13124432334241598,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta7.5": {
+   "ret": 0.29622771124099206,
+   "ex_all": 0.6648501362397821,
+   "deferral": 0.0,
+   "calls": 3.346049046321526,
+   "tokens_k": 7.213463225005216,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.15258855585831063,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.0": {
+   "ret": 0.2815856449653843,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.3987284287011805,
+   "tokens_k": 7.398777029711371,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.17620345140781107,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.5": {
+   "ret": 0.2801196776727025,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.4118982742960946,
+   "tokens_k": 7.447642606134094,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.18256130790190736,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.0": {
+   "ret": 0.26869336069334016,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 3.5154405086285196,
+   "tokens_k": 7.798244331664762,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.23342415985467757,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.5": {
+   "ret": 0.20947902830376836,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 4.158492279745686,
+   "tokens_k": 9.772055411317151,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.5535876475930972,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k0": {
+   "ret": 0.24613987284287012,
+   "ex_all": 0.623069936421435,
+   "deferral": 0.0,
+   "calls": 3.017257039055404,
+   "tokens_k": 6.097711183719479,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k1": {
+   "ret": 0.1336504178789937,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 5.033151680290645,
+   "tokens_k": 12.299675758809636,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 1.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k2": {
+   "ret": -0.04506090821838711,
+   "ex_all": 0.6630336058128974,
+   "deferral": 0.0,
+   "calls": 7.044959128065395,
+   "tokens_k": 18.468648511858877,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 2.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k3": {
+   "ret": -0.23445378749831813,
+   "ex_all": 0.6607629427792916,
+   "deferral": 0.0,
+   "calls": 9.055858310626704,
+   "tokens_k": 24.630366952282856,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 3.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.3": {
+   "ret": 0.3193394731868949,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.1403269754768393,
+   "tokens_k": 6.503622174371274,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.06085376930063579,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.5": {
+   "ret": 0.28946856945671895,
+   "ex_all": 0.6485013623978202,
+   "deferral": 0.0,
+   "calls": 3.094459582198002,
+   "tokens_k": 6.34884969501686,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.03814713896457766,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.7": {
+   "ret": 0.27773433696130106,
+   "ex_all": 0.6412352406902816,
+   "deferral": 0.0,
+   "calls": 3.0663033605812897,
+   "tokens_k": 6.25558266436155,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.02452316076294278,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "oracle_upper_bound_return": 0.5416803951419341
+ },
+ "ch0.75_lam0.0": {
+  "P0_theta7.0": {
+   "ret": 0.3315168029064487,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.298819255222525,
+   "tokens_k": 7.048844242615661,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.13124432334241598,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta7.5": {
+   "ret": 0.329700272479564,
+   "ex_all": 0.6648501362397821,
+   "deferral": 0.0,
+   "calls": 3.346049046321526,
+   "tokens_k": 7.213463225005216,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.15258855585831063,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.0": {
+   "ret": 0.3206176203451408,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.3987284287011805,
+   "tokens_k": 7.398777029711371,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.17620345140781107,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.5": {
+   "ret": 0.3206176203451408,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.4118982742960946,
+   "tokens_k": 7.447642606134094,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.18256130790190736,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.0": {
+   "ret": 0.31970935513169846,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 3.5154405086285196,
+   "tokens_k": 7.798244331664762,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.23342415985467757,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.5": {
+   "ret": 0.31970935513169846,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 4.158492279745686,
+   "tokens_k": 9.772055411317151,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.5535876475930972,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k0": {
+   "ret": 0.24613987284287012,
+   "ex_all": 0.623069936421435,
+   "deferral": 0.0,
+   "calls": 3.017257039055404,
+   "tokens_k": 6.097711183719479,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k1": {
+   "ret": 0.31970935513169846,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 5.033151680290645,
+   "tokens_k": 12.299675758809636,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 1.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k2": {
+   "ret": 0.3260672116257947,
+   "ex_all": 0.6630336058128974,
+   "deferral": 0.0,
+   "calls": 7.044959128065395,
+   "tokens_k": 18.468648511858877,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 2.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k3": {
+   "ret": 0.3215258855585831,
+   "ex_all": 0.6607629427792916,
+   "deferral": 0.0,
+   "calls": 9.055858310626704,
+   "tokens_k": 24.630366952282856,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 3.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.3": {
+   "ret": 0.3315168029064487,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.1403269754768393,
+   "tokens_k": 6.503622174371274,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.06085376930063579,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.5": {
+   "ret": 0.2970027247956403,
+   "ex_all": 0.6485013623978202,
+   "deferral": 0.0,
+   "calls": 3.094459582198002,
+   "tokens_k": 6.34884969501686,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.03814713896457766,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.7": {
+   "ret": 0.28247048138056313,
+   "ex_all": 0.6412352406902816,
+   "deferral": 0.0,
+   "calls": 3.0663033605812897,
+   "tokens_k": 6.25558266436155,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.02452316076294278,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "oracle_upper_bound_return": 0.48978201634877383
+ },
+ "ch0.75_lam0.01": {
+  "P0_theta7.0": {
+   "ret": 0.3220054723174871,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.298819255222525,
+   "tokens_k": 7.048844242615661,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.13124432334241598,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta7.5": {
+   "ret": 0.3185427520667069,
+   "ex_all": 0.6648501362397821,
+   "deferral": 0.0,
+   "calls": 3.346049046321526,
+   "tokens_k": 7.213463225005216,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.15258855585831063,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.0": {
+   "ret": 0.3076069618852221,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.3987284287011805,
+   "tokens_k": 7.398777029711371,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.17620345140781107,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.5": {
+   "ret": 0.30711830612099483,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.4118982742960946,
+   "tokens_k": 7.447642606134094,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.18256130790190736,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.0": {
+   "ret": 0.30270402365224564,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 3.5154405086285196,
+   "tokens_k": 7.798244331664762,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.23342415985467757,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.5": {
+   "ret": 0.2829659128557218,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 4.158492279745686,
+   "tokens_k": 9.772055411317151,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.5535876475930972,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k0": {
+   "ret": 0.24613987284287012,
+   "ex_all": 0.623069936421435,
+   "deferral": 0.0,
+   "calls": 3.017257039055404,
+   "tokens_k": 6.097711183719479,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k1": {
+   "ret": 0.25768970938079666,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 5.033151680290645,
+   "tokens_k": 12.299675758809636,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 1.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k2": {
+   "ret": 0.2023578383444008,
+   "ex_all": 0.6630336058128974,
+   "deferral": 0.0,
+   "calls": 7.044959128065395,
+   "tokens_k": 18.468648511858877,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 2.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k3": {
+   "ret": 0.1361993278729492,
+   "ex_all": 0.6607629427792916,
+   "deferral": 0.0,
+   "calls": 9.055858310626704,
+   "tokens_k": 24.630366952282856,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 3.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.3": {
+   "ret": 0.3274576929999308,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.1403269754768393,
+   "tokens_k": 6.503622174371274,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.06085376930063579,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.5": {
+   "ret": 0.29449133968266655,
+   "ex_all": 0.6485013623978202,
+   "deferral": 0.0,
+   "calls": 3.094459582198002,
+   "tokens_k": 6.34884969501686,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.03814713896457766,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.7": {
+   "ret": 0.2808917665741424,
+   "ex_all": 0.6412352406902816,
+   "deferral": 0.0,
+   "calls": 3.0663033605812897,
+   "tokens_k": 6.25558266436155,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.02452316076294278,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "oracle_upper_bound_return": 0.48278538148691175
+ },
+ "ch0.75_lam0.03": {
+  "P0_theta7.0": {
+   "ret": 0.30298281113956343,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.298819255222525,
+   "tokens_k": 7.048844242615661,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.13124432334241598,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta7.5": {
+   "ret": 0.29622771124099206,
+   "ex_all": 0.6648501362397821,
+   "deferral": 0.0,
+   "calls": 3.346049046321526,
+   "tokens_k": 7.213463225005216,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.15258855585831063,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.0": {
+   "ret": 0.2815856449653843,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.3987284287011805,
+   "tokens_k": 7.398777029711371,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.17620345140781107,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta8.5": {
+   "ret": 0.2801196776727025,
+   "ex_all": 0.6603088101725704,
+   "deferral": 0.0,
+   "calls": 3.4118982742960946,
+   "tokens_k": 7.447642606134094,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.18256130790190736,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.0": {
+   "ret": 0.26869336069334016,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 3.5154405086285196,
+   "tokens_k": 7.798244331664762,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.23342415985467757,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "P0_theta9.5": {
+   "ret": 0.20947902830376836,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 4.158492279745686,
+   "tokens_k": 9.772055411317151,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.5535876475930972,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k0": {
+   "ret": 0.24613987284287012,
+   "ex_all": 0.623069936421435,
+   "deferral": 0.0,
+   "calls": 3.017257039055404,
+   "tokens_k": 6.097711183719479,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k1": {
+   "ret": 0.1336504178789937,
+   "ex_all": 0.6598546775658493,
+   "deferral": 0.0,
+   "calls": 5.033151680290645,
+   "tokens_k": 12.299675758809636,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 1.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k2": {
+   "ret": -0.04506090821838711,
+   "ex_all": 0.6630336058128974,
+   "deferral": 0.0,
+   "calls": 7.044959128065395,
+   "tokens_k": 18.468648511858877,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 2.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "fixed_k3": {
+   "ret": -0.23445378749831813,
+   "ex_all": 0.6607629427792916,
+   "deferral": 0.0,
+   "calls": 9.055858310626704,
+   "tokens_k": 24.630366952282856,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 3.0,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.3": {
+   "ret": 0.3193394731868949,
+   "ex_all": 0.6657584014532243,
+   "deferral": 0.0,
+   "calls": 3.1403269754768393,
+   "tokens_k": 6.503622174371274,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.06085376930063579,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.5": {
+   "ret": 0.28946856945671895,
+   "ex_all": 0.6485013623978202,
+   "deferral": 0.0,
+   "calls": 3.094459582198002,
+   "tokens_k": 6.34884969501686,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.03814713896457766,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "LR_stop_thr0.7": {
+   "ret": 0.27773433696130106,
+   "ex_all": 0.6412352406902816,
+   "deferral": 0.0,
+   "calls": 3.0663033605812897,
+   "tokens_k": 6.25558266436155,
+   "accept_rate": 1.0,
+   "actions": {
+    "accept": 1.0,
+    "revise": 0.02452316076294278,
+    "re_retrieve": 0.0,
+    "escalate": 0.0,
+    "route_human": 0.0
+   }
+  },
+  "oracle_upper_bound_return": 0.4687921117631876
+ }
+}

@@ -1,0 +1,8 @@
+contrast,diff,lo,hi
+route_ca_frozen_minus_v3,0.0683,0.0552,0.0795
+hr_refit_no_agreement_minus_v3,0.0023,0.0011,0.0039
+route_ca_frozen_minus_hr_refit_no_agreement,0.0660,0.0536,0.0763
+dev_lodo_no_agreement_minus_v3,-0.0486,-0.0954,-0.0064
+dev_lodo_3feat_minus_dev_lodo_no_agreement,0.0819,0.0643,0.0967
+agreement_only_minus_v3,-0.0294,-0.0678,0.0018
+hr_refit_3feat_minus_v3,0.0683,0.0552,0.0795

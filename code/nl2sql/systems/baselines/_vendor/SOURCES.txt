@@ -1,0 +1,8 @@
+Vendored verbatim from upstream repositories (B1, 2026-10-25):
+
+macsql_const.py            <- https://github.com/wbbeyourself/MAC-SQL  core/const.py
+                              commit 31a9df5e0d520be4769be57a4b9022e5e34a14f4 (2025-02-27).  NO LICENSE FILE in the upstream
+                              repository (GitHub reports none) -> redistribution terms unclear; see docs/BASELINES.md.
+alphasql_templates/*.txt   <- https://github.com/HKUSTDial/Alpha-SQL  alphasql/templates/
+                              commit 216e61fc86467591fa1dc5b7031ca536577b4d21 (2026-06-10).  MIT licence (LICENSE.alpha-sql).
+Files are byte-identical to upstream (sha256 recorded in docs/BASELINES.md).

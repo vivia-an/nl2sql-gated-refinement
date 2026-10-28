@@ -1,0 +1,11 @@
+# X5 (HEADROOM row 2): full_gated_route + consistency sub-score for routing. k = 4 extra samples (T 0.7) of the INITIAL generation prompt in
+# ONE API request (DashScope n <= 4, seed = run seed + 1); each is executed, consistency = fraction whose result set equals the final
+# result. Without coefficients route.score v3+consistency is the equal-weight mean of V3 (0-10) and 10 x consistency; fit the logistic
+# combination with tools/fit_route_score.py and point full_gated_cons_lr.yaml at the JSON. preds.jsonl keeps the raw fields
+# (critic.score = V3, consistency, n_samples, cons_bits, final_status) so any combination can be evaluated post hoc.
+temperature: 0.0
+ddl: {quote_keywords: true}
+m5: {policy: gated, gate_empty: false, score_for_routing: true, t_max: 3}
+route:
+  score: v3+consistency
+  consistency: {k: 4, temperature: 0.7, n_per_call: 4}

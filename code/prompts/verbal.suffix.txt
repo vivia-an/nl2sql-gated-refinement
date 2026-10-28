@@ -1,0 +1,1 @@
+After the SQL, add a final line "CONFIDENCE: <integer 0-100>" giving how likely the query returns the correct result.

@@ -1,0 +1,409 @@
+{
+ "dirs": [
+  "R3",
+  "R3smoke"
+ ],
+ "price_file": "<NL2SQL_ROOT>/exp/prices.yaml",
+ "cache_hit_ratio": 0.2,
+ "unpriced_rows": {},
+ "total": {
+  "cny_disc": 135.94261103999997,
+  "cny_nodisc": 197.45719920000036,
+  "calls": 72444
+ },
+ "by_model": {
+  "qwen3.5-27b": {
+   "calls": 27857,
+   "pt": 82612497,
+   "ct": 2828732,
+   "cached": 0,
+   "cny_disc": 63.145411800000396,
+   "cny_nodisc": 63.145411800000396
+  },
+  "qwen3.7-flash-2026-07-15": {
+   "calls": 28084,
+   "pt": 83038407,
+   "ct": 3387885,
+   "cached": 19824896,
+   "cny_disc": 16.146006039999918,
+   "cny_nodisc": 19.317989399999973
+  },
+  "qwen3.7-plus-2026-05-26": {
+   "calls": 16503,
+   "pt": 52219259,
+   "ct": 1319410,
+   "cached": 36464128,
+   "cny_disc": 56.65119319999967,
+   "cny_nodisc": 114.99379799999998
+  }
+ },
+ "by_run": {
+  "R3/fixed-27b-s101": {
+   "calls": 5610,
+   "pt": 16256621,
+   "ct": 722884,
+   "cached": 0,
+   "cny_disc": 13.223815799999972,
+   "cny_nodisc": 13.223815799999972
+  },
+  "R3/fixed-27b-s202": {
+   "calls": 5590,
+   "pt": 16222016,
+   "ct": 710605,
+   "cached": 0,
+   "cny_disc": 13.144113599999963,
+   "cny_nodisc": 13.144113599999963
+  },
+  "R3/fixed-27b-s303": {
+   "calls": 5673,
+   "pt": 16451077,
+   "ct": 745551,
+   "cached": 0,
+   "cny_disc": 13.449290999999974,
+   "cny_nodisc": 13.449290999999974
+  },
+  "R3/fixed-flash-s101": {
+   "calls": 5677,
+   "pt": 16309777,
+   "ct": 859248,
+   "cached": 1574912,
+   "cny_disc": 3.697367879999997,
+   "cny_nodisc": 3.949353799999994
+  },
+  "R3/fixed-flash-s202": {
+   "calls": 5679,
+   "pt": 16394106,
+   "ct": 857149,
+   "cached": 2216832,
+   "cny_disc": 3.609847279999985,
+   "cny_nodisc": 3.964540399999987
+  },
+  "R3/fixed-flash-s303": {
+   "calls": 5641,
+   "pt": 16270504,
+   "ct": 884440,
+   "cached": 1546496,
+   "cny_disc": 3.7142134399999986,
+   "cny_nodisc": 3.961652799999999
+  },
+  "R3/fixed-plus-s101": {
+   "calls": 1919,
+   "pt": 7265250,
+   "ct": 152178,
+   "cached": 5990144,
+   "cny_disc": 6.163693600000013,
+   "cny_nodisc": 15.747924000000028
+  },
+  "R3/fixed-plus-s202": {
+   "calls": 1897,
+   "pt": 7115575,
+   "ct": 148616,
+   "cached": 4920832,
+   "cny_disc": 7.546746800000003,
+   "cny_nodisc": 15.420078000000025
+  },
+  "R3/fixed-plus-s303": {
+   "calls": 4975,
+   "pt": 13569424,
+   "ct": 590261,
+   "cached": 8908288,
+   "cny_disc": 17.60767520000003,
+   "cny_nodisc": 31.86093600000001
+  },
+  "R3/gated-27b-s101": {
+   "calls": 82,
+   "pt": 377283,
+   "ct": 23069,
+   "cached": 0,
+   "cny_disc": 0.3371009999999998,
+   "cny_nodisc": 0.3371009999999998
+  },
+  "R3/gated-27b-s202": {
+   "calls": 88,
+   "pt": 360481,
+   "ct": 21175,
+   "cached": 0,
+   "cny_disc": 0.31792859999999984,
+   "cny_nodisc": 0.31792859999999984
+  },
+  "R3/gated-27b-s303": {
+   "calls": 71,
+   "pt": 295047,
+   "ct": 9148,
+   "cached": 0,
+   "cny_disc": 0.2209386000000001,
+   "cny_nodisc": 0.2209386000000001
+  },
+  "R3/gated-flash-s101": {
+   "calls": 106,
+   "pt": 439478,
+   "ct": 31953,
+   "cached": 13568,
+   "cny_disc": 0.11128712000000004,
+   "cny_nodisc": 0.11345800000000004
+  },
+  "R3/gated-flash-s202": {
+   "calls": 114,
+   "pt": 447394,
+   "ct": 33251,
+   "cached": 24960,
+   "cny_disc": 0.11208599999999996,
+   "cny_nodisc": 0.11607959999999999
+  },
+  "R3/gated-flash-s303": {
+   "calls": 125,
+   "pt": 527790,
+   "ct": 45016,
+   "cached": 26624,
+   "cny_disc": 0.13731096000000004,
+   "cny_nodisc": 0.1415708
+  },
+  "R3/gated-plus-s303": {
+   "calls": 29,
+   "pt": 133608,
+   "ct": 2697,
+   "cached": 24576,
+   "cny_disc": 0.2494704,
+   "cny_nodisc": 0.288792
+  },
+  "R3/rootonly-27b-s101": {
+   "calls": 1,
+   "pt": 1335,
+   "ct": 68,
+   "cached": 0,
+   "cny_disc": 0.0011274000000000002,
+   "cny_nodisc": 0.0011274000000000002
+  },
+  "R3/rootonly-27b-s202": {
+   "calls": 3,
+   "pt": 14932,
+   "ct": 157,
+   "cached": 0,
+   "cny_disc": 0.0097128,
+   "cny_nodisc": 0.0097128
+  },
+  "R3/rootonly-27b-s303": {
+   "calls": 1,
+   "pt": 1102,
+   "ct": 54,
+   "cached": 0,
+   "cny_disc": 0.0009203999999999998,
+   "cny_nodisc": 0.0009203999999999998
+  },
+  "R3/rootonly-flash-s101": {
+   "calls": 1,
+   "pt": 1063,
+   "ct": 49,
+   "cached": 0,
+   "cny_disc": 0.0002518,
+   "cny_nodisc": 0.0002518
+  },
+  "R3/rootonly-flash-s202": {
+   "calls": 1,
+   "pt": 6637,
+   "ct": 24,
+   "cached": 0,
+   "cny_disc": 0.0013466,
+   "cny_nodisc": 0.0013466
+  },
+  "R3/rootonly-flash-s303": {
+   "calls": 2,
+   "pt": 9557,
+   "ct": 76,
+   "cached": 0,
+   "cny_disc": 0.0019722000000000003,
+   "cny_nodisc": 0.0019722000000000003
+  },
+  "R3/rootonly-plus-s101": {
+   "calls": 3,
+   "pt": 14942,
+   "ct": 166,
+   "cached": 0,
+   "cny_disc": 0.031212,
+   "cny_nodisc": 0.031212
+  },
+  "R3/rootonly-plus-s202": {
+   "calls": 2,
+   "pt": 11575,
+   "ct": 89,
+   "cached": 0,
+   "cny_disc": 0.023862,
+   "cny_nodisc": 0.023862
+  },
+  "R3/rootonly-plus-s303": {
+   "calls": 2,
+   "pt": 7953,
+   "ct": 200,
+   "cached": 0,
+   "cny_disc": 0.017506,
+   "cny_nodisc": 0.017506
+  },
+  "R3/zs-27b-s101": {
+   "calls": 1534,
+   "pt": 4279297,
+   "ct": 81532,
+   "cached": 0,
+   "cny_disc": 2.9589318,
+   "cny_nodisc": 2.9589318
+  },
+  "R3/zs-27b-s202": {
+   "calls": 1534,
+   "pt": 4279297,
+   "ct": 82049,
+   "cached": 0,
+   "cny_disc": 2.961413400000002,
+   "cny_nodisc": 2.961413400000002
+  },
+  "R3/zs-27b-s303": {
+   "calls": 1534,
+   "pt": 4279297,
+   "ct": 80421,
+   "cached": 0,
+   "cny_disc": 2.953599000000002,
+   "cny_nodisc": 2.953599000000002
+  },
+  "R3/zs-flash-s101": {
+   "calls": 1534,
+   "pt": 4279297,
+   "ct": 90499,
+   "cached": 3754368,
+   "cny_disc": 0.3275597200000004,
+   "cny_nodisc": 0.9282586000000009
+  },
+  "R3/zs-flash-s202": {
+   "calls": 1534,
+   "pt": 4279297,
+   "ct": 93199,
+   "cached": 3046016,
+   "cny_disc": 0.44305604,
+   "cny_nodisc": 0.9304186000000009
+  },
+  "R3/zs-flash-s303": {
+   "calls": 1534,
+   "pt": 4279297,
+   "ct": 102307,
+   "cached": 3733120,
+   "cny_disc": 0.34040580000000087,
+   "cny_nodisc": 0.9377050000000001
+  },
+  "R3/zs-plus-s303": {
+   "calls": 1534,
+   "pt": 4279297,
+   "ct": 79873,
+   "cached": 3553920,
+   "cny_disc": 3.5113060000000003,
+   "cny_nodisc": 9.197578000000004
+  },
+  "R3/zsex-27b-s0": {
+   "calls": 1534,
+   "pt": 4949085,
+   "ct": 86997,
+   "cached": 0,
+   "cny_disc": 3.3870365999999987,
+   "cny_nodisc": 3.3870365999999987
+  },
+  "R3/zsex-27b-s101": {
+   "calls": 1534,
+   "pt": 4948455,
+   "ct": 87836,
+   "cached": 0,
+   "cny_disc": 3.3906858,
+   "cny_nodisc": 3.3906858
+  },
+  "R3/zsex-27b-s202": {
+   "calls": 1534,
+   "pt": 4948610,
+   "ct": 88633,
+   "cached": 0,
+   "cny_disc": 3.3946043999999995,
+   "cny_nodisc": 3.3946043999999995
+  },
+  "R3/zsex-27b-s303": {
+   "calls": 1534,
+   "pt": 4948562,
+   "ct": 88553,
+   "cached": 0,
+   "cny_disc": 3.394191599999995,
+   "cny_nodisc": 3.394191599999995
+  },
+  "R3/zsex-flash-s0": {
+   "calls": 1534,
+   "pt": 4948692,
+   "ct": 91496,
+   "cached": 1146496,
+   "cny_disc": 0.8794958400000014,
+   "cny_nodisc": 1.0629352
+  },
+  "R3/zsex-flash-s101": {
+   "calls": 1534,
+   "pt": 4948610,
+   "ct": 97613,
+   "cached": 34560,
+   "cny_disc": 1.0622828000000006,
+   "cny_nodisc": 1.0678124000000009
+  },
+  "R3/zsex-flash-s202": {
+   "calls": 1534,
+   "pt": 4948484,
+   "ct": 96334,
+   "cached": 2399872,
+   "cny_disc": 0.6827844800000014,
+   "cny_nodisc": 1.0667639999999985
+  },
+  "R3/zsex-flash-s303": {
+   "calls": 1534,
+   "pt": 4948424,
+   "ct": 105231,
+   "cached": 307072,
+   "cny_disc": 1.024738080000001,
+   "cny_nodisc": 1.0738696000000008
+  },
+  "R3/zsex-plus-s0": {
+   "calls": 1534,
+   "pt": 4948610,
+   "ct": 85730,
+   "cached": 2848512,
+   "cny_disc": 6.025440800000001,
+   "cny_nodisc": 10.58306000000002
+  },
+  "R3/zsex-plus-s101": {
+   "calls": 1534,
+   "pt": 4948525,
+   "ct": 86609,
+   "cached": 3536000,
+   "cny_disc": 4.932322,
+   "cny_nodisc": 10.58992200000002
+  },
+  "R3/zsex-plus-s202": {
+   "calls": 1534,
+   "pt": 4948455,
+   "ct": 86629,
+   "cached": 3102976,
+   "cny_disc": 5.625180400000002,
+   "cny_nodisc": 10.589942000000011
+  },
+  "R3/zsex-plus-s303": {
+   "calls": 1534,
+   "pt": 4948641,
+   "ct": 85972,
+   "cached": 3570944,
+   "cny_disc": 4.871547600000008,
+   "cny_nodisc": 10.58505800000001
+  },
+  "R3smoke/zsex-plus-s0": {
+   "calls": 6,
+   "pt": 27404,
+   "ct": 390,
+   "cached": 7936,
+   "cny_disc": 0.0452304,
+   "cny_nodisc": 0.057928
+  }
+ },
+ "s303": {
+  "cny_disc": 51.49508628000001,
+  "cny_nodisc": 78.08558099999999,
+  "calls": 25723,
+  "runs": 15
+ },
+ "note": "embedding and rerank requests are not priced (placeholder prices, tokens not logged); the 1-token probes of r3_probe are not logged"
+}

@@ -1,0 +1,339 @@
+{
+ "revision_effect_all_dev_items": {
+  "full_fixed": {
+   "n_changed": 70,
+   "helped": 11,
+   "hurt": 11,
+   "neutral_both_correct_or_both_wrong": 48
+  },
+  "full_gated": {
+   "n_changed": 0,
+   "helped": 0,
+   "hurt": 0,
+   "neutral_both_correct_or_both_wrong": 0
+  }
+ },
+ "revision_effect_discordant_items": {
+  "full_fixed": {
+   "n_changed": 22,
+   "helped": 11,
+   "hurt": 11,
+   "neutral_both_correct_or_both_wrong": 0
+  },
+  "full_gated": {
+   "n_changed": 0,
+   "helped": 0,
+   "hurt": 0,
+   "neutral_both_correct_or_both_wrong": 0
+  }
+ },
+ "repair_of_nonexecutable_root_all_dev_items": {
+  "full_fixed": {
+   "n_changed": 15,
+   "helped": 6,
+   "hurt": 0,
+   "neutral_both_correct_or_both_wrong": 9
+  },
+  "full_gated": {
+   "n_changed": 18,
+   "helped": 4,
+   "hurt": 0,
+   "neutral_both_correct_or_both_wrong": 14
+  }
+ },
+ "repair_of_nonexecutable_root_discordant_items": {
+  "full_fixed": {
+   "n_changed": 5,
+   "helped": 4,
+   "hurt": 0,
+   "neutral_both_correct_or_both_wrong": 1
+  },
+  "full_gated": {
+   "n_changed": 6,
+   "helped": 2,
+   "hurt": 0,
+   "neutral_both_correct_or_both_wrong": 4
+  }
+ },
+ "discordant": {
+  "n": 28,
+  "fixed_correct_gated_wrong": 15,
+  "fixed_wrong_gated_correct": 13,
+  "n_in_sheet_as_full_prediction": 5,
+  "label_counts_full_prediction": {
+   "L1": 1,
+   "L4": 3,
+   "L6": 1
+  },
+  "n_in_sheet_as_zs_prediction": 4,
+  "label_counts_zs_prediction_not_the_full_systems": {
+   "L1": 1,
+   "L3": 1,
+   "L4": 1,
+   "L8": 1
+  },
+  "note": "The sheet is a stratified sample of failures of full_fixed (system full) and zs; a discordant item appears only if sampled. full rows are failures of full_fixed; a zs row labels the zs prediction of that question, not either full system. Final label = common label of A1/A2 or the adjudicated label.",
+  "items": [
+   {
+    "qid": "bird_dev:california_schools:30",
+    "fixed_ex": 1,
+    "gated_ex": 0,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": "A283",
+    "label_zs": "L4"
+   },
+   {
+    "qid": "bird_dev:california_schools:36",
+    "fixed_ex": 1,
+    "gated_ex": 0,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:california_schools:77",
+    "fixed_ex": 0,
+    "gated_ex": 1,
+    "in_sheet_as_full_prediction": "A001",
+    "label_full": "L1",
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:card_games:356",
+    "fixed_ex": 1,
+    "gated_ex": 0,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:card_games:393",
+    "fixed_ex": 1,
+    "gated_ex": 0,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": "A265",
+    "label_zs": "L3"
+   },
+   {
+    "qid": "bird_dev:card_games:424",
+    "fixed_ex": 1,
+    "gated_ex": 0,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:card_games:451",
+    "fixed_ex": 0,
+    "gated_ex": 1,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:card_games:483",
+    "fixed_ex": 0,
+    "gated_ex": 1,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:codebase_community:673",
+    "fixed_ex": 0,
+    "gated_ex": 1,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:debit_card_specializing:1499",
+    "fixed_ex": 1,
+    "gated_ex": 0,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:debit_card_specializing:1512",
+    "fixed_ex": 0,
+    "gated_ex": 1,
+    "in_sheet_as_full_prediction": "A136",
+    "label_full": "L6",
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:debit_card_specializing:1524",
+    "fixed_ex": 1,
+    "gated_ex": 0,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": "A261",
+    "label_zs": "L1"
+   },
+   {
+    "qid": "bird_dev:debit_card_specializing:1526",
+    "fixed_ex": 0,
+    "gated_ex": 1,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": "A145",
+    "label_zs": "L8"
+   },
+   {
+    "qid": "bird_dev:european_football_2:1063",
+    "fixed_ex": 0,
+    "gated_ex": 1,
+    "in_sheet_as_full_prediction": "A085",
+    "label_full": "L4",
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:european_football_2:1127",
+    "fixed_ex": 1,
+    "gated_ex": 0,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:financial:149",
+    "fixed_ex": 0,
+    "gated_ex": 1,
+    "in_sheet_as_full_prediction": "A031",
+    "label_full": "L4",
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:formula_1:866",
+    "fixed_ex": 1,
+    "gated_ex": 0,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:formula_1:883",
+    "fixed_ex": 0,
+    "gated_ex": 1,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:formula_1:897",
+    "fixed_ex": 1,
+    "gated_ex": 0,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:formula_1:959",
+    "fixed_ex": 0,
+    "gated_ex": 1,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:formula_1:987",
+    "fixed_ex": 0,
+    "gated_ex": 1,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:formula_1:988",
+    "fixed_ex": 1,
+    "gated_ex": 0,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:student_club:1452",
+    "fixed_ex": 1,
+    "gated_ex": 0,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:student_club:1454",
+    "fixed_ex": 1,
+    "gated_ex": 0,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:thrombosis_prediction:1171",
+    "fixed_ex": 1,
+    "gated_ex": 0,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:thrombosis_prediction:1187",
+    "fixed_ex": 1,
+    "gated_ex": 0,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:thrombosis_prediction:1209",
+    "fixed_ex": 0,
+    "gated_ex": 1,
+    "in_sheet_as_full_prediction": "A035",
+    "label_full": "L4",
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   },
+   {
+    "qid": "bird_dev:toxicology:305",
+    "fixed_ex": 0,
+    "gated_ex": 1,
+    "in_sheet_as_full_prediction": null,
+    "label_full": null,
+    "in_sheet_as_zs_prediction": null,
+    "label_zs": null
+   }
+  ]
+ },
+ "definitions": {
+  "revision_changed_executable_sql": "root candidate executes (status ok_nonempty or ok_empty) and the final SQL differs from the root SQL (text, stripped)",
+  "helped": "root ex=0 -> final ex=1",
+  "hurt": "root ex=1 -> final ex=0",
+  "neutral": "root and final both correct or both wrong",
+  "repair_of_nonexecutable_root": "root status is an error/timeout and the final SQL differs from the root SQL (reported separately; not a change of an executable SQL)",
+  "source": "runs/MIN/M1/fixed-s0 and gated-s0 (preds.jsonl, cands.jsonl; dev; seed 0); ex is the stored evaluator flag"
+ }
+}

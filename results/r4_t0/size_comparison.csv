@@ -1,0 +1,41 @@
+kind,item,estimate_pp,widest_lo,widest_hi,reading
+rerun r1 minus s0,plus zs,-0.391,-1.695,0.656,contains 0
+rerun r1 minus s0,plus rootonly,-0.456,-1.306,0.326,contains 0
+rerun r1 minus s0,plus gated,-0.391,-1.260,0.399,contains 0
+rerun r1 minus s0,plus fixed,-0.391,-1.333,0.570,contains 0
+rerun r1 minus s0,flash zs,-0.261,-1.877,1.141,contains 0
+rerun r1 minus s0,flash rootonly,-0.196,-2.259,1.693,contains 0
+rerun r1 minus s0,flash gated,0.130,-2.486,2.656,contains 0
+rerun r1 minus s0,flash fixed,0.130,-1.977,2.084,contains 0
+rerun r1 minus s0,27b zs,0.000,-0.436,0.431,contains 0
+rerun r1 minus s0,27b rootonly,-0.522,-1.321,0.160,contains 0
+rerun r1 minus s0,27b gated,-0.391,-1.174,0.290,contains 0
+rerun r1 minus s0,27b fixed,-0.196,-1.473,0.961,contains 0
+"change of the contrast, r1 minus s0",f_minus_zs plus,0.000,-1.345,1.524,contains 0
+"change of the contrast, r1 minus s0",f_minus_zs flash,0.391,-1.499,2.282,contains 0
+"change of the contrast, r1 minus s0",f_minus_zs 27b,-0.196,-1.473,0.879,contains 0
+locked-run contrast,stack plus,0.456,-1.613,2.540,contains 0
+locked-run contrast,stack flash,1.304,-1.490,3.899,contains 0
+locked-run contrast,stack 27b,2.347,-0.242,4.915,contains 0
+locked-run contrast,stack pooled3,1.369,-0.049,2.658,contains 0
+locked-run contrast,loop_g plus,0.196,-0.065,0.522,contains 0
+locked-run contrast,loop_g flash,1.108,0.587,1.695,positive
+locked-run contrast,loop_g 27b,1.108,0.652,1.630,positive
+locked-run contrast,loop_g pooled3,0.804,0.522,1.108,positive
+locked-run contrast,loop_f plus,0.326,-0.326,0.979,contains 0
+locked-run contrast,loop_f flash,1.760,0.351,3.363,positive
+locked-run contrast,loop_f 27b,1.108,-0.310,2.526,contains 0
+locked-run contrast,loop_f pooled3,1.065,0.270,1.956,positive
+locked-run contrast,g_minus_f plus,-0.130,-0.782,0.522,contains 0
+locked-run contrast,g_minus_f flash,-0.652,-2.326,0.873,contains 0
+locked-run contrast,g_minus_f 27b,0.000,-1.299,1.293,contains 0
+locked-run contrast,g_minus_f pooled3,-0.261,-1.063,0.464,contains 0
+locked-run contrast,g_minus_zs plus,0.652,-1.371,2.710,contains 0
+locked-run contrast,g_minus_zs flash,2.412,-0.606,5.293,contains 0
+locked-run contrast,g_minus_zs 27b,3.455,1.060,5.882,positive
+locked-run contrast,g_minus_zs pooled3,2.173,0.797,3.410,positive
+locked-run contrast,f_minus_zs plus,0.782,-1.173,2.740,contains 0
+locked-run contrast,f_minus_zs flash,3.064,0.432,5.460,positive
+locked-run contrast,f_minus_zs 27b,3.455,0.721,6.349,positive
+locked-run contrast,f_minus_zs pooled3,2.434,1.062,3.752,positive
+locked-run contrast,w1 weak2,2.934,1.264,4.440,positive

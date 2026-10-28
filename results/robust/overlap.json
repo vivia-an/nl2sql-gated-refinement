@@ -1,0 +1,125 @@
+{
+ "_meta": {
+  "n_dev": 1534,
+  "sap": "section 20 (Amendment 7)",
+  "scope": "robustness-posthoc",
+  "stage": "sets"
+ },
+ "jin_dev100": {
+  "n": 100,
+  "n_e_changed": 23,
+  "n_in_dev": 100,
+  "n_in_plat": 31,
+  "n_q_changed": 27,
+  "n_sql_changed": 41,
+  "n_union_with_plat": 567,
+  "note": "not re-scored (corrected database files, n < 150); overlap only"
+ },
+ "question_set_of_runs": {
+  "n": 1534,
+  "source": "bird/dev/dev_20240627/dev.json",
+  "split": "bird_dev"
+ },
+ "variants": {
+  "G1": {
+   "S_same_by_db": {
+    "california_schools": 13,
+    "card_games": 38,
+    "codebase_community": 38,
+    "debit_card_specializing": 25,
+    "european_football_2": 41,
+    "financial": 20,
+    "formula_1": 42,
+    "student_club": 43,
+    "superhero": 45,
+    "thrombosis_prediction": 32,
+    "toxicology": 30
+   },
+   "file": "repos/text_to_sql_benchmarks/data/arcwise_plat_sql_only_with_diff.json",
+   "label": "Arcwise-Plat-SQL (Jin repo), primary",
+   "n_S_all": 498,
+   "n_S_same": 367,
+   "n_e_changed": 73,
+   "n_in_dev": 498,
+   "n_items": 498,
+   "n_q_changed": 84,
+   "n_sql_text_changed_S_all": 184,
+   "n_sql_text_changed_S_same": 104
+  },
+  "G2": {
+   "S_same_by_db": {
+    "california_schools": 10,
+    "card_games": 29,
+    "codebase_community": 30,
+    "debit_card_specializing": 20,
+    "european_football_2": 30,
+    "financial": 14,
+    "formula_1": 31,
+    "student_club": 34,
+    "superhero": 40,
+    "thrombosis_prediction": 17,
+    "toxicology": 17
+   },
+   "file": "repos/text_to_sql_benchmarks/data/arcwise_plat_full_with_diff.json",
+   "label": "Arcwise-Plat full (Jin repo)",
+   "n_S_all": 498,
+   "n_S_same": 272,
+   "n_e_changed": 145,
+   "n_in_dev": 498,
+   "n_items": 498,
+   "n_q_changed": 150,
+   "n_sql_text_changed_S_all": 220,
+   "n_sql_text_changed_S_same": 74
+  },
+  "G3": {
+   "S_same_by_db": {
+    "california_schools": 12,
+    "card_games": 36,
+    "codebase_community": 28,
+    "debit_card_specializing": 20,
+    "european_football_2": 38,
+    "financial": 19,
+    "formula_1": 42,
+    "student_club": 34,
+    "superhero": 45,
+    "thrombosis_prediction": 31,
+    "toxicology": 30
+   },
+   "file": "repos/ReViSQL/data/arcwise_plat_sql.json",
+   "label": "Arcwise-Plat-SQL (ReViSQL copy)",
+   "n_S_all": 498,
+   "n_S_same": 335,
+   "n_e_changed": 106,
+   "n_in_dev": 498,
+   "n_items": 498,
+   "n_q_changed": 85,
+   "n_sql_text_changed_S_all": 168,
+   "n_sql_text_changed_S_same": 87
+  },
+  "G4": {
+   "S_same_by_db": {
+    "california_schools": 9,
+    "card_games": 30,
+    "codebase_community": 30,
+    "debit_card_specializing": 17,
+    "european_football_2": 29,
+    "financial": 13,
+    "formula_1": 31,
+    "student_club": 28,
+    "superhero": 41,
+    "thrombosis_prediction": 16,
+    "toxicology": 17
+   },
+   "file": "repos/ReViSQL/data/arcwise_plat_full.json",
+   "label": "Arcwise-Plat full (ReViSQL copy)",
+   "n_S_all": 498,
+   "n_S_same": 261,
+   "n_e_changed": 159,
+   "n_in_dev": 498,
+   "n_items": 498,
+   "n_q_changed": 151,
+   "n_sql_text_changed_S_all": 219,
+   "n_sql_text_changed_S_same": 72
+  }
+ }
+}

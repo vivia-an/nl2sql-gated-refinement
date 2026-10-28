@@ -1,0 +1,9 @@
+# FROZEN 2026-10-26 by code/tools/freeze_configs.py from exp/configs/min_gated_blind.yaml (sha256 f9b042f39179779c). Do not edit: a change is a new lock entry (SPEC 1.3 step 6).
+# MIN P5 control TEMPLATE -> frozen/gated_blind.yaml (X6). Identical to min_full_gated.yaml (same gate, same roots, same call count) except that the revision
+# prompt carries NO execution error text (blind retry: "The previous query failed. Write a corrected query."). SAP 13.3 P5 / D3. --system full_gated_blind.
+# Not yet wired into freeze_configs.py / gen_min.py (docs/handoff/X6.md lists the two one-line additions).
+temperature: 0.0
+ddl: {quote_keywords: true}
+m5: {policy: gated, gate_empty: false, score_for_routing: false, t_max: 3, revise_feedback: blind}
+route: {score: exec, theta_h: 7.5}
+m6: {policy: ws_full, path: exp/frozen/corpus_burnin_39e2477c.sqlite, update: false}

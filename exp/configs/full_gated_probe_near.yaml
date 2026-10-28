@@ -1,0 +1,7 @@
+# X7 variant of full_gated_probe.yaml: m5.probe_near lists first the stored values that contain (case-insensitively) the longest alphanumeric token of the
+# failed literal (e.g. 'bishopville' -> 'Bishopville'), then the first distinct values, up to probe_n = 8 per column. Needed because a plain
+# SELECT DISTINCT ... LIMIT 8 shows the whole column only when it has <= 8 distinct short values (tuning data: 6 of 26 "same column, other value" roots).
+temperature: 0.0
+ddl: {quote_keywords: true}
+m5: {policy: gated, gate_empty: true, probe_values: true, probe_near: true, probe_n: 8, probe_max_len: 40, probe_max_cols: 4, probe_timeout_s: 5.0, score_for_routing: false, t_max: 3}
+route: {score: exec, theta_h: 7.5}

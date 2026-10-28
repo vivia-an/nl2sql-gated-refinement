@@ -1,0 +1,10 @@
+{
+ "E6.status": "not run: MINIMAL_PLAN drops the live RL runs (D9); the negative result rests on the tuning-set CV in T.p2.e6_summary.* (labelled tuning set)",
+ "_meta": {
+  "created": "2026-10-27 16:21:51",
+  "git": "unknown",
+  "name": "E6",
+  "notes": [],
+  "scope": "confirmatory"
+ }
+}

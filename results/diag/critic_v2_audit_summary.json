@@ -1,0 +1,87 @@
+{
+ "_meta": {
+  "scope": "diagnostic-posthoc",
+  "block": "what the V0 critic sees as schema (SAP 18.6)",
+  "n_items": 396
+ },
+ "items_full_schema_shown": 380,
+ "items_pruned_schema": 16,
+ "share_pruned": 0.04040404040404041,
+ "mean_tables_shown": 6.7727272727272725,
+ "mean_tables_db": 8.23989898989899,
+ "gold_sql_uses_table_not_shown": {
+  "items": 3,
+  "n": 396,
+  "controls": 2,
+  "n_controls": 198
+ },
+ "v0_gold_false_positives": {
+  "n": 54,
+  "gold_uses_hidden_table": 2,
+  "pruned_schema": 2
+ },
+ "v0_gold_accepted": {
+  "n": 144,
+  "gold_uses_hidden_table": 0,
+  "pruned_schema": 7
+ },
+ "v0_fp_absence_claims_by_where": {
+  "not_in_db": 3,
+  "shown": 2,
+  "hidden_by_pruning": 3
+ },
+ "v0_fp_absence_claims": [
+  {
+   "id": "D008",
+   "where": "not_in_db",
+   "token": "full name",
+   "sentence": "More importantly, since last_name is missing entirely, the 'full name' requirement is not met."
+  },
+  {
+   "id": "D153",
+   "where": "not_in_db",
+   "token": "GROUP BY",
+   "sentence": "Additionally, the subquery for the denominator in the inner select is missing the `GROUP BY` context if it were intended to be per-division, but here it calculates a global total, which is consistent with a share-of-total calculation, but t"
+  },
+  {
+   "id": "D278",
+   "where": "shown",
+   "token": "rating_date_utc",
+   "sentence": "The query references the column `rating_date_utc` in the `WHERE` clause, but this column does not exist in the `ratings_users` table."
+  },
+  {
+   "id": "D278",
+   "where": "not_in_db",
+   "token": "WHERE",
+   "sentence": "The query references the column `rating_date_utc` in the `WHERE` clause, but this column does not exist in the `ratings_users` table."
+  },
+  {
+   "id": "D278",
+   "where": "shown",
+   "token": "ratings_users",
+   "sentence": "The query references the column `rating_date_utc` in the `WHERE` clause, but this column does not exist in the `ratings_users` table."
+  },
+  {
+   "id": "D316",
+   "where": "hidden_by_pruning",
+   "token": "Teams",
+   "sentence": "The query references a table 'Teams' which is not defined in the provided schema."
+  },
+  {
+   "id": "D353",
+   "where": "hidden_by_pruning",
+   "token": "SpecialOfferProduct",
+   "sentence": "The query references a table 'SpecialOfferProduct' which is not defined in the provided schema."
+  },
+  {
+   "id": "D353",
+   "where": "hidden_by_pruning",
+   "token": "SpecialOfferProduct",
+   "sentence": "The intermediate table `SpecialOfferProduct` is not part of the provided schema."
+  }
+ ],
+ "fp_gold_uses_hidden_table_ids": [
+  "D316",
+  "D353"
+ ]
+}

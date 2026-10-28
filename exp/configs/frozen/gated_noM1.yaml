@@ -1,0 +1,8 @@
+# FROZEN 2026-10-26 by code/tools/freeze_configs.py from exp/configs/min_gated_noM1.yaml (sha256 53534586a944d71f). Do not edit: a change is a new lock entry (SPEC 1.3 step 6).
+# MIN M3 ablation -M1 on full_gated: no task graph anywhere (prompts, retrieval queries). TEMPLATE -> frozen/gated_noM1.yaml. --system full_gated.
+temperature: 0.0
+ddl: {quote_keywords: true}
+m1: {enabled: false}
+m5: {policy: gated, gate_empty: false, score_for_routing: false, t_max: 3}
+route: {score: exec, theta_h: 7.5}
+m6: {policy: ws_full, path: exp/frozen/corpus_burnin_39e2477c.sqlite, update: false}

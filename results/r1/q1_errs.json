@@ -1,0 +1,100 @@
+{
+ "root_errors_top": [
+  [
+   [
+    "beer_factory",
+    "near \"transaction\": syntax error"
+   ],
+   54
+  ],
+  [
+   [
+    "beer_factory",
+    "no such column: T3.Review"
+   ],
+   1
+  ],
+  [
+   [
+    "bike_share_1",
+    "no such column: T1.zip_code"
+   ],
+   1
+  ],
+  [
+   [
+    "bike_share_1",
+    "interrupted"
+   ],
+   1
+  ],
+  [
+   [
+    "beer_factory",
+    "no such column: T3.Latitude"
+   ],
+   1
+  ]
+ ],
+ "P0_replay_by_root_status": {
+  "ok_nonempty": {
+   "n": 949,
+   "root_right": 665,
+   "final_right": 659,
+   "gain": 2,
+   "harm": 8,
+   "revised": 44,
+   "calls": 3018
+  },
+  "ok_empty": {
+   "n": 82,
+   "root_right": 21,
+   "final_right": 19,
+   "gain": 1,
+   "harm": 3,
+   "revised": 21,
+   "calls": 339
+  },
+  "exec_error": {
+   "n": 70,
+   "root_right": 0,
+   "final_right": 47,
+   "gain": 47,
+   "harm": 0,
+   "revised": 70,
+   "calls": 368
+  }
+ },
+ "P0_replay_gain_harm_beer_vs_others": {
+  "others/ok_nonempty": {
+   "n": 877,
+   "gain": 2,
+   "harm": 8
+  },
+  "beer_factory/ok_nonempty": {
+   "n": 72,
+   "gain": 0,
+   "harm": 0
+  },
+  "others/ok_empty": {
+   "n": 79,
+   "gain": 1,
+   "harm": 3
+  },
+  "beer_factory/exec_error": {
+   "n": 56,
+   "gain": 41,
+   "harm": 0
+  },
+  "others/exec_error": {
+   "n": 14,
+   "gain": 6,
+   "harm": 0
+  },
+  "beer_factory/ok_empty": {
+   "n": 3,
+   "gain": 0,
+   "harm": 0
+  }
+ }
+}

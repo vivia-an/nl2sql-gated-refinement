@@ -1,0 +1,108 @@
+diff --git a/exp/dev_lock.json b/exp/dev_lock.json
+index ea13999..fb5b02b 100644
+--- a/exp/dev_lock.json
++++ b/exp/dev_lock.json
+@@ -387,6 +387,102 @@
+    "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+    "critic_sha256": null,
+    "route_sha256": null
++  },
++  {
++   "system": "patent_fb",
++   "config_path": "exp/configs/pf/patent_fb_n0.yaml",
++   "config_sha256": "15d586a70eb525eafb4c3ee046c5d71be485e2b24116882ae0b5c1945b1145c8",
++   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
++   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
++   "git_hash": "32de07d63ae28624dd3819405bee050778abf187",
++   "date": "2026-10-27",
++   "datasets_allowed": [
++    "bird_dev",
++    "bird_minidev",
++    "spider_*",
++    "ambiqt",
++    "livesql_lite"
++   ],
++   "seeds": [
++    0
++   ],
++   "sap_commit": "32de07d",
++   "controller_sha256": null,
++   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
++   "critic_sha256": null,
++   "route_sha256": null
++  },
++  {
++   "system": "patent_fb",
++   "config_path": "exp/configs/pf/patent_fb_n250_q100.yaml",
++   "config_sha256": "54e8e4580faf0beb61ae96ec72e28c4102d730b08a7853e1ba76a50c3c4fc29a",
++   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
++   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
++   "git_hash": "32de07d63ae28624dd3819405bee050778abf187",
++   "date": "2026-10-27",
++   "datasets_allowed": [
++    "bird_dev",
++    "bird_minidev",
++    "spider_*",
++    "ambiqt",
++    "livesql_lite"
++   ],
++   "seeds": [
++    0
++   ],
++   "sap_commit": "32de07d",
++   "controller_sha256": null,
++   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
++   "critic_sha256": null,
++   "route_sha256": null
++  },
++  {
++   "system": "patent_fb",
++   "config_path": "exp/configs/pf/patent_fb_n1000_q100.yaml",
++   "config_sha256": "972a1c858ae3ff4e5a808a077152694e579c92f6c91b03e56e59e4fd266db245",
++   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
++   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
++   "git_hash": "32de07d63ae28624dd3819405bee050778abf187",
++   "date": "2026-10-27",
++   "datasets_allowed": [
++    "bird_dev",
++    "bird_minidev",
++    "spider_*",
++    "ambiqt",
++    "livesql_lite"
++   ],
++   "seeds": [
++    0
++   ],
++   "sap_commit": "32de07d",
++   "controller_sha256": null,
++   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
++   "critic_sha256": null,
++   "route_sha256": null
++  },
++  {
++   "system": "patent_fb",
++   "config_path": "exp/configs/pf/patent_fb_n1000_q085.yaml",
++   "config_sha256": "abb26caaf9438f41fb82182c6839773ee9838349125a972b99de63fa2aa710d1",
++   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
++   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
++   "git_hash": "32de07d63ae28624dd3819405bee050778abf187",
++   "date": "2026-10-27",
++   "datasets_allowed": [
++    "bird_dev",
++    "bird_minidev",
++    "spider_*",
++    "ambiqt",
++    "livesql_lite"
++   ],
++   "seeds": [
++    0
++   ],
++   "sap_commit": "32de07d",
++   "controller_sha256": null,
++   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
++   "critic_sha256": null,
++   "route_sha256": null
+   }
+  ]
+ }
+\ No newline at end of file

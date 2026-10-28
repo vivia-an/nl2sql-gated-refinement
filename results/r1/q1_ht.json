@@ -1,0 +1,98 @@
+{
+ "EX": {
+  "full_final": 0.6933333333333334,
+  "full_root": 0.6833333333333333,
+  "zs_ours": 0.6966666666666667,
+  "zs_b1": 0.6733333333333333
+ },
+ "delta_full_vs_zs_ours": [
+  -0.0033333333333333335,
+  -0.04046242774566474,
+  0.05128205128205128
+ ],
+ "delta_full_vs_zs": [
+  0.02,
+  -0.014749262536873156,
+  0.06299212598425197
+ ],
+ "delta_final_vs_root": [
+  0.01,
+  0.0,
+  0.02564102564102564
+ ],
+ "delta_root_vs_zs_ours": [
+  -0.013333333333333334,
+  -0.04046242774566474,
+  0.02564102564102564
+ ],
+ "mcnemar_full_vs_zs_ours": [
+  9,
+  10
+ ],
+ "mcnemar_final_vs_root": [
+  4,
+  1
+ ],
+ "mcnemar_root_vs_zs_ours": [
+  9,
+  13
+ ],
+ "root_vs_zs_ours_sql_equal": 0.06333333333333334,
+ "root_vs_zs_ours_ex_disagree": 0.07333333333333333,
+ "zs_vs_zs_ours_ex_disagree": 0.056666666666666664,
+ "by_root_status": {
+  "ok_nonempty": {
+   "n": 279,
+   "gain": 1,
+   "harm": 1,
+   "revised": 14
+  },
+  "exec_error": {
+   "n": 4,
+   "gain": 3,
+   "harm": 0,
+   "revised": 4
+  },
+  "ok_empty": {
+   "n": 17,
+   "gain": 0,
+   "harm": 0,
+   "revised": 4
+  }
+ },
+ "root_status_counts": {
+  "ok_nonempty": 279,
+  "err_identifier": 4,
+  "ok_empty": 17
+ },
+ "per_db": {
+  "law_episode": {
+   "n": 54,
+   "full": 0.7407407407407407,
+   "root": 0.7222222222222222,
+   "zs_ours": 0.7037037037037037,
+   "zs": 0.6666666666666666
+  },
+  "retail_complains": {
+   "n": 78,
+   "full": 0.6923076923076923,
+   "root": 0.6923076923076923,
+   "zs_ours": 0.7307692307692307,
+   "zs": 0.6794871794871795
+  },
+  "video_games": {
+   "n": 95,
+   "full": 0.7789473684210526,
+   "root": 0.7789473684210526,
+   "zs_ours": 0.8210526315789474,
+   "zs": 0.8105263157894737
+  },
+  "world_development_indicators": {
+   "n": 73,
+   "full": 0.547945205479452,
+   "root": 0.5205479452054794,
+   "zs_ours": 0.4931506849315068,
+   "zs": 0.4931506849315068
+  }
+ }
+}

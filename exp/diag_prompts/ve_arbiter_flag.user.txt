@@ -1,0 +1,30 @@
+# Complete list of tables and columns of the database
+<<full_schema>>
+
+# Task
+<<role_intro>>
+Decide once whether to MAINTAIN the review (its claims stay and the proposed fix is applied) or to CHANGE it (the claims are dropped and the query is left as it is). Neither answer is the default. A wrong claim that is maintained turns a correct query into a wrong one; a correct claim that is dropped leaves an error in the query. <<user_clause>>
+Decide from the question, the evidence, the schema and the real executions below. Whichever answer you choose, quote the part of the question, evidence, schema or result that decides it and say in one or two sentences why it decides it.
+
+Return one JSON object and nothing else:
+{"decision": "maintain" | "change", "evidence": str}
+
+# Question
+Question: <<question>>
+Evidence: <<evidence>>
+<<graph?>>
+
+# SQL
+<<sql>>
+
+# Execution of this SQL
+<<preview>>
+
+# The review
+<<review_block>>
+<<user_block>>
+# Mechanical evidence
+A fix was generated for the claims taken together. Its SQL and its real execution:
+<<probe_sql>>
+<<probe_preview>>
+Comparison: <<comparison>>

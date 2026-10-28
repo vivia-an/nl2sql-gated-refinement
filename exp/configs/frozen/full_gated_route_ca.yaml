@@ -1,0 +1,14 @@
+# FROZEN 2026-10-26 by code/tools/freeze_configs.py from exp/configs/min_full_gated_route_ca.yaml (sha256 1b6a1210a8781394). Do not edit: a change is a new lock entry (SPEC 1.3 step 6).
+# MIN plan TEMPLATE -> frozen as exp/configs/frozen/full_gated_route_ca.yaml. Same answer path as full_gated (the routing steps run AFTER the final
+# answer and cannot change it) + ONE V3 critic call on the final answer + k = 4 extra T=0.7 samples of the root prompt in ONE request (n = 4; SAP Amendment 3 P3).
+# route.score = frozen logistic combination of [V3/10, agreement share, non-empty] fitted on HR (tools/fit_route_score.py --k 4; SAP 13.3 / 15.3 P3).
+# Answer-path calls = calls - stage `cons` - the single routing `crit` call. coef_path must exist before the lock entry is made (route_sha256).
+# --system full_gated, seed r0 only.
+temperature: 0.0
+ddl: {quote_keywords: true}
+m5: {policy: gated, gate_empty: false, score_for_routing: true, t_max: 3}
+route:
+  score: v3+consistency
+  coef_path: exp/frozen/route_coef_hr.json
+  consistency: {k: 4, temperature: 0.7, n_per_call: 4}
+m6: {policy: ws_full, path: exp/frozen/corpus_burnin_39e2477c.sqlite, update: false}

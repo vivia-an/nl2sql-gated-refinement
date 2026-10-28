@@ -1,0 +1,4 @@
+# AC-SQL trial 3: max_regen 3 (the matched setting of BASELINES.md; HT-10 smoke 3.0 calls/q, probably over the gated window; kept to document it).
+temperature: 0.0
+ddl: {quote_keywords: true}   # X6: same quoted identifiers as the ours-systems (SAP 13.6 rule 1); schema block only, no extra rule line
+max_regen: 3

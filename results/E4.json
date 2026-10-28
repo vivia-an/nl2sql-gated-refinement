@@ -1,0 +1,259 @@
+{
+ "E4.append.p0.auc.mean": 0.6954545454545454,
+ "E4.append.p0.final_ex.ci_hi": 0.7612039142038153,
+ "E4.append.p0.final_ex.ci_lo": 0.6135064835613641,
+ "E4.append.p0.final_ex.mean": 0.7,
+ "E4.append.p0.init_ex.mean": 0.6909090909090909,
+ "E4.append.p0.n_units": 8,
+ "E4.append.p40.auc.mean": 0.703030303030303,
+ "E4.append.p40.final_ex.ci_hi": 0.7694704049844237,
+ "E4.append.p40.final_ex.ci_lo": 0.607140126692879,
+ "E4.append.p40.final_ex.mean": 0.703030303030303,
+ "E4.append.p40.init_ex.mean": 0.703030303030303,
+ "E4.append.p40.n_units": 16,
+ "E4.contrast.ws_full_vs_memrl.p40.diff_pp.ci_hi": 0.9463722397476393,
+ "E4.contrast.ws_full_vs_memrl.p40.diff_pp.ci_lo": -1.3377926421404673,
+ "E4.contrast.ws_full_vs_memrl.p40.diff_pp.mean": 0.0,
+ "E4.contrast.ws_full_vs_memrl.p40.logodds.ci_hi": 0.7718380183860258,
+ "E4.contrast.ws_full_vs_memrl.p40.logodds.ci_lo": -0.7718627505947058,
+ "E4.contrast.ws_full_vs_memrl.p40.logodds.mean": -1.23661043400163e-05,
+ "E4.contrast.ws_full_vs_memrl.p40.p": 1.0,
+ "E4.contrast.ws_full_vs_memrl.p40.p_adj": 1.0,
+ "E4.curve.append.p0.ci_hi": [
+  0.7500183284457477,
+  0.7612039142038153
+ ],
+ "E4.curve.append.p0.ci_lo": [
+  0.6,
+  0.6135064835613641
+ ],
+ "E4.curve.append.p0.online_x": [
+  15,
+  30,
+  45
+ ],
+ "E4.curve.append.p0.online_y": [
+  0.625,
+  0.6666666666666666,
+  0.6416666666666667
+ ],
+ "E4.curve.append.p0.x": [
+  0.0,
+  1.0
+ ],
+ "E4.curve.append.p0.y": [
+  0.6909090909090909,
+  0.7
+ ],
+ "E4.curve.append.p40.ci_hi": [
+  0.764797507788162,
+  0.7694704049844237
+ ],
+ "E4.curve.append.p40.ci_lo": [
+  0.6111111111111112,
+  0.607140126692879
+ ],
+ "E4.curve.append.p40.online_x": [
+  15,
+  30,
+  45
+ ],
+ "E4.curve.append.p40.online_y": [
+  0.6125,
+  0.6375,
+  0.6375
+ ],
+ "E4.curve.append.p40.x": [
+  0.0,
+  1.0
+ ],
+ "E4.curve.append.p40.y": [
+  0.703030303030303,
+  0.703030303030303
+ ],
+ "E4.curve.memrl.p0.ci_hi": [
+  0.7561203555960792,
+  0.7544910179640718
+ ],
+ "E4.curve.memrl.p0.ci_lo": [
+  0.6012311870372617,
+  0.5959797239184657
+ ],
+ "E4.curve.memrl.p0.online_x": [
+  15,
+  30,
+  45
+ ],
+ "E4.curve.memrl.p0.online_y": [
+  0.625,
+  0.6416666666666667,
+  0.65
+ ],
+ "E4.curve.memrl.p0.x": [
+  0.0,
+  1.0
+ ],
+ "E4.curve.memrl.p0.y": [
+  0.693939393939394,
+  0.6878787878787879
+ ],
+ "E4.curve.memrl.p40.ci_hi": [
+  0.764797507788162,
+  0.7570126835781041
+ ],
+ "E4.curve.memrl.p40.ci_lo": [
+  0.6111111111111112,
+  0.591875531011045
+ ],
+ "E4.curve.memrl.p40.online_x": [
+  15,
+  30,
+  45
+ ],
+ "E4.curve.memrl.p40.online_y": [
+  0.6041666666666666,
+  0.6416666666666667,
+  0.6416666666666667
+ ],
+ "E4.curve.memrl.p40.x": [
+  0.0,
+  1.0
+ ],
+ "E4.curve.memrl.p40.y": [
+  0.703030303030303,
+  0.6878787878787879
+ ],
+ "E4.curve.ws_full.p0.ci_hi": [
+  0.7714285714285715,
+  0.7604790419161677
+ ],
+ "E4.curve.ws_full.p0.ci_lo": [
+  0.6178319601082997,
+  0.5887850467289719
+ ],
+ "E4.curve.ws_full.p0.online_x": [
+  15,
+  30,
+  45
+ ],
+ "E4.curve.ws_full.p0.online_y": [
+  0.6166666666666667,
+  0.6083333333333333,
+  0.6333333333333333
+ ],
+ "E4.curve.ws_full.p0.x": [
+  0.0,
+  1.0
+ ],
+ "E4.curve.ws_full.p0.y": [
+  0.7090909090909091,
+  0.6878787878787879
+ ],
+ "E4.curve.ws_full.p40.ci_hi": [
+  0.764797507788162,
+  0.7591463414634146
+ ],
+ "E4.curve.ws_full.p40.ci_lo": [
+  0.6111111111111112,
+  0.5825198749848283
+ ],
+ "E4.curve.ws_full.p40.online_x": [
+  15,
+  30,
+  45
+ ],
+ "E4.curve.ws_full.p40.online_y": [
+  0.6041666666666666,
+  0.625,
+  0.6375
+ ],
+ "E4.curve.ws_full.p40.x": [
+  0.0,
+  1.0
+ ],
+ "E4.curve.ws_full.p40.y": [
+  0.703030303030303,
+  0.6878787878787879
+ ],
+ "E4.evict.fpr": 0.556907659269864,
+ "E4.evict.precision": 0.08146399055489964,
+ "E4.evict.recall": 0.5476190476190477,
+ "E4.evict.ws_full.p0.clean_share_of_evicted.mean": 1.0,
+ "E4.evict.ws_full.p0.fpr.mean": 0.5393700787401575,
+ "E4.evict.ws_full.p0.precision.mean": 0.0,
+ "E4.evict.ws_full.p40.clean_share_of_evicted.mean": 0.9185360094451004,
+ "E4.evict.ws_full.p40.fpr.mean": 0.556907659269864,
+ "E4.evict.ws_full.p40.precision.mean": 0.08146399055489964,
+ "E4.evict.ws_full.p40.recall.mean": 0.5476190476190477,
+ "E4.memrl.p0.auc.mean": 0.6909090909090909,
+ "E4.memrl.p0.final_ex.ci_hi": 0.7544910179640718,
+ "E4.memrl.p0.final_ex.ci_lo": 0.5959797239184657,
+ "E4.memrl.p0.final_ex.mean": 0.6878787878787879,
+ "E4.memrl.p0.init_ex.mean": 0.693939393939394,
+ "E4.memrl.p0.n_units": 8,
+ "E4.memrl.p40.auc.mean": 0.6954545454545454,
+ "E4.memrl.p40.final_ex.ci_hi": 0.7570126835781041,
+ "E4.memrl.p40.final_ex.ci_lo": 0.591875531011045,
+ "E4.memrl.p40.final_ex.mean": 0.6878787878787879,
+ "E4.memrl.p40.init_ex.mean": 0.703030303030303,
+ "E4.memrl.p40.n_units": 16,
+ "E4.memrl_vs_ws.p40.delta.ci_hi": 0.9463722397476393,
+ "E4.memrl_vs_ws.p40.delta.ci_lo": -1.3377926421404673,
+ "E4.memrl_vs_ws.p40.delta.mean": 0.0,
+ "E4.memrl_vs_ws.p40.p": 1.0,
+ "E4.memrl_vs_ws.p40.p_adj": 1.0,
+ "E4.n_units": 72,
+ "E4.perms": "1, 2",
+ "E4.policies": "append, memrl, ws_full",
+ "E4.pollution_levels": "0, 40",
+ "E4.slope.append.ci_hi": 0.29885055532884147,
+ "E4.slope.append.ci_lo": -0.209001884660956,
+ "E4.slope.append.mean": 0.04492433533394272,
+ "E4.slope.append.p": 0.7291003172482876,
+ "E4.slope.memrl.ci_hi": 0.23452221724993205,
+ "E4.slope.memrl.ci_lo": -0.2345286740366085,
+ "E4.slope.memrl.mean": -3.2283933382091338e-06,
+ "E4.slope.memrl.p": 0.9837233266011003,
+ "E4.slope.ws.ci_hi": 0.24804130980550365,
+ "E4.slope.ws.ci_lo": -0.24809928966258715,
+ "E4.slope.ws.mean": -2.8989928541749285e-05,
+ "E4.slope.ws_full.ci_hi": 0.24804130980550365,
+ "E4.slope.ws_full.ci_lo": -0.24809928966258715,
+ "E4.slope.ws_full.mean": -2.8989928541749285e-05,
+ "E4.slope.ws_full.p": 0.9836649153864299,
+ "E4.slope_diff.p": 0.8066054956543485,
+ "E4.slope_diff.ws_full_minus_append.ci_hi": 0.3097270413166294,
+ "E4.slope_diff.ws_full_minus_append.ci_lo": -0.395344316162369,
+ "E4.slope_diff.ws_full_minus_append.mean": -0.042808637422869764,
+ "E4.status": "ok",
+ "E4.ws_full.p0.auc.mean": 0.6984848484848485,
+ "E4.ws_full.p0.evicted_clean": 411,
+ "E4.ws_full.p0.evicted_polluted": 0,
+ "E4.ws_full.p0.evicted_total": 411,
+ "E4.ws_full.p0.final_ex.ci_hi": 0.7604790419161677,
+ "E4.ws_full.p0.final_ex.ci_lo": 0.5887850467289719,
+ "E4.ws_full.p0.final_ex.mean": 0.6878787878787879,
+ "E4.ws_full.p0.init_ex.mean": 0.7090909090909091,
+ "E4.ws_full.p0.n_units": 8,
+ "E4.ws_full.p0.noharm.delta.ci_hi": 0.6230529595015577,
+ "E4.ws_full.p0.noharm.delta.ci_lo": -3.0770547945205484,
+ "E4.ws_full.p0.noharm.delta.mean": -1.2121212121212088,
+ "E4.ws_full.p0.noharm.p_1s": 0.22415516896620677,
+ "E4.ws_full.p40.auc.mean": 0.6954545454545454,
+ "E4.ws_full.p40.evicted_clean": 778,
+ "E4.ws_full.p40.evicted_polluted": 69,
+ "E4.ws_full.p40.evicted_total": 847,
+ "E4.ws_full.p40.final_ex.ci_hi": 0.7591463414634146,
+ "E4.ws_full.p40.final_ex.ci_lo": 0.5825198749848283,
+ "E4.ws_full.p40.final_ex.mean": 0.6878787878787879,
+ "E4.ws_full.p40.init_ex.mean": 0.703030303030303,
+ "E4.ws_full.p40.n_units": 16,
+ "E4.ws_full.p40.recall_polluted": 0.5476190476190477,
+ "_meta": {
+  "created": "2026-10-27 16:21:20",
+  "git": "unknown",
+  "name": "E4",
+  "notes": [],
+  "scope": "confirmatory"
+ }
+}

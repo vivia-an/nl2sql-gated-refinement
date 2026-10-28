@@ -1,0 +1,157 @@
+{
+ "rule3": "fixed",
+ "full": "full_fixed",
+ "rule4_p3": "keep",
+ "route_ca_adopted": true,
+ "m_family": 5,
+ "m_family_note": "counts P3 only; P5 is in the family iff n_R >= 40 on dev (SAP 13.3), applied at the lock",
+ "b_ref_calls": 3.2888,
+ "b_ref_calls_gated": 2.0209,
+ "b_ref_calls_fixed": 3.2888,
+ "p2_calls_ceiling": 3.7822,
+ "baseline_window": [
+  2.7955,
+  3.7822
+ ],
+ "decided": "2026-10-26",
+ "rule3_detail": {
+  "decision": "fixed",
+  "conditions": {
+   "i_hr_dEX_lower95_gt_-1.5pp": false,
+   "ii_hr_ratio_upper95_lt_0.80": true,
+   "iii_ht_point_dEX_ge_-2.0pp_and_ratio_lt_0.80": true
+  },
+  "hr": {
+   "n_pairs": 1101,
+   "ex_fixed": 0.667574931880109,
+   "ex_gated": 0.662125340599455,
+   "diff_pp": -0.544959128065395,
+   "calls_per_q_fixed": 3.2888283378746594,
+   "calls_per_q_gated": 2.0208900999091735,
+   "ratio": 0.6144711405689036,
+   "gated_right_fixed_wrong": 14,
+   "fixed_right_gated_wrong": 20,
+   "n_databases": 8,
+   "diff_pp_ci95": [
+    -1.552511415525114,
+    0.4780114722753346
+   ],
+   "diff_pp_lo_onesided95": -1.3998250218722659,
+   "ratio_ci95": [
+    0.5933447954259997,
+    0.6376532875031078
+   ],
+   "ratio_hi_onesided95": 0.6338700059630292,
+   "dropped": {
+    "only_in_fixed": 0,
+    "only_in_gated": 0,
+    "ex_null": 0
+   }
+  },
+  "ht": {
+   "n_pairs": 300,
+   "ex_fixed": 0.6933333333333334,
+   "ex_gated": 0.6833333333333333,
+   "diff_pp": -1.0,
+   "calls_per_q_fixed": 3.236666666666667,
+   "calls_per_q_gated": 2.013333333333333,
+   "ratio": 0.6220391349124614,
+   "gated_right_fixed_wrong": 2,
+   "fixed_right_gated_wrong": 5,
+   "dropped": {
+    "only_in_fixed": 0,
+    "only_in_gated": 0,
+    "ex_null": 0
+   }
+  }
+ },
+ "rule4_detail": {
+  "decision": "keep",
+  "k": 4,
+  "features": [
+   "v3",
+   "consistency",
+   "nonempty"
+  ],
+  "conditions": {
+   "i_dAUROC_ge_0.03_and_lower95_gt_0": true,
+   "ii_acc60_ge_v3_plus_2pp": true
+  },
+  "hr": {
+   "n": 1101,
+   "n_databases": 8,
+   "dropped": {
+    "no_label": 0,
+    "missing_feature": 0
+   },
+   "auroc_route_ca_lodo": 0.7070560868441458,
+   "auroc_v3": 0.6647878743122992,
+   "dAUROC": 0.04226821253184654,
+   "dAUROC_ci95": [
+    0.021011655294893537,
+    0.07496446770894716
+   ],
+   "acc60_route_ca_lodo": 0.7812405446293493,
+   "acc60_v3": 0.7427382753403933,
+   "dAcc60_pp": 3.850226928895606,
+   "aurc_route_ca_lodo": 0.24703046512370755,
+   "aurc_v3": 0.241893782866131
+  },
+  "ht_heldout_info": {
+   "n": 300,
+   "dropped": {
+    "no_label": 0,
+    "missing_feature": 0
+   },
+   "dAUROC": 0.04505776636713732,
+   "dAUROC_ci95": [
+    -0.004415584415584428,
+    0.07899305555555558
+   ],
+   "acc60_route_ca": 0.8333333333333333,
+   "acc60_v3": 0.8061111111111112
+  }
+ },
+ "inputs": [
+  {
+   "name": "hr_fixed",
+   "path": "<NL2SQL_ROOT>/runs/X5/1b-hr-quote/preds.jsonl",
+   "sha256": "0ebaca531872a0dc05bc24c87213c9b427422d9aaead2ccd2bb3163dfd118ac9",
+   "n_rows": 1101
+  },
+  {
+   "name": "hr_gated",
+   "path": "<NL2SQL_ROOT>/runs/X5/1b-hr-gated/preds.jsonl",
+   "sha256": "646671885cd284940bf4e1c972432e00c8db2d487470cc93b09994495f78bb60",
+   "n_rows": 1101
+  },
+  {
+   "name": "ht_fixed",
+   "path": "<NL2SQL_ROOT>/runs/X5/1b-ht-quote/preds.jsonl",
+   "sha256": "6c9c5e2fc7f1fe21e99583e83ee2f4812bda6c86e67bf90b2f52e1427c63a5e4",
+   "n_rows": 300
+  },
+  {
+   "name": "ht_gated",
+   "path": "<NL2SQL_ROOT>/runs/X5/1b-ht-gated/preds.jsonl",
+   "sha256": "cabbcb8ed49113c1805128f8ac28840cce88ab439fd1f2c2c8c6147231383174",
+   "n_rows": 300
+  },
+  {
+   "name": "hr_cons",
+   "path": "<NL2SQL_ROOT>/runs/X5/2-hr-cons/preds.jsonl",
+   "sha256": "e82070910cf5d537a603ed698bee55fe5b530a105095b3a65e7bd79c2b388e46",
+   "n_rows": 1101
+  },
+  {
+   "name": "ht_cons",
+   "path": "<NL2SQL_ROOT>/runs/X5/2-ht-cons/preds.jsonl",
+   "sha256": "9da8ce7a8208da6b8c518732c3f520d2722a971346f3b0930bdd4e4ccf676710",
+   "n_rows": 300
+  }
+ ],
+ "boot": 10000,
+ "seed": 20261101,
+ "tool": "code/tools/selection_rules.py (X6)",
+ "fallback_note": "full_fixed: full_gated is still run on dev and P1 is still tested (SAP 13.6 rule 3, 'Otherwise')"
+}

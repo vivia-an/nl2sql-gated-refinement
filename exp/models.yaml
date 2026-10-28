@@ -1,0 +1,105 @@
+# 模型登记表（X1，2026-10-25）。由 /models 实时列表（exp/models_list_20261025.json，180 项）选出并逐个 1 次调用验证。
+# 规则：全部请求走 DashScope OpenAI 兼容端点；一律关闭思考（enable_thinking=false），E2.T 附录除外。
+# 红线：禁用 qwen-plus* / qwen-max* / qwen-flash* / qwen-turbo* / qwen3-max*（线上在用）。下列 8 个 id 均不命中。
+version: 1
+snapshot_date: 2026-10-25
+api:
+  base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
+  chat: /chat/completions
+  embeddings: /embeddings
+  rerank_url: https://dashscope.aliyuncs.com/compatible-api/v1/reranks   # 实测可用，响应 results[].relevance_score
+  key_file: /root/.nl2sql/qwen.env         # pod 本地盘；宿主为 /root/mu-cards-ops/secrets/qwen.env；变量名 QWEN_API_KEY
+forbidden_prefixes: [qwen-plus, qwen-max, qwen-flash, qwen-turbo, qwen3-max]
+
+defaults:                                   # 客户端默认；各调用点可覆盖 max_tokens
+  temperature: 0
+  seed: 0
+  top_p: 1.0
+  extra_body: {enable_thinking: false}      # 8 个模型实测均有效（见 probe）；kimi-k2.6 本端点本就不输出思考
+  concurrency_per_model_per_process: 8
+  timeout_s: 120
+  retry: {max_attempts: 6, backoff_base_s: 2, backoff_cap_s: 60, on: [429, 500, 502, 503, 504, timeout]}
+  max_tokens: {m1: 700, generate: 1024, critic: 512, revise: 1024, nl_probe: 128}
+  strip_code_fence: true                    # glm-5.2 / kimi-k2.6 / qwen 常把 SQL 包在 ```sql 中，解析器必须剥离
+  thinking_on_override: {extra_body: {enable_thinking: true}, max_tokens: 8192}   # 仅 E2.T
+
+roles:
+  primary_actor: qwen37plus                 # E1/E3/E4/E5/E6/E7/E8 的 Actor（以及默认 self-critic）
+  critic_cross_vendor: dsv41flash           # 跨厂商 Critic（DeepSeek；与 Actor 不同厂商）
+  tier1: qwen37plus                         # M7 升级档：起点
+  tier2: qwen38max                          # M7 escalate 目标
+  embedding: qwen3.7-text-embedding         # dim=1024（实测）。-flash 变体同为 1024，备用
+  rerank: qwen3.7-text-rerank
+
+models:
+  - key: qwen38max
+    id: qwen3.8-max-0902
+    vendor: Alibaba/Qwen
+    access: proprietary                      # 闭源 API
+    params_b: null                           # 官方未公开则留空，不估填
+    snapshot: dated                          # id 带日期（0902）
+    thinking: {default_thinks: true, off: {enable_thinking: false}, off_verified: true}
+    probe_2026_10_25: {off_ok: true, off_completion_tokens: 1, lat_mean_s_48calls_c8: 3.7, thr_calls_per_s_c8: 2.0, thr_calls_per_s_c24: 5.19, http_errors: 0}
+  - key: qwen37plus
+    id: qwen3.7-plus-2026-05-26
+    vendor: Alibaba/Qwen
+    access: proprietary
+    params_b: null
+    snapshot: dated
+    thinking: {default_thinks: true, off: {enable_thinking: false}, off_verified: true}
+    probe_2026_10_25: {off_ok: true, off_completion_tokens: 1, lat_mean_s_48calls_c8: 3.9, thr_calls_per_s_c8: 1.74, thr_calls_per_s_c24: 3.13, http_errors: 0}
+  - key: qwen37flash
+    id: qwen3.7-flash-2026-07-15
+    vendor: Alibaba/Qwen
+    access: proprietary
+    params_b: null
+    snapshot: dated
+    thinking: {default_thinks: true, off: {enable_thinking: false}, off_verified: true}
+    probe_2026_10_25: {off_ok: true, off_completion_tokens: 1}
+  - key: qwen3527b
+    id: qwen3.5-27b
+    vendor: Alibaba/Qwen
+    access: open_weight_unverified           # 命名与厂商惯例指向开源；L1/X2 须在模型卡核实后改为 open_weight
+    params_b: 27                             # 取自模型名；是否稠密待核
+    snapshot: undated                        # 列表中无带日期版本；同时记录 created=1783075416 (2026-07-03)
+    thinking: {default_thinks: true, off: {enable_thinking: false}, off_verified: true}
+    probe_2026_10_25: {off_ok: true, off_completion_tokens: 2}
+  - key: qwen36a3b
+    id: qwen3.6-35b-a3b
+    vendor: Alibaba/Qwen
+    access: open_weight_unverified
+    params_b: {total: 35, active: 3}         # 取自模型名（MoE），待核
+    snapshot: undated                        # created=1783304863 (2026-07-06)
+    thinking: {default_thinks: true, off: {enable_thinking: false}, off_verified: true}
+    probe_2026_10_25: {off_ok: true, off_completion_tokens: 1}
+  - key: dsv41flash
+    id: deepseek-v4.1-flash-1017
+    vendor: DeepSeek
+    access: open_weight_unverified
+    params_b: null
+    snapshot: dated                          # 1017
+    thinking: {default_thinks: true, off: {enable_thinking: false}, off_verified: true}
+    probe_2026_10_25: {off_ok: true, off_completion_tokens: 2, lat_mean_s_48calls_c8: 2.3, thr_calls_per_s_c8: 3.1, thr_calls_per_s_c24: 7.07, http_errors: 0}
+  - key: glm52
+    id: glm-5.2
+    vendor: Zhipu
+    access: open_weight_unverified
+    params_b: null
+    snapshot: undated                        # 列表另有 ZHIPU/GLM-5.2 别名；用小写 glm-5.2（已验证可调）
+    thinking: {default_thinks: true, off: {enable_thinking: false}, off_verified: true}
+    probe_2026_10_25: {off_ok: true, off_completion_tokens: 1}
+  - key: kimik26
+    id: kimi-k2.6
+    vendor: Moonshot
+    access: open_weight_unverified
+    params_b: null
+    snapshot: undated                        # created=1784953933 (2026-07-25)
+    thinking: {default_thinks: false, off: {enable_thinking: false}, off_verified: true}   # 本端点两种设置下均无 reasoning_content
+    probe_2026_10_25: {off_ok: true, off_completion_tokens: 2, note: "default 与 off 输出一致；E2.T 对其无意义，标 n/a"}
+
+# 以下字段由工程师在 smoke 阶段人工到 DashScope 官方价格页查证后填写；查不到保持 null，成本表只报 token。
+pricing_per_mtok_cny: {qwen38max: null, qwen37plus: null, qwen37flash: null, qwen3527b: null, qwen36a3b: null, dsv41flash: null, glm52: null, kimik26: null}
+tier_cost_multiplier_fallback: {tier1: 1, tier2: 4}   # 价格缺失时 E6 的 token 成本乘子（声明为假设，非事实）
+
+# 候选但未选（备选/扩展）：qwen3.8-27b、qwen3.5-397b-a17b、qwen3.5-122b-a10b、deepseek-v4-pro-0813、kimi/kimi-k3.1-pro、
+# MiniMax/MiniMax-M3；不选原因：8 个名额已覆盖 3 个 Qwen 闭源档 + 2 个 Qwen 开源档 + 3 个其他厂商。

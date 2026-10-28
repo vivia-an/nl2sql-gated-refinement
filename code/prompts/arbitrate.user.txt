@@ -1,0 +1,23 @@
+<<sections>>
+
+# Task
+Two SQLite queries were written for the question below and they return different results. Decide which one answers the question completely and correctly. Judge by what each query computes and by its result preview.
+Return one JSON object and nothing else:
+{"choice": "A" | "B", "reason": str}
+
+# Question
+Question: <<question>>
+Evidence: <<evidence>>
+<<graph>>
+
+# Candidate A
+<<sql_a>>
+
+Execution of A:
+<<preview_a>>
+
+# Candidate B
+<<sql_b>>
+
+Execution of B:
+<<preview_b>>

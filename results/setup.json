@@ -1,0 +1,39 @@
+{
+ "_meta": {
+  "created": "2026-10-27 20:31:27",
+  "git": "unknown",
+  "name": "setup",
+  "notes": [
+   "setup.holdout = HR-1101 (8 dbs) + HT-300 (4 dbs): the tuning data of docs/TUNING.md and docs/HEADROOM.md"
+  ],
+  "scope": "confirmatory"
+ },
+ "setup.bird_dev.n_dbs": 11,
+ "setup.bird_dev.n_questions": 1534,
+ "setup.boot_resolution_pp": 0.009999000099990002,
+ "setup.design_effect": 2.3845454545454547,
+ "setup.design_effect.basis": "planning design effect (SAP 9): 1 + (m - 1) * rho, m = 139.5 items per database, rho = 0.01 assumed; not estimated from these data (observed analogues: setup.design_effect_emp.*)",
+ "setup.design_effect.items_per_db": 139.45454545454547,
+ "setup.design_effect.rho_assumed": 0.01,
+ "setup.design_effect_emp.full_gated_vs_full_fixed.qwen37plus": 0.3531764798697395,
+ "setup.design_effect_emp.full_gated_vs_full_fixed.qwen37plus.rho": -0.004671739147362354,
+ "setup.design_effect_emp.full_gated_vs_zs.qwen3527b": 1.258645574326226,
+ "setup.design_effect_emp.full_gated_vs_zs.qwen3527b.rho": 0.0018680901625663065,
+ "setup.design_effect_emp.full_gated_vs_zs.qwen37flash": 1.6899465372075013,
+ "setup.design_effect_emp.full_gated_vs_zs.qwen37flash.rho": 0.0049831988898768964,
+ "setup.design_effect_emp.full_gated_vs_zs.qwen37plus": 1.334792781913754,
+ "setup.design_effect_emp.full_gated_vs_zs.qwen37plus.rho": 0.0024180699941242895,
+ "setup.devlock.hash": "d97296311b75",
+ "setup.holdout.n_dbs": 12,
+ "setup.holdout.n_questions": 1401,
+ "setup.hr.n_dbs": 8,
+ "setup.hr.n_questions": 1101,
+ "setup.ht.n_dbs": 4,
+ "setup.ht.n_questions": 300,
+ "setup.p4_mde_pp": 6.897026032063687,
+ "setup.p4_mde_pp.n_probe_items": 330,
+ "setup.plan.commit": "045fb7b",
+ "setup.resolution_pp": 3.0128489763794364,
+ "setup.resolution_pp.basis": "SAP 13.7 row p_d 0.05: n=1534, DEFF=2.38, power 0.80, two-sided alpha 0.01 (Holm step 1, m=5)",
+ "setup.seeds": "0, 101, 202"
+}

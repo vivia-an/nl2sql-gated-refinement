@@ -1,0 +1,27 @@
+{
+ "arm": "A0",
+ "model": "qwen3.7-plus-2026-05-26",
+ "units": "<NL2SQL_ROOT>/runs/DIAGV3/eval/units.json",
+ "n_done_now": 594,
+ "prompts_sha256_before": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+ "prompts_sha256_after": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+ "models_yaml_sha256_before": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+ "models_yaml_sha256_after": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+ "arbiter_prompt_sha256": {
+  "ve_arbiter_flag.user.txt": "aca7811e1b7780fc0845993849296edbbd37802948089d3ad4c35138967f894d",
+  "ve_arbiter_pass.user.txt": "8cd0778ed2b4b55e4f81c7dedfc0241866b1c7551b79164beb7ae0bb8136b79c",
+  "vd_appeal.user.txt": "aab465a6d5be723a7d97a70a60f8b354e47aa095c642f5110417fd27b804cf04"
+ },
+ "stats": {
+  "calls": 594,
+  "cache_hits": 0,
+  "n429": 0,
+  "n5xx": 0,
+  "ntimeout": 0,
+  "retries": 0,
+  "failures": 0,
+  "embed_calls": 0,
+  "rerank_calls": 0
+ },
+ "secs": 425.4
+}

@@ -1,0 +1,71 @@
+{
+ "annotation": "LLM annotation: two independent Claude Sonnet 5.5 runs (A1, A2) and one adjudicator run; SAP section 14 (Amendment 2). Not human or expert annotation.",
+ "date": "2026-10-26",
+ "model_id": "claude-sonnet-5-5",
+ "model_note": "the annotation runs were started as separate model sessions (model alias 'sonnet'); the model id reported for these sessions is claude-sonnet-5-5. The sampling temperature of these sessions is not controlled.",
+ "frozen_texts_sha256": {
+  "docs/ANNOTATION_PROMPT.md": "1dfd34c4cfc32342015948dcf6d186e9aca143031333160e181874928ecf19e3",
+  "docs/ANNOTATION_GUIDE.md": "f9d427869d73a828637e1887234d17b61962695f4dc5ffb270f8cab633a8cd92"
+ },
+ "frozen_texts_unchanged_since_pilot": true,
+ "git_head_at_run": "cbf534224b363b80a246d3408307fe405099c8c7",
+ "sheet": {
+  "run_path": "<NL2SQL_ROOT>/runs/MIN/E10/sheet",
+  "n_main": 300,
+  "n_pilot": 30,
+  "seed": 20261027,
+  "files_sha256": {
+   "annotation_A1.csv": "62c8dc5605b4f45dd431e48b1d76222490c996a3f9cabd350b7d6e1f8239fd5c",
+   "annotation_A2.csv": "a6e60973a997de2992a7de99b5c9e952962dd8103773d4de22b09d10a9cd5731",
+   "annotation_key.csv": "85bfd30a082c966b98667e9b5d68c1bc8f6d724098a2b70cfa042f9c809c573f",
+   "pilot_A1.csv": "14dc8b4c002ec2af7cdaf71411799172e53933fe35bebe176983622e5474ad4f",
+   "pilot_A2.csv": "192f1c64e6f93ca12ee4e2ba226a381491840d7b309dcc36e72639d1b1ce8596"
+  }
+ },
+ "chunk_size": {
+  "main": 50,
+  "pilot": 30
+ },
+ "database_access": "none",
+ "folder_contents": "per session folder: chunk_NN.csv (own run's chunks), schemas/ (copy of sheet/schemas), GUIDE.md (= docs/ANNOTATION_GUIDE.md); no key, no sheet_meta, no other run's folder, no preds, no results/, no repository",
+ "prompt": "verbatim section 1 (annotator) and section 3 (adjudicator) of docs/ANNOTATION_PROMPT.md with <FOLDER>/<CHUNK> substituted; nothing added",
+ "sessions": {
+  "pilot": {
+   "A1": 1,
+   "A2": 1,
+   "note": "30 pilot items each (P-ids); pilot labels discarded for the analysis, texts frozen unchanged afterwards; pilot primary-label agreement 25/30"
+  },
+  "main": {
+   "A1": 6,
+   "A2": 6,
+   "adjudicator": 1,
+   "total_main": 13
+  },
+  "total_including_pilot": 15,
+  "repeated_sessions": 0
+ },
+ "repeated_chunks": [],
+ "repeat_reason": "none: every chunk passed annotation_kappa.py merge (--expect) at the first attempt",
+ "protocol_deviations_not_repeated": [
+  "Several annotator sessions ran read-only shell commands on files inside their own folder (grep, wc, cut, sort, uniq, a short python read-back) although the prompt says not to run any other program: A1 chunks 04, 05, 06 and A2 chunks 02, 04. No SQL was run, nothing outside the own folder was read (as reported by the sessions), the label content was not re-done. Not repeated: the rule is for tool/format failures only, not for labels.",
+  "Self-reported label counts of some sessions differ slightly from the merged files (pilot A1: L2/L4/L6; others by hand); the merged files are the record.",
+  "Pilot A2 first wrote one unquoted comma inside a note and fixed it itself; the file merged cleanly."
+ ],
+ "independence": "A1 and A2 sessions were given disjoint folders with an opaque name, were never shown each other's labels, and each saw the items in its own random order (sheet files annotation_A1.csv / annotation_A2.csv). The adjudicator saw adjudication.csv with the two labels in blinded random X/Y positions (xy_key.json not given).",
+ "guide_note": "GUIDE.md (frozen text) names the system 'full_fixed' in its worked-example provenance lines (train split); it does not say which system produced which prediction in the sample.",
+ "adjudication": {
+  "n_rows": 35,
+  "final_equals_A1": 13,
+  "final_equals_A2": 22,
+  "third_label": 0
+ },
+ "files_sha256": {
+  "annotation_key.csv": "85bfd30a082c966b98667e9b5d68c1bc8f6d724098a2b70cfa042f9c809c573f",
+  "labels_A1.csv": "8a193c65e9cb03bc0cc659a5b31df8ffec9ef4a5c8143f7c8d322f185bbaa813",
+  "labels_A2.csv": "9f94e9e45fa5956a97431e48090157d9c0806360569006519fb3959aa4a33b68",
+  "final_labels.csv": "01437d3573057d88f776c63d9b5a551e74a18fd8771ddc4aa8d2038f20062695",
+  "labels_final_all.csv": "ba85c6e243983c5a5cc8259a6b47a5b2739d8be23e92d20123b989f9618170b6",
+  "agreement.json": "a78fa1fb61a2084a6468f0d5349d175ab7dcca5408cb2b95f4cf029ddb32e349"
+ },
+ "unverified": "analysis_pipeline/e10.py not executed on the host (no numpy); its input layout was matched by file names (annotation_key.csv, labels_A1.csv, labels_A2.csv, final_labels.csv in this directory)."
+}

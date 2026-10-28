@@ -1,0 +1,5 @@
+# Self-Debug trial 3: E.7 "explain" feedback, 1 round (the paper's richer feedback at a small round budget).
+temperature: 0.0
+ddl: {quote_keywords: true}   # X6: same quoted identifiers as the ours-systems (SAP 13.6 rule 1); schema block only, no extra rule line
+max_rounds: 1
+feedback: explain

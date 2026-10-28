@@ -1,0 +1,8 @@
+# MIN M4: "no_evict" comparator = policy `append` of SPEC E4 / SAP P4 (writes every accepted output, never evicts, ranks by similarity).
+# Pipeline P0 + identifier quoting. Use: stream e4 --policy append.
+temperature: 0.0
+ddl: {quote_keywords: true}
+m3: {k_t: 6, k_e: 4}
+m6:
+  policy: append
+  params: {phi: 0.5, tau: 6.0}

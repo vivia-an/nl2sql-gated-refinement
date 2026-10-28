@@ -1,0 +1,8 @@
+# FROZEN 2026-10-26 by code/tools/freeze_configs.py from exp/configs/min_full_gated.yaml (sha256 bc94950f5b120ea8). Do not edit: a change is a new lock entry (SPEC 1.3 step 6).
+# MIN plan TEMPLATE -> frozen as exp/configs/frozen/full_gated.yaml (= full_gated.yaml of X5 + frozen M6 store). Execution-gated loop, no semantic
+# critic call, route.score exec. Used for the stability seeds r1, r2 and as the base of the M3 ablations. --system full_gated.
+temperature: 0.0
+ddl: {quote_keywords: true}
+m5: {policy: gated, gate_empty: false, score_for_routing: false, t_max: 3}
+route: {score: exec, theta_h: 7.5}
+m6: {policy: ws_full, path: exp/frozen/corpus_burnin_39e2477c.sqlite, update: false}

@@ -1,0 +1,12 @@
+db_id,n_tables,median_ctx_tokens,n_questions
+california_schools,3,4132,89
+card_games,6,4716,191
+codebase_community,8,2087,186
+debit_card_specializing,5,393,64
+european_football_2,7,4603,129
+financial,8,1530,106
+formula_1,13,2730,174
+student_club,8,2320,158
+superhero,10,1389,129
+thrombosis_prediction,3,1612,163
+toxicology,4,588,145

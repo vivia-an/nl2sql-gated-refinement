@@ -1,0 +1,24 @@
+{
+ "_meta": {
+  "frozen_at": "2026-10-27 (worker machine time CST) / 2026-10-26 EDT, after tuning on the fresh draw and before the first evaluation call",
+  "rule": "docs/SAP.md 18.3 / 18.12",
+  "tuning_items_sha256": "a1140edeb012ca2a76d2f4a4d530e00962e143d6bdb0a40d7df52ef4b6f7086e",
+  "eval_items_sha256": "208504194921c78b38a724219725b921bc8e35639274f81603d79008ba855d18",
+  "code_defaults": {
+   "theta_acc_variant": 7.0,
+   "theta_fb_variant": 5.0,
+   "max_tokens_critic_variant": 900,
+   "max_tokens_verifier": 500,
+   "max_tokens_appeal": 600,
+   "k_memory": 4,
+   "stage1": "critic_v2.stage1_ab + results_equal",
+   "scale_consistency": "critic_v2.consistent_semantic"
+  }
+ },
+ "prompts": {
+  "va_grounded.user.txt": "4c8d32e931d3b6b7b29452522a695cc280314e17bae4ca4b94364b34dec63032",
+  "vb_memory.user.txt": "d7e8cc8ed910d337f407b8ade1b3368b7ede2f08f660a8dd1971b5e7ca7417d1",
+  "vc_verifier.user.txt": "7c68f7e74d41a5094ecfe04d2fdf0a04a2b6d3d656302185ab2cd2f796ba2d17",
+  "vd_appeal.user.txt": "aab465a6d5be723a7d97a70a60f8b354e47aa095c642f5110417fd27b804cf04"
+ }
+}

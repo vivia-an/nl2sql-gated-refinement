@@ -1,0 +1,6 @@
+# R0 tuned (P2) E4 memrl: lambda_m=1.0 (first pass EX 0.7070; 0.25 -> 0.6992, 0.5 -> 0.7031). Use with: stream e4 --policy memrl
+temperature: 0.0
+m3: {k_t: 6, k_e: 4}
+m6:
+  policy: memrl
+  params: {lambda_m: 1.0, phi: 0.5, memrl_eta: 0.3, memrl_q0: 0.5}

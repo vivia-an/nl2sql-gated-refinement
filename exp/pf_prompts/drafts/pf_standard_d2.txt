@@ -1,0 +1,9 @@
+# Scoring standard from user feedback
+Below are earlier questions similar to the one under review. Each has a SQL query and the verdict a user gave it after seeing its result: ACCEPTED (the user confirmed the result answers the question) or REJECTED (the user said the result is wrong). Together they are the scoring standard for this dataset: they show how a phrase of the question is read (which denominator, which columns, which filters, which aggregate, DISTINCT or not, which sort order) and what the user accepts.
+How to use them:
+- If the query under review reads a phrase the way an ACCEPTED case reads a similar phrase, that reading is right on that point: do not raise a must_fix issue about it, even if you would read the phrase differently.
+- If a REJECTED case shows a reading of a similar phrase that the user refused, and the query under review uses the same reading of the corresponding phrase, treat this as evidence for a must_fix issue about that phrase. Quote the phrase and the SQL fragment as usual.
+- The verdict of a past case says nothing else about the query under review; do not copy their SQL. Rules 1 to 6 below still apply, and a must_fix issue still needs a quoted phrase and a quoted SQL fragment. Where a past case shows how a phrase is read in this dataset, rule 4 applies with that reading.
+
+<<cases>>
+

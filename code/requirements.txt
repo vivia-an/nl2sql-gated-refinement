@@ -1,0 +1,18 @@
+# Pinned to what the worker machines ship (Python 3.12.3) plus sqlglot. The venv is created with
+# --system-site-packages (see scripts/setup_venv.sh) so numpy/sklearn/torch come from the system.
+httpx==0.28.1
+numpy==1.26.4
+scipy==1.15.2
+scikit-learn==1.6.1
+networkx==3.4.2
+pyyaml==6.0.2
+pandas==2.2.3
+pyarrow==19.0.1
+pytest==8.1.1
+sqlglot==25.34.1
+func_timeout==4.3.5   # only for the cross-check against the official BIRD scripts
+# torch: CPU build. Worker machines ship torch 2.7.0 (NVIDIA build; runs on CPU). If absent:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+sqlparse==0.5.3     # Spider test-suite evaluation (official exec_eval imports it)
+lightgbm==4.6.0     # E5 learned critic (optional model next to sklearn HistGradientBoosting)
+tqdm                # imported by the official test-suite exec_eval (ships with the worker machines)

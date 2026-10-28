@@ -1,0 +1,27 @@
+{
+ "variant": "VA",
+ "items": "<NL2SQL_ROOT>/runs/DIAGV2/eval/items.json",
+ "n_done_now": 396,
+ "critic_only": false,
+ "prompts_sha256_before": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+ "prompts_sha256_after": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+ "models_yaml_sha256_before": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+ "models_yaml_sha256_after": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+ "variant_prompt_sha256": {
+  "va_grounded.user.txt": "4c8d32e931d3b6b7b29452522a695cc280314e17bae4ca4b94364b34dec63032"
+ },
+ "theta_acc": 7.0,
+ "theta_fb": 5.0,
+ "stats": {
+  "calls": 1868,
+  "cache_hits": 485,
+  "n429": 0,
+  "n5xx": 0,
+  "ntimeout": 0,
+  "retries": 0,
+  "failures": 0,
+  "embed_calls": 0,
+  "rerank_calls": 5
+ },
+ "secs": 1438.3
+}

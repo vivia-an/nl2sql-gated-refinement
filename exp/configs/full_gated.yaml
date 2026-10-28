@@ -1,0 +1,12 @@
+# X5 (HEADROOM row 1): execution-gated loop + identifier hygiene. M1-M6 as in full_fixed, but
+#  * ddl.quote_keywords: SQLite reserved words (e.g. the BIRD table `transaction`) are double-quoted in the schema block, lineage hints
+#    and the zero-shot prompt, and the generation / revision prompts get one rule line "Quote SQLite reserved words ...";
+#  * m5.policy gated: revise only when the SQL fails to execute or times out (M5 syntax / field-mismatch sub-score); NO semantic critic
+#    call in the loop (about -1.1 calls/q); revision feedback = the execution error text; gate_empty false (empty results are accepted);
+#  * route.score exec: no V3 score exists, the routing score is the execution sub-score; a final answer that still fails (< theta_h 7.5)
+#    is routed to a human. Use full_gated_route.yaml for the patent V3 score as routing score.
+# Run with --system full_gated (or full_fixed: the policy comes from this file).
+temperature: 0.0
+ddl: {quote_keywords: true}
+m5: {policy: gated, gate_empty: false, score_for_routing: false, t_max: 3}
+route: {score: exec, theta_h: 7.5}

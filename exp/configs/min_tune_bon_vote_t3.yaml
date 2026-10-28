@@ -1,0 +1,5 @@
+# bon_vote trial 3: n 2, sample T 0.3.
+temperature: 0.0
+ddl: {quote_keywords: true}   # X6: same quoted identifiers as the ours-systems (SAP 13.6 rule 1); schema block only, no extra rule line
+n: 2
+sample_temperature: 0.3

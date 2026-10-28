@@ -1,0 +1,51 @@
+item_id,primary_label,secondary_label,rationale,notes
+A214,L8,,,"Pred returns t.* (10 columns) instead of trans_id only; same rows otherwise"
+A072,L3,,"Pred lacks T2.translation IS NOT NULL so NULL translations appear (7 rows vs 5).",
+A225,L3,L4,"Gold has school IS NOT NULL and DISTINCT; pred has neither.",
+A129,L6,L4,"Gold computes T1.Date - T2.CreationDate as raw text subtraction giving the constant 1 where the question asks 'How long did it take'; pred computes a real day difference.","Gold result degenerate; pred also adds ORDER BY/LIMIT 1"
+A179,L3,,"Pred filters date LIKE '95%' but dates are ISO (1995-..) so no rows.",
+A182,L1,,"Pred takes the fastest-lap column results.fastestLapTime instead of lapTimes.time that the evidence names ('lap records ... refers to time').",
+A109,L7,,"No evidence: 'highest point' can mean best single standing row (gold ORDER BY points DESC LIMIT 1) or total points (pred SUM(points)).",
+A180,L3,,"Pred filters l.date LIKE '97%' but dates are ISO so no rows.",
+A050,L5,L8,"D1: evidence says the set of Abyssal Horror refers to name = 'Abyssal Horror' so percentage is over cards with that name; D2: pred computes it over all cards of the same setCode. Tables and columns are right.","Gold also outputs an extra name column"
+A284,L6,L1,"Question asks the display name of the 'parent ID' of the child post but gold returns the owner of the child post itself and never uses the parent; pred follows the parent but reads posts.OwnerDisplayName (NULL).",
+A184,L4,L8,"Pred subquery groups by member AND event then requires COUNT(DISTINCT event) > 1 which is never true (grouping unit wrong) so empty.","Pred also returns names instead of member_id"
+A244,L1,L2,"Evidence 'code of sets refers to setCode' - pred reads sets.code and omits the set_translations join that gold uses (gold repeats codes).",
+A085,L4,,"Pred adds ORDER BY date DESC LIMIT 1 so one row instead of all potential values.",
+A258,L6,L1,"Gold selects cards whose id appears as set_translations.id for setCode OGW, not cards of set OGW ('set OGW refers to setCode = ...'); pred filters cards.setCode.","Pred returns name instead of id"
+A110,L6,,"Evidence says 'Max(faceConvertedManaCost)' but gold orders ascending LIMIT 1 which is the minimum.",
+A019,L3,,,"Pred literal 'A Lion.' includes the sentence period"
+A174,L3,,"Pred compares account date to '950101' and '001231' but dates are ISO so no rows.",
+A114,L3,,,"Pred County = 'Orange County' but the value is 'Orange'"
+A105,L7,,"Evidence only says average of aCL IgM with no population: gold averages over thrombosis=2 and ANA S subset while pred averages over all Examination rows.",
+A021,L3,,"Pred compares issued to '940303' but dates are ISO.",
+A285,L3,,"Pred compares issued < '980101' but dates are ISO so numerator is 0.",
+A147,L8,,,"Execution error: final SELECT ORDER BY ft.trans_id not in CTE columns; logic otherwise plausible"
+A131,L4,,"Pred uses COUNT(DISTINCT CustomerID) while gold counts rows (2730 vs 391).","Gold arguably counts customer-month rows; kept as DISTINCT difference"
+A037,L8,,,"Pred omits the count column that gold returns; same districts in same order"
+A046,L8,,,"Pred omits molecule_id column; label values equal"
+A220,L2,,"Gold joins atom and bond on molecule_id while pred joins through connected so pairs differ (6 vs 4 rows).",
+A292,L5,L4,"D1: evidence defines percentage as Spanish rows over all foreign_data rows (single value) listing Spanish names; D2: pred groups by cards.name giving a per-name percentage over all languages.","Also column order and name source differ"
+A261,L1,,,"Pred returns customers.Currency instead of gasstations.Country"
+A017,L3,,"Pred builds year from SUBSTR(date,1,2) assuming YYMMDD but dates are ISO so no rows.",
+A010,L1,L2,"Evidence says the month comes from yearmonth.Date = '201306' but pred filters transactions_1k.Date and omits the yearmonth join.",
+A183,L3,,,"Pred CharterNum = '40' but stored value is '0040'"
+A035,L4,L8,,"Pred lacks DISTINCT and adds Birthday column"
+A033,L7,L1,"Compound question (how many offer Multiple Provision Types plus cities and schools per city); gold only lists city counts filtered by provision while pred counts provision inside SELECT and uses GSserved instead of GSoffered.",
+A199,L1,L3,,"Pred orders by convertedManaCost though question and evidence say unconverted manaCost; adds status='Legal' and extra column"
+A052,L8,,,"Pred returns T1.* (all trans columns) instead of trans_id"
+A057,L1,L8,,"Pred ranks results.laps instead of lapTimes.lap and omits lap column"
+A030,L6,L8,"Evidence says 'anti-Cardiolipin refers to aCL IgM' but gold returns aCL IgA and aCL IgG as well.",
+A086,L3,,,"Pred uses 'Provision 2' but question says 'Lunch Provision 2'"
+A002,L1,,,"Execution error: District Code lives in frpm not schools; column order also swapped"
+A049,L8,,,"Pred returns only colour without count and rank columns"
+A169,L3,,,"Pred colour = 'blue' lowercase but data value is 'Blue'"
+A044,L8,,,"Pred omits ID column and applies DISTINCT on Admission only"
+A275,L6,L1,"Question says 'Name all cards' but gold returns id; pred returns name.",
+A148,L1,,,"Execution error: budget has no event_id column (link_to_event); gold uses budget_id"
+A181,L3,,"Pred compares account date to '970101' but dates are ISO.",
+A200,L8,,,"Pred returns forename and surname instead of driverId; same driver (15 = Trulli) and also orders by milliseconds not time"
+A234,L6,,"Evidence says age = year(current_timestamp) - year(Birthday) but gold uses the laboratory Date year; pred follows the evidence with 'now'.",
+A224,L3,,,"Pred BETWEEN 600 AND 800 inclusive vs gold strict bounds"
+A270,L1,L8,,"Pred uses foreign_data instead of set_translations and returns 'Yes'/'No' casing different"
+A028,L1,L8,,"Pred uses foreign_data instead of set_translations and returns language list instead of YES/NO"

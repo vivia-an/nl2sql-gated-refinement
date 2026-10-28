@@ -1,0 +1,9 @@
+# E5 variant V5: learned critic. The score the pipeline thresholds on is 10 * P(EX=1) from the exported model (calibrated with
+# isotonic regression fitted on out-of-fold HR predictions); `score_v3` keeps the V3 score. The bundle is produced by
+#   python -m nl2sql.analysis.critic_v5 --trees <HR trees.jsonl> --out <dir> --models hgb --features live --export hgb --export-path exp/frozen/critic_v5.pkl
+# and enters the dev lock through `critic_sha256`. The file does not exist until the HR candidate sets exist: running this config
+# before then fails at start-up (FileNotFoundError) by design.
+temperature: 0.0
+m5:
+  variant: v5
+  learned: {path: exp/frozen/critic_v5.pkl}

@@ -1,0 +1,128 @@
+{
+ "P2_base-zs_ours-qwen37plus-s0-80485cc1": {
+  "n": 300,
+  "ex": 0.6966666666666667,
+  "ex_ci": [
+   0.5555555555555556,
+   0.8016528925619835
+  ],
+  "soft_f1": 0.7191724066666667,
+  "calls_per_q": 1.0,
+  "prompt_tokens_per_q": 1708.3033333333333,
+  "completion_tokens_per_q": 54.08,
+  "cached_tokens_per_q": 1095.68,
+  "embed_calls_per_q": 0.0,
+  "rerank_calls_per_q": 0.0,
+  "latency_mean_s": 2.0747666666666666,
+  "latency_p95_s": 3.0346000000000006,
+  "api_fail": 0,
+  "coverage": 1.0,
+  "ex_accepted": 0.6966666666666667,
+  "actions": {},
+  "ex_by_db": {
+   "law_episode": [
+    0.7037,
+    54
+   ],
+   "retail_complains": [
+    0.7308,
+    78
+   ],
+   "video_games": [
+    0.8211,
+    95
+   ],
+   "world_development_indicators": [
+    0.4932,
+    73
+   ]
+  },
+  "wall_s": 195.4
+ },
+ "P2_base-full_fixed-qwen37plus-s0-d37d2097": {
+  "n": 300,
+  "ex": 0.6933333333333334,
+  "ex_ci": [
+   0.5860805860805861,
+   0.7651006711409396
+  ],
+  "soft_f1": 0.7155809000000001,
+  "calls_per_q": 3.2533333333333334,
+  "prompt_tokens_per_q": 5937.0233333333335,
+  "completion_tokens_per_q": 381.3333333333333,
+  "cached_tokens_per_q": 3378.7733333333335,
+  "embed_calls_per_q": 1.6666666666666667,
+  "rerank_calls_per_q": 2.316666666666667,
+  "latency_mean_s": 10.507316666666668,
+  "latency_p95_s": 17.188700000000004,
+  "api_fail": 0,
+  "coverage": 0.9866666666666667,
+  "ex_accepted": 0.7027027027027027,
+  "actions": {
+   "accept": 296,
+   "revise": 34,
+   "stop_best": 4
+  },
+  "ex_by_db": {
+   "law_episode": [
+    0.7407,
+    54
+   ],
+   "retail_complains": [
+    0.6923,
+    78
+   ],
+   "video_games": [
+    0.7789,
+    95
+   ],
+   "world_development_indicators": [
+    0.5479,
+    73
+   ]
+  },
+  "wall_s": 450.3
+ },
+ "P2_base-zs-qwen37plus-s0-80485cc1": {
+  "n": 300,
+  "ex": 0.6733333333333333,
+  "ex_ci": [
+   0.5420875420875421,
+   0.7823691460055097
+  ],
+  "soft_f1": 0.7038935399999999,
+  "calls_per_q": 1.0,
+  "prompt_tokens_per_q": 1637.9633333333334,
+  "completion_tokens_per_q": 57.35666666666667,
+  "cached_tokens_per_q": 1174.1866666666667,
+  "embed_calls_per_q": 0.0,
+  "rerank_calls_per_q": 0.0,
+  "latency_mean_s": 2.2063,
+  "latency_p95_s": 3.60285,
+  "api_fail": 0,
+  "coverage": 1.0,
+  "ex_accepted": 0.6733333333333333,
+  "actions": {
+   "generate": 300
+  },
+  "ex_by_db": {
+   "law_episode": [
+    0.6667,
+    54
+   ],
+   "retail_complains": [
+    0.6795,
+    78
+   ],
+   "video_games": [
+    0.8105,
+    95
+   ],
+   "world_development_indicators": [
+    0.4932,
+    73
+   ]
+  },
+  "wall_s": 237.9
+ }
+}

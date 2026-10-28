@@ -1,0 +1,5 @@
+# MIN M2 TEMPLATE -> frozen/acsql_s.yaml. AC-SQL (same LLM as critic) at the budget of full_gated. Starting point max_regen 1 (default 3 = 3.0 calls/q on the
+# HT-10 smoke, over budget; 1 is expected near 2-2.5 calls/q, UNMEASURED: measure in the HT-300 pass). --system acsql_s.
+temperature: 0.0
+ddl: {quote_keywords: true}   # X6: same quoted identifiers as the ours-systems (SAP 13.6 rule 1); schema block only, no extra rule line
+max_regen: 1

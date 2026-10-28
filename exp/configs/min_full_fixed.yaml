@@ -1,0 +1,5 @@
+# MIN plan TEMPLATE -> frozen as exp/configs/frozen/full_fixed.yaml. M1-M6 + patent loop P0 (V3 critic in the loop) + identifier quoting
+# (= full_quote.yaml). The freeze step appends the M6 line  m6: {policy: ws_full, path: exp/frozen/corpus_burnin_<sha8>.sqlite, update: false}.
+# Use with --system full_fixed.
+temperature: 0.0
+ddl: {quote_keywords: true}

@@ -1,0 +1,5 @@
+# E6-tier (A5): escalate allowed
+temperature: 0.0
+m7:
+  controller: {path: exp/frozen/controller_tier.npz, greedy: true}
+  actions: 5

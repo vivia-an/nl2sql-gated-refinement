@@ -1,0 +1,4 @@
+# X5 (HEADROOM row 1a): identical to full_fixed (patent loop P0) except ddl.quote_keywords: true. Isolates the effect of quoting reserved
+# words (BIRD train: `transaction` in beer_factory; `Match`, `current` in two other dbs). Compare with runs of full_fixed.yaml.
+temperature: 0.0
+ddl: {quote_keywords: true}

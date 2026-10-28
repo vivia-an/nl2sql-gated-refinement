@@ -1,0 +1,9 @@
+# X5: full_gated_cons with the logistic routing score fitted on HR (tools/fit_route_score.py --out exp/frozen/route_coef_hr.json).
+# The coefficient file must exist before the run (RouteScorer fails loudly otherwise); it enters the dev lock (route_sha256).
+temperature: 0.0
+ddl: {quote_keywords: true}
+m5: {policy: gated, gate_empty: false, score_for_routing: true, t_max: 3}
+route:
+  score: v3+consistency
+  coef_path: exp/frozen/route_coef_hr.json
+  consistency: {k: 4, temperature: 0.7, n_per_call: 4}

@@ -1,0 +1,6 @@
+# E4c dev stream, no gold feedback; the frozen burn-in store goes into m6.path at freeze time
+temperature: 0.0
+m6:
+  policy: ws_full
+  path: null          # exp/frozen/corpus_burnin_<sha>.sqlite after the burn-in
+  params: {eta: 0.3, rho: 0.2, tau: 6.0}

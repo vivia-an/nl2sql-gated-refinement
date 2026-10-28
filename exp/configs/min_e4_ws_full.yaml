@@ -1,0 +1,8 @@
+# MIN M4 (E4 on HR, no dev, no lock): pipeline P0 + identifier quoting (beer_factory is an HR database and has the `transaction` table).
+# ws_full = (eta 0.5, rho 0.2) with tau, alpha/beta/gamma, phi at defaults (SAP 13.6 rule 7). Use: stream e4 --policy ws_full.
+temperature: 0.0
+ddl: {quote_keywords: true}
+m3: {k_t: 6, k_e: 4}
+m6:
+  policy: ws_full
+  params: {eta: 0.5, rho: 0.2, phi: 0.5, tau: 6.0}

@@ -1,0 +1,14 @@
+# X7 (confidence-routed compute, route.adaptive): root + k = 4 extra T = 0.7 samples of the INITIAL generation prompt (ONE API request, n = 4;
+# identical to full_gated_cons.yaml, so the M1 / generation / sampling calls are cache hits when the archive of an X5 2-*-cons run is imported).
+# consistency (share of the samples whose result set equals the root's) >= theta_fast -> the root answer ("fast"); otherwise the execution-result
+# majority over root + samples ("vote"; ties -> root). NO revision call and NO critic call: calls/q = M1 + generation + 1 sampling request = 3.0.
+# A root that fails to execute is outvoted by executing samples; if nothing executes the root stays (no repair loop by design).
+# route.score consistency: confidence = 10 x consistency of the final answer; theta_h null -> no abstention, every answer counts in EX.
+# preds: adaptive_path (fast|vote), adaptive_cons (vs the root), adaptive_choice (root|sample), adaptive_sizes, adaptive_tie; cands: the root + the 4 samples.
+temperature: 0.0
+ddl: {quote_keywords: true}
+m5: {policy: gated, gate_empty: false, score_for_routing: false, t_max: 3}
+route:
+  score: consistency
+  consistency: {k: 4, temperature: 0.7, n_per_call: 4}
+  adaptive: {enabled: true, theta_fast: 1.0, tiebreak: root, empty: vote}

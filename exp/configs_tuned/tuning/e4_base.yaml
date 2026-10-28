@@ -1,0 +1,6 @@
+# R0 E4 HT mini-stream tuning base: e4.yaml + tuned M3 (k_t 6, k_e 4); m6 policy/params overwritten per trial by tools_r0/e4_ht_tune.py
+temperature: 0.0
+m3: {k_t: 6, k_e: 4}
+m6:
+  policy: ws_full
+  params: {eta: 0.3, rho: 0.2, phi: 0.5, tau: 6.0}

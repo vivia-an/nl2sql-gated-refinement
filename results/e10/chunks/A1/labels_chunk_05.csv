@@ -1,0 +1,51 @@
+item_id,primary_label,secondary_label,rationale,notes
+A036,L1,L2,,"Pred outputs Patient.""First Date"" instead of Laboratory.Date (question asks when the laboratory work was completed) and drops the Laboratory join and Birthday column"
+A255,L3,,,"Question says 7:25:47 PM but evidence fixes CreationDate = '2010-07-19 19:16:14.0'; gold follows evidence and pred used the question time literal"
+A031,L4,L3,,"Pred adds AVG(A11) and GROUP BY type which collapses rows to one; also > 8000 vs gold BETWEEN 8000 AND 9000"
+A234,L6,L3,"Evidence says below 50 years old = SUBTRACT(year(current_timestamp) year(Birthday)) < 50 but gold uses year(Laboratory.Date) - year(Birthday); pred follows the evidence.",
+A025,L6,L3,"Evidence says cryokinesis refers to power_name = 'cryokinesis' (lower case) and pred uses exactly that; gold uses 'Cryokinesis' so gold does not implement the evidence literal.","Case-sensitive equality; pred returned no rows"
+A202,L8,,,"Gold also outputs height_cm; pred omits that column; ranking and order same"
+A034,L6,L7,"Question asks to list all posts related to post 61217 and evidence says related post = RelatedPostId but gold never selects RelatedPostId and returns the same ViewCount (4949) repeated for every link row.","Pred lists related posts with their ViewCount"
+A240,L4,,,"Missing DISTINCT; pred repeats the same card name"
+A069,L6,L1,"Question asks for free or reduced price meals but gold filters ""Free Meal Count (Ages 5-17)"" (free only) while the FRPM column exists; pred uses ""FRPM Count (Ages 5-17)"" and returns one more school.","Pred also names the column School instead of School Name which is only an alias difference"
+A219,L6,L2,"Question asks for elements in a double bond but gold joins bond only by molecule_id (any double bond in the molecule) while connected.bond_id gives the atoms of the bond; pred joins through connected.bond_id.",
+A267,L4,,,"Pred lacks the outer COUNT over the grouped customers and returns one row per customer; date filter itself is equivalent"
+A209,L6,L1,"Question asks In which race the fastest first lap occurred but gold selects only milliseconds and orders the text column time lexicographically (returns 841218 ms = 14 min lap); pred returns race name with min milliseconds.",
+A185,L6,L3,"Question asks for the editor of the post but gold joins posts.OwnerUserId (owner) while LastEditorUserId exists; pred uses LastEditorUserId but strips the question mark from the title so no rows.","Title literal in question includes the trailing question mark"
+A258,L6,,"Question asks for cards of set OGW but gold filters cards.id IN (SELECT id FROM set_translations WHERE setCode = 'OGW') which compares unrelated ids; pred uses cards.setCode = 'OGW'.","Pred also selects name instead of id"
+A187,L8,,,"Pred adds height column which the question actually asks for; gold returns only the name"
+A295,L4,L3,,"COUNT(*) counts the NULL frameEffects group as largest while gold COUNT(frameEffects) ignores NULL"
+A271,L1,L2,,"Pred takes Diagnosis from Examination instead of Patient"
+A056,L7,,"Question 'how many owner and disponent dispositions' can mean one total or one count per type; gold returns two counts (10 and 3) pred returns a single total 13.",
+A180,L3,,,"Pred uses date LIKE '97%' but dates are stored as 1997-..."
+A291,L1,L4,,"Pred orders by milliseconds while evidence says fastest time refers to Min(time) and gold orders by time"
+A146,L6,L2,"Gold joins Player.id = Match.id which are unrelated keys so it does not give players of Italy; pred matches players through the match player columns.","Pred timed out"
+A183,L3,,,"Charter number stored as '0040' pred used '40'"
+A112,L1,,,"Pred outputs DisplayName instead of Id; gold path via comments is questionable but gives same user"
+A089,L4,,,"COUNT(*) over join rows instead of COUNT(DISTINCT player id)"
+A270,L1,,,"Pred uses foreign_data (card level) instead of set_translations (set level as question says set of cards)"
+A027,L6,L1,"Question and evidence say the last to edit the post but gold joins posts.OwnerUserId (owner); pred uses LastEditorUserId.","Pred returned no rows"
+A043,L4,L8,,"Gold takes min lap per driver then ranks 20 drivers; pred ranks laps then DISTINCT names and omits driverId column"
+A248,L1,L2,,"Pred takes Diagnosis from Examination instead of Patient"
+A095,L6,L1,"Evidence defines powerful foils with cardKingdomFoilId and cardKingdomId but gold tests (cardKingdomId IS NULL OR cardKingdomId IS NULL) never touching cardKingdomFoilId; pred implements both.","Pred also outputs name instead of id"
+A052,L8,,,"Pred returns T1.* (all trans columns) instead of trans_id; rows identical"
+A277,L6,L1,"Question asks for the card numbers but gold returns cards.id and not cards.number; pred selects number.","Pred also uses LIKE for both subtypes instead of exact string"
+A285,L3,,,"Pred compares issued with '980101' but issued is stored as a date string so result 0.0"
+A172,L6,,"Gold ignores the stated 2014 range (evidence date between 2014-01-01 and 2014-01-31) as the outer query has no date filter and the average uses the whole of 2014; pred follows the evidence range and gets no rows.",
+A293,L6,L3,"Evidence says overall_rating >= 60 AND overall_rating < 65 and pred implements that but gold uses BETWEEN 60 AND 65 (inclusive).",
+A168,L6,L3,"Evidence says on 2011/2/22 refers to date = '2012-02-22' and pred implements that but gold uses '2011-02-22'; question and evidence disagree.",
+A252,L3,,,"Pred uses isTextless = 1 while evidence says isTextless = 0 for no text box"
+A286,L3,,,"Pred adds d.type = 'OWNER' not asked for"
+A197,L8,L2,,"Gold returns client_id and account_id; pred returns only client_id and uses client district rather than account; same 3 clients"
+A179,L3,,,"Pred uses date LIKE '95%' but dates are stored as 1995-..."
+A227,L5,L4,"D1: find the oldest mythic card (MIN originalReleaseDate) and give its legal formats; D2: pred groups by format and returns the oldest date per format.",
+A160,L1,,,"Pred filters posts.CreaionDate (post) while evidence CreationDate points to comments.CreationDate"
+A127,L8,,,"Pred returns Yes/No strings while gold returns 1/0 booleans; same logic"
+A181,L3,,,"Pred compares account date with '970101' format wrong so no rows"
+A091,L4,,,"Pred groups by player_name (merges namesakes) and uses AVG instead of SUM / COUNT(player_fifa_api_id)"
+A149,L1,,,"Pred selects MailStreet from satscores alias and School Name column that do not exist; should come from schools"
+A021,L3,,,"Pred uses issued = '940303' but format is 1994-03-03"
+A157,L1,L8,,"Pred references alias c that does not exist (error); also adds circuit name column which question asks for but gold omits"
+A123,L5,L7,"D1 (evidence formula): share of Japanese translations among expansion sets (numerator language='Japanese' denominator all rows with type='expansion'); D2: pred shares expansion among Japanese rows.",
+A176,L1,,,"Pred uses comments.UserDisplayName (empty) instead of users.DisplayName through join"
+A191,L8,,,"Pred concatenates forename and surname into a single name column; age same"
