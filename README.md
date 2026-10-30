@@ -4,9 +4,13 @@ Code, frozen configurations, the statistical analysis plan with its dated amendm
 
 > Li, S.; Song, X.; Wang, D. *Pricing Execution-Gated Refinement in Text-to-SQL: Cost, Accuracy Across Backbones, and Negative Results.* Submitted to Applied Sciences (MDPI).
 
-Code archive (this repository, release v1.1.0; all versions: https://doi.org/10.5281/zenodo.23739687; v1.0.1: https://doi.org/10.5281/zenodo.23739688). Run archive (stored model requests and responses, predictions; all versions: https://doi.org/10.5281/zenodo.23735018; version 1.0.0: https://doi.org/10.5281/zenodo.23735019; version 1.1.0 adds one file, `nl2sql_runs_posthoc_1.1.0.tar.gz`). Source repository: https://github.com/vivia-an/nl2sql-gated-refinement.
+Code archive (this repository, release v1.1.1; all versions: https://doi.org/10.5281/zenodo.23739687; v1.0.1: https://doi.org/10.5281/zenodo.23739688; v1.1.0: https://doi.org/10.5281/zenodo.23792037). Run archive (stored model requests and responses, predictions; all versions: https://doi.org/10.5281/zenodo.23735018; version 1.0.0: https://doi.org/10.5281/zenodo.23735019; version 1.1.0, which adds one file, `nl2sql_runs_posthoc_1.1.0.tar.gz`: https://doi.org/10.5281/zenodo.23797154). Source repository: https://github.com/vivia-an/nl2sql-gated-refinement.
 
 The paper is an evaluation study. It asks what a generate-and-critique loop adds to a text-to-SQL system built on a frozen, API-hosted language model: what it costs, what it buys on backbones of different price, and which parts matter. It reports the tests that were pre-specified, the post hoc analyses (marked as such) and the components that did not help. This repository is not a software product; it exists so that the numbers in the paper can be traced to stored result files and re-derived.
+
+## What is new in 1.1.1
+
+Release 1.1.1 adds `docs/sap_working/`: the working file of the analysis plan at the four commits that the paper names (`7ea5cff`, `900b6ea`, `899bdd2`, `32de07d`), byte for byte, with `SHA256SUMS` and a table that says where each commit or hash is recorded (`exp/dev_lock.json`, `results/primary.json`). It corrects the working-version sha256 of `docs/SAP.md` in the table under "A note on paths and on files that keep their bytes" (it is the hash that `results/primary.json` records). No code, configuration, result file or number changes; the run archive is unchanged (version 1.1.0).
 
 ## What is new in 1.1.0
 
@@ -34,7 +38,7 @@ exp/configs/             configurations; exp/configs/posthoc/ the post hoc ones 
 exp/dev_lock.json        hash lock of the configurations used on the development set; exp/models.yaml, exp/prices.yaml model ids and list prices
 exp/splits/              tuning/hold-out split of the BIRD training databases (question and database identifiers only)
 exp/queues/              the job lists that were executed (one JSON object per run: command, model, estimated calls)
-docs/SAP.md             statistical analysis plan, amendments and the post hoc note; docs/EXPERIMENT_SPEC.md, TUNING.md, ...
+docs/SAP.md             statistical analysis plan, amendments and the post hoc note (reading copy); docs/sap_working/ the working file at the commits named in the paper (1.1.1); docs/EXPERIMENT_SPEC.md, TUNING.md, ...
 results/                 flat result files (results/*.json, one per analysis stage) and the post hoc tables (results/posthoc2/*.csv); results/x2ds/: the post hoc results of SAP Sections 28 to 30 (1.1.0)
 paper/                   the number macros and generated tables of the article (results_macros*.tex, tables/, supp_tables/); no manuscript text
 figs/                    the figures of the article and the data files they are drawn from
@@ -137,13 +141,13 @@ Provenance fields in some result files recorded absolute paths of the machines t
 
 Some files are byte-identical to the versions that were used, because their sha256 values are checked by the lock (`exp/dev_lock.json`, `nl2sql.lock`) or recorded in the metadata of every run (`run_meta.json` in the run archive): the lock file itself, `exp/configs/`, `code/prompts/`, `exp/diag_prompts/`, `exp/pf_prompts/`, `exp/models.yaml` and `exp/frozen/route_coef_hr.json`. A few of them contain remarks of the working environment that do not matter for the analysis: comment lines that refer to working notes that are not part of this release (`exp/configs/`), a key-file path and a remark on the machines in `exp/models.yaml` (the key file is chosen by `NL2SQL_KEY_FILE`, see Level 3), and the location of two input files in `exp/frozen/route_coef_hr.json`. Editing them would change the hashes and the lock would refuse the configurations.
 
-`docs/SAP.md`, `docs/ANNOTATION_GUIDE.md` and `docs/ANNOTATION_PROMPT.md` are reading copies. They were generated from the working versions with the references to working notes, review rounds and machines removed (a paragraph at the top of `docs/SAP.md` says what was edited; sections, numbers, dates, scope labels, hashes and the two annotation prompts are unchanged). The sha256 values that result files record for these documents (`sap_sha256` in `results/primary.json` and the other files written by the primary stage, `files_sha256` and `frozen_texts_sha256` in `results/e10/annotation_runs.json`) refer to the working versions, which are not released:
+`docs/SAP.md`, `docs/ANNOTATION_GUIDE.md` and `docs/ANNOTATION_PROMPT.md` are reading copies. They were generated from the working versions with the references to working notes, review rounds and machines removed (a paragraph at the top of `docs/SAP.md` says what was edited; sections, numbers, dates, scope labels, hashes and the two annotation prompts are unchanged). The sha256 values that result files record for these documents (`sap_sha256` in `results/primary.json` and the other files written by the primary stage, `files_sha256` and `frozen_texts_sha256` in `results/e10/annotation_runs.json`) refer to the working versions. The working versions of the analysis plan at the commits named in the paper are in `docs/sap_working/` (1.1.1); those of the annotation guide and prompt are not released:
 
 | file | sha256 of the working version (recorded in result files) | sha256 of the reading copy in this repository |
 |---|---|---|
 | `docs/ANNOTATION_GUIDE.md` | `f9d427869d73a828637e1887234d17b61962695f4dc5ffb270f8cab633a8cd92` | `c65eb163c93f893c4b5bd244935a6dacbb4d9fc0ae8152babbebe614cf27bf7b` |
 | `docs/ANNOTATION_PROMPT.md` | `1dfd34c4cfc32342015948dcf6d186e9aca143031333160e181874928ecf19e3` | `59d9c2fff8a6c191177fd129cc10dfb96c80b6ce503fa617eb01cdd28da70bc2` |
-| `docs/SAP.md` | `ed8c289ef570cc385c6d962d131806052a3eab6f8df337cb839e780c934146e6` | `bc23246368aa5e73a907958fe50cc198397a52ca3685ce922fcaed7e62889d1c` |
+| `docs/SAP.md` | `e3add9a4fdd7a5ff0e3a22b5f6744142ce38326d936316c2208c58e52984319a` (`docs/sap_working/SAP_32de07d.md`) | `bc23246368aa5e73a907958fe50cc198397a52ca3685ce922fcaed7e62889d1c` |
 
 ## Disclosure
 

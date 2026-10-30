@@ -5,9 +5,9 @@ type: software
 abstract: >-
   Code, frozen configurations, pre-specified statistical analysis plan with dated amendments, lock file, result files and replay
   scripts for a seven-module text-to-SQL pipeline around frozen, API-hosted language models, evaluated on the BIRD benchmark.
-version: "1.1.0"
-date-released: "2026-10-30"        # planned date of the GitHub release v1.1.0; correct it if the release is made on another day
-doi: "10.5281/zenodo.23739687"      # concept DOI (all versions); the version DOI of 1.1.0 exists only after the release is published
+version: "1.1.1"
+date-released: "2026-10-30"        # planned date of the GitHub release v1.1.1; correct it if the release is made on another day
+doi: "10.5281/zenodo.23739687"      # concept DOI (all versions); the version DOI of 1.1.1 exists only after the release is published
 repository-code: "https://github.com/vivia-an/nl2sql-gated-refinement"
 url: "https://github.com/vivia-an/nl2sql-gated-refinement"
 license: "MIT"
