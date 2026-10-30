@@ -1,0 +1,22 @@
+{
+ "n": 1534,
+ "gold_empty": 0,
+ "gold_one_null_row": 1,
+ "gold_fail": 0,
+ "qids_empty": [],
+ "qids_null": [
+  "bird_dev:debit_card_specializing:1504"
+ ],
+ "arms": {
+  "zs_plus": 1,
+  "gated_plus": 1,
+  "empty_plus": 1,
+  "zs_flash": 1,
+  "gated_flash": 1,
+  "empty_flash": 0,
+  "zs_27b": 1,
+  "empty_27b": 1,
+  "zs_ds": 1,
+  "empty_ds": 1
+ }
+}

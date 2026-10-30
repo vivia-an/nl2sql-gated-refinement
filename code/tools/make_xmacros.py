@@ -48,6 +48,7 @@ SOURCES = collections.OrderedDict([
     ("rv3", ("r3/rv3_summary.json", ("posthoc-secondary",))),
     ("rv4", ("r4/rv4_summary.json", ("posthoc-secondary",))),
     ("rv4t0", ("r4_t0/rv4t0_summary.json", ("posthoc-secondary",))),
+    ("x2ds", ("x2ds/x2ds_keys.json", ("posthoc-secondary",))),
 ])
 LABELS = {
     "ROB": "ROB (robustness-posthoc)",
@@ -61,6 +62,7 @@ LABELS = {
     "RV2": "POSTHOC2 (post hoc, following a critical reading of the draft by the authors with Claude Sonnet 5.5 (see Acknowledgments); computed on existing runs; SAP Amendment 10)",
     "RV3": "POSTHOC3 (post hoc, requested by the round-3 referees; new runs for seeds and the same-examples control; SAP section 26)",
     "RV4T0": "POSTHOC4-T0 (post hoc, requested by the round-4 referees; temperature-0 rerun of part of the locked run, reduced scope after the loss of compute worker machines; SAP section 27)",
+    "X2DS": "X2DS (post hoc, decided after the locked results were known; a non-Qwen backbone and a single call with retry on execution failure; SAP section 28)",
     "RV4": "POSTHOC4 (post hoc, requested by the round-4 referees; computed on existing runs, no model call; SAP section 27)",
 }
 
@@ -1159,7 +1161,20 @@ def build_rv4t0(ctx):
     _emit_summary(ctx, src, rv4t0_keys.expected_keys(), "RV4T0", api_calls_ok=True)
 
 
-BUILDERS = [build_rob, build_diag, build_fbk, build_vad, build_ve, build_ext1, build_e10, build_pf, build_rv2, build_rv2s, build_rv3, build_rv4, build_rv4t0]
+def build_x2ds(ctx):
+    """results/x2ds/x2ds_keys.json (non-Qwen backbone deepseek-v4.1-flash-1017 and the retry-only control zs_retry, written by code/tools/x2ds_keys.py from the outputs of x2ds_analyze.py, x2ds_pool.py
+    and x2ds_runmeta.py; grammar code/tools/x2ds_grammar.json; prefix X2DS.): same format and strict gate as build_rv4t0 (_meta.api_calls counts the billed chat requests of the new runs)."""
+    start(ctx, "X2DS.", "X2DS")
+    src = "x2ds"
+    if src in ctx.absent:
+        ctx.errors.append("source file missing: %s" % ctx.paths[src])
+        return
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import x2ds_keys
+    _emit_summary(ctx, src, x2ds_keys.expected_keys(), "X2DS", api_calls_ok=True)
+
+
+BUILDERS = [build_rob, build_diag, build_fbk, build_vad, build_ve, build_ext1, build_e10, build_pf, build_rv2, build_rv2s, build_rv3, build_rv4, build_rv4t0, build_x2ds]
 
 
 def build_all(results_dir, allow_missing=False):
@@ -1385,6 +1400,7 @@ def write_doc(ctx, path):
     w("**`RV4.`** (results/r4/rv4_summary.json, merged by `code/tools/r4_merge.py` from `code/tools/r4_stats.py`; grammar `code/tools/rv4_grammar.json` via `code/tools/rv4_keys.py`, described in `internal note R4A`; scope posthoc-secondary, SAP section 27; no model call, `_meta.api_calls` = 0; never `\\res`, never in the P* family): `RV4.wide.*` (one widest-interval definition for the locked run and the replication: hull of the clustered, item-level, cluster-robust t and sign-flip intervals; readings and the agrees flag per contrast, counts), `RV4.regen.*` (root regeneration between gated and fixed arms and the net questions it carries), `RV4.ccost.*` (cost per extra correct answer of the Critic increment, fixed loop over gated loop, per backbone), `RV4.rmargin.*` (P1' margin ratio and share kept in the replication, locked run beside), `RV4.mde4.*` (minimum detectable effects at question and database level), `RV4.p5u.*` (P5' with one unit per distinct question), `RV4.silent.*` (silent-error rate and the share of wrong answers the gate can reach), `RV4.mult.*` (breakdown of the post hoc contrast count).")
     w("")
     w("**`RV4T0.`** (results/r4_t0/rv4t0_summary.json, written by `code/tools/r4_t0.py`; grammar `code/tools/rv4t0_grammar.json` via `code/tools/rv4t0_keys.py`, described in `internal note R4T0`; scope posthoc-secondary, SAP section 27; new runs, so `_meta.api_calls` is the number of billed calls of the rerun; never `\\res`, never in the P* family): the temperature-0 non-determinism check, reduced to the reruns that finished (`RV4T0.nd.<b>.<arm>.*`: locked run s0 against one rerun r1, shares of changed final SQL and changed correctness, b and c counts, exact McNemar p, EX difference with cluster, item-level and widest interval; `RV4T0.nd.complete.*`; `RV4T0.pair.*`; `RV4T0.lock.*` the paper's key contrasts in the locked run; `RV4T0.cmp.*`; `RV4T0.req.*`; `RV4T0.cost.*`).")
+    w("**`X2DS.`** (results/x2ds/x2ds_keys.json, written by `code/tools/x2ds_keys.py` from `x2ds_summary.json` of the four backbones (`code/tools/x2ds_analyze.py`), `pooled/x2ds_pooled.json` (`x2ds_pool.py`), `x2ds_runs.json` (`x2ds_runmeta.py`) and the two cost files; grammar `code/tools/x2ds_grammar.json`, described in `internal note X2DS`; scope posthoc-secondary, SAP section 28; new runs, so `_meta.api_calls` is the number of billed chat requests; never `\\res`, never in the P* family): the non-Qwen backbone deepseek-v4.1-flash-1017 (four arms) and the single call with retry on execution failure (`zsretry`) on four backbones (`X2DS.<b>.arm.<a>.*`, `X2DS.<b>.ctr.<contrast>` with cluster / item-level interval and `.t`, `.sf`, `.wide`, `.reading`, `X2DS.<b>.retry.*`, `X2DS.pool.<q3|w2>.*`, `X2DS.n.*`, `X2DS.meta.*`, `X2DS.runs.*`, `X2DS.cost.*`).")
     w("")
     w("**`EXT1.`** (ext1_summary.json; keys are the file's own): `EXT1.XB1|XB2|XB3.{delta_ex,n,n_dbs,p_adj,verdict,text,per_backbone.<b>,member.<b>.*}`, `.ci`, `.item_ci`, `.loo`; `EXT1.XB1_loop`, `EXT1.XB1_stack`; `EXT1.sens_no_world_1.*` (same cells without world_1); `EXT1.desc.<b>.<contrast>.*`; `EXT1.arm.<b>.<zs|fixed|gated|rootonly>.{ex_ts,ex_plain,calls_per_q,cost_k,...}` (`cost_k` = CNY per 1000 questions, derived); `EXT1.gate.<b>.*` and `EXT1.gate.pooled.{fired,n,share}` (derived sums).")
     w("")

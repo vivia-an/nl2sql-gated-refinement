@@ -1,0 +1,88 @@
+{
+ "dirs": [
+  "X2DSR"
+ ],
+ "price_file": "/w/tree/exp/prices.yaml",
+ "cache_hit_ratio": 0.2,
+ "unpriced_rows": {},
+ "total": {
+  "cny_disc": 0.37267728,
+  "cny_nodisc": 0.5200104,
+  "calls": 150
+ },
+ "by_model": {
+  "qwen3.5-27b": {
+   "calls": 33,
+   "pt": 91877,
+   "ct": 7473,
+   "cached": 0,
+   "cny_disc": 0.09099659999999998,
+   "cny_nodisc": 0.09099659999999998
+  },
+  "deepseek-v4.1-flash-1017": {
+   "calls": 28,
+   "pt": 84717,
+   "ct": 2921,
+   "cached": 60416,
+   "cny_disc": 0.09613640000000001,
+   "cny_nodisc": 0.19280199999999997
+  },
+  "qwen3.7-flash-2026-07-15": {
+   "calls": 66,
+   "pt": 189077,
+   "ct": 20908,
+   "cached": 59392,
+   "cny_disc": 0.04503908000000001,
+   "cny_nodisc": 0.054541799999999994
+  },
+  "qwen3.7-plus-2026-05-26": {
+   "calls": 23,
+   "pt": 75351,
+   "ct": 3871,
+   "cached": 25728,
+   "cny_disc": 0.14050520000000002,
+   "cny_nodisc": 0.18167000000000005
+  }
+ },
+ "by_run": {
+  "X2DSR/zsretry-27b-s0": {
+   "calls": 33,
+   "pt": 91877,
+   "ct": 7473,
+   "cached": 0,
+   "cny_disc": 0.09099659999999998,
+   "cny_nodisc": 0.09099659999999998
+  },
+  "X2DSR/zsretry-dsv41flash-s0": {
+   "calls": 28,
+   "pt": 84717,
+   "ct": 2921,
+   "cached": 60416,
+   "cny_disc": 0.09613640000000001,
+   "cny_nodisc": 0.19280199999999997
+  },
+  "X2DSR/zsretry-flash-s0": {
+   "calls": 66,
+   "pt": 189077,
+   "ct": 20908,
+   "cached": 59392,
+   "cny_disc": 0.04503908000000001,
+   "cny_nodisc": 0.054541799999999994
+  },
+  "X2DSR/zsretry-plus-s0": {
+   "calls": 23,
+   "pt": 75351,
+   "ct": 3871,
+   "cached": 25728,
+   "cny_disc": 0.14050520000000002,
+   "cny_nodisc": 0.18167000000000005
+  }
+ },
+ "s303": {
+  "cny_disc": 0,
+  "cny_nodisc": 0,
+  "calls": 0,
+  "runs": 0
+ },
+ "note": "embedding and rerank requests are not priced (placeholder prices, tokens not logged); the 1-token probes of r3_probe are not logged"
+}

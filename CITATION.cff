@@ -5,9 +5,9 @@ type: software
 abstract: >-
   Code, frozen configurations, pre-specified statistical analysis plan with dated amendments, lock file, result files and replay
   scripts for a seven-module text-to-SQL pipeline around frozen, API-hosted language models, evaluated on the BIRD benchmark.
-version: "1.0.1"
-date-released: "2026-10-28"
-doi: "10.5281/zenodo.23739688"
+version: "1.1.0"
+date-released: "2026-10-30"        # planned date of the GitHub release v1.1.0; correct it if the release is made on another day
+doi: "10.5281/zenodo.23739687"      # concept DOI (all versions); the version DOI of 1.1.0 exists only after the release is published
 repository-code: "https://github.com/vivia-an/nl2sql-gated-refinement"
 url: "https://github.com/vivia-an/nl2sql-gated-refinement"
 license: "MIT"
@@ -26,7 +26,7 @@ authors:
     given-names: "Dongwei"
 preferred-citation:
   type: article
-  title: "What Does Execution-Gated Refinement Buy in Text-to-SQL? Cost, Accuracy Across Backbones, and Negative Results"
+  title: "Pricing Execution-Gated Refinement in Text-to-SQL: Cost, Accuracy Across Backbones, and Negative Results"
   authors:
     - family-names: "Li"
       given-names: "Shikai"

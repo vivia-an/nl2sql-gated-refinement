@@ -1,0 +1,5 @@
+# POST HOC (W7, 2026-10-29), not part of the frozen set. Use with --system zs_retry. As posthoc/zs_retry.yaml, but the gate also fires on an empty result
+# (m5.gate_empty true; frozen off in the locked arms): the reviewer's wider gate, as in MAC-SQL's Refiner (empty result or execution error).
+temperature: 0.0
+ddl: {quote_keywords: true}
+m5: {policy: gated, gate_empty: true, t_max: 3}

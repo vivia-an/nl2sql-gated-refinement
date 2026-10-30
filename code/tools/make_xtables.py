@@ -83,18 +83,20 @@ def long_colspec(cols, base="\\linewidth"):
     return "".join(spec), setl
 
 
-def longtabular(cols, header, rows, wide_=True):
-    """One longtable (breaks between rows, header repeated on every page, no caption of its own).  wide_: MDPI full-width environment around it."""
+def longtabular(cols, header, rows, wide_=True, tcs=None):
+    """One longtable (breaks between rows, header repeated on every page, no caption of its own).  wide_: MDPI full-width environment around it.
+    tcs: optional column padding (e.g. "3pt") for this table only; the column lengths are computed from it, so a narrow column keeps room for its header word (typesetting only)."""
     spec, setl = long_colspec(cols, "(\\textwidth+\\extralength)" if wide_ else "\\linewidth")
     head = ["\\toprule", header + " \\\\", "\\midrule"]
     body = setl + ["\\begin{longtable}{%s}" % spec] + head + ["\\endfirsthead"] + head + ["\\endhead", "\\bottomrule", "\\endfoot", "\\bottomrule", "\\endlastfoot"]
     for r in rows:
         body.append(r + (" \\\\" if not r.startswith("\\midrule") else ""))
     body.append("\\end{longtable}\\addtocounter{table}{-1}")   # the longtable environment steps the table counter once: undo, so the one \\captionof carries the number
+    pad = ["\\setlength{\\tabcolsep}{%s}" % tcs] if tcs else []
     if wide_:
         # longtable ignores the margins that adjustwidth sets: shift it by \LTleft instead (full-width block: 17.5 cm, into the left margin column)
-        return ["\\begingroup\\setlength{\\LTleft}{-\\extralength}\\setlength{\\LTright}{0pt}"] + body + ["\\endgroup"]
-    return body
+        return ["\\begingroup\\setlength{\\LTleft}{-\\extralength}\\setlength{\\LTright}{0pt}"] + pad + body + ["\\endgroup"]
+    return (["\\begingroup"] + pad + body + ["\\endgroup"]) if tcs else body
 
 
 def split_table(label, caption, blocks, note, clear=True):
@@ -224,7 +226,7 @@ def tab_critic_diag(entries):
 
 def tab_pf(entries):
     """learning curve of the feedback-updated Critic (PF) and the three pre-specified contrasts"""
-    cols = [("Y", 2.0), ("Z", 0.7), ("Z", 0.45), ("Z", 1.25), ("Z", 0.7), ("Z", 1.0), ("Z", 1.0), ("Z", 0.8)]
+    cols = [("Y", 1.8), ("Z", 0.9), ("Z", 0.45), ("Z", 1.25), ("Z", 0.7), ("Z", 1.0), ("Z", 1.0), ("Z", 0.8)]   # "Feedback" needs 36 pt
     H = ("Arm & Feedback items & $q$ & EX (\\%) [CI] & Calls per question & Cost (CNY per 1\\,000 questions) & Wrong roots flagged by the Critic (\\%) & Helped / hurt")
     refs = [("full_fixed", "Fixed loop (reference)", True), ("full_gated", "Gated loop (reference)", False)]
     pfs = [("pf_n0", "Patent Critic, no feedback"), ("pf_n250_q100", "Patent Critic, accurate feedback"), ("pf_n1000_q100", "Patent Critic, accurate feedback"), ("pf_n1000_q085", "Patent Critic, noisy feedback")]
@@ -390,7 +392,8 @@ RES_NAME = {"C1_plus": "C1 Qwen3.7-Plus", "C1_flash": "C1 Qwen3.7-Flash", "C1_27
 DUAL_HEAD = ["P1p.pooled", "P1p.plus", "P1p.flash", "P1p.27b", "P1p_ratio.pooled", "W1.pooled", "W1.plus", "W1.flash", "W1.27b", "P5p", "P3", "P3_aurc", "P3_acc60", "XB1", "XB1_flash", "XB1_27b", "XB1_loop",
              "XB2", "XB3", "XB3_ratio", "RES.S_same.C1_pooled.corr", "RES.S_same.C1_flash.corr", "RES.S_same.C1_27b.corr", "RES.S_same.C2_plus.corr", "RES.S_same.C3_auroc.corr", "RES.S_same.C4.corr",
              "PF1", "PF2", "PF3a", "PF3b"]
-DUAL_COLS = [("Y", 2.5), ("Z", 0.8), ("Z", 1.7), ("Z", 1.2), ("Z", 1.0), ("Z", 0.5), ("Z", 1.1), ("Y", 1.2), ("Y", 1.2), ("Z", 0.5)]
+DUAL_COLS = [("Y", 2.5), ("Z", 0.8), ("Z", 1.7), ("Z", 1.2), ("Z", 1.0), ("Z", 0.8), ("Z", 1.1), ("Y", 1.2), ("Y", 1.2), ("Z", 0.95)]   # "Design effect" and "Changes" need room for their header words (drawn with 3pt column padding, DUAL_TCS)
+DUAL_TCS = "3pt"
 DUAL_HDR = ("Contrast & $n$ / $G$ & Estimate [cluster 95\\% interval] & Item-level 95\\% interval & McNemar $p$ (helped / hurt) & Design effect & Leave-one-database-out range & "
             "Reading, cluster interval & Reading, item interval & Changes")
 
@@ -425,7 +428,7 @@ def tab_dual(entries):
             "The remaining rows (all rescoring cells on both sets, the other external-validity and feedback contrasts, and the cluster-robust $t$ interval) are in the Supplementary Materials. "
             "Plan: SAP Amendment 10.")
     cap = _dual_caption("BIRD development set (n = %s questions, G = %s databases) unless the row says otherwise." % (xr("RV2.dual.P1p.plus.n"), xr("RV2.dual.P1p.plus.g")))
-    return split_table("tab:dual", cap, [longtabular(DUAL_COLS, DUAL_HDR, rows)], note)
+    return split_table("tab:dual", cap, [longtabular(DUAL_COLS, DUAL_HDR, rows, tcs=DUAL_TCS)], note)
 
 
 def tab_dual_full(entries):
@@ -437,14 +440,14 @@ def tab_dual_full(entries):
     cap = _dual_caption("Complete list; BIRD development set (n = %s questions, G = %s databases), the re-scoring sets (same-annotation set first, all-annotation set last), "
                         "Spider-Realistic (G = %s databases) and the feedback arms." % (xr("RV2.dual.P1p.plus.n"), xr("RV2.dual.P1p.plus.g"), xr("RV2.dual.XB1.g")))
     rows = [dual_row(i, entries) for i in ids]
-    return split_table("tab:dual_full", cap, [longtabular(DUAL_COLS, DUAL_HDR, rows)], note)
+    return split_table("tab:dual_full", cap, [longtabular(DUAL_COLS, DUAL_HDR, rows, tcs=DUAL_TCS)], note)
 
 
 SMALL_IDS = DUAL_HEAD + ["RES.S_same.C1_27b.shift", "RES.S_same.C3_aurc.corr", "RES.S_all.C1_27b.corr", "RES.S_all.C2_27b.orig", "RES.S_all.C2_27b.corr", "RES.S_all.C2_plus.shift",
                          "loop.pooled.eff_in.gated", "loop.pooled.eff_in.fixed", "loop.plus.eff_in.gated", "loop.pooled.stack", "loop.27b.stack"]
 SMALL_LOOP_LABEL = {"loop.pooled.eff_in.gated": "Gated loop over its own root, mean of three", "loop.pooled.eff_in.fixed": "Fixed loop over its own root, mean of three", "loop.plus.eff_in.gated": "Gated loop over its own root, Qwen3.7-Plus",
                     "loop.pooled.stack": "Root-only minus single call, mean of three", "loop.27b.stack": "Root-only minus single call, Qwen3.5-27B"}
-SMALL_COLS = [("Y", 2.6), ("Z", 0.8), ("Z", 1.3), ("Z", 1.3), ("Z", 1.3), ("Z", 1.3), ("Y", 1.1), ("Y", 1.1), ("Z", 0.5)]
+SMALL_COLS = [("Y", 2.6), ("Z", 0.8), ("Z", 1.3), ("Z", 1.3), ("Z", 1.3), ("Z", 1.3), ("Y", 1.1), ("Y", 1.1), ("Z", 0.9)]   # "Changes" needs room for its header word (3pt column padding, as DUAL_TCS)
 SMALL_HDR = ("Contrast & $G$ & Cluster bootstrap & Item-level & Cluster-robust $t$ & Exact sign-flip & Reading, cluster and item intervals & Reading, widest of the four & Changes")
 
 
@@ -463,7 +466,7 @@ def tab_small(entries):
            "Reading words follow the rules of the previous table; the widest reading takes the hull of the four intervals and is a reading rule, not an interval of known coverage. "
            "Changes = yes where the word differs from that of the cluster and item intervals together. Plan: SAP Section 25.")
     rows = [small_row(i, entries) for i in ids]
-    return split_table("tab:small", cap, [longtabular(SMALL_COLS, SMALL_HDR, rows)], "")
+    return split_table("tab:small", cap, [longtabular(SMALL_COLS, SMALL_HDR, rows, tcs=DUAL_TCS)], "")
 
 
 

@@ -290,12 +290,11 @@ P2.verdict
 P3.dauroc
 P3.dauroc.ci
 P3.n
+P3.p_adj
 P3.route_ca.auroc
-P3.route_ca.auroc.ci
 P3.route_ca_vs_v3.dacc_ex_cov60
 P3.route_ca_vs_v3.dacc_ex_cov60.ci
 P3.v3.auroc
-P3.v3.auroc.ci
 P3.verdict
 P4.diff_pp
 P4.diff_pp.ci
@@ -310,7 +309,6 @@ P5.diff_rate_pp
 P5.diff_rate_pp.ci
 P5.p_adj
 P5.verdict
-P5prime.b
 P5prime.blind_rate
 P5prime.blind_rate.ci
 P5prime.by_backbone.qwen3527b.repair_rate.fmt
@@ -322,7 +320,6 @@ P5prime.by_class.timeout.n
 P5prime.by_class.timeout.repair_rate.fmt
 P5prime.by_class.unknown_identifier.n
 P5prime.by_class.unknown_identifier.repair_rate.fmt
-P5prime.c
 P5prime.diff_rate_pp
 P5prime.diff_rate_pp.ci
 P5prime.n_R
@@ -343,9 +340,7 @@ W1.loo_min
 W1.n
 W1.p_adj
 W1.qwen3527b.delta_ex
-W1.qwen3527b.delta_ex.ci
 W1.qwen37flash.delta_ex
-W1.qwen37flash.delta_ex.ci
 W1.sens_no_thr.delta_ex
 W1.verdict
 setup.bird_dev.n_dbs

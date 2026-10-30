@@ -1,0 +1,120 @@
+{
+ "dirs": [
+  "W8"
+ ],
+ "price_file": "/w/tree/exp/prices.yaml",
+ "cache_hit_ratio": 0.2,
+ "unpriced_rows": {},
+ "total": {
+  "cny_disc": 4.3719052,
+  "cny_nodisc": 6.592653999999999,
+  "calls": 1246
+ },
+ "by_model": {
+  "qwen3.5-27b": {
+   "calls": 388,
+   "pt": 1637139,
+   "ct": 139977,
+   "cached": 0,
+   "cny_disc": 1.6541729999999992,
+   "cny_nodisc": 1.6541729999999992
+  },
+  "deepseek-v4.1-flash-1017": {
+   "calls": 233,
+   "pt": 1002633,
+   "ct": 15576,
+   "cached": 748544,
+   "cny_disc": 0.9322036000000002,
+   "cny_nodisc": 2.129874000000001
+  },
+  "qwen3.7-flash-2026-07-15": {
+   "calls": 357,
+   "pt": 1497231,
+   "ct": 206901,
+   "cached": 324480,
+   "cny_disc": 0.41305019999999987,
+   "cny_nodisc": 0.46496699999999985
+  },
+  "qwen3.7-plus-2026-05-26": {
+   "calls": 268,
+   "pt": 1096520,
+   "ct": 18825,
+   "cached": 606976,
+   "cny_disc": 1.3724784000000005,
+   "cny_nodisc": 2.343639999999999
+  }
+ },
+ "by_run": {
+  "W8/gatedempty-27b-r1": {
+   "calls": 184,
+   "pt": 772926,
+   "ct": 66928,
+   "cached": 0,
+   "cny_disc": 0.7850100000000004,
+   "cny_nodisc": 0.7850100000000004
+  },
+  "W8/gatedempty-27b-s0": {
+   "calls": 204,
+   "pt": 864213,
+   "ct": 73049,
+   "cached": 0,
+   "cny_disc": 0.8691629999999998,
+   "cny_nodisc": 0.8691629999999998
+  },
+  "W8/gatedempty-dsv41flash-r1": {
+   "calls": 107,
+   "pt": 471644,
+   "ct": 6978,
+   "cached": 400896,
+   "cny_disc": 0.3576784000000001,
+   "cny_nodisc": 0.9991120000000001
+  },
+  "W8/gatedempty-dsv41flash-s0": {
+   "calls": 126,
+   "pt": 530989,
+   "ct": 8598,
+   "cached": 347648,
+   "cny_disc": 0.5745252,
+   "cny_nodisc": 1.1307619999999998
+  },
+  "W8/gatedempty-flash-r1": {
+   "calls": 143,
+   "pt": 602678,
+   "ct": 92218,
+   "cached": 163840,
+   "cny_disc": 0.16809560000000004,
+   "cny_nodisc": 0.19431000000000007
+  },
+  "W8/gatedempty-flash-s0": {
+   "calls": 214,
+   "pt": 894553,
+   "ct": 114683,
+   "cached": 160640,
+   "cny_disc": 0.24495459999999986,
+   "cny_nodisc": 0.27065699999999987
+  },
+  "W8/gatedempty-plus-r1": {
+   "calls": 129,
+   "pt": 539209,
+   "ct": 9067,
+   "cached": 388608,
+   "cny_disc": 0.5291812000000004,
+   "cny_nodisc": 1.1509539999999991
+  },
+  "W8/gatedempty-plus-s0": {
+   "calls": 139,
+   "pt": 557311,
+   "ct": 9758,
+   "cached": 218368,
+   "cny_disc": 0.8432971999999999,
+   "cny_nodisc": 1.192686
+  }
+ },
+ "s303": {
+  "cny_disc": 0,
+  "cny_nodisc": 0,
+  "calls": 0,
+  "runs": 0
+ },
+ "note": "embedding and rerank requests are not priced (placeholder prices, tokens not logged); the 1-token probes of r3_probe are not logged"
+}

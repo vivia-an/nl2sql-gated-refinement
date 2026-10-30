@@ -1,0 +1,195 @@
+{
+ "_meta": {
+  "scope": "posthoc",
+  "sap": "Section 30",
+  "split": "bird_train_HR"
+ },
+ "n": 988,
+ "n_db": 7,
+ "gold_empty": 28,
+ "gold_null_row": 0,
+ "gold_fail": 2,
+ "backbones": {
+  "plus": {
+   "ex_zs": 58.80566801619433,
+   "ex_zsretry": 62.34817813765182,
+   "ex_zsretryempty": 62.24696356275304,
+   "dex_er": -0.10121457489878542,
+   "dex_er_ci": [
+    -2.4390243902439024,
+    2.3735810113519094
+   ],
+   "dex_ez": 3.4412955465587043,
+   "dex_ez_ci": [
+    0.09523809523809523,
+    8.794788273615636
+   ],
+   "up_er": 16,
+   "down_er": 17,
+   "up_ez": 44,
+   "down_ez": 10,
+   "n_empty_ref": 28,
+   "right_r_empty_ref": 15,
+   "right_e_empty_ref": 10,
+   "harm": 5,
+   "repair_empty_ref": 0,
+   "harm_vs_zs": 5,
+   "down_er_outside_empty_ref": 12,
+   "n_differ": 89,
+   "harm_qids": [
+    "bird_train:donor:3247",
+    "bird_train:donor:3282",
+    "bird_train:retails:6826",
+    "bird_train:retails:6908",
+    "bird_train:simpson_episodes:4235"
+   ],
+   "n_fired": 51,
+   "up_fired": 6,
+   "down_fired": 5,
+   "up_out": 10,
+   "down_out": 12,
+   "flips_same_sql_out": 18,
+   "net_fired_pp": 0.10121457489878542,
+   "correct_empty_kept": 10,
+   "harm_per_100_empty_ref": 17.857142857142858,
+   "harm_per_100_correct_empty": 33.333333333333336
+  },
+  "flash": {
+   "ex_zs": 55.06072874493927,
+   "ex_zsretry": 61.63967611336032,
+   "ex_zsretryempty": 61.23481781376518,
+   "dex_er": -0.4048582995951417,
+   "dex_er_ci": [
+    -2.3735810113519094,
+    1.309164149043303
+   ],
+   "dex_ez": 6.174089068825911,
+   "dex_ez_ci": [
+    2.0854021847070507,
+    11.307053941908714
+   ],
+   "up_er": 18,
+   "down_er": 22,
+   "up_ez": 71,
+   "down_ez": 10,
+   "n_empty_ref": 28,
+   "right_r_empty_ref": 17,
+   "right_e_empty_ref": 10,
+   "harm": 8,
+   "repair_empty_ref": 1,
+   "harm_vs_zs": 7,
+   "down_er_outside_empty_ref": 14,
+   "n_differ": 98,
+   "harm_qids": [
+    "bird_train:donor:3282",
+    "bird_train:public_review_platform:4014",
+    "bird_train:retails:6812",
+    "bird_train:retails:6826",
+    "bird_train:sales:5436",
+    "bird_train:simpson_episodes:4235",
+    "bird_train:simpson_episodes:4258",
+    "bird_train:simpson_episodes:4296"
+   ],
+   "n_fired": 59,
+   "up_fired": 12,
+   "down_fired": 8,
+   "up_out": 6,
+   "down_out": 14,
+   "flips_same_sql_out": 16,
+   "net_fired_pp": 0.4048582995951417,
+   "correct_empty_kept": 8,
+   "harm_per_100_empty_ref": 28.571428571428573,
+   "harm_per_100_correct_empty": 47.05882352941177
+  },
+  "27b": {
+   "ex_zs": 59.311740890688256,
+   "ex_zsretry": 63.46153846153846,
+   "ex_zsretryempty": 62.955465587044536,
+   "dex_er": -0.5060728744939271,
+   "dex_er_ci": [
+    -2.0385050962627407,
+    0.8729388942774006
+   ],
+   "dex_ez": 3.6437246963562755,
+   "dex_ez_ci": [
+    1.8867924528301887,
+    6.05759682224429
+   ],
+   "up_er": 12,
+   "down_er": 17,
+   "up_ez": 44,
+   "down_ez": 8,
+   "n_empty_ref": 28,
+   "right_r_empty_ref": 17,
+   "right_e_empty_ref": 12,
+   "harm": 5,
+   "repair_empty_ref": 0,
+   "harm_vs_zs": 5,
+   "down_er_outside_empty_ref": 12,
+   "n_differ": 89,
+   "harm_qids": [
+    "bird_train:donor:3247",
+    "bird_train:retails:6826",
+    "bird_train:retails:6908",
+    "bird_train:simpson_episodes:4235",
+    "bird_train:simpson_episodes:4296"
+   ],
+   "n_fired": 58,
+   "up_fired": 8,
+   "down_fired": 5,
+   "up_out": 4,
+   "down_out": 12,
+   "flips_same_sql_out": 12,
+   "net_fired_pp": 0.30364372469635625,
+   "correct_empty_kept": 12,
+   "harm_per_100_empty_ref": 17.857142857142858,
+   "harm_per_100_correct_empty": 29.41176470588235
+  },
+  "dsv41flash": {
+   "ex_zs": 56.174089068825914,
+   "ex_zsretry": 58.906882591093115,
+   "ex_zsretryempty": 59.21052631578947,
+   "dex_er": 0.30364372469635625,
+   "dex_er_ci": [
+    -0.2857142857142857,
+    1.0192525481313703
+   ],
+   "dex_ez": 3.0364372469635628,
+   "dex_ez_ci": [
+    0.7944389275074478,
+    6.578947368421052
+   ],
+   "up_er": 11,
+   "down_er": 8,
+   "up_ez": 37,
+   "down_ez": 7,
+   "n_empty_ref": 28,
+   "right_r_empty_ref": 19,
+   "right_e_empty_ref": 12,
+   "harm": 7,
+   "repair_empty_ref": 0,
+   "harm_vs_zs": 6,
+   "down_er_outside_empty_ref": 1,
+   "n_differ": 69,
+   "harm_qids": [
+    "bird_train:donor:3282",
+    "bird_train:public_review_platform:4014",
+    "bird_train:public_review_platform:4085",
+    "bird_train:retails:6826",
+    "bird_train:retails:6908",
+    "bird_train:simpson_episodes:4235",
+    "bird_train:simpson_episodes:4296"
+   ],
+   "n_fired": 65,
+   "up_fired": 10,
+   "down_fired": 7,
+   "up_out": 1,
+   "down_out": 1,
+   "flips_same_sql_out": 2,
+   "net_fired_pp": 0.30364372469635625,
+   "correct_empty_kept": 12,
+   "harm_per_100_empty_ref": 25.0,
+   "harm_per_100_correct_empty": 36.8421052631579
+  }
+ }
+}

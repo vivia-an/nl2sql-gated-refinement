@@ -165,7 +165,7 @@ def draw(mode="final", synthetic=False, case=None, repair=None, cost=None):
     ax.text(165.6, 44, "outcome feedback (training stream only)", rotation=90, ha="center", va="center", fontsize=8, color=st.DGREY, zorder=5)
     # ------------------------------------------------------------------ legend: in the free area left of the loop container (the former panel (b) sat here)
     ax.plot([0, 8], [62.0, 62.0], color=st.INK, lw=1.0, clip_on=False)
-    ax.text(10, 62.0, "frozen gated pipeline", fontsize=8, va="center", clip_on=False)
+    ax.text(10, 62.0, "pipeline (gated loop)", fontsize=8, va="center", clip_on=False)
     ax.plot([0, 8], [53.0, 53.0], color=st.DGREY, lw=1.0, ls=(0, (3, 2)), clip_on=False)
     ax.text(10, 53.0, "comparator, optional\nor training-only path", fontsize=8, va="center", linespacing=1.25, clip_on=False)
     if case:

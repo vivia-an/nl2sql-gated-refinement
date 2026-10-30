@@ -1,0 +1,8 @@
+# POST HOC (W8, 2026-10-29, third-round review), not part of the frozen set. Use with --system full_gated. As frozen/full_gated.yaml (the pipeline), but the
+# gate also fires on an empty result (m5.gate_empty true; frozen off), so that the pipeline and the single call + retry with the empty-result gate share the trigger.
+# The locked gated archive of the backbone is imported into the call cache first: every question whose root and revisions never return an empty result replays the locked run.
+temperature: 0.0
+ddl: {quote_keywords: true}
+m5: {policy: gated, gate_empty: true, score_for_routing: false, t_max: 3}
+route: {score: exec, theta_h: 7.5}
+m6: {policy: ws_full, path: exp/frozen/corpus_burnin_39e2477c.sqlite, update: false}

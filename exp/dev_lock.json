@@ -875,6 +875,106 @@
    "critic_sha256": null,
    "route_sha256": null,
    "note": "round-5 completion of the temperature-0 reruns (r1 only; seed parameter 0; post hoc, SAP 27); registration only, seed 0 was already authorised"
+  },
+  {
+   "system": "zs_retry",
+   "config_path": "exp/configs/posthoc/zs_retry.yaml",
+   "config_sha256": "5b5dabde0e09c9a29b6247e5932a9c0b599f813b89f92eb29ce977ad17081daf",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "2c086d9d38695a856b7fe05acab1eac8a2e798fe",
+   "date": "2026-10-29",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": null,
+   "controller_sha256": null,
+   "corpus_sha256": null,
+   "critic_sha256": null,
+   "route_sha256": null,
+   "note": "post hoc X2DSR (SAP 28): single call plus execution gate (retry-only control); entered 2026-10-29 before its runs, appended to this file at integration; seed 0 only"
+  },
+  {
+   "system": "zs_think",
+   "config_path": "exp/configs/posthoc/zs_think.yaml",
+   "config_sha256": "649c9c6a2763c93b811f815f8397816ab7a0cf9f3461cd609dbcc6bc2f0f8692",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "2c086d9d38695a856b7fe05acab1eac8a2e798fe",
+   "date": "2026-10-29",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": null,
+   "controller_sha256": null,
+   "corpus_sha256": null,
+   "critic_sha256": null,
+   "route_sha256": null,
+   "note": "post hoc W7 (SAP 29): single call with thinking on; entered 2026-10-29 before its runs, appended to this file at integration; seed 0 only"
+  },
+  {
+   "system": "zs_retry",
+   "config_path": "exp/configs/posthoc/zs_retry_empty.yaml",
+   "config_sha256": "d425089067134146f888964b7f7dc9d8c4550d99e000bfc3331b3bb0cf8a5dab",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "2c086d9d38695a856b7fe05acab1eac8a2e798fe",
+   "date": "2026-10-29",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": null,
+   "controller_sha256": null,
+   "corpus_sha256": null,
+   "critic_sha256": null,
+   "route_sha256": null,
+   "note": "post hoc W7 (SAP 29): single call plus execution gate that also fires on an empty result (empty-gate retry); also used by W9 (SAP 30); entered 2026-10-29 before its runs, appended to this file at integration; seed 0 only"
+  },
+  {
+   "system": "full_gated",
+   "config_path": "exp/configs/posthoc/gated_empty.yaml",
+   "config_sha256": "b285ff17c91b3153b58f65fe85033832ada412c67d4f9f1249874b71de4f537d",
+   "models_yaml_sha256": "5131de632eb8ae2f35f4c9c5a1f33d1d9d943a7796ecf02aeb5afe0145d6704b",
+   "prompts_sha256": "a61f8211c4372dd6d1bbca6848ce52949dfce0c87fc50e82905fe89566c357e0",
+   "git_hash": "2c086d9d38695a856b7fe05acab1eac8a2e798fe",
+   "date": "2026-10-29",
+   "datasets_allowed": [
+    "bird_dev",
+    "bird_minidev",
+    "spider_*",
+    "ambiqt",
+    "livesql_lite"
+   ],
+   "seeds": [
+    0
+   ],
+   "sap_commit": null,
+   "controller_sha256": null,
+   "corpus_sha256": "39e2477c853c0738fa139e42c7fe700afb880966eaa35ac740eeed5cb25687b5",
+   "critic_sha256": null,
+   "route_sha256": null,
+   "note": "post hoc W8 (SAP 29): the pipeline (gated loop) with the empty gate; entered 2026-10-29 before its runs, appended to this file at integration; seed 0 only"
   }
  ]
 }

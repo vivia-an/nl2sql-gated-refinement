@@ -1,0 +1,64 @@
+{
+ "dirs": [
+  "X2DS"
+ ],
+ "price_file": "/w/tree/exp/prices.yaml",
+ "cache_hit_ratio": 0.2,
+ "unpriced_rows": {},
+ "total": {
+  "cny_disc": 22.75743679999987,
+  "cny_nodisc": 44.48343999999995,
+  "calls": 7021
+ },
+ "by_model": {
+  "deepseek-v4.1-flash-1017": {
+   "calls": 7021,
+   "pt": 19207816,
+   "ct": 758476,
+   "cached": 13578752,
+   "cny_disc": 22.75743679999987,
+   "cny_nodisc": 44.48343999999995
+  }
+ },
+ "by_run": {
+  "X2DS/fixed-dsv41flash-s0": {
+   "calls": 5442,
+   "pt": 14993985,
+   "ct": 679447,
+   "cached": 10000384,
+   "cny_disc": 19.422931599999984,
+   "cny_nodisc": 35.42354599999996
+  },
+  "X2DS/gated-dsv41flash-s0": {
+   "calls": 42,
+   "pt": 170313,
+   "ct": 3695,
+   "cached": 139776,
+   "cny_disc": 0.1465444,
+   "cny_nodisc": 0.37018600000000007
+  },
+  "X2DS/rootonly-dsv41flash-s0": {
+   "calls": 3,
+   "pt": 12316,
+   "ct": 119,
+   "cached": 7168,
+   "cny_disc": 0.0141152,
+   "cny_nodisc": 0.025584000000000003
+  },
+  "X2DS/zs-dsv41flash-s0": {
+   "calls": 1534,
+   "pt": 4031202,
+   "ct": 75215,
+   "cached": 3431424,
+   "cny_disc": 3.1738456,
+   "cny_nodisc": 8.66412400000002
+  }
+ },
+ "s303": {
+  "cny_disc": 0,
+  "cny_nodisc": 0,
+  "calls": 0,
+  "runs": 0
+ },
+ "note": "embedding and rerank requests are not priced (placeholder prices, tokens not logged); the 1-token probes of r3_probe are not logged"
+}

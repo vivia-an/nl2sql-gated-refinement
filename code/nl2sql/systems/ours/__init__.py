@@ -1,6 +1,8 @@
 from .patent_fb import PatentFB
 from .pipeline import FullFixed, FullGated, FullGatedBlind, FullRL, FullSystem, FullX, ZeroShot
 from .zs_ex import ZeroShotExamples
+from .zs_retry import ZeroShotRetry
+from .zs_think import ZeroShotThink
 
 SYSTEMS = {
     "full": FullSystem,          # behaviour decided by the config (m7.controller / m5.variant ...)
@@ -13,4 +15,6 @@ SYSTEMS = {
     "zs": ZeroShot,              # fallback; B1's zs overrides in the registry
     "zs_ours": ZeroShot,
     "zs_ex": ZeroShotExamples,   # R3 (SAP section 26): single call + the examples the root-only arm of the same backbone and seed retrieved
+    "zs_retry": ZeroShotRetry,   # X2DSR (post hoc): single call + the execution gate of the gated loop (max 3 revisions), no front end
+    "zs_think": ZeroShotThink,   # W7 (post hoc): single call with thinking mode on
 }

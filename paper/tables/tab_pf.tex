@@ -3,9 +3,9 @@
 \caption{Exploratory, post hoc, simulated feedback: does a Critic whose scoring standard is updated from accumulated feedback get better with use? BIRD development set, \xres{PF.n_items} questions, Qwen3.7-Plus, one run per arm. The feedback comes from a simulated oracle user (execution accuracy against the BIRD training reference, right with probability $q$), so every number is an upper bound for a real user. Upper block: EX with a 95\% database-clustered bootstrap interval, model calls and nominal list-price cost per arm, the share of wrong root queries the Critic flagged, and the revisions that helped or hurt. Lower block: paired differences in percentage points (pp) with 95\% database-clustered paired intervals; ratios are to the gated loop with interval; readings follow the pre-stated rules of SAP Amendment 9 (Section 22).}\label{tab:pf}
 \centering
 \footnotesize
-\begin{tabularx}{\linewidth}{Y{2.025}Z{0.709}Z{0.456}Z{1.266}Z{0.709}Z{1.013}Z{1.013}Z{0.810}}
+\begin{tabularx}{\linewidth}{Y{1.823}Z{0.911}Z{0.456}Z{1.266}Z{0.709}Z{1.013}Z{1.013}Z{0.810}}
 \toprule
-Arm & Feedback items & $q$ & EX (\%) [CI] & Calls per question & Cost (CNY per 1\,000 questions) & Wrong roots flagged by the Critic (\%) & Helped / hurt \\
+Arm & Feedback items & $q$ & EX (\%) [CI] & Calls per question & Cost (CNY per 1,000 questions) & Wrong roots flagged by the Critic (\%) & Helped / hurt \\
 \midrule
 Fixed loop (reference) & -- & -- & \xres{PF.arm.full_fixed.ex.d2} \xres{PF.arm.full_fixed.ex.ci.d2} & \xres{PF.arm.full_fixed.calls_per_q} & \xres{PF.arm.full_fixed.cost_k} & \xres{PF.arm.full_fixed.detection} & \xres{PF.arm.full_fixed.helped} / \xres{PF.arm.full_fixed.hurt} \\
 Gated loop (reference) & -- & -- & \xres{PF.arm.full_gated.ex.d2} \xres{PF.arm.full_gated.ex.ci.d2} & \xres{PF.arm.full_gated.calls_per_q} & \xres{PF.arm.full_gated.cost_k} & -- & \xres{PF.arm.full_gated.helped} / \xres{PF.arm.full_gated.hurt} \\

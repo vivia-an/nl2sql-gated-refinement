@@ -218,7 +218,7 @@ def test_final_mode_figure_code_has_no_reference_stamp_in_final():
 
 
 def test_amendment_log_lists_every_sap_row():
-    """Table S19 (tab_s_log): Amendments 1-10 incl. 6b-6d, the 20.10 addendum, the incident note and the post hoc notes of SAP Sections 24 to 27, each once, in SAP order."""
+    """Table S19 (tab_s_log): Amendments 1-10 incl. 6b-6d, the 20.10 addendum, the incident note and the post hoc notes of SAP Sections 24 to 30, each once, in SAP order."""
     out = tempfile.mkdtemp()
     try:
         old = mx.SUPP
@@ -232,11 +232,14 @@ def test_amendment_log_lists_every_sap_row():
         nums = [re.match(r"Amendment (\d+[a-z]?)", x).group(1) for x in labels if x.startswith("Amendment")]
         assert nums == ["1", "2", "3", "4", "5", "6", "6b", "6c", "6d", "7", "8", "9", "10"]
         tail = [x for x in labels if not x.startswith("Amendment")]
-        assert len(tail) == 6 and len(set(tail)) == 6
+        assert len(tail) == 10 and len(set(tail)) == 10
         assert tail[0].startswith("20.10 addendum") or tail[0].startswith("Incident note")
         assert "Memo-SQL" in tail[2] and "statistics add-on S2" in tail[3]        # Section 24 before Section 25
-        assert "additional experiments" in tail[4] and labels.index(tail[4]) == len(labels) - 2     # Section 26 after Section 25
-        assert "further statistics" in tail[5] and "round-4" not in tail[5] and "temperature-0" in tail[5] and labels.index(tail[5]) == len(labels) - 1     # Section 27 last
+        assert "additional experiments" in tail[4] and labels.index(tail[4]) == len(labels) - 6     # Section 26 after Section 25
+        assert "further statistics" in tail[5] and "round-4" not in tail[5] and "temperature-0" in tail[5] and labels.index(tail[5]) == len(labels) - 5     # Section 27 before Section 28
+        assert "non-Qwen backbone" in tail[6] and "retry on execution failure" in tail[6] and labels.index(tail[6]) == len(labels) - 4     # Section 28
+        assert "thinking-on single call" in tail[7] and "pipeline + empty gate" in tail[8]       # Section 29 (W7 and the reruns, then W8)
+        assert "tuning split HR" in tail[9] and labels.index(tail[9]) == len(labels) - 1     # Section 30 last
         amend7 = [x for x in labels if x.startswith("Amendment 7")][0]
         assert "robustness check, post hoc" in amend7 and "robustness-posthoc" not in amend7        # V4 L-6
         assert "gold" not in open(p, encoding="utf-8").read()                      # prose says 'reference query', not 'gold'

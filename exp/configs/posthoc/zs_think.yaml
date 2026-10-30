@@ -1,0 +1,6 @@
+# POST HOC (W7, 2026-10-29), not part of the frozen set. Use with --system zs_think. The single call of frozen/zs.yaml with the provider's thinking mode on
+# (reviewer request: a single call that spends more tokens by reasoning). Same temperature / DDL rendering as frozen/zs.yaml; max_tokens.generate raised to 16384
+# so the answer is not cut after the reasoning.
+temperature: 0.0
+ddl: {quote_keywords: true}
+max_tokens: {generate: 16384}

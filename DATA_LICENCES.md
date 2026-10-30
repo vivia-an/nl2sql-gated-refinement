@@ -50,17 +50,19 @@ sources (the BIRD paper, appendix B.10, lists Public Domain, CC BY, CC BY-SA, GP
 ## Model outputs
 
 The stored language-model requests and responses were produced through the OpenAI-compatible endpoint of Alibaba Cloud Model Studio
-(see `exp/models.yaml`) with a paid account of the authors; model identifiers and call dates are in the run metadata of the archive. They are
+(see `exp/models.yaml`) with a paid account of the authors (the Qwen models of version 1.0.0 of the run archive, and, in version 1.1.0, also `deepseek-v4.1-flash-1017`, which the same service offers under the same account); model identifiers and call dates are in the run metadata of the archive. They are
 shared as research data so that the analyses can be replayed. No licence is added to the raw output text. The terms of the service provider
 apply to their use; at the time of writing (checked 2026-10-28) they leave the rights in model output with the customer and do not allow using
 the service or its output to train competing models. The responses are not human-written text and may contain errors.
 
-## The run archive (Zenodo record https://doi.org/10.5281/zenodo.23735019)
+**DeepSeek outputs (run archive 1.1.0, post hoc runs).** The responses of `deepseek-v4.1-flash-1017` were generated through Alibaba Cloud Model Studio under the same account terms as the Qwen responses. They are shared as research data on the same basis: no licence is added to the raw output text and none is claimed; the terms of the service and of the model developer, where they apply, govern further use.
+
+## The run archive (Zenodo record https://doi.org/10.5281/zenodo.23735018; version 1.0.0 is https://doi.org/10.5281/zenodo.23735019, version 1.1.0 adds the post hoc runs)
 
 - **Benchmark material, CC BY-SA 4.0 with attribution.** BIRD and Spider are published under CC BY-SA 4.0, and Spider-Realistic is treated as CC BY-SA 4.0 (see the table). The archive contains questions, evidence strings, schema text with sample values and exemplar questions from them. Please attribute the benchmarks to their authors (list above).
 - **Modification notice.** The archive modifies the benchmark material: questions, evidence strings and schema text are embedded in the stored model requests and responses (rendered into prompts, with sample values added to the schema text), and model outputs and execution results are attached to them. The modified material is shared under CC BY-SA 4.0.
 - **Underlying databases.** The databases under BIRD and Spider are not in the archive and are not relicensed here; they keep the licences of their original sources.
-- **Model responses.** The responses are shared as research data, with attribution to the provider (Alibaba Cloud Model Studio, models named in the run metadata). No additional licence is claimed on the raw output text. Their use is subject to the provider's terms.
+- **Model responses.** The responses are shared as research data, with attribution to the provider (Alibaba Cloud Model Studio, models named in the run metadata; for version 1.1.0 this includes the DeepSeek model named above). No additional licence is claimed on the raw output text. Their use is subject to the provider's terms.
 
 ## Code
 

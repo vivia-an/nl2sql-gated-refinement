@@ -263,7 +263,7 @@ def fig_rc(B, mode, synthetic=False):
     fig = P.figure(figsize=(st.W2, 7.4 * CM), constrained_layout=True)
     gs = fig.add_gridspec(1, n + 1, width_ratios=[1.0] * n + [0.8])
     col = {"v3": st.DGREY, "route_ca": st.BLUE}
-    lab = {"v3": "V3 Critic score", "route_ca": "consistency-augmented score"}
+    lab = {"v3": "V3 Critic score", "route_ca": r"routing score $\rho$"}
     ls = {"v3": (0, (4, 1.5)), "route_ca": "-"}
     tops = [max(c.get("hi") or c["risk"]) for p in pans for c in p["curves"].values() if c.get("risk")]
     ymax = max(tops) * 100 * 1.38
@@ -290,9 +290,9 @@ def fig_rc(B, mode, synthetic=False):
         a60 = p.get("acc60") or {}
         note = []
         if aurc.get("v3") is not None and aurc.get("route_ca") is not None:
-            note.append("AURC %.3f (V3), %.3f (aug.)" % (aurc["v3"], aurc["route_ca"]))
+            note.append("AURC %.3f (V3), %.3f (routing)" % (aurc["v3"], aurc["route_ca"]))
         if "v3" in a60 and "route_ca" in a60:
-            note.append("EX at 60%% coverage:\n%.1f%% (V3), %.1f%% (aug.)" % (100 * a60["v3"], 100 * a60["route_ca"]))
+            note.append("EX at 60%% coverage:\n%.1f%% (V3), %.1f%% (routing)" % (100 * a60["v3"], 100 * a60["route_ca"]))
         if note:
             ax.text(21, ymax * 0.985, "\n".join(note), ha="left", va="top", fontsize=8, bbox=dict(boxstyle="square,pad=0.2", fc="white", ec="none", alpha=0.85), zorder=6)
         ax.set_xlim(20, 100)

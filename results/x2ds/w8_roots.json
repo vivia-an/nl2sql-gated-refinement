@@ -1,0 +1,210 @@
+{
+ "_meta": {
+  "scope": "posthoc",
+  "what": "W8 regenerated roots; empty-gate retry losses"
+ },
+ "backbones": {
+  "plus": {
+   "n": 1534,
+   "n_regen": 22,
+   "n_changed": 42,
+   "n_changed_regen": 22,
+   "n_up": 14,
+   "n_up_regen": 1,
+   "n_down": 0,
+   "n_down_regen": 0,
+   "n_same_root": 1512,
+   "gain_same_root": 0.7936507936507936,
+   "down_qids": [],
+   "lat_delta": 0.9526251629726188,
+   "lat_delta_samecalls": 0.7331441196464982,
+   "n_samecalls": 1471,
+   "retry_empty_down_qids": [
+    "bird_dev:european_football_2:1127"
+   ],
+   "empty_vs_retry_down_qids": [
+    "bird_dev:debit_card_specializing:1526",
+    "bird_dev:european_football_2:1127"
+   ],
+   "empty_vs_retry_down_root_status": {
+    "bird_dev:debit_card_specializing:1526": null,
+    "bird_dev:european_football_2:1127": null
+   },
+   "empty_vs_retry_down_actions": {
+    "bird_dev:debit_card_specializing:1526": [
+     [
+      "revise",
+      "revise",
+      "revise",
+      "accept"
+     ],
+     [
+      "revise",
+      "revise",
+      "revise",
+      "stop_best"
+     ],
+     "ok_nonempty",
+     "timeout"
+    ],
+    "bird_dev:european_football_2:1127": [
+     [
+      "revise",
+      "accept"
+     ],
+     [
+      "revise",
+      "revise",
+      "accept"
+     ],
+     "ok_nonempty",
+     "ok_nonempty"
+    ]
+   },
+   "retry_empty_down_nullrow": 0
+  },
+  "flash": {
+   "n": 1534,
+   "n_regen": 32,
+   "n_changed": 77,
+   "n_changed_regen": 32,
+   "n_up": 28,
+   "n_up_regen": 0,
+   "n_down": 5,
+   "n_down_regen": 5,
+   "n_same_root": 1502,
+   "gain_same_root": 1.8641810918774966,
+   "down_qids": [
+    "bird_dev:california_schools:50",
+    "bird_dev:codebase_community:621",
+    "bird_dev:debit_card_specializing:1473",
+    "bird_dev:thrombosis_prediction:1300",
+    "bird_dev:toxicology:209"
+   ],
+   "lat_delta": 1.509418513689702,
+   "lat_delta_samecalls": 0.5779288674033136,
+   "n_samecalls": 1448,
+   "retry_empty_down_qids": [
+    "bird_dev:debit_card_specializing:1504"
+   ],
+   "empty_vs_retry_down_qids": [
+    "bird_dev:debit_card_specializing:1504",
+    "bird_dev:european_football_2:1128",
+    "bird_dev:thrombosis_prediction:1165"
+   ],
+   "empty_vs_retry_down_root_status": {
+    "bird_dev:debit_card_specializing:1504": null,
+    "bird_dev:european_football_2:1128": null,
+    "bird_dev:thrombosis_prediction:1165": null
+   },
+   "empty_vs_retry_down_actions": {
+    "bird_dev:debit_card_specializing:1504": [
+     [
+      "accept"
+     ],
+     [
+      "revise",
+      "accept"
+     ],
+     "ok_empty",
+     "ok_nonempty"
+    ],
+    "bird_dev:european_football_2:1128": [
+     [
+      "revise",
+      "revise",
+      "accept"
+     ],
+     [
+      "revise",
+      "revise",
+      "revise",
+      "stop_best"
+     ],
+     "ok_nonempty",
+     "timeout"
+    ],
+    "bird_dev:thrombosis_prediction:1165": [
+     [
+      "revise",
+      "accept"
+     ],
+     [
+      "revise",
+      "accept"
+     ],
+     "ok_nonempty",
+     "ok_nonempty"
+    ]
+   },
+   "retry_empty_down_nullrow": 1
+  },
+  "27b": {
+   "n": 1534,
+   "n_regen": 16,
+   "n_changed": 59,
+   "n_changed_regen": 15,
+   "n_up": 20,
+   "n_up_regen": 0,
+   "n_down": 2,
+   "n_down_regen": 2,
+   "n_same_root": 1518,
+   "gain_same_root": 1.251646903820817,
+   "down_qids": [
+    "bird_dev:codebase_community:648",
+    "bird_dev:toxicology:319"
+   ],
+   "lat_delta": 1.8764335071707972,
+   "lat_delta_samecalls": 0.6578443526170781,
+   "n_samecalls": 1452,
+   "retry_empty_down_qids": [],
+   "empty_vs_retry_down_qids": [
+    "bird_dev:formula_1:944"
+   ],
+   "empty_vs_retry_down_root_status": {
+    "bird_dev:formula_1:944": null
+   },
+   "empty_vs_retry_down_actions": {
+    "bird_dev:formula_1:944": [
+     [
+      "revise",
+      "revise",
+      "accept"
+     ],
+     [
+      "revise",
+      "revise",
+      "revise",
+      "accept"
+     ],
+     "ok_nonempty",
+     "ok_nonempty"
+    ]
+   },
+   "retry_empty_down_nullrow": 0
+  },
+  "dsv41flash": {
+   "n": 1534,
+   "n_regen": 2,
+   "n_changed": 51,
+   "n_changed_regen": 2,
+   "n_up": 22,
+   "n_up_regen": 0,
+   "n_down": 1,
+   "n_down_regen": 1,
+   "n_same_root": 1532,
+   "gain_same_root": 1.370757180156658,
+   "down_qids": [
+    "bird_dev:debit_card_specializing:1523"
+   ],
+   "lat_delta": 0.07173989569752273,
+   "lat_delta_samecalls": -0.09625741890959275,
+   "n_samecalls": 1449,
+   "retry_empty_down_qids": [],
+   "empty_vs_retry_down_qids": [],
+   "empty_vs_retry_down_root_status": {},
+   "empty_vs_retry_down_actions": {},
+   "retry_empty_down_nullrow": 0
+  }
+ }
+}

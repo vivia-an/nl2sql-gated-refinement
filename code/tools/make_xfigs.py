@@ -212,7 +212,23 @@ def frontier_data(res=RES):
                       "x_discount": "panel a: cost with the cache discount (cny_q); panel b: every prompt token at the full input price (cny_q_nodisc); 27b records no cached tokens (its points coincide in the two panels); flash records cached tokens only in the single call and the fixed loop (small shift except the single call)",
                       "front": "point-estimate Pareto over the 21 configurations; panel a front = cost with the discount (RV2 definition; recomputed here, equal to pareto.csv); panel b front = same rule on the cost without the discount (not in RV2; computed here)",
                       "front_without_discount_same_set": front_nd == front, "front_without_discount": sorted("%s %s" % k for k in front_nd)},
-            "points": pts, "front": sorted("%s %s" % k for k in front), "front_nodisc": sorted("%s %s" % k for k in front_nd)}
+            "points": pts, "front": sorted("%s %s" % k for k in front), "front_nodisc": sorted("%s %s" % k for k in front_nd),
+            "posthoc_retry": _retry_points(res)}
+
+
+POSTHOC_MARK = {"zsretry": "P", "zsretryempty": "X", "gatedempty": "v"}
+
+
+def _retry_points(res):
+    """W7: the post hoc single call + retry (results/x2ds/<b>/x2ds_summary.json), drawn as an open marker; it does not enter the front (RV2 definition)."""
+    out = []
+    for b, _ in FRONTIER_BACKBONES:
+        arms = jload(os.path.join(res, "x2ds", b, "x2ds_summary.json"))["arms"]
+        for cfg in ("zsretry", "zsretryempty", "gatedempty"):          # W8: the empty-gate retry and the pipeline + empty gate as well
+            if cfg in arms:
+                a = arms[cfg]
+                out.append({"backbone": b, "cfg": cfg, "ex": a["ex_pct"], "cny_1000": a["cny_per_1000q_cache_disc"], "cny_1000_nodisc": a["cny_per_1000q_list"]})
+    return out
 
 
 # ----------------------------------------------------------------------------------------------------------------------------------
@@ -401,6 +417,9 @@ def draw_frontier(data, out_dir=FIGS, height_cm=11.3):
             on = "%s %s" % (p["backbone"], p["cfg"]) in front
             ax.plot([p[ckey]], [p["ex"]], marker=m, ms=FRONTIER_SIZE[m], mfc=col[p["backbone"]], mec=st.INK if on else "white", mew=1.5 if on else 0.6, ls="none",
                     transform=shifted(ax, p["cfg"]), zorder=4 if on else 3, clip_on=False)
+        for p in data.get("posthoc_retry", []):                                                   # post hoc arms: open markers, outside the front
+            m = POSTHOC_MARK.get(p.get("cfg", "zsretry"), "P")
+            ax.plot([p[ckey]], [p["ex"]], marker=m, ms=FRONTIER_SIZE.get(m, 6.0), mfc="white", mec=col[p["backbone"]], mew=1.3, ls="none", zorder=3.5, clip_on=False)
         for txt, key, ck in FRONTIER_TEXT:
             p = byk[key]
             ax.text(p[ckey], p["ex_ci"][1] + 0.5, txt, ha=FRONTIER_HA[letter][ck], va="bottom", fontsize=8, color=col[ck], fontweight="bold", zorder=6)
@@ -454,12 +473,15 @@ def draw_frontier(data, out_dir=FIGS, height_cm=11.3):
     gray = dict(mfc="#bbbbbb", mec=st.DGREY, mew=0.7, ls="none")
     hb = [Line2D([], [], marker="o", ls="none", ms=6.5, mfc=col[k], mec="white", label=lab) for k, lab in FRONTIER_BACKBONES]
     hs = [Line2D([], [], marker="o", ms=6.0, label="single call", **gray), Line2D([], [], marker="s", ms=5.5, label="root-only", **gray),
-          Line2D([], [], marker="^", ms=6.5, label="gated loop", **gray), Line2D([], [], marker="D", ms=5.0, label="fixed loop", **gray)]
+          Line2D([], [], marker="^", ms=6.5, label="gated loop", **gray), Line2D([], [], marker="D", ms=5.0, label="fixed loop", **gray),
+          Line2D([], [], marker="P", ms=6.0, mfc="white", mec=st.DGREY, mew=1.3, ls="none", label="single call + retry (post hoc)"),
+          Line2D([], [], marker="X", ms=6.0, mfc="white", mec=st.DGREY, mew=1.3, ls="none", label="empty-gate retry (post hoc)"),
+          Line2D([], [], marker="v", ms=6.0, mfc="white", mec=st.DGREY, mew=1.3, ls="none", label="pipeline + empty gate (post hoc)")]
     hx = [Line2D([], [], marker="o", ms=6.0, mfc="#bbbbbb", mec=st.INK, mew=1.5, ls="none", label="not dominated"),
           Line2D([], [], marker="x", ms=6.0, mec=st.DGREY, mew=1.5, ls="none", label="other comparator"),
           Line2D([], [], color=st.DGREY, lw=1.0, label="95% interval")]
-    handles = [hb[0], hs[0], hb[1], hs[1], hb[2], hs[2], hx[0], hs[3], hx[2], hx[1]]
-    fig.legend(handles=handles, loc="outside upper center", ncol=5, frameon=False, fontsize=8, handlelength=1.4, columnspacing=1.2, handletextpad=0.4, labelspacing=0.3)
+    handles = [hb[0], hb[1], hb[2], hs[0], hs[1], hs[2], hs[3], hs[6], hx[1], hs[4], hs[5], hx[0], hx[2]]   # five columns of 3, 3, 3, 2, 2
+    fig.legend(handles=handles, loc="outside upper center", ncol=5, frameon=False, fontsize=8, handlelength=1.3, columnspacing=0.9, handletextpad=0.35, labelspacing=0.3)
     return _save(fig, "fig_frontier", out_dir)
 
 
@@ -789,7 +811,11 @@ def tab_log(sap=os.path.join(ROOT, "docs", "SAP.md")):
     notes that are not amendments (addenda, incident, post hoc notes of Sections 24 to 27) follow in the order of the SAP."""
     seen, rows = set(), []
     pat = re.compile(r"^\| (20\d\d-\d\d-\d\d) \| ")
+    sec = None
     for ln in open(sap, encoding="utf-8"):
+        h = re.match(r"^## (\d+)\.", ln)
+        if h:
+            sec = h.group(1)
         if not pat.match(ln):
             continue
         cells = [c.strip() for c in ln.strip().strip("|").split("|")]
@@ -805,15 +831,21 @@ def tab_log(sap=os.path.join(ROOT, "docs", "SAP.md")):
         if not m:
             key = (999, "%04d" % len(rows))
         entry = re.sub(r"\s*\(\u00a7\d+\)", "", cells[1])
+        if not m and sec:
+            entry += " (SAP Section %s)" % sec                                       # each note row names its plan section
         entry = re.sub(r"Plat gold\b", "Plat reference queries", entry)               # prose says 'reference query', not 'gold'
         entry = re.sub(r"\bgold SQL results\b", "reference-query results", entry)
         before = cells[3].replace("no `code/prompts/**`, no `exp/models.yaml` touched", "no prompt or model-configuration file touched")  # no repository paths in the table
         entry = entry.replace("scope `robustness-posthoc`", "scope: robustness check, post hoc")               # V4 L-6: the rule label in prose, the code token only in code font
         entry = entry.replace("`exp/dev_lock.json`", "the lock file").replace("exp/dev_lock.json", "the lock file")      # no repository paths in the table
-        effect = re.sub(r"`?\\(?:ts|x)?res`?(?:, `?\\(?:ts|x)?res`?)*", "the result macros", cells[4])      # round 5 (R2 N8): no LaTeX macro names in the supplement text
+        effect = re.sub(r"`?\\(?:ts|x)?res`?(?:, `?\\(?:ts|x)?res`?)*", "the result macros", cells[4])      # no LaTeX macro names in the supplement text
         # W3: no working-file names, review-round labels or process words in the supplement text (the SAP row keeps its date, scope and numbers)
         clean = lambda s: re.sub(r"\bsmoke\b", "pilot", re.sub(r"`?results_macros\.tex`?", "the result macros", s.replace("round-4 statistics", "further statistics")))
         entry, before, effect = clean(entry), clean(before), clean(effect)
+        # leftovers of macro names and repository paths in the effect column
+        effect = re.sub(r"the result macros or a `?the result macros`?\{\}`? macro", "the result macros", effect).replace("or `paper/`", "or the paper text").replace("or paper/", "or the paper text")
+        # 'the result macros' was never defined, and Amendment 7 is reported in the paper (Section 4.5.1) as a post hoc robustness check
+        effect = effect.replace("the result macros or the paper text", "the confirmatory result values (reported in the paper as a post hoc robustness check)").replace("the result macros", "the confirmatory result values")
         rows.append((key, [cells[0], tex_escape(entry), tex_escape(before), tex_escape(effect)]))
     rows.sort(key=lambda kv: (kv[0][0], str(kv[0][1])))
     return write_tex("tab_s_log", table_rows([r for _, r in rows]))

@@ -1,0 +1,6 @@
+# POST HOC (X2DSR, 2026-10-29), not part of the frozen set. Use with --system zs_retry. Single call (zs_ours request) + the execution gate of the gated loop:
+# revise only while the SQL fails to execute or times out, max t_max = 3 revisions, feedback = the database error text, final = best node by execution status.
+# Same temperature / DDL rendering as frozen/zs.yaml and same gate settings as frozen/full_gated.yaml (m5.gate_empty false, t_max 3).
+temperature: 0.0
+ddl: {quote_keywords: true}
+m5: {policy: gated, gate_empty: false, t_max: 3}

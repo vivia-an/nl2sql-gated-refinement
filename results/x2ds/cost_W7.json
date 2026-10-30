@@ -1,0 +1,128 @@
+{
+ "dirs": [
+  "W7"
+ ],
+ "price_file": "/w/tree/exp/prices.yaml",
+ "cache_hit_ratio": 0.2,
+ "unpriced_rows": {},
+ "total": {
+  "cny_disc": 39.08708299999997,
+  "cny_nodisc": 47.217745399999984,
+  "calls": 11299
+ },
+ "by_model": {
+  "qwen3.5-27b": {
+   "calls": 4591,
+   "pt": 13687217,
+   "ct": 2186989,
+   "cached": 0,
+   "cny_disc": 18.709877399999968,
+   "cny_nodisc": 18.709877399999968
+  },
+  "qwen3.7-flash-2026-07-15": {
+   "calls": 4881,
+   "pt": 14275932,
+   "ct": 4176397,
+   "cached": 8247680,
+   "cny_disc": 4.8766752000000055,
+   "cny_nodisc": 6.196303999999999
+  },
+  "deepseek-v4.1-flash-1017": {
+   "calls": 181,
+   "pt": 512557,
+   "ct": 13771,
+   "cached": 425984,
+   "cny_disc": 0.45370759999999966,
+   "cny_nodisc": 1.1352819999999995
+  },
+  "qwen3.7-plus-2026-05-26": {
+   "calls": 1646,
+   "pt": 4621177,
+   "ct": 1491741,
+   "cached": 3830912,
+   "cny_disc": 15.046822799999996,
+   "cny_nodisc": 21.176282000000015
+  }
+ },
+ "by_run": {
+  "W7/macsql-27b-s0": {
+   "calls": 2848,
+   "pt": 8800997,
+   "ct": 661843,
+   "cached": 0,
+   "cny_disc": 8.457444599999999,
+   "cny_nodisc": 8.457444599999999
+  },
+  "W7/macsql-flash-s0": {
+   "calls": 3137,
+   "pt": 9358475,
+   "ct": 1045799,
+   "cached": 4467968,
+   "cny_disc": 1.99345932,
+   "cny_nodisc": 2.708334199999997
+  },
+  "W7/zsretryempty-27b-s0": {
+   "calls": 209,
+   "pt": 612778,
+   "ct": 70533,
+   "cached": 0,
+   "cny_disc": 0.7062251999999999,
+   "cny_nodisc": 0.7062251999999999
+  },
+  "W7/zsretryempty-dsv41flash-s0": {
+   "calls": 181,
+   "pt": 512557,
+   "ct": 13771,
+   "cached": 425984,
+   "cny_disc": 0.45370759999999966,
+   "cny_nodisc": 1.1352819999999995
+  },
+  "W7/zsretryempty-flash-s0": {
+   "calls": 210,
+   "pt": 641228,
+   "ct": 99513,
+   "cached": 268416,
+   "cny_disc": 0.16490944000000016,
+   "cny_nodisc": 0.20785600000000004
+  },
+  "W7/zsretryempty-plus-s0": {
+   "calls": 112,
+   "pt": 344948,
+   "ct": 9953,
+   "cached": 251520,
+   "cny_disc": 0.367088,
+   "cny_nodisc": 0.7695200000000002
+  },
+  "W7/zsthink-27b-s0": {
+   "calls": 1534,
+   "pt": 4273442,
+   "ct": 1454613,
+   "cached": 0,
+   "cny_disc": 9.546207599999995,
+   "cny_nodisc": 9.546207599999995
+  },
+  "W7/zsthink-flash-s0": {
+   "calls": 1534,
+   "pt": 4276229,
+   "ct": 3031085,
+   "cached": 3511296,
+   "cny_disc": 2.7183064399999965,
+   "cny_nodisc": 3.2801137999999934
+  },
+  "W7/zsthink-plus-s0": {
+   "calls": 1534,
+   "pt": 4276229,
+   "ct": 1481788,
+   "cached": 3579392,
+   "cny_disc": 14.679734799999997,
+   "cny_nodisc": 20.406762000000015
+  }
+ },
+ "s303": {
+  "cny_disc": 0,
+  "cny_nodisc": 0,
+  "calls": 0,
+  "runs": 0
+ },
+ "note": "embedding and rerank requests are not priced (placeholder prices, tokens not logged); the 1-token probes of r3_probe are not logged"
+}
